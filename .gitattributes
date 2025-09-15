@@ -1,0 +1,40 @@
+# Handle line endings consistently
+* text=auto eol=lf
+
+# Ensure these stay binary (no diff/merge attempts)
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.ico  binary
+*.svg  binary
+*.ttf  binary
+*.otf  binary
+*.woff binary
+*.woff2 binary
+*.eot  binary
+*.pdf  binary
+
+# Lock down lockfiles (avoid merge conflicts by treating as binary)
+package-lock.json binary
+pnpm-lock.yaml    binary
+yarn.lock         binary
+
+# Treat shell and config files as text (force LF)
+*.sh      text eol=lf
+*.bash    text eol=lf
+*.zsh     text eol=lf
+*.env     text eol=lf
+*.env.*   text eol=lf
+
+# TypeScript & JS files always text
+*.js   text eol=lf
+*.jsx  text eol=lf
+*.ts   text eol=lf
+*.tsx  text eol=lf
+*.mjs  text eol=lf
+*.cjs  text eol=lf
+
+# CSS and PostCSS
+*.css   t*
