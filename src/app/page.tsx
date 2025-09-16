@@ -1,103 +1,97 @@
-import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Image from "next/image"
+import Link from "next/link"
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <Navbar />
+    </>
+    // <main className="flex flex-col">
+    //   {/* Hero Section */}
+    //   <section className="relative w-full h-[80vh]">
+    //     <Image
+    //       src="/images/home-banner-edit.jpg"
+    //       alt="Dr. Cristina Caridi providing in-home Botox and filler treatments across NYC"
+    //       fill
+    //       className="object-cover"
+    //       priority
+    //     />
+    //     <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/30 text-center text-white p-6">
+    //       <h1 className="font-fraunces text-4xl md:text-6xl max-w-3xl">
+    //         Premium In-Home Botox & Filler Treatments Across NYC
+    //       </h1>
+    //       <p className="mt-4 text-lg md:text-xl max-w-2xl font-satoshi">
+    //         Private, physician-led care that blends science with artistry. I
+    //         tailor every treatment to your features, creating natural results in
+    //         every setting.
+    //       </p>
+    //       <Link
+    //         href="/book"
+    //         className="mt-6 inline-block rounded-md bg-white px-6 py-3 text-black font-medium shadow-md hover:bg-gray-100"
+    //       >
+    //         Book a visit
+    //       </Link>
+    //     </div>
+    //   </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    //   {/* Services Section */}
+    //   <section className="py-16 bg-gray-50">
+    //     <div className="container mx-auto px-4">
+    //       <h2 className="text-3xl font-fraunces mb-8">
+    //         Signature Aesthetic Services
+    //       </h2>
+    //       <div className="grid gap-8 md:grid-cols-3">
+    //         <div>
+    //           <h3 className="text-xl font-semibold">Botox Treatments</h3>
+    //           <p className="mt-2 text-gray-700">
+    //             Advanced wrinkle-reduction treatments to smooth lines and refine
+    //             features. Common products: Botox, Xeomin, Daxxify.
+    //           </p>
+    //           <Link href="/treatments/wrinkle-reduction" className="text-blue-600 underline mt-2 inline-block">
+    //             Learn More
+    //           </Link>
+    //         </div>
+    //         <div>
+    //           <h3 className="text-xl font-semibold">Dermal Fillers</h3>
+    //           <p className="mt-2 text-gray-700">
+    //             Restore volume and enhance contours with Juvederm and the RHA
+    //             Collection. Natural-looking results tailored to your features.
+    //           </p>
+    //           <Link href="/treatments/dermal-fillers" className="text-blue-600 underline mt-2 inline-block">
+    //             Learn More
+    //           </Link>
+    //         </div>
+    //         <div>
+    //           <h3 className="text-xl font-semibold">Biostimulatory Fillers</h3>
+    //           <p className="mt-2 text-gray-700">
+    //             Stimulate natural collagen production with Radiesse and
+    //             Sculptra. Results build gradually for long-lasting rejuvenation.
+    //           </p>
+    //           <Link href="/treatments/biostimulatory-fillers" className="text-blue-600 underline mt-2 inline-block">
+    //             Learn More
+    //           </Link>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </section>
+
+    //   {/* Call-to-Action */}
+    //   <section className="bg-blue-900 text-white py-16">
+    //     <div className="container mx-auto text-center px-4">
+    //       <h2 className="text-3xl font-fraunces">Modern beauty, made effortless.</h2>
+    //       <p className="mt-4 text-lg">
+    //         Personalized Botox and filler treatments that restore balance,
+    //         volume, and confidence.
+    //       </p>
+    //       <Link
+    //         href="/book"
+    //         className="mt-6 inline-block rounded-md bg-white px-6 py-3 text-black font-medium shadow-md hover:bg-gray-100"
+    //       >
+    //         Book a visit
+    //       </Link>
+    //     </div>
+    //   </section>
+    // </main>
+  )
 }

@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: var(--font-satoshi);
+  }
+}
