@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+    /* Custom colors */
+    --color-alabaster: #f2f4eb;
+    --color-outer-space: #2a414b;
+    --color-midnight: #01152c;
+    --color-merino: #f9f5eb;
+    --color-champagne: #ece1c9;
+    --color-steel: #4f778b;
+    --color-peach-puff: #ffe7b9;
+    --color-carnation: #ea5455;
+  
+    /* Font family */
+    --font-sans: var(--font-satoshi), system-ui, sans-serif;
+  }

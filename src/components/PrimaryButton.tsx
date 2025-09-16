@@ -17,7 +17,7 @@ export default function PrimaryButton({ href, children, className = "" }: Primar
         // visual
         "rounded-full border px-10 py-2.5 font-satoshi text-base font-medium transition-colors",
         // brand
-        "bg-outer-space border-outer-space text-merino hover:bg-midnight hover:border-midnight",
+        "bg-outer-space border-outer-space text-merino hover:bg-peach-puff hover:border-outer-space hover:text-outer-space",
         className,
       ].join(" ")}
     >
