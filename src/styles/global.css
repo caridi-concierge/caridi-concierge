@@ -11,6 +11,8 @@
     --color-peach-puff: #ffe7b9;
     --color-carnation: #ea5455;
   
-    /* Font family */
-    --font-sans: var(--font-satoshi), system-ui, sans-serif;
+    /* Fonts - tokens used by Tailwind classes */
+    --font-sans: var(--f-satoshi), system-ui, sans-serif;  /* Tailwind default alias */
+    --font-satoshi: var(--f-satoshi), system-ui, sans-serif; /* use with class: font-sans */
+    --font-fraunces: var(--f-fraunces), ui-serif, Georgia, serif; /* use with class: font-fraunces */
   }

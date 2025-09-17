@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Fraunces } from "next/font/google";
 import localFont from "next/font/local";
 import "../styles/global.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fraunces = Fraunces({
+  variable: "--f-fraunces",           // note the name
   subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
   title: "Caridi Concierge",
-  description: "Caridi Concierge - Aesthetic and Wellness Services",
+  description: "Luxury aesthetic treatments in NYC",
 };
 
 const satoshi = localFont({
@@ -26,7 +29,7 @@ const satoshi = localFont({
       style: "italic",
     },
   ],
-  variable: "--font-satoshi",
+  variable: "--f-satoshi",
   display: "swap",
 });
 
@@ -36,8 +39,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${satoshi.variable} font-sans`}>
-      <body className="min-h-screen bg-alabaster">
+    <html lang="en" className={`${satoshi.variable} ${fraunces.variable}`}>
+      <body className="min-h-screen bg-merino">
         {children}
       </body>
     </html>
