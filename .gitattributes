@@ -37,4 +37,4 @@ yarn.lock         binary
 *.cjs  text eol=lf
 
 # CSS and PostCSS
-*.css   t*
+*.css  text eol=lf
