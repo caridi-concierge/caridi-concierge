@@ -6,6 +6,7 @@ import Locations from "@/app/sections/home/Locations";
 import Reviews from "@/app/sections/home/Reviews";
 import FAQ from "@/app/sections/home/FAQ";
 import CTA from "@/app/sections/home/CTA";
+import Footer from "@/components/Footer";
 
 export default function HomePage() {
   return (
@@ -21,6 +22,7 @@ export default function HomePage() {
       <Reviews />
       <FAQ />
       <CTA />
+      <Footer />
     </>
   )
 }
