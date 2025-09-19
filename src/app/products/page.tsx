@@ -2,7 +2,7 @@
 import Banner from "@/components/Banner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CTASection from "@/app/sections/products/CTA";
+import CTASection from "@/components/CTA";
 import ProductsSection from "@/app/sections/products/Products";
 
 export default function ProductsPage() {

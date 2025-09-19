@@ -1,4 +1,4 @@
-import { COMPANY } from "@/lib/constants";
+import { COMPANY } from "@/lib/constants/company";
 
 export default function PrivacyPolicy() {
     return (

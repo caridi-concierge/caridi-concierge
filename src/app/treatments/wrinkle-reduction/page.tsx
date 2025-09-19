@@ -1,7 +1,7 @@
 import Banner from "@/components/Banner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CTASection from "@/app/sections/treatments/CTA";
+import CTASection from "@/components/CTA";
 import WrinkleReductionIntroSection from "@/app/sections/treatments/wrinkle-reduction/WrinkleReductionIntro";
 import WrinkleReductionAreasSection from "@/app/sections/treatments/wrinkle-reduction/WrinkleReductionAreas";
 

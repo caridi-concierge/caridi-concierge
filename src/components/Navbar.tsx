@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Menu, X } from "lucide-react";
 import Button from "./PrimaryButton";
-import { COMPANY } from "@/lib/constants";
+import { COMPANY } from "@/lib/constants/company";
 
 export default function Navbar() {
   const [isOpen, setSidebarIsOpen] = useState(false);

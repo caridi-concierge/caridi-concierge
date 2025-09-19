@@ -3,7 +3,7 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
-import { COMPANY } from "@/lib/constants";
+import { COMPANY } from "@/lib/constants/company";
 import PrimaryButton from "@/components/PrimaryButton";
 
 export default function BookingRedirectPage() {

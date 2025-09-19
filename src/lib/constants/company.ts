@@ -17,4 +17,3 @@ export const COMPANY = {
       yelp: "https://www.yelp.com/biz/caridi-concierge-brooklyn",
     },
   };
-  

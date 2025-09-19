@@ -5,7 +5,7 @@ import ServicesSection from "@/app/sections/home/Services";
 import LocationsSection from "@/app/sections/home/Locations";
 import ReviewsSection from "@/app/sections/home/Reviews";
 import FAQSection from "@/app/sections/home/FAQ";
-import CTASection from "@/app/sections/home/CTA";
+import CTASection from "@/components/CTA";
 import Footer from "@/components/Footer";
 
 export default function HomePage() {
@@ -21,7 +21,7 @@ export default function HomePage() {
       <LocationsSection />
       <ReviewsSection />
       <FAQSection />
-      <CTASection />
+      <CTASection variantKey='default'/>
       <Footer />
     </>
   )

@@ -1,7 +1,7 @@
 import Banner from "@/components/Banner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CTASection from "@/app/sections/treatments/CTA";
+import CTASection from "@/components/CTA";
 import DermalFillersIntroSection from "@/app/sections/treatments/dermal-fillers/DermalFillersIntro";
 import DermalFillersAreasSection from "@/app/sections/treatments/dermal-fillers/DermalFillersAreas";
 
