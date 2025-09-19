@@ -12,8 +12,8 @@ export default function Footer() {
         <div className="space-y-6">
           <Link href="/" className="inline-block">
             <Image
-              src="images/caridi_concierge_logo_contrast_fraunces.svg"
-              alt="Caridi Concierge logo"
+              src="/images/caridi_concierge_logo_contrast_fraunces.svg"
+              alt="Caridi Concierge logo" 
               width={226}
               height={60}
               className="h-auto w-[180px]"
