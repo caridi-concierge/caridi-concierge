@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Menu, X } from "lucide-react";
-import PrimaryButton from "./PrimaryButton";
+import Button from "./PrimaryButton";
 import { COMPANY } from "@/lib/constants";
 
 export default function Navbar() {
@@ -42,7 +42,9 @@ export default function Navbar() {
             <a href={COMPANY.phoneHref} className="flex items-center gap-2">
               <Phone size={16} /> {COMPANY.phone}
             </a>
-            <PrimaryButton href="/book">Book a Visit</PrimaryButton>
+            <Button href="/book" variant="primary" className="text-sm px-6 py-1.5">
+              Book a visit
+            </Button>
           </div>
 
           {/* Mobile hamburger */}

@@ -1,7 +1,7 @@
 "use client";
 
 import { Accordion, AccordionItem } from "@/components/Accordion";
-import Button from "@/components/SecondaryButton";
+import PrimaryButton from "@/components/PrimaryButton";
 import Image from "next/image";
 
 export default function ServicesSection() {
@@ -28,9 +28,9 @@ export default function ServicesSection() {
               <br />
               Common product options are Botox, Xeomin, and Daxxify.
             </p>
-            <Button href="/treatments/wrinkle-reduction" variant="primary" className="text-sm px-6 py-1.5">
+            <PrimaryButton href="/treatments/wrinkle-reduction" variant="primary" className="text-sm px-6 py-1.5">
               Learn More
-            </Button>
+            </PrimaryButton>
           </AccordionItem>
 
           <AccordionItem title="Dermal Filler Treatments">
@@ -43,9 +43,9 @@ export default function ServicesSection() {
               <br />
               Common product options are Juvederm and the RHA Collection.
             </p>
-            <Button href="/treatments/dermal-fillers" variant="primary" className="text-sm px-6 py-1.5">
+            <PrimaryButton href="/treatments/dermal-fillers" variant="primary" className="text-sm px-6 py-1.5">
               Learn More
-            </Button>
+            </PrimaryButton>
           </AccordionItem>
 
           <AccordionItem title="Biostimulatory Filler Treatments">
@@ -58,9 +58,9 @@ export default function ServicesSection() {
               <br />
               Common product options are Radiesse and Sculptra.
             </p>
-            <Button href="/treatments/biostimulatory-fillers" variant="primary" className="text-sm px-6 py-1.5">
+            <PrimaryButton href="/treatments/biostimulatory-fillers" variant="primary" className="text-sm px-6 py-1.5">
               Learn More
-            </Button>
+            </PrimaryButton>
           </AccordionItem>
         </Accordion>
       </div>

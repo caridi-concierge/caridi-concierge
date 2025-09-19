@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Button from "@/components/SecondaryButton";
+import PrimaryButton from "@/components/PrimaryButton";
 
 export default function HeroSection() {
   return (
@@ -20,9 +20,9 @@ export default function HeroSection() {
             I tailor every treatment to your features, creating natural results in your own setting.
           </h2>
           <div className="flex justify-center md:justify-center">
-            <Button href="/book" variant="secondary">
-              Book a Visit
-            </Button>
+            <PrimaryButton href="/book" variant="secondary">
+              Book a visit
+            </PrimaryButton>
           </div>
         </div>
 

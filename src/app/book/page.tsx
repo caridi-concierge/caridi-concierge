@@ -4,7 +4,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import { COMPANY } from "@/lib/constants";
-import Button from "@/components/SecondaryButton";
+import PrimaryButton from "@/components/PrimaryButton";
 
 export default function BookingRedirectPage() {
   useEffect(() => {
@@ -30,12 +30,12 @@ export default function BookingRedirectPage() {
         If you are not redirected automatically, click below:
       </p>
       <br />
-      <Button
+      <PrimaryButton
         href={COMPANY.bookingUrl}
         variant="primary"
       >
         Book
-      </Button>
+      </PrimaryButton>
     </div>
   );
 }

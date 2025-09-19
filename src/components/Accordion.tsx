@@ -9,7 +9,7 @@ type AccordionProps = {
 };
 
 export function Accordion({ children, className = "" }: AccordionProps) {
-  return <div className={`space-y-4 ${className}`}>{children}</div>;
+  return <div className={`${className}`}>{children}</div>;
 }
 
 type AccordionItemProps = {
@@ -21,7 +21,7 @@ export function AccordionItem({ title, children }: AccordionItemProps) {
     const [open, setOpen] = useState(false);
   
     return (
-      <div className="border-b border-light-gray pb-4">
+      <div className="border-b border-gray-300 pb-6 pt-4">
         {/* Header */}
         <button
           onClick={() => setOpen(!open)}
