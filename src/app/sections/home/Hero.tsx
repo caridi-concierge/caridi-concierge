@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Button from "@/components/SecondaryButton";
 
-export default function Hero() {
+export default function HeroSection() {
   return (
     <section
       id="home"

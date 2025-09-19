@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Menu, X } from "lucide-react";
 import PrimaryButton from "./PrimaryButton";
+import { COMPANY } from "@/lib/constants";
 
 export default function Navbar() {
   const [isOpen, setSidebarIsOpen] = useState(false);
@@ -38,8 +39,8 @@ export default function Navbar() {
         <div className="flex items-center justify-end gap-4 font-satoshi text-sm">
           {/* Desktop only */}
           <div className="hidden md:flex items-center gap-4">
-            <a href="tel:+19174399470" className="flex items-center gap-2">
-              <Phone size={16} /> (917) 439-9470
+            <a href={COMPANY.phoneHref} className="flex items-center gap-2">
+              <Phone size={16} /> {COMPANY.phone}
             </a>
             <PrimaryButton href="/book">Book a Visit</PrimaryButton>
           </div>
@@ -79,7 +80,7 @@ export default function Navbar() {
               Book a visit
             </Link>
             <a
-              href="tel:+19174399470"
+              href={COMPANY.phoneHref}
               className="bg-outer-space text-merino px-5 py-2 rounded-full text-center"
               onClick={() => setSidebarIsOpen(false)}
             >

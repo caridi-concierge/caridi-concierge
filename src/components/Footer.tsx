@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { COMPANY } from "@/lib/constants";
 
 export default function Footer() {
   return (
@@ -22,19 +23,19 @@ export default function Footer() {
 
           {/* Social icons */}
           <div className="flex gap-4">
-            <a href="https://www.facebook.com/profile.php?id=61572501036242" target="_blank">
+            <a href={COMPANY.social.facebook} target="_blank">
               <Image src="/images/merino_facebook.svg" alt="Facebook" width={24} height={24} />
             </a>
-            <a href="https://www.instagram.com/caridiconcierge/" target="_blank">
+            <a href={COMPANY.social.instagram} target="_blank">
               <Image src="/images/merino_instagram.svg" alt="Instagram" width={24} height={24} />
             </a>
-            <a href="https://www.linkedin.com/company/caridi-concierge/" target="_blank">
+            <a href={COMPANY.social.linkedin} target="_blank">
               <Image src="/images/merino_linkedin.svg" alt="LinkedIn" width={24} height={24} />
             </a>
-            <a href="https://tiktok.com/@caridiconcierge" target="_blank">
+            <a href={COMPANY.social.tiktok} target="_blank">
               <Image src="/images/merino_tiktok.svg" alt="TikTok" width={24} height={24} />
             </a>
-            <a href="https://www.yelp.com/biz/caridi-concierge-brooklyn?" target="_blank">
+            <a href={COMPANY.social.yelp} target="_blank">
               <Image src="/images/merino_yelp.svg" alt="Yelp" width={24} height={24} />
             </a>
           </div>

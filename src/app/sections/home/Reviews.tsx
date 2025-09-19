@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-export default function Reviews() {
+export default function ReviewsSection() {
   useEffect(() => {
     // Inject Elfsight script only once
     if (!document.querySelector("#elfsight-platform")) {

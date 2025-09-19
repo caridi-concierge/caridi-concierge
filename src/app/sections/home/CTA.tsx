@@ -2,7 +2,7 @@
 
 import Button from "@/components/SecondaryButton";
 
-export default function CTA() {
+export default function CTASection() {
   return (
     <section className="bg-merino py-20">
       <div className="container mx-auto bg-outer-space rounded-2xl px-8 py-16 text-center space-y-6">

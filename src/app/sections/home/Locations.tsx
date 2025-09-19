@@ -2,7 +2,7 @@
 
 import { AccordionItem } from "@/components/Accordion";
 
-export default function Locations() {
+export default function LocationsSection() {
   return (
     <section className="bg-champagne py-16">
       <div className="container mx-auto">

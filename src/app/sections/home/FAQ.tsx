@@ -1,11 +1,12 @@
 "use client";
 
 import { Accordion, AccordionItem } from "@/components/Accordion";
+import { COMPANY } from "@/lib/constants";
 
-export default function FAQ() {
+export default function FAQSection() {
   return (
     <section className="bg-merino py-20">
-      <div className="container mx-auto grid md:grid-cols-2 gap-12 items-start">
+      <div className="container mx-auto grid grid-cols-1 gap-12 items-start">
         {/* Left heading */}
         <div>
           <h2 className="font-fraunces text-3xl md:text-4xl text-outer-space">
@@ -15,7 +16,7 @@ export default function FAQ() {
 
         {/* Right accordion */}
         <div>
-          <Accordion>
+          <Accordion className="py-5">
             <AccordionItem title="How do I schedule an appointment?">
               <p>
                 You can schedule an appointment by calling or booking online
@@ -26,8 +27,9 @@ export default function FAQ() {
                 to schedule your tailored experience today!
                 <br />
                 <br />
-                Call/text: <a href="tel:19174399470" className="text-carnation font-medium underline">917-439-9470</a>
-                Email: <a href="mailto:booking@caridiconcierge.com" className="text-carnation font-medium underline">booking@caridiconcierge.com</a>
+                Call/text: <a href={COMPANY.phoneHref} className="text-carnation font-medium underline">{COMPANY.phone}</a>
+                <br />
+                Email: <a href={COMPANY.emailHref} className="text-carnation font-medium underline">{COMPANY.email}</a>
                 <br />
                 I am available for in-home treatments in Brooklyn, Manhattan, Queens, Staten Island, The Bronx, and Long Island.
               </p>
@@ -50,7 +52,7 @@ export default function FAQ() {
                 Sometimes, yes. I offer same-day appointments on a limited
                 basis. Please{" "}
                 <a
-                  href="tel:19174399470"
+                  href={COMPANY.phoneHref}
                   className="text-carnation font-medium underline"
                 >
                   call

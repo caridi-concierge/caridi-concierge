@@ -2,11 +2,12 @@
 
 import { Accordion, AccordionItem } from "@/components/Accordion";
 import Button from "@/components/SecondaryButton";
+import Image from "next/image";
 
 export default function ServicesSection() {
   return (
     <section className="bg-merino py-16">
-      <div className="container mx-auto grid md:grid-cols-2 gap-12 items-start">
+      <div className="container mx-auto grid grid-cols-1 gap-12 items-start">
         {/* Heading */}
         <div>
           <h2 className="font-fraunces text-3xl md:text-4xl text-outer-space">
@@ -15,7 +16,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Accordion with services */}
-        <Accordion>
+        <Accordion className="py-5">
           <AccordionItem title="Botox Treatments">
             <p>
               I offer advanced wrinkle-reduction treatments to help you achieve
@@ -62,6 +63,15 @@ export default function ServicesSection() {
             </Button>
           </AccordionItem>
         </Accordion>
+      </div>
+      <div className="w-full flex justify-center py-15">
+        <Image
+          src="/images/Decor01.svg"
+          alt=""
+          width={93}
+          height={108}
+          className="h-auto"
+        />
       </div>
     </section>
   );
