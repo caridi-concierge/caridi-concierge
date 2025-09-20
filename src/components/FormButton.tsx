@@ -1,27 +1,25 @@
-import Link from "next/link";
 import { ReactNode } from "react";
 import { base, variants } from "./ButtonStyles";
 
-type ButtonProps = {
-  href: string;
+type FormButtonProps = {
   children: ReactNode;
-  variant?: "primary" | "secondary" | "light"; // add as needed
+  variant?: keyof typeof variants;
   className?: string;
+  type?: "button" | "submit" | "reset";
 };
 
-export default function PrimaryButton({
-  href,
+export default function FormButton({
   children,
   variant = "primary",
   className = "",
-}: ButtonProps) {
-
+  type = "submit",
+}: FormButtonProps) {
   return (
-    <Link
-      href={href}
+    <button
+      type={type}
       className={[base, variants[variant], className].join(" ")}
     >
       {children}
-    </Link>
+    </button>
   );
 }

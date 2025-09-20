@@ -31,7 +31,7 @@ export default function CTASection({
             </h2>
             {config.subtitle && (
               <p
-                className={`${config.textColor}/90 text-lg max-w-xl mx-auto leading-relaxed`}
+                className={`${config.textColor} opacity-90 text-lg max-w-xl mx-auto leading-relaxed`}
               >
                 {config.subtitle}
               </p>

@@ -56,6 +56,7 @@ export default function Footer() {
             <h3 className="uppercase font-semibold text-alabaster mb-3">Company</h3>
             <ul className="space-y-2">
               <li><Link href="/about">About</Link></li>
+              <li><Link href="/doctors">Staff</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>
           </div>
