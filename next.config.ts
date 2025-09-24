@@ -1,7 +1,22 @@
 import type { NextConfig } from "next";
+import nextMDX from "@next/mdx";
+
+const withMDX = nextMDX({
+  extension: /\.mdx?$/, // support .md and .mdx
+});
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  pageExtensions: ["ts", "tsx", "js", "jsx", "mdx"],
+
+  async redirects() {
+    return [
+      {
+        source: "/post/:slug*",        // old Webflow-style URL
+        destination: "/blog/:slug*",   // new clean URL
+        permanent: true,               // 301
+      },
+    ];
+  },
 };
 
-export default nextConfig;
+export default withMDX(nextConfig);
