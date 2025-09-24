@@ -17,3 +17,7 @@
     --font-satoshi: var(--f-satoshi), system-ui, sans-serif; /* use with class: font-sans */
     --font-fraunces: var(--f-fraunces), ui-serif, Georgia, serif; /* use with class: font-fraunces */
   }
+
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7:not(:empty) + #reviews-fallback {
+    display: none;
+  }
