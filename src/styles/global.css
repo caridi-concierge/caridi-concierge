@@ -21,3 +21,28 @@
   .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7:not(:empty) + #reviews-fallback {
     display: none;
   }
+
+  /* Blog Table Definitions */
+  .blog-table {
+    @apply min-w-full border-collapse border border-gray-300 my-6;
+  }
+  
+  .blog-table thead {
+    @apply bg-outer-space;
+  }
+  
+  .blog-table th {
+    @apply px-4 py-3 text-left font-semibold text-white border-r border-gray-300 last:border-r-0;
+  }
+  
+  .blog-table td {
+    @apply px-4 py-3 text-outer-space/80 border-r border-gray-300 last:border-r-0;
+  }
+  
+  .blog-table tbody tr {
+    @apply border-b border-gray-200 hover:bg-carnation/60 bg-white;
+  }
+  
+  .blog-table caption {
+    @apply text-center font-semibold mb-2;
+  }

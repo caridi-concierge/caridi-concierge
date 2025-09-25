@@ -36,7 +36,7 @@ export default function AboutMissionSection() {
         {/* CTA */}
         <div className="mb-12">
           <PrimaryButton
-            href="https://caridiconcierge.janeapp.com/"
+            href="/book"
             variant="primary"
           >
             Book a visit
