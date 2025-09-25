@@ -5,7 +5,7 @@ export const doctors: Doctor[] = [
       slug: "cristina-caridi",
       name: "Cristina Caridi, MD",
       tagline: "AESTHETIC MEDICINE",
-      img: "/images/cc_headshot_white.jpg",
+      img: "/images/cc_headshot_white_hq_crop_edit.jpg",
       imgAlt: "Dr Caridi headshot in white shirt",
       email: "drcaridi@caridiconcierge.com",
       bio: [

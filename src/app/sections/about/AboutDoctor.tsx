@@ -27,7 +27,7 @@ export default function AboutDoctorSection() {
           >
             <div className="mb-6">
               <Image
-                src="/images/cc_headshot_white.jpg"
+                src="/images/cc_headshot_white_hq_crop_edit.jpg"
                 alt="Portrait of Dr. Cristina Caridi"
                 width={250}
                 height={300}

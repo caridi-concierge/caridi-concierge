@@ -27,7 +27,7 @@ export default async function BlogIndex() {
             <div className="p-4">
               <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
               <p className="text-sm text-gray-600 mb-2">
-                {post.author} · {new Date(post.date).toLocaleDateString()}
+                {post.author} · {new Date(post.date).toLocaleDateString("en-US", { timeZone: "UTC" })}
               </p>
               <p className="text-gray-700 line-clamp-3">{post.description}</p>
             </div>
