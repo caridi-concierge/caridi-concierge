@@ -6,7 +6,7 @@ export default function ContactLayout() {
     <section className="py-16 bg-champagne">
       <div className="container mx-auto px-4">
         <h3 className="font-fraunces text-3xl md:text-4xl text-midnight mb-12 text-center">
-          Get In Touch!
+          Your Direct Line to Caridi Concierge
         </h3>
 
         <div className="grid md:grid-cols-2 gap-8">

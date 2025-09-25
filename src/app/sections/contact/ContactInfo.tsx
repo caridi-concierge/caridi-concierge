@@ -6,16 +6,16 @@ export default function ContactInfoCard() {
     <div className="bg-merino rounded-lg p-8 shadow-md flex flex-col items-center text-center space-y-8">
       <div>
         <h3 className="font-fraunces text-xl text-charcoal mb-2">
-          Connect with Caridi Concierge today!
+          Reach us anytime
         </h3>
         <p className="text-gray-700 text-sm">
-          Reach out directly for tailored service and professional care. Caridi Concierge is here to help you with your aesthetic goals.
+          Whether you&apos;re exploring options or ready to book, we&apos;re here to help. Call, text, or email-whatever feels easiest. Or send us a note through the form.
         </p>
       </div>
 
       {/* Contact */}
       <div>
-        <h4 className="font-fraunces text-lg text-charcoal mb-3">Contact</h4>
+        <h4 className="font-fraunces text-lg text-charcoal mb-3">Call or Email</h4>
         <div className="space-y-3">
           <Link href="tel:+19174399470" className="flex items-center gap-2 justify-center text-sm">
             <Image src="/images/space_phone.svg" alt="Phone" width={20} height={20} />
@@ -33,7 +33,7 @@ export default function ContactInfoCard() {
 
       {/* Socials */}
       <div>
-        <h4 className="font-fraunces text-lg text-charcoal mb-3">Socials</h4>
+        <h4 className="font-fraunces text-lg text-charcoal mb-3">Find Us Online</h4>
         <div className="flex flex-col gap-2 text-sm">
           <Link href="https://www.linkedin.com/company/caridi-concierge/" target="_blank" className="flex items-center gap-2 justify-center">
             <Image src="/images/space_linkedin.svg" alt="LinkedIn" width={20} height={20} /> caridi-concierge

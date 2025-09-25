@@ -1,26 +1,25 @@
-import fs from "fs";
-import path from "path";
+import { notFound } from "next/navigation";
 import BlogPostHeroSection from "@/app/sections/blog/BlogPostHero";
 import BlogPostBodySection from "@/app/sections/blog/BlogPostBody";
+import { getAllPosts, getPostBySlug } from "@/lib/blogs/posts";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-// Absolute path to your MDX posts
-const postsDir = path.join(process.cwd(), "src/content/blog");
-
-export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  const files = fs.readdirSync(postsDir).filter((f) => f.endsWith(".mdx"));
-  return files.map((file) => ({
-    slug: file.replace(/\.mdx$/, ""),
-  }));
+export async function generateStaticParams() {
+  const posts = await getAllPosts();
+  return posts.map((p) => ({ slug: p.slug }));
 }
 
-export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+export default async function BlogPost({ params }: { params: { slug: string } }) {
   const { slug } = await params;
-  const PostModule = await import(`@/content/blog/${slug}.mdx`);
-  const { metadata } = PostModule;
-  const PostContent = PostModule.default;
+  const post = await getPostBySlug(slug);
+  if (!post) return notFound();
+
+  const { metadata, Content } = post;
 
   return (
-    <article>
+    <>
+      <Navbar />  
       <BlogPostHeroSection
         title={metadata.title}
         author={metadata.author}
@@ -28,8 +27,9 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         coverImage={metadata.coverImage}
       />
       <BlogPostBodySection>
-        <PostContent />
+        <Content />
       </BlogPostBodySection>
-    </article>
+      <Footer />
+    </>
   );
 }

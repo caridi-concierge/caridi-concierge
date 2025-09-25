@@ -19,9 +19,12 @@ export default function HeroSection() {
             Private, physician-led care that blends science with artistry.  
             I tailor every treatment to your features, creating natural results in your own setting.
           </h2>
-          <div className="flex justify-center md:justify-center">
+          <div className="flex gap-4 justify-center md:justify-center">
             <PrimaryButton href="/book" variant="secondary">
               Book a visit
+            </PrimaryButton>
+            <PrimaryButton href="/contact" variant="primary">
+              Contact Us
             </PrimaryButton>
           </div>
         </div>
