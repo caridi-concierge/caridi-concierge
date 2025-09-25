@@ -2,11 +2,12 @@
 
 import { Accordion, AccordionItem } from "@/components/Accordion";
 import { COMPANY } from "@/lib/constants/company";
+import Container from "@/components/Container";
 
 export default function FAQSection() {
   return (
     <section className="bg-merino py-20">
-      <div className="container mx-auto grid grid-cols-1 gap-12 items-start">
+      <Container className="container mx-auto grid grid-cols-1 gap-12 items-start">
         {/* Left heading */}
         <div>
           <h2 className="font-fraunces text-3xl md:text-4xl text-outer-space">
@@ -90,7 +91,7 @@ export default function FAQSection() {
             </AccordionItem>
           </Accordion>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

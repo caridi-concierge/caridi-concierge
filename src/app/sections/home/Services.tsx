@@ -2,12 +2,13 @@
 
 import { Accordion, AccordionItem } from "@/components/Accordion";
 import PrimaryButton from "@/components/PrimaryButton";
+import Container from "@/components/Container";
 import Image from "next/image";
 
 export default function ServicesSection() {
   return (
     <section className="bg-merino py-16">
-      <div className="container mx-auto grid grid-cols-1 gap-12 items-start">
+      <Container className="container mx-auto grid grid-cols-1 gap-12 items-start">
         {/* Heading */}
         <div>
           <h2 className="font-fraunces text-3xl md:text-4xl text-outer-space">
@@ -63,7 +64,7 @@ export default function ServicesSection() {
             </PrimaryButton>
           </AccordionItem>
         </Accordion>
-      </div>
+      </Container>
       <div className="w-full flex justify-center py-15">
         <Image
           src="/images/Decor01.svg"

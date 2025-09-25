@@ -1,5 +1,6 @@
 import PrimaryButton from "@/components/PrimaryButton";
 import { ctaVariants } from "@/lib/constants/ctas";
+import Container from "@/components/Container";
 
 export type CTASectionProps = {
   title: string;
@@ -23,7 +24,7 @@ export default function CTASection({
     
     return (
         <section className="bg-merino py-20">
-          <div
+          <Container
             className={`container mx-auto rounded-2xl px-8 py-16 text-center space-y-6 ${config.bgColor}`}
           >
             <h2 className={`font-fraunces text-4xl md:text-6xl ${config.textColor}`}>
@@ -41,7 +42,7 @@ export default function CTASection({
                 {config.ctaText}
               </PrimaryButton>
             </div>
-          </div>
+          </Container>
         </section>
       );
     }

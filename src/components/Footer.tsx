@@ -3,11 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { COMPANY } from "@/lib/constants/company";
+import Container from "@/components/Container";
 
 export default function Footer() {
   return (
     <footer className="bg-outer-space text-merino">
-      <div className="container mx-auto py-12 grid grid-cols-1 md:grid-cols-2 gap-12">
+      <Container className="container mx-auto py-12 grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Left: Logo, address, socials */}
         <div className="space-y-6">
           <Link href="/" className="inline-block">
@@ -67,7 +68,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-      </div>
+      </Container>
 
       {/* Bottom bar */}
       <div className="border-t border-merino/20 mt-8">
