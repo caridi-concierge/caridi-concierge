@@ -29,7 +29,7 @@ export default function ServicesSection() {
               <br />
               Common product options are Botox, Xeomin, and Daxxify.
             </p>
-            <PrimaryButton href="/treatments/wrinkle-reduction" variant="primary" className="text-sm px-6 py-1.5">
+            <PrimaryButton href="/treatments/wrinkle-reduction" variant="primary" className="text-sm px-6 py-1.5" aria-label="Learn more about botox treatments and wrinkle reduction">
               Learn More
             </PrimaryButton>
           </AccordionItem>
@@ -44,7 +44,7 @@ export default function ServicesSection() {
               <br />
               Common product options are Juvederm and the RHA Collection.
             </p>
-            <PrimaryButton href="/treatments/dermal-fillers" variant="primary" className="text-sm px-6 py-1.5">
+            <PrimaryButton href="/treatments/dermal-fillers" variant="primary" className="text-sm px-6 py-1.5" aria-label="Learn more about dermal fillers and volume enhancers">
               Learn More
             </PrimaryButton>
           </AccordionItem>
@@ -59,7 +59,7 @@ export default function ServicesSection() {
               <br />
               Common product options are Radiesse and Sculptra.
             </p>
-            <PrimaryButton href="/treatments/biostimulatory-fillers" variant="primary" className="text-sm px-6 py-1.5">
+            <PrimaryButton href="/treatments/biostimulatory-fillers" variant="primary" className="text-sm px-6 py-1.5" aria-label="Learn more about biostimulatory fillers and collagen builders">
               Learn More
             </PrimaryButton>
           </AccordionItem>

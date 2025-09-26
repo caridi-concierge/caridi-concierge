@@ -10,6 +10,7 @@ export const ctaVariants: Record<string, CTASectionProps> = {
     variant: "secondary",
     bgColor: "bg-outer-space",
     textColor: "text-alabaster",
+    ariaLabel: "Book a visit to Caridi Concierge for personalized Botox and filler treatments",
   },
   consult: {
     title: "Ready to start your journey?",
@@ -19,6 +20,7 @@ export const ctaVariants: Record<string, CTASectionProps> = {
     variant: "primary",
     bgColor: "bg-champagne",
     textColor: "text-outer-space",
+    ariaLabel: "Get in touch with Caridi Concierge for personalized Botox and filler treatments",
   },
   promo: {
     title: "Special seasonal offer",
@@ -28,6 +30,7 @@ export const ctaVariants: Record<string, CTASectionProps> = {
     variant: "secondary",
     bgColor: "bg-steel-blue",
     textColor: "text-alabaster",
+    ariaLabel: "Claim a special seasonal offer at Caridi Concierge for personalized Botox and filler treatments",
   },
 };
   
