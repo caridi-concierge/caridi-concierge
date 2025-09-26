@@ -12,8 +12,11 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Caridi Concierge",
-  description: "Luxury aesthetic treatments in NYC",
+  title: "Caridi Concierge | Luxury Aesthetic Treatments in NYC",
+  description: "Caridi Concierge offers premium, in-home aesthetic treatments in NYC. From botox to fillers, experience luxury skincare at your convenience. Book today!",
+  alternates: {
+    canonical: "https://www.caridiconcierge.com",
+  },
   icons: {
     icon: "/images/favicon.png",
     shortcut: "/images/cc_contrast_favicon.png",

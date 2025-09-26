@@ -13,7 +13,7 @@ export default function HomePage() {
     <>
       <Navbar />
       <Banner
-        src="/images/home-banner-edit.jpg"
+        src="/images/home-banner-edit.webp"
         alt="Dr. Cristina Caridi providing in-home Botox and filler treatments across NYC"
       />
       <HeroSection />

@@ -46,3 +46,7 @@
   .blog-table caption {
     @apply text-center font-semibold mb-2;
   }
+
+  section h1 {
+    @apply text-4xl md:text-5xl leading-tight;
+  }

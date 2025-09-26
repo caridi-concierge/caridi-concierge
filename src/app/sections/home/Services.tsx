@@ -71,7 +71,7 @@ export default function ServicesSection() {
           alt=""
           width={93}
           height={108}
-          className="h-auto"
+          className="w-auto h-auto"
         />
       </div>
     </section>

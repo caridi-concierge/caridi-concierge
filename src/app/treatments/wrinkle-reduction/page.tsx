@@ -10,7 +10,7 @@ export default function WrinkleReductionPage() {
       <>
       <Navbar />
       <Banner
-        src="/images/wrinkle-reduction-banner-green-opaque-stripes.jpg"
+        src="/images/wrinkle-reduction-banner-green-opaque-stripes.webp"
         alt="Caridi Concierge uses the following products for aesthetic treatments. 
         For botox treatments, we use Botox, Daxxify, Xeomin, and Juvederm. 
         For dermal fillers, we use RHA Collection and Juvederm. 

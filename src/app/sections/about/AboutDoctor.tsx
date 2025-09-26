@@ -13,7 +13,7 @@ export default function AboutDoctorSection() {
             alt=""
             width={93}
             height={108}
-            className="mb-6 h-auto"
+            className="mb-6 w-auto h-auto"
           />
           <h1 className="font-fraunces text-3xl md:text-4xl text-outer-space mb-8">
             Meet Dr. Caridi
@@ -28,11 +28,11 @@ export default function AboutDoctorSection() {
           >
             <div className="mb-6">
               <Image
-                src="/images/cc_headshot_white_hq_crop_edit.jpg"
+                src="/images/cc_headshot_white_hq_crop_edit.webp"
                 alt="Portrait of Dr. Cristina Caridi"
-                width={250}
-                height={300}
-                className="rounded-lg shadow-lg object-cover"
+                width={333}
+                height={400}
+                className="rounded-lg shadow-lg object-cover sm:w-[150px] md:w-[250px] h-auto"
               />
             </div>
             <div className="text-center space-y-2">

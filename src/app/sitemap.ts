@@ -8,7 +8,7 @@ const blogDir = path.join(process.cwd(), "src/content/blog");
 
 // Static pages
 const staticPages = [
-  "", // homepage
+  "",
   "about",
   "contact",
   "privacy-policy",
@@ -18,7 +18,7 @@ const staticPages = [
 
 // Treatments (index + details)
 const treatments = [
-  "treatments", // index page
+  "treatments",
   "treatments/wrinkle-reduction",
   "treatments/dermal-fillers",
   "treatments/biostimulatory-fillers",
@@ -26,9 +26,8 @@ const treatments = [
 
 // Doctors (index + known slugs)
 const doctors = [
-  "doctors", // index page
+  "doctors",
   "doctors/cristina-caridi",
-  // add more doctors here if you have them
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
