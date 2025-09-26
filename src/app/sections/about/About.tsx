@@ -1,11 +1,12 @@
 // src/components/AboutMissionSection.tsx
 import Image from "next/image";
 import PrimaryButton from "@/components/PrimaryButton";
+import Container from "@/components/Container";
 
 export default function AboutMissionSection() {
   return (
     <section className="py-16 bg-merino">
-      <div className="container mx-auto px-4 max-w-3xl text-start">
+      <Container className="container mx-auto px-4 max-w-3xl text-start">
         {/* Heading */}
         <h2 className="font-fraunces text-3xl md:text-4xl text-outer-space mb-6">
           My mission to you
@@ -53,7 +54,7 @@ export default function AboutMissionSection() {
             className="rounded-lg object-cover shadow-[4px_6px_12px_rgba(0,0,0,0.25)]"
           />
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

@@ -2,6 +2,7 @@
 import Image from "next/image";
 import type { TreatmentIntroProps } from "@/model/treatments/Treatment";
 import PrimaryButton from "@/components/PrimaryButton";
+import Container from "@/components/Container";
 
 export default function TreatmentIntroSection({
   title,
@@ -14,7 +15,7 @@ export default function TreatmentIntroSection({
 }: TreatmentIntroProps) {
   return (
     <section className="py-16 bg-cream">
-      <div className="container mx-auto px-4">
+      <Container className="container mx-auto px-4">
         {/* Decorative SVG */}
         <div className="flex justify-center mb-12">
           <Image
@@ -76,7 +77,7 @@ export default function TreatmentIntroSection({
             </p>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

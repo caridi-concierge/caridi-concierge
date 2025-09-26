@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { doctors } from "@/lib/constants/doctors";
+import Container from "@/components/Container";
 
 export default function AllStaffSection() {
   return (
     <section className="py-16 bg-champagne">
-      <div className="container mx-auto px-4">
+      <Container className="container mx-auto px-4">
         <h1 className="font-fraunces text-3xl md:text-4xl text-outer-space text-center mb-12">
           Meet Our Doctors & Aesthetic Specialists
         </h1>
@@ -37,7 +38,7 @@ export default function AllStaffSection() {
             ))}
           </div>
         )}
-      </div>
+      </Container>
     </section>
   );
 }

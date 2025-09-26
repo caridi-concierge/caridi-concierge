@@ -2,13 +2,14 @@
 import { doctors } from "@/lib/constants/doctors";
 import Image from "next/image";
 import Link from "next/link";
+import Container from "@/components/Container";
 
 export default function OtherStaffSection({ currentSlug }: { currentSlug: string }) {
   const otherStaff = doctors.filter((d) => d.slug !== currentSlug);
 
   return (
     <section className="py-16 bg-champagne">
-      <div className="container mx-auto px-4 text-start">
+      <Container className="container mx-auto px-4 text-start">
         <h2 className="font-fraunces text-4xl md:text-4xl text-midnight mb-8">
           Other Staff
         </h2>
@@ -38,7 +39,7 @@ export default function OtherStaffSection({ currentSlug }: { currentSlug: string
             ))}
           </div>
         )}
-      </div>
+      </Container>
     </section>
   );
 }

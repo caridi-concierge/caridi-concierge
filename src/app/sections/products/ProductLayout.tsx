@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ProductSectionProps } from "@/model/products/Product";
 import PrimaryButton from "@/components/PrimaryButton";
+import Container from "@/components/Container";
 
 export default function ProductLayout({
   sectionTitle,
@@ -10,7 +11,7 @@ export default function ProductLayout({
 }: ProductSectionProps) {
   return (
     <section className="py-16 bg-merino">
-      <div className="container mx-auto px-4">
+      <Container className="container mx-auto px-4">
         {/* Header */}
         <div className="flex flex-col items-center mb-12 text-center">
           <Image
@@ -67,7 +68,7 @@ export default function ProductLayout({
             </div>
           ))}
         </div>
-        </div>
+        </Container>
     </section>
   );
 }

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Accordion, AccordionItem } from "@/components/Accordion";
 import type { TreatmentAreasProps } from "@/model/treatments/Treatment";
 import PrimaryButton from "@/components/PrimaryButton";
+import Container from "@/components/Container";
 
 export default function TreatmentAreasLayout({
   sectionTitle,
@@ -14,7 +15,7 @@ export default function TreatmentAreasLayout({
 }: TreatmentAreasProps) {
   return (
     <section className="py-16 bg-champagne">
-      <div className="container mx-auto px-4">
+      <Container className="container mx-auto px-4">
         {/* Decorative SVG */}
         <div className="flex justify-center mb-12">
           <Image
@@ -58,7 +59,7 @@ export default function TreatmentAreasLayout({
             {ctaText}
           </PrimaryButton>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
