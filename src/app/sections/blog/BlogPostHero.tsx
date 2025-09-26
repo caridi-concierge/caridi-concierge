@@ -35,10 +35,9 @@ export default function BlogPostHeroSection({
           Back
         </Link>
         <h1 className="text-3xl md:text-4xl font-bold mb-2">{title}</h1>
-        <div className="flex items-center space-x-2 text-sm text-gray-200">
+        <div className="flex flex-col md:flex-row md:justify-between text-sm text-gray-200">
           <span>{author}</span>
-          <span>|</span>
-          <span>{date}</span>
+          <span className="mt-1 md:mt-0">{date}</span>
         </div>
       </div>
     </section>

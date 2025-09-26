@@ -11,7 +11,7 @@ export default function BiostimulatoryFillersPage() {
       <>
       <Navbar />
       <Banner
-        src="/images/biostim-filler-banner-light.jpg"
+        src="/images/biostim-filler-banner-light.webp"
         alt="Biostimulatory fillers are are advanced treatments that can help help your body to produce more collagen and restore volume. At Caridi Concierge, we use Radiesse for biostimulatory fillers."
       />
       <BiostimulatoryFillersIntroSection />

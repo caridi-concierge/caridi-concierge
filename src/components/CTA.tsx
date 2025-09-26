@@ -7,6 +7,7 @@ export type CTASectionProps = {
   subtitle?: string;
   ctaHref: string;
   ctaText: string;
+  ariaLabel?: string;
   variant?: "primary" | "secondary";
   bgColor?: string;
   textColor?: string;
@@ -38,7 +39,7 @@ export default function CTASection({
               </p>
             )}
             <div className="pt-6">
-              <PrimaryButton href={config.ctaHref} variant={config.variant}>
+              <PrimaryButton href={config.ctaHref} variant={config.variant} ariaLabel={config.ariaLabel}>
                 {config.ctaText}
               </PrimaryButton>
             </div>

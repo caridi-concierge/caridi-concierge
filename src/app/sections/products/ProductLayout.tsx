@@ -28,6 +28,7 @@ export default function ProductLayout({
             href={ctaHref}
             variant="primary"
             className="text-sm bg-steel-blue"
+            ariaLabel={`Learn more about our treatments using ${sectionTitle}`}
           >
             {ctaText}
           </PrimaryButton>

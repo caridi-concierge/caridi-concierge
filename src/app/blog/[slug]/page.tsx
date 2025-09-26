@@ -23,7 +23,11 @@ export default async function BlogPost({ params }: { params: { slug: string } })
       <BlogPostHeroSection
         title={metadata.title}
         author={metadata.author}
-        date={metadata.date}
+        date={new Date(metadata.date).toLocaleDateString(undefined, {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })}
         coverImage={metadata.coverImage}
       />
       <BlogPostBodySection>

@@ -10,7 +10,7 @@ export default function DermalFillersPage() {
       <>
       <Navbar />
       <Banner
-        src="/images/dermal-filler-banner-light.jpg"
+        src="/images/dermal-filler-banner-light.webp"
         alt="Dermal fillers are a non-surgical treatment that can help reduce the appearance of wrinkles and fine lines. At Caridi Concierge, we use RHA Collection and Juvederm for dermal fillers."
       />
       <DermalFillersIntroSection />

@@ -47,11 +47,12 @@ export default function AboutMissionSection() {
         {/* Image */}
         <div className="flex justify-center">
           <Image
-            src="/images/cc_headshot_white_outside.jpg"
+            src="/images/cc_headshot_white_outside_hq_800px.webp"
             alt="Dr Cristina Caridi is driven to help you look and feel your best. At Caridi Concierge, we provide private, tailored care that enhances your natural beauty and supports your overall well-being."
             width={466}
             height={600}
-            className="rounded-lg object-cover shadow-[4px_6px_12px_rgba(0,0,0,0.25)]"
+            className="w-auto h-auto rounded-lg object-cover shadow-[4px_6px_12px_rgba(0,0,0,0.25)]"
+            priority
           />
         </div>
       </Container>

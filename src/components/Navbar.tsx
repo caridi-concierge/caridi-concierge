@@ -29,7 +29,7 @@ export default function Navbar() {
               alt="Caridi Concierge logo"
               width={200}
               height={60}
-              className="h-auto w-[200px] sm:w-[250px] md:w-[280px] lg:w-[300px]"
+              className="w-[200px] sm:w-[250px] md:w-[280px] lg:w-[300px] h-auto"
             />
           </Link>
         </div>

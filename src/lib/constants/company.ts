@@ -8,7 +8,7 @@ export const COMPANY = {
     url: "https://www.caridiconcierge.com",
     bookingUrl: "https://caridiconcierge.janeapp.com/",
     address: "Red Hook, Brooklyn, NY 11231",
-    logo: "images/caridi_concierge_flat_logo.svg", // store in /public
+    logo: "images/caridi_concierge_flat_logo.svg",
     social: {
       instagram: "https://www.instagram.com/caridiconcierge/",
       facebook: "https://www.facebook.com/profile.php?id=61572501036242",

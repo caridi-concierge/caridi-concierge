@@ -61,6 +61,14 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     figcaption: (props: ComponentPropsWithoutRef<"figcaption">) => (
       <figcaption className="text-center text-sm text-gray-600 mt-3 italic px-4" {...props} />
     ),
+    a: (props: ComponentPropsWithoutRef<"a">) => (
+      <a
+        className="text-blue-600 hover:text-carnation underline underline-offset-2 transition-colors"
+        target={props.href?.startsWith("http") ? "_blank" : undefined}
+        rel={props.href?.startsWith("http") ? "noopener noreferrer" : undefined}
+        {...props}
+      />
+    ),
     img: (props: ComponentPropsWithoutRef<"img">) => {
       const { src, alt, width, height, ...rest } = props;
       

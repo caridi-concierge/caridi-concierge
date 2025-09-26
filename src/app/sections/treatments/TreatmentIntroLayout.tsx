@@ -51,7 +51,7 @@ export default function TreatmentIntroSection({
             </h2>
             <p className="text-gray-700 text-sm md:text-base">{frequency}</p>
             <div className="mt-6">
-              <PrimaryButton href={frequencyCtaHref} variant="secondary">
+              <PrimaryButton href={frequencyCtaHref} variant="secondary" ariaLabel={`Book a visit for ${title} treatments`}>
                 {frequencyCtaText}
               </PrimaryButton>
             </div>

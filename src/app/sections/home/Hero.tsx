@@ -33,11 +33,11 @@ export default function HeroSection() {
         {/* Right image */}
         <div className="w-full md:basis-1/3 md:flex-none flex flex-col items-center text-center">
           <Image
-            src="/images/cc_headshot_white_outside_hq_800px.jpg"
+            src="/images/cc_headshot_white_outside_hq_800px.webp"
             alt="Dr Caridi delivers high-quality aesthetic care in the comfort and privacy of your home. Book your tailored experience today."
-            width={256}
-            height={256}
-            className="rounded-xl shadow-lg"
+            width={800}
+            height={800}
+            className="rounded-xl shadow-lg sm:w-[150px] md:w-[256px] h-auto"
           />
           <div className="mt-4 font-fraunces text-lg">Dr. Cristina Caridi</div>
         </div>
