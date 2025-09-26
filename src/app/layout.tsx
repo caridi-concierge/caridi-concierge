@@ -14,6 +14,11 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   title: "Caridi Concierge",
   description: "Luxury aesthetic treatments in NYC",
+  icons: {
+    icon: "/images/favicon.png",
+    shortcut: "/images/cc_contrast_favicon.png",
+    apple: "/images/cc_contrast_webclip.png",
+  },
 };
 
 const satoshi = localFont({

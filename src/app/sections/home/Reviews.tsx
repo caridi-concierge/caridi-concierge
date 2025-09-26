@@ -1,11 +1,12 @@
 import Script from "next/script";
 import { reviews } from "@/content/reviews/reviews";
 import StarRating from "@/components/StarRating";
+import Container from "@/components/Container";
 
 export default function ReviewsSection() {
   return (
     <section className="bg-merino py-20">
-      <div className="container mx-auto text-center space-y-8">
+      <Container className="container mx-auto text-center space-y-8">
         <h2 className="font-fraunces text-3xl md:text-4xl font-bold text-outer-space">
           Client Testimonials
         </h2>
@@ -47,7 +48,7 @@ export default function ReviewsSection() {
           strategy="lazyOnload"
           id="elfsight-platform"
         />
-      </div>
+      </Container>
     </section>
   );
 }

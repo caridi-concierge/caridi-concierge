@@ -4,7 +4,7 @@ import ProductSection from "@/app/sections/products/ProductLayout";
 export default function ProductsSection() {
   return (
     <section className="py-16 bg-merino">
-      <h1 className="text-center text-outer-space font-fraunces text-4xl mb-16">
+      <h1 className="text-center text-outer-space font-fraunces text-4xl mb-16 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         The Products Behind Our Treatments
       </h1>
 

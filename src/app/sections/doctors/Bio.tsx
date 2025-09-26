@@ -1,11 +1,12 @@
 // src/components/DoctorPageLayout.tsx
 import Image from "next/image";
 import type { Doctor } from "@/model/doctors/Doctor";
+import Container from "@/components/Container";
 
 export default function DoctorBioSection({ doctor }: { doctor: Doctor }) {
     return (
         <section className="py-16 bg-merino">
-          <div className="container mx-auto px-4">
+          <Container className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row md:items-start md:gap-12">
               {/* Left: Image */}
               <div className="flex-shrink-0 md:w-1/3 flex justify-center md:justify-start">
@@ -43,7 +44,7 @@ export default function DoctorBioSection({ doctor }: { doctor: Doctor }) {
                 </div>
               </div>
             </div>
-          </div>
+          </Container>
         </section>
       );
     }

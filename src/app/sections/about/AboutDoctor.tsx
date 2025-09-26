@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import Container from "@/components/Container";
 
 export default function AboutDoctorSection() {
   return (
     <section className="py-16 bg-champagne">
-      <div className="container mx-auto px-4 text-center">
+      <Container className="container mx-auto px-4 text-center">
         {/* Header */}
         <div className="flex flex-col items-center mb-12">
           <Image
@@ -44,7 +45,7 @@ export default function AboutDoctorSection() {
             </div>
           </Link>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

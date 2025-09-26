@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import PrimaryButton from "@/components/PrimaryButton";
+import Container from "@/components/Container";
 
 export default function HeroSection() {
   return (
@@ -9,7 +10,7 @@ export default function HeroSection() {
       id="home"
       className="bg-merino text-outer-space py-16"
     >
-      <div className="container mx-auto flex flex-col md:flex-row items-center gap-12">
+      <Container className="container mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left text content */}
         <div className="w-full md:basis-2/3 md:flex-none space-y-6">
           <h1 className="font-fraunces text-4xl md:text-5xl leading-tight">
@@ -40,7 +41,7 @@ export default function HeroSection() {
           />
           <div className="mt-4 font-fraunces text-lg">Dr. Cristina Caridi</div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

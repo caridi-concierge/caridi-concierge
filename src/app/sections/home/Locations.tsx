@@ -1,11 +1,12 @@
 "use client";
 
 import { AccordionItem } from "@/components/Accordion";
+import Container from "@/components/Container";
 
 export default function LocationsSection() {
   return (
     <section className="bg-champagne py-16">
-      <div className="container mx-auto">
+      <Container className="container mx-auto">
         {/* Title */}
         <h2 className="font-fraunces text-3xl md:text-4xl font-bold text-outer-space mb-10">
           Available in Brooklyn, Manhattan &amp; Queens – Right to Your Door
@@ -61,7 +62,7 @@ export default function LocationsSection() {
             </p>
           </AccordionItem>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
