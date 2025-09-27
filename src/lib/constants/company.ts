@@ -6,9 +6,17 @@ export const COMPANY = {
     email: "booking@caridiconcierge.com",
     emailHref: "mailto:booking@caridiconcierge.com",
     url: "https://www.caridiconcierge.com",
-    bookingUrl: "https://caridiconcierge.janeapp.com/",
-    address: "Red Hook, Brooklyn, NY 11231",
+    bookingUrl: "https://caridiconcierge.com/book",
+    address: {
+      complete: "Red Hook, Brooklyn, NY 11231",
+      neighborhood: "Red Hook",
+      locality: "Brooklyn",
+      region: "NY",
+      postalCode: "11231",
+      country: "US"
+    },
     logo: "images/caridi_concierge_flat_logo.svg",
+    logoWebclip: "images/cc_contrast_webclip.png",
     social: {
       instagram: "https://www.instagram.com/caridiconcierge/",
       facebook: "https://www.facebook.com/profile.php?id=61572501036242",

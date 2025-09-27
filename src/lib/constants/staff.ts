@@ -1,11 +1,11 @@
-import type { Doctor } from "@/model/doctors/Doctor";
+import type { Staff } from "@/model/staff/Staff";
 
-export const doctors: Doctor[] = [
+export const staff: Staff[] = [
     {
       slug: "cristina-caridi",
       name: "Cristina Caridi, MD",
       tagline: "AESTHETIC MEDICINE",
-      img: "/images/cc_headshot_white_hq_crop_edit.jpg",
+      img: "/images/cc_headshot_white.jpg",
       imgAlt: "Dr Caridi headshot in white shirt",
       email: "drcaridi@caridiconcierge.com",
       bio: [

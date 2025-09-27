@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
         destination: "/blog/:slug*",   // new clean URL
         permanent: true,               // 301
       },
+      {
+        source: "/doctors/:slug*",        // old Webflow-style URL
+        destination: "/staff/:slug*",   // new clean URL
+        permanent: true,               // 301
+      },
     ];
   },
 };

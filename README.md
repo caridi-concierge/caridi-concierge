@@ -1,5 +1,6 @@
 
 # Caridi Concierge
+
 ![Logo](public/images/caridi_concierge_logo_contrast_fraunces.svg)
 
 Caridi Concierge is a medical aesthetic practice specializing in non-surgical aesthetic treatments to improve the appearance of wrinkles, restore volume loss, and improve confidence.
@@ -9,9 +10,8 @@ Caridi Concierge is a medical aesthetic practice specializing in non-surgical ae
 - [Contact Page](https://caridiconcierge.com/contact)
 
 This page is maintained by [Joseph Deferio](https://github.com/jdeferio)
+
 - [Caridi Concierge Email](mailto:joseph@caridiconcierge.com)
-
-
 
 ## Getting Started
 
@@ -32,7 +32,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
 
 ## Deploy on Vercel
 

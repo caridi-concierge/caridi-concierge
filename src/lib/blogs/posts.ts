@@ -10,6 +10,9 @@ export type BlogPostMeta = {
   date: string;
   coverImage?: string;
   description?: string;
+  tags?: string[];
+  category?: string;
+  authorPage?: string;
 };
 
 // Get all posts (metadata only)
