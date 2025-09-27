@@ -20,7 +20,7 @@ export default function Footer() {
               className="h-auto w-[180px]"
             />
           </Link>
-          <p className="font-fraunces text-sm">Red Hook <br />Brooklyn, NY 11231</p>
+          <p className="font-fraunces text-sm">{COMPANY.address.neighborhood} <br />{COMPANY.address.locality}, {COMPANY.address.region} {COMPANY.address.postalCode}</p>
 
           {/* Social icons */}
           <div className="flex gap-4">

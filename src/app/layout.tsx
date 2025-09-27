@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Fraunces } from "next/font/google";
 import localFont from "next/font/local";
 import "../styles/global.css";
+import { businessSchema, websiteSchema, organizationSchema } from "@/content/schemas";
+import { JsonLd } from "@/components/JsonLD";
 
 const fraunces = Fraunces({
   variable: "--f-fraunces",           // note the name
@@ -49,6 +51,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${satoshi.variable} ${fraunces.variable}`}>
       <body className="min-h-screen bg-merino">
+        <JsonLd schema={businessSchema} id="layout-business"/>
+        <JsonLd schema={websiteSchema} id="layout-website"/>
+        <JsonLd schema={organizationSchema} id="layout-organization"/>
         {children}
       </body>
     </html>

@@ -4,10 +4,13 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTA";
 import WrinkleReductionIntroSection from "@/app/sections/treatments/wrinkle-reduction/WrinkleReductionIntro";
 import WrinkleReductionAreasSection from "@/app/sections/treatments/wrinkle-reduction/WrinkleReductionAreas";
+import { JsonLd } from "@/components/JsonLD";
+import { botoxServiceSchema } from "@/content/schemas";
 
 export default function WrinkleReductionPage() {
     return (
       <>
+      <JsonLd schema={botoxServiceSchema}/>
       <Navbar />
       <Banner
         src="/images/wrinkle-reduction-banner-green-opaque-stripes.webp"

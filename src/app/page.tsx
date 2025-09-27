@@ -7,10 +7,14 @@ import ReviewsSection from "@/app/sections/home/Reviews";
 import FAQSection from "@/app/sections/home/FAQ";
 import CTASection from "@/components/CTA";
 import Footer from "@/components/Footer";
+import { JsonLd } from "@/components/JsonLD";
+import { faqSchema } from "@/content/schemas";
+
 
 export default function HomePage() {
   return (
     <>
+      <JsonLd schema={faqSchema} />
       <Navbar />
       <Banner
         src="/images/home-banner-edit.webp"

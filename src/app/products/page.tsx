@@ -4,10 +4,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTA";
 import ProductsSection from "@/app/sections/products/Products";
+import { productListSchema } from "@/content/schemas";
+import { JsonLd } from "@/components/JsonLD";
 
 export default function ProductsPage() {
     return (
       <>
+      <JsonLd schema={productListSchema} />
       <Navbar />
       <Banner
         src="/images/products-banner.jpg"

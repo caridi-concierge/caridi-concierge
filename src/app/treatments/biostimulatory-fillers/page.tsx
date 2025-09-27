@@ -1,14 +1,16 @@
-
 import Banner from "@/components/Banner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTA";
 import BiostimulatoryFillersIntroSection from "@/app/sections/treatments/biostimulatory-fillers/BiostimulatoryFillersIntro";
 import BiostimulatoryFillersAreasSection from "@/app/sections/treatments/biostimulatory-fillers/BiostimulatoryFillersAreas"
+import { JsonLd } from "@/components/JsonLD";
+import { biostimulatoryFillerServiceSchema } from "@/content/schemas";
 
 export default function BiostimulatoryFillersPage() {
     return (
       <>
+      <JsonLd schema={biostimulatoryFillerServiceSchema}/>
       <Navbar />
       <Banner
         src="/images/biostim-filler-banner-light.webp"

@@ -4,6 +4,8 @@ import BlogPostBodySection from "@/app/sections/blog/BlogPostBody";
 import { getAllPosts, getPostBySlug } from "@/lib/blogs/posts";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { JsonLd } from "@/components/JsonLD";
+import { buildBlogSchema } from "@/lib/blogs/schema";
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
@@ -16,9 +18,11 @@ export default async function BlogPost({ params }: { params: { slug: string } })
   if (!post) return notFound();
 
   const { metadata, Content } = post;
+  const blogSchema = buildBlogSchema(slug, metadata);
 
   return (
     <>
+      <JsonLd schema={blogSchema} />
       <Navbar />  
       <BlogPostHeroSection
         title={metadata.title}

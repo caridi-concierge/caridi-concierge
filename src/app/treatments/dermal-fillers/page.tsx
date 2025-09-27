@@ -4,10 +4,13 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTA";
 import DermalFillersIntroSection from "@/app/sections/treatments/dermal-fillers/DermalFillersIntro";
 import DermalFillersAreasSection from "@/app/sections/treatments/dermal-fillers/DermalFillersAreas";
+import { JsonLd } from "@/components/JsonLD";
+import { dermalFillerServiceSchema } from "@/content/schemas";
 
 export default function DermalFillersPage() {
     return (
       <>
+      <JsonLd schema={dermalFillerServiceSchema}/>
       <Navbar />
       <Banner
         src="/images/dermal-filler-banner-light.webp"
