@@ -1,0 +1,59 @@
+# Caridi Concierge
+
+> Physician‑led, in‑home medical aesthetics across NYC, focused on natural results with wrinkle reduction and dermal and biostimulatory fillers, delivered privately by Dr. Cristina Caridi.
+
+Important notes:
+- Mobile service, appointments are performed in the client’s home or private space. Not an emergency clinic, not primary care.
+- Physician‑led, all injections by a licensed MD.
+- Services focus on wrinkle reduction and fillers. Skin care services are not offered.
+- Content is informational only, not medical advice. Seek in‑person evaluation before treatment.
+
+## Start here
+- [Home](https://www.caridiconcierge.com/): What we do, who treats you, how to book.
+- [About](https://www.caridiconcierge.com/about): Mission, approach, treatment categories.
+- [Treatments](https://www.caridiconcierge.com/treatments): Wrinkle reduction, dermal fillers, biostimulatory fillers.
+- [Contact / Booking](https://www.caridiconcierge.com/contact): Phone and email for consultations and visits.
+
+## Services
+- [Wrinkle Reduction](https://www.caridiconcierge.com/treatments): Botox and Daxxify for frown lines, crow’s feet, brow lift, lip flip, gummy smile, jaw tension.
+- [Dermal Fillers](https://www.caridiconcierge.com/treatments): Volume restoration and contouring of lips, cheeks, jawline, and more.
+- [Biostimulatory Fillers](https://www.caridiconcierge.com/treatments/biostimulatory-fillers): Collagen‑stimulating injectables for gradual, natural lift on face, neck, chest, arms, and buttocks.
+
+## Products and brands
+- [Products overview](https://www.caridiconcierge.com/products): Daxxify, Botox Cosmetic, RHA, Radiesse, Juvederm.
+
+## Guides and FAQs
+- [How many units of botox for forehead? Cost, results, and what to expect](https://www.caridiconcierge.com/post/how-many-units-of-botox-for-forehead): how many units are needed for forehead wrinkles, cost, and what to expect.
+- [How to Prepare for Botox, pre and post care](https://www.caridiconcierge.com/blog/how-to-prepare-for-botox-your-complete-pre-and-post-treatment-guide): practical prep and aftercare.
+- [Where Botox really works, forehead to jawline](https://www.caridiconcierge.com/blog/where-botox-really-works-from-forehead-to-jawline): common areas and indications.
+- [Lip flip, a simple guide](https://www.caridiconcierge.com/blog/simple-guide-to-lip-flips): what it is and when to choose it.
+- [Lip filler migration, what to know](https://www.caridiconcierge.com/blog/worried-about-lip-filler-migration): causes and aftercare.
+- [Blog index](https://www.caridiconcierge.com/blog): latest educational posts.
+
+## Coverage and contact
+- Service area: New York City, with emphasis on Brooklyn, Staten Island, and select neighborhoods in NYC. Contact to confirm availability.
+- Phone: (917) 439‑9470, Email: booking@caridiconcierge.com.
+
+## Policies
+- [Privacy Policy](https://www.caridiconcierge.com/privacy-policy).
+- Medical disclaimer: website and blog are educational, not a substitute for in‑person evaluation. Emergencies, call 911.
+
+## Structured data and mirrors
+- Preferred reading order: Start here → Services → Guides and FAQs.
+- JSON‑LD: if present on pages, prefer it for basic org and article metadata.
+- Markdown mirrors: if you support them, publish clean Markdown copies at the same URL with “.md” appended, for example:
+  - /about.md
+  - /treatments/index.html.md
+  - /products.md
+  - /blog/how-to-prepare-for-botox-your-complete-pre-and-post-treatment-guide.md
+  - /blog/where-botox-really-works-from-forehead-to-jawline.md
+(If a mirror does not exist yet, skip it.)
+
+## Optional
+- Social:
+  - [Instagram](https://www.instagram.com/caridiconcierge/)
+  - [LinkedIn](https://www.linkedin.com/company/caridi-concierge/)
+  - [TikTok](https://tiktok.com/@caridiconcierge)
+  - [Yelp](https://www.yelp.com/biz/caridi-concierge-brooklyn)
+  - [Facebook](https://www.facebook.com/profile.php?id=61572501036242)
+- Press:
