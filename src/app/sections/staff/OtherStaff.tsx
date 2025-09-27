@@ -1,11 +1,11 @@
 // src/components/OtherStaffSection.tsx
-import { doctors } from "@/lib/constants/doctors";
+import { staff } from "@/lib/constants/staff";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/Container";
 
 export default function OtherStaffSection({ currentSlug }: { currentSlug: string }) {
-  const otherStaff = doctors.filter((d) => d.slug !== currentSlug);
+  const otherStaff = staff.filter((d) => d.slug !== currentSlug);
 
   return (
     <section className="py-16 bg-champagne">
@@ -21,7 +21,7 @@ export default function OtherStaffSection({ currentSlug }: { currentSlug: string
             {otherStaff.map((staff) => (
               <Link
                 key={staff.slug}
-                href={`/doctors/${staff.slug}`}
+                href={`/staff/${staff.slug}`}
                 className="block bg-merino rounded-lg shadow-md hover:shadow-lg transition p-6"
               >
                 <Image

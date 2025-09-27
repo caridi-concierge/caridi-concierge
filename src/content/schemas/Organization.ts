@@ -11,7 +11,7 @@ export const organizationSchema = {
       "@type": "Person",
       "name": "Dr. Cristina Caridi",
       "jobTitle": "Founder and Aesthetic Medicine Physician",
-      "url": `${COMPANY.url}/doctors/cristina-caridi`
+      "url": `${COMPANY.url}/staff/cristina-caridi`
     },
     "sameAs": Object.values(COMPANY.social),
     "contactPoint": {

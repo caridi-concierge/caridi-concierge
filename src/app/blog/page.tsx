@@ -3,6 +3,15 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata = createPageMetadata({
+    title: "Aesthetic Insights | Caridi Concierge Blog",
+    description: "Stay informed with expert tips on wrinkle reduction and fillers. The Caridi Concierge blog keeps you up to date on the latest in aesthetics.",
+    path: "/blog",
+    keywords: ["Caridi Concierge", "Aesthetic Insights", "Aesthetic Treatments", "Guides","Dermal Fillers", "Botox", "Brooklyn", "New York City"],
+    noIndex: false
+});
 
 export default async function BlogIndexPage() {
   const posts = await getAllPosts();

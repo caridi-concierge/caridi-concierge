@@ -6,6 +6,15 @@ import WrinkleReductionIntroSection from "@/app/sections/treatments/wrinkle-redu
 import WrinkleReductionAreasSection from "@/app/sections/treatments/wrinkle-reduction/WrinkleReductionAreas";
 import { JsonLd } from "@/components/JsonLD";
 import { botoxServiceSchema } from "@/content/schemas";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata = createPageMetadata({
+    title: "Wrinkle Reduction | Botox, Daxxify & Xeomin Treatments in NYC",
+    description: "Smooth fine lines & wrinkles with botox at Caridi Concierge. Expert in-home neuromodulator treatments for a refreshed, natural look. Book now!",
+    path: "/treatments/wrinkle-reduction",
+    keywords: ["Caridi Concierge", "Aesthetic Treatments", "Botox", "Daxxify", "Xeomin", "In-Home Treatments", "Brooklyn", "New York City"],
+    noIndex: false
+});
 
 export default function WrinkleReductionPage() {
     return (

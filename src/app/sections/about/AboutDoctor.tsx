@@ -23,7 +23,7 @@ export default function AboutDoctorSection() {
         {/* Doctor card */}
         <div className="flex justify-center">
           <Link
-            href="/doctors/cristina-caridi"
+            href="/staff/cristina-caridi"
             className="flex flex-col items-center bg-champagne"
           >
             <div className="mb-6">

@@ -24,10 +24,10 @@ const treatments = [
   "treatments/biostimulatory-fillers",
 ];
 
-// Doctors (index + known slugs)
-const doctors = [
-  "doctors",
-  "doctors/cristina-caridi",
+// Staff (index + known slugs)
+const staff = [
+  "staff",
+  "staff/cristina-caridi",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -45,9 +45,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }));
 
-  // Doctors
-  const doctorUrls = doctors.map((d) => ({
-    url: `${baseUrl}/${d}`,
+  // Staff
+  const staffUrls = staff.map((s) => ({
+    url: `${baseUrl}/${s}`,
     lastModified: new Date(),
   }));
 
@@ -73,5 +73,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  return [...staticUrls, ...treatmentUrls, ...doctorUrls, ...blogIndex, ...blogUrls];
+  return [...staticUrls, ...treatmentUrls, ...staffUrls, ...blogIndex, ...blogUrls];
 }

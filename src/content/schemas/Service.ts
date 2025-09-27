@@ -54,7 +54,7 @@ export const dermalFillerServiceSchema = {
     "@type": "Service",
     "serviceType": "Dermal Filler Treatment",
     "name": "Dermal Filler Treatment",
-    "description": "In-home dermal filler treatments using products like RHA or Juveau to smooth wrinkles, restore volume, and add contours. Treatments are tailored and priced by unit.",
+    "description": "In-home dermal filler treatments using products like RHA or Juvederm to smooth wrinkles, restore volume, and add contours. Treatments are tailored and priced by unit.",
     "provider": {
       "@type": "LocalBusiness",
       "name": COMPANY.name,

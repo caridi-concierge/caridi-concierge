@@ -8,7 +8,7 @@ import Container from "@/components/Container";
 export default function Footer() {
   return (
     <footer className="bg-outer-space text-merino">
-      <Container className="container mx-auto py-12 grid grid-cols-1 md:grid-cols-2 gap-12">
+      <Container className="py-12 grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Left: Logo, address, socials */}
         <div className="space-y-6">
           <Link href="/" className="inline-block">
@@ -57,7 +57,7 @@ export default function Footer() {
             <h3 className="uppercase font-semibold text-alabaster mb-3">Company</h3>
             <ul className="space-y-2">
               <li><Link href="/about">About</Link></li>
-              <li><Link href="/doctors">Staff</Link></li>
+              <li><Link href="/staff">Staff</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>
           </div>

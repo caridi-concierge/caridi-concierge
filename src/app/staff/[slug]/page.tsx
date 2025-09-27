@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
-import { doctors } from "@/lib/constants/doctors";
-import OtherStaffSection from "@/app/sections/doctors/OtherStaff";
-import DoctorBioSection from "@/app/sections/doctors/Bio";
+import { staff } from "@/lib/constants/staff";
+import OtherStaffSection from "@/app/sections/staff/OtherStaff";
+import DoctorBioSection from "@/app/sections/staff/Bio";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLD";
@@ -13,15 +13,15 @@ export default async function DoctorPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const doctor = doctors.find((d) => d.slug === slug);
-  if (!doctor) return notFound();
+  const staffMember = staff.find((d) => d.slug === slug);
+  if (!staffMember) return notFound();
 
   return (
     <>
       <JsonLd schema={physicianSchema}/>
       <Navbar />
-      <DoctorBioSection doctor={doctor} />
-      <OtherStaffSection currentSlug={doctor.slug} />
+      <DoctorBioSection staff={staffMember} />
+      <OtherStaffSection currentSlug={staffMember.slug} />
       <Footer />
     </>
   );

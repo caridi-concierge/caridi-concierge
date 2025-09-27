@@ -18,7 +18,7 @@ export function buildBlogSchema(slug: string, metadata: {
     author: {
       "@type": "Person",
       name: metadata.author,
-      url: `${COMPANY.url}/doctors/${metadata.authorPage}`,
+      url: `${COMPANY.url}/${metadata.authorPage}`,
     },
     publisher: {
       "@type": "Organization",

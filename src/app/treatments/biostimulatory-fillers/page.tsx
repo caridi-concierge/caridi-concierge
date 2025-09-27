@@ -6,6 +6,15 @@ import BiostimulatoryFillersIntroSection from "@/app/sections/treatments/biostim
 import BiostimulatoryFillersAreasSection from "@/app/sections/treatments/biostimulatory-fillers/BiostimulatoryFillersAreas"
 import { JsonLd } from "@/components/JsonLD";
 import { biostimulatoryFillerServiceSchema } from "@/content/schemas";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata = createPageMetadata({
+    title: "Biostimulatory Fillers in NYC | Natural Collagen-Stimulating Treatments",
+    description: "Restore volume and rejuvenate your skin from within with biostimulatory fillers. Serving NYC with personalized care for natural, long-lasting results.",
+    path: "/treatments/biostimulatory-fillers",
+    keywords: ["Caridi Concierge", "Aesthetic Treatments", "Biostimulatory Fillers", "Radiesse", "Collagen-building", "In-Home Treatments", "Brooklyn", "New York City"],
+    noIndex: false
+});
 
 export default function BiostimulatoryFillersPage() {
     return (
