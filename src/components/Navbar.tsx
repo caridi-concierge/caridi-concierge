@@ -3,10 +3,13 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Menu, X } from "lucide-react";
-import Button from "./PrimaryButton";
+import PrimaryButton from "./PrimaryButton";
 import { COMPANY } from "@/lib/constants/company";
 
-export default function Navbar() {
+export default function Navbar({
+  ctaId = "navbar-cta",
+  overlayCtaId = "navbar-overlay-cta",
+}) {
   const [isOpen, setSidebarIsOpen] = useState(false);
   
   return (
@@ -43,13 +46,14 @@ export default function Navbar() {
               <span className="hidden lg:inline">{COMPANY.phone}</span>
               <span className="lg:hidden">Call</span>
             </a>
-            <Button 
+            <PrimaryButton 
               href="/book" 
               variant="primary" 
               className="text-sm px-4 py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-1.5 whitespace-nowrap"
+              id={ctaId}
             >
               Book a visit
-            </Button>
+            </PrimaryButton>
           </div>
           
           {/* Mobile hamburger */}
@@ -83,6 +87,7 @@ export default function Navbar() {
           <div className="flex flex-col gap-4 w-full max-w-[200px] px-4 touch-auto">
             <Link
               href="/book"
+              id={overlayCtaId}
               className="bg-carnation text-merino px-4 py-2 rounded-full text-center text-sm"
               onClick={() => setSidebarIsOpen(false)}
             >
