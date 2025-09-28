@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "../styles/global.css";
 import { businessSchema, websiteSchema, organizationSchema } from "@/content/schemas";
 import { JsonLd } from "@/components/JsonLD";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const fraunces = Fraunces({
   variable: "--f-fraunces",           // note the name
@@ -54,6 +55,7 @@ export default function RootLayout({
         <JsonLd schema={businessSchema} id="layout-business"/>
         <JsonLd schema={websiteSchema} id="layout-website"/>
         <JsonLd schema={organizationSchema} id="layout-organization"/>
+        <GoogleTagManager gtmId="GTM-KN8MSZTK" />
         {children}
       </body>
     </html>

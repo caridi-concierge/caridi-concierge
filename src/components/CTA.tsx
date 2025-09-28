@@ -11,14 +11,17 @@ export type CTASectionProps = {
   variant?: "primary" | "secondary";
   bgColor?: string;
   textColor?: string;
+  id?: string;
 };
 
 type CTASectionWrapperProps = {
     variantKey?: keyof typeof ctaVariants; // choose from "default" | "consult" | "promo"
+    id?: string;
   } & Partial<CTASectionProps>;
 
 export default function CTASection({
   variantKey = "default",
+  id = "primary-cta",
   ...overrides
 }: CTASectionWrapperProps) {
     const config = { ...ctaVariants[variantKey], ...overrides };
@@ -39,8 +42,8 @@ export default function CTASection({
               </p>
             )}
             <div className="pt-6">
-              <PrimaryButton href={config.ctaHref} variant={config.variant} ariaLabel={config.ariaLabel}>
-                {config.ctaText}
+              <PrimaryButton href={config.ctaHref} variant={config.variant} ariaLabel={config.ariaLabel} id={id ?? config.id}>
+                {config.ctaText} 
               </PrimaryButton>
             </div>
           </Container>

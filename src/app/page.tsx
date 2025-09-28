@@ -25,7 +25,7 @@ export default function HomePage() {
       <LocationsSection />
       <ReviewsSection />
       <FAQSection />
-      <CTASection variantKey='default'/>
+      <CTASection variantKey='default' id='homepage-cta'/>
       <Footer />
     </>
   )

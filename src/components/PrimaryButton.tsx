@@ -8,6 +8,7 @@ type ButtonProps = {
   variant?: "primary" | "secondary" | "light"; // add as needed
   className?: string;
   ariaLabel?: string;
+  id?: string;
 };
 
 export default function PrimaryButton({
@@ -16,6 +17,7 @@ export default function PrimaryButton({
   variant = "primary",
   className = "",
   ariaLabel,
+  id,
 }: ButtonProps) {
 
   return (
@@ -23,6 +25,7 @@ export default function PrimaryButton({
       href={href}
       aria-label={ariaLabel}
       className={[base, variants[variant], className].join(" ")}
+      id={id ?? "primary-button"}
     >
       {children}
     </Link>
