@@ -4,8 +4,6 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTA";
 import BiostimulatoryFillersIntroSection from "@/app/sections/treatments/biostimulatory-fillers/BiostimulatoryFillersIntro";
 import BiostimulatoryFillersAreasSection from "@/app/sections/treatments/biostimulatory-fillers/BiostimulatoryFillersAreas"
-import { JsonLd } from "@/components/JsonLD";
-import { biostimulatoryFillerServiceSchema } from "@/content/schemas";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -19,7 +17,6 @@ export const metadata = createPageMetadata({
 export default function BiostimulatoryFillersPage() {
     return (
       <>
-      <JsonLd schema={biostimulatoryFillerServiceSchema}/>
       <Navbar />
       <Banner
         src="/images/biostim-filler-banner-light.webp"

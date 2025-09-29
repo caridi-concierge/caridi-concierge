@@ -9,7 +9,7 @@ export const botoxServiceSchema = {
     "provider": {
       "@type": "LocalBusiness",
       "name": COMPANY.name,
-      "url": COMPANY.url
+      "url": COMPANY.url,
     },
     "areaServed": {
       "@type": "GeoCircle",
@@ -24,10 +24,10 @@ export const botoxServiceSchema = {
       "@type": "Offer",
       "url": `${COMPANY.url}/treatments/wrinkle-reduction`,
       "priceCurrency": "USD",
-      "price": "12",
+      "price": `${process.env.PRICE_BOTOX ?? 12}`,
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
-        "price": "12",
+        "price": `${process.env.PRICE_BOTOX ?? 12}`,
         "priceCurrency": "USD",
         "unitText": "unit",
         "priceType": "FromPrice"
@@ -73,10 +73,10 @@ export const dermalFillerServiceSchema = {
       "@type": "Offer",
       "url": "https://caridiconcierge.com/treatments/dermal-fillers",
       "priceCurrency": "USD",
-      "price": "600",
+      "price": `${process.env.PRICE_DERMAL_FILLER ?? 600}`,
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
-        "price": "600",
+        "price": `${process.env.PRICE_DERMAL_FILLER ?? 600}`,
         "priceCurrency": "USD",
         "unitText": "syringe",
         "priceType": "FromPrice"
@@ -122,10 +122,10 @@ export const biostimulatoryFillerServiceSchema = {
       "@type": "Offer",
       "url": "https://caridiconcierge.com/treatments/biostimulatory-fillers",
       "priceCurrency": "USD",
-      "price": "800",
+      "price": `${process.env.PRICE_BIOSTIMULATORY_FILLER ?? 825}`,
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
-        "price": "800",
+        "price": `${process.env.PRICE_BIOSTIMULATORY_FILLER ?? 825}`,
         "priceCurrency": "USD",
         "unitText": "unit",
         "priceType": "FromPrice"

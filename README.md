@@ -15,16 +15,23 @@ This page is maintained by [Joseph Deferio](https://github.com/jdeferio)
 
 ## Getting Started
 
+### Environment Variables
+
+The following environment variables are required:
+
+- `RESEND_API_KEY`
+- `PRICE_BOTOX`
+- `PRICE_DERMAL_FILLER`
+- `PRICE_BIOSTIMULATORY_FILLER`
+
+### Development
+
 First, run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
