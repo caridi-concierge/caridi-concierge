@@ -1,22 +1,24 @@
-// src/app/book/page.tsx
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { COMPANY } from "@/lib/constants/company";
 import PrimaryButton from "@/components/PrimaryButton";
 
 export default function BookingRedirectPage() {
+  const hasRedirected = useRef(false);
+
   useEffect(() => {
-    // redirect immediately
-    window.location.href = COMPANY.bookingUrl;
+    if (!hasRedirected.current) {
+      hasRedirected.current = true;
+      window.location.replace(COMPANY.bookingUrl);
   }, []);
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-merino px-4 text-center">
       <Image
         src={COMPANY.logo}
-        alt="Caridi Concierge logo. Overlapping C's in dark text."
+        alt="Caridi Concierge. Concierge botox and filler across NYC."
         width={280}
         height={80}
         priority
