@@ -12,6 +12,7 @@ export default function BookingRedirectPage() {
     if (!hasRedirected.current) {
       hasRedirected.current = true;
       window.location.replace(COMPANY.bookingUrl);
+    }
   }, []);
 
   return (
