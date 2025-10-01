@@ -6,7 +6,7 @@ export const COMPANY = {
     email: "booking@caridiconcierge.com",
     emailHref: "mailto:booking@caridiconcierge.com",
     url: "https://www.caridiconcierge.com",
-    bookingUrl: "https://caridiconcierge.com/book",
+    bookingUrl: "https://caridiconcierge.janeapp.com",
     address: {
       complete: "Red Hook, Brooklyn, NY 11231",
       neighborhood: "Red Hook",
