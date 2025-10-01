@@ -34,11 +34,6 @@ const satoshi = localFont({
       weight: "100 900",
       style: "normal",
     },
-    {
-      path: "../../public/fonts/Satoshi-VariableItalic.woff2",
-      weight: "100 900",
-      style: "italic",
-    },
   ],
   variable: "--f-satoshi",
   display: "swap",
