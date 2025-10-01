@@ -5,7 +5,7 @@ export const staff: Staff[] = [
       slug: "cristina-caridi",
       name: "Cristina Caridi, MD",
       tagline: "AESTHETIC MEDICINE",
-      img: "/images/cc_headshot_white.jpg",
+      img: "/images/cc_headshot_white.webp",
       imgAlt: "Dr Caridi headshot in white shirt",
       email: "drcaridi@caridiconcierge.com",
       bio: [
