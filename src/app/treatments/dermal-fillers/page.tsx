@@ -24,7 +24,7 @@ export default function DermalFillersPage() {
       />
       <DermalFillersIntroSection />
       <DermalFillersAreasSection />
-      <CTASection />
+      <CTASection variantKey="fillers"/>
       <Footer />
       </>
     );

@@ -27,7 +27,7 @@ export default function WrinkleReductionPage() {
       />
       <WrinkleReductionIntroSection />
       <WrinkleReductionAreasSection />
-      <CTASection />
+      <CTASection variantKey="botox"/>
       <Footer />
       </>
     );

@@ -15,8 +15,8 @@ export const COMPANY = {
       postalCode: "11231",
       country: "US"
     },
-    logo: "images/caridi_concierge_flat_logo.svg",
-    logoWebclip: "images/cc_contrast_webclip.png",
+    logo: "/images/caridi_concierge_flat_logo.svg",
+    logoWebclip: "/images/cc_contrast_webclip.png",
     social: {
       instagram: "https://www.instagram.com/caridiconcierge/",
       facebook: "https://www.facebook.com/profile.php?id=61572501036242",
