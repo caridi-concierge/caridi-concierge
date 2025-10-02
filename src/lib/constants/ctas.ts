@@ -72,5 +72,17 @@ export const ctaVariants: Record<string, CTASectionProps> = {
     ariaLabel: "Book a biostimulatory filler treatment with Caridi Concierge",
     id: "biostim-cta",
   },
+  staff: {
+    title: "Expert care, personally delivered.",
+    subtitle:
+      "Every treatment is performed by Dr. Cristina Caridi herself, combining medical precision with an artistic eye for aesthetics.",
+    ctaHref: "/book",
+    ctaText: "Book with Dr. Caridi",
+    variant: "primary",
+    bgColor: "bg-outer-space",
+    textColor: "text-alabaster",
+    ariaLabel: "Book an appointment with Dr. Cristina Caridi at Caridi Concierge",
+    id: "staff-cta",
+  },
 };
   
