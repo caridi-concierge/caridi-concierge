@@ -6,6 +6,7 @@ type FormButtonProps = {
   variant?: keyof typeof variants;
   className?: string;
   type?: "button" | "submit" | "reset";
+  id?: string;
 };
 
 export default function FormButton({
@@ -13,11 +14,13 @@ export default function FormButton({
   variant = "primary",
   className = "",
   type = "submit",
+  id = "form-button",
 }: FormButtonProps) {
   return (
     <button
       type={type}
       className={[base, variants[variant], className].join(" ")}
+      id={id}
     >
       {children}
     </button>
