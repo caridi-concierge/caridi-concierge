@@ -21,10 +21,10 @@ export default function HeroSection() {
             I tailor every treatment to your features, creating natural results in your own setting.
           </h2>
           <div className="flex gap-4 justify-center md:justify-center">
-            <PrimaryButton href="/book" variant="secondary">
+            <PrimaryButton href="/book" variant="secondary" id="hero-booking-cta">
               Book a visit
             </PrimaryButton>
-            <PrimaryButton href="/contact" variant="primary">
+            <PrimaryButton href="/contact" variant="primary" id="hero-contact-cta">
               Contact Us
             </PrimaryButton>
           </div>

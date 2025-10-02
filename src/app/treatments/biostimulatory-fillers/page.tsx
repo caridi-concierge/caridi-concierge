@@ -24,7 +24,7 @@ export default function BiostimulatoryFillersPage() {
       />
       <BiostimulatoryFillersIntroSection />
       <BiostimulatoryFillersAreasSection />
-      <CTASection />
+      <CTASection variantKey="biostim"/>
       <Footer />
       </>
     );

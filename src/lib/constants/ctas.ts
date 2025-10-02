@@ -35,5 +35,42 @@ export const ctaVariants: Record<string, CTASectionProps> = {
     ariaLabel: "Claim a special seasonal offer at Caridi Concierge for personalized Botox and filler treatments",
     id: "promo-cta",
   },
+  // --- Treatment-specific variants ---
+  botox: {
+    title: "Smooth, refreshed, confident.",
+    subtitle:
+      "Target frown lines, crow’s feet, and more with advanced Botox treatments delivered where you feel most comfortable.",
+    ctaHref: "/book",
+    ctaText: "Book Botox",
+    variant: "secondary",
+    bgColor: "bg-outer-space",
+    textColor: "text-alabaster",
+    ariaLabel: "Book Botox treatment with Caridi Concierge",
+    id: "botox-cta",
+  },
+  fillers: {
+    title: "Restore volume and harmony.",
+    subtitle:
+      "Enhance lips, cheeks, and facial contours with dermal fillers for a natural, balanced look.",
+    ctaHref: "/book",
+    ctaText: "Book Fillers",
+    variant: "secondary",
+    bgColor: "bg-outer-space",
+    textColor: "text-alabaster",
+    ariaLabel: "Book dermal filler treatment with Caridi Concierge",
+    id: "fillers-cta",
+  },
+  biostim: {
+    title: "Rejuvenation that lasts.",
+    subtitle:
+      "Enjoy gradual, lasting rejuvenation with collagen-stimulating injectables designed for natural longevity.",
+    ctaHref: "/book",
+    ctaText: "Book Biostimulators",
+    variant: "secondary",
+    bgColor: "bg-outer-space",
+    textColor: "text-alabaster",
+    ariaLabel: "Book a biostimulatory filler treatment with Caridi Concierge",
+    id: "biostim-cta",
+  },
 };
   
