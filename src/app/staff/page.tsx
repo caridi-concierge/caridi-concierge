@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AllStaffSection from "@/app/sections/staff/AllStaff";
+import CTASection from "@/components/CTA";
 import { JsonLd } from "@/components/JsonLD";
 import { physicianSchema } from "@/content/schemas";
 import { createPageMetadata } from "@/lib/metadata";
@@ -19,6 +20,7 @@ export default function StaffPage() {
         <JsonLd schema={physicianSchema}/>
         <Navbar />
         <AllStaffSection />
+        <CTASection variantKey="staff"/>
         <Footer />
         </>
     );
