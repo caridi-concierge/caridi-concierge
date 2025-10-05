@@ -5,6 +5,8 @@ import CTASection from "@/components/CTA";
 import BiostimulatoryFillersIntroSection from "@/app/sections/treatments/biostimulatory-fillers/BiostimulatoryFillersIntro";
 import BiostimulatoryFillersAreasSection from "@/app/sections/treatments/biostimulatory-fillers/BiostimulatoryFillersAreas"
 import { createPageMetadata } from "@/lib/metadata";
+import { biostimulatoryFillersFAQSchema } from "@/content/schemas/treatments/biostimulatoryFillersFAQSchema";
+import { JsonLd } from "@/components/JsonLD";
 
 export const metadata = createPageMetadata({
     title: "Biostimulatory Fillers in NYC | Natural Collagen-Stimulating Treatments",
@@ -17,6 +19,7 @@ export const metadata = createPageMetadata({
 export default function BiostimulatoryFillersPage() {
     return (
       <>
+      <JsonLd schema={biostimulatoryFillersFAQSchema} />
       <Navbar />
       <Banner
         src="/images/biostim-filler-banner-light.webp"
