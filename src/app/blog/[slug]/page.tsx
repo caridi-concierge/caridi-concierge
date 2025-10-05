@@ -14,13 +14,14 @@ export async function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = await getPostBySlug(params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug)
   
   return createPageMetadata({
     title: post.metadata.title,
     description: post.metadata.description,
-    path: `/blog/${params.slug}`,
+    path: `/blog/${slug}`,
     keywords: post.metadata.tags,
   })
 }

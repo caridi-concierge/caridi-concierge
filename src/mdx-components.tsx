@@ -1,6 +1,7 @@
 import type { MDXComponents } from 'mdx/types';
 import type { ComponentPropsWithoutRef } from 'react';
 import Image from 'next/image';
+import PrimaryButton from '@/components/PrimaryButton';
 
 // This file is required when using @next/mdx in the app directory
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -84,6 +85,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         />
       );
     },
+    PrimaryButton: (props: ComponentPropsWithoutRef<typeof PrimaryButton>) => (
+      <PrimaryButton {...props} />
+    ),
     ...components,
   };
 }

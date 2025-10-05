@@ -5,6 +5,8 @@ import CTASection from "@/components/CTA";
 import WrinkleReductionIntroSection from "@/app/sections/treatments/wrinkle-reduction/WrinkleReductionIntro";
 import WrinkleReductionAreasSection from "@/app/sections/treatments/wrinkle-reduction/WrinkleReductionAreas";
 import { createPageMetadata } from "@/lib/metadata";
+import { botoxFAQSchema } from "@/content/schemas/treatments/botoxFAQSchema";
+import { JsonLd } from "@/components/JsonLD";
 
 export const metadata = createPageMetadata({
     title: "Wrinkle Reduction | Botox, Daxxify & Xeomin Treatments in NYC",
@@ -17,6 +19,7 @@ export const metadata = createPageMetadata({
 export default function WrinkleReductionPage() {
     return (
       <>
+      <JsonLd schema={botoxFAQSchema} />
       <Navbar />
       <Banner
         src="/images/wrinkle-reduction-banner-green-opaque-stripes.webp"

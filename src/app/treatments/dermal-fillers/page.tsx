@@ -5,6 +5,8 @@ import CTASection from "@/components/CTA";
 import DermalFillersIntroSection from "@/app/sections/treatments/dermal-fillers/DermalFillersIntro";
 import DermalFillersAreasSection from "@/app/sections/treatments/dermal-fillers/DermalFillersAreas";
 import { createPageMetadata } from "@/lib/metadata";
+import { dermalFillersFAQSchema } from "@/content/schemas/treatments/dermalFillersFAQShema";
+import { JsonLd } from "@/components/JsonLD";
 
 export const metadata = createPageMetadata({
     title: "Dermal Fillers | Lip, Cheek & Jawline Enhancement in NYC",
@@ -17,6 +19,7 @@ export const metadata = createPageMetadata({
 export default function DermalFillersPage() {
     return (
       <>
+      <JsonLd schema={dermalFillersFAQSchema} />
       <Navbar />
       <Banner
         src="/images/dermal-filler-banner-light.webp"
