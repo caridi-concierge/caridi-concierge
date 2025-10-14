@@ -49,5 +49,47 @@ export const businessSchema = {
     }
   ],
   "priceRange": "$$",
+  "hasOfferCatalog": {
+  "@type": "OfferCatalog",
+  "name": "Aesthetic Services",
+  "itemListElement": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Wrinkle Reduction Treatments",
+        "serviceType": "Botox, Daxxify, and Xeomin Treatments",
+        "areaServed": { "@type": "Place", "name": "Brooklyn, NY" }
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Dermal Filler Treatments",
+        "serviceType": "Lip Filler, Cheek Filler, and Chin Filler",
+        "areaServed": { "@type": "Place", "name": "Brooklyn, NY" }
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Lip Flip",
+        "serviceType": "Botox-based Lip Enhancement",
+        "areaServed": { "@type": "Place", "name": "Brooklyn, NY" }
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Collagen-Stimulating Fillers",
+        "serviceType": "Radiesse Biostimulatory Filler",
+        "areaServed": { "@type": "Place", "name": "Brooklyn, NY" }
+      }
+    }
+  ]
+  },
   "sameAs": Object.values(COMPANY.social)
 }
