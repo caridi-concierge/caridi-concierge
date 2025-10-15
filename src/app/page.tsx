@@ -9,6 +9,7 @@ import CTASection from "@/components/CTA";
 import Footer from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLD";
 import { faqSchema } from "@/content/schemas";
+import { SMSContactWidget } from "@/components/SMSContactWidget";
 
 
 export default function HomePage() {
@@ -27,6 +28,7 @@ export default function HomePage() {
       <FAQSection />
       <CTASection variantKey='default' id='homepage-cta'/>
       <Footer />
+      <SMSContactWidget />
     </>
   )
 }
