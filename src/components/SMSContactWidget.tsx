@@ -31,7 +31,7 @@ export function SMSContactWidget() {
     // Lazy load after 5 seconds
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 5000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
