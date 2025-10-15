@@ -3,6 +3,7 @@ export const COMPANY = {
     nameLegal: "Caridi Concierge Medicine PLLC",
     phone: "(917) 439-9470",
     phoneHref: "tel:+19174399470",
+    smsHref: "sms:+19174399470",
     email: "booking@caridiconcierge.com",
     emailHref: "mailto:booking@caridiconcierge.com",
     url: "https://www.caridiconcierge.com",
