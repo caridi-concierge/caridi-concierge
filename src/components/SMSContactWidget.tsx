@@ -122,10 +122,10 @@ export function SMSContactWidget() {
       ) : (
         <div className="bg-white rounded-2xl shadow-2xl w-80 overflow-hidden border border-gray-100 animate-in slide-in-from-bottom-4 duration-300">
           {/* Header */}
-          <div className="bg-rose-500 px-6 py-4 relative">
+          <div className="bg-dimgray px-6 py-4 relative">
             <button
               onClick={handleClose}
-              className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors p-1 hover:bg-white/10 rounded-full"
+              className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors p-1 hover:bg-white/35 rounded-full"
               aria-label="Close widget"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -136,7 +136,7 @@ export function SMSContactWidget() {
               Get in touch
             </h3>
             <p className="text-white/90 text-sm mt-1">
-              We&apos;ll text you right back
+              We&apos;ll text you right back.
             </p>
           </div>
 
@@ -153,7 +153,7 @@ export function SMSContactWidget() {
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Enter your name"
                 required
-                className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
+                className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-paleviolet focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
               />
             </div>
 
@@ -165,7 +165,7 @@ export function SMSContactWidget() {
                 id="service"
                 value={service}
                 onChange={(e) => setService(e.target.value)}
-                className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-transparent outline-none transition-all text-gray-900 appearance-none bg-white cursor-pointer"
+                className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-paleviolet focus:border-transparent outline-none transition-all text-gray-900 appearance-none bg-white cursor-pointer"
                 style={{
                   backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
                   backgroundRepeat: 'no-repeat',
@@ -184,7 +184,7 @@ export function SMSContactWidget() {
 
             <button
               type="submit"
-              className="w-full bg-rose-500 text-white font-medium py-3 rounded-lg hover:bg-rose-600 transition-all duration-200 shadow-md hover:shadow-lg"
+              className="w-full bg-dimgray text-white font-medium py-3 rounded-lg hover:bg-rose-600 transition-all duration-200 shadow-md hover:shadow-lg"
             >
               Send text message
             </button>
