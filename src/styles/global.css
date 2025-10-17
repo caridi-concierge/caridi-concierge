@@ -11,6 +11,8 @@
     --color-peach-puff: #ffe7b9;
     --color-carnation: #ea5455;
     --color-steel-blue: #4f778b;
+    --color-paleviolet: #8c4672;
+    --color-dimgray: #6A3556;
   
     /* Fonts - tokens used by Tailwind classes */
     --font-sans: var(--f-satoshi), system-ui, sans-serif;  /* Tailwind default alias */

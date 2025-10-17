@@ -11,8 +11,8 @@ export default function ContactLayout() {
         </h3>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <ContactInfoCard />
           <ContactFormCard />
+          <ContactInfoCard />
         </div>
       </Container>
     </section>

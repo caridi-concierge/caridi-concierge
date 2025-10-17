@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTA";
 import BiostimulatoryFillersIntroSection from "@/app/sections/treatments/biostimulatory-fillers/BiostimulatoryFillersIntro";
 import BiostimulatoryFillersAreasSection from "@/app/sections/treatments/biostimulatory-fillers/BiostimulatoryFillersAreas"
+import BiostimulatoryFillersFAQSection from "@/app/sections/treatments/biostimulatory-fillers/BiostimulatoryFillersFAQ"
 import { createPageMetadata } from "@/lib/metadata";
 import { biostimulatoryFillersFAQSchema } from "@/content/schemas/treatments/biostimulatoryFillersFAQSchema";
 import { JsonLd } from "@/components/JsonLD";
@@ -27,6 +28,7 @@ export default function BiostimulatoryFillersPage() {
       />
       <BiostimulatoryFillersIntroSection />
       <BiostimulatoryFillersAreasSection />
+      <BiostimulatoryFillersFAQSection />
       <CTASection variantKey="biostim"/>
       <Footer />
       </>

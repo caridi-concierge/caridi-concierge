@@ -60,6 +60,8 @@ export default function Navbar({
           <button
             onClick={() => setSidebarIsOpen(true)}
             className="lg:hidden text-outerSpace"
+            aria-label="Open mobile menu"
+            aria-controls="mobile-menu"
           >
             <Menu size={28} />
           </button>
