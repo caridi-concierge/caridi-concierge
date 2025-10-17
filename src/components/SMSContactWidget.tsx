@@ -28,7 +28,7 @@ export function SMSContactWidget() {
   const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
-    // Lazy load after 5 seconds
+    // Lazy load after 3 seconds
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 3000);
@@ -46,6 +46,14 @@ export function SMSContactWidget() {
   const handleClose = () => {
     setIsOpen(false);
     trackEvent('widget_closed', {
+      widget_type: 'sms_contact'
+    });
+  };
+
+  const handleDismiss = () => {
+    setIsVisible(false);
+    setIsOpen(false);
+    trackEvent('widget_dismissed', {
       widget_type: 'sms_contact'
     });
   };
@@ -73,40 +81,51 @@ export function SMSContactWidget() {
   return (
     <div className="fixed bottom-6 right-6 z-50">
       {!isOpen ? (
-        <button
-          onClick={handleOpen}
-          className="group relative flex items-center gap-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 pl-6 pr-5 py-4 border border-gray-100"
-          aria-label="Open contact widget"
-        >
-          <span className="text-sm font-medium text-gray-700">
-            Text us
-          </span>
-          <div className="relative">
-            <div className="w-10 h-10 bg-rose-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-              <svg 
-                className="w-5 h-5 text-white" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" 
-                />
-              </svg>
+        <div className="relative group">
+          <button
+            onClick={handleOpen}
+            className="flex items-center gap-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 pl-6 pr-5 py-4 border border-gray-100"
+            aria-label="Open contact widget"
+          >
+            <span className="text-sm font-medium text-gray-700">
+              Text us
+            </span>
+            <div className="relative">
+              <div className="w-10 h-10 bg-rose-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <svg 
+                  className="w-5 h-5 text-white" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" 
+                  />
+                </svg>
+              </div>
+              <span className="absolute -top-1 -right-1 w-3 h-3 bg-rose-500 rounded-full animate-pulse" />
             </div>
-            <span className="absolute -top-1 -right-1 w-3 h-3 bg-rose-500 rounded-full animate-pulse" />
-          </div>
-        </button>
+          </button>
+          <button
+            onClick={handleDismiss}
+            className="absolute -top-2 -right-2 w-6 h-6 bg-gray-600 hover:bg-gray-700 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-md flex items-center justify-center"
+            aria-label="Dismiss widget"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
       ) : (
         <div className="bg-white rounded-2xl shadow-2xl w-80 overflow-hidden border border-gray-100 animate-in slide-in-from-bottom-4 duration-300">
           {/* Header */}
           <div className="bg-rose-500 px-6 py-4 relative">
             <button
               onClick={handleClose}
-              className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors"
+              className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors p-1 hover:bg-white/10 rounded-full"
               aria-label="Close widget"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -117,7 +136,7 @@ export function SMSContactWidget() {
               Get in touch
             </h3>
             <p className="text-white/90 text-sm mt-1">
-              We&apos;ll text you right back.
+              We&apos;ll text you right back
             </p>
           </div>
 
@@ -184,7 +203,7 @@ export function SMSContactWidget() {
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
-                  <span>Your information is private & secure.</span>
+                  <span>Your information is private & secure</span>
                 </button>
                 
                 {showTooltip && (

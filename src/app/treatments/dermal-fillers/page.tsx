@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTA";
 import DermalFillersIntroSection from "@/app/sections/treatments/dermal-fillers/DermalFillersIntro";
 import DermalFillersAreasSection from "@/app/sections/treatments/dermal-fillers/DermalFillersAreas";
+import DermalFillersFAQSection from "@/app/sections/treatments/dermal-fillers/DermalFillersFAQ";
 import { createPageMetadata } from "@/lib/metadata";
 import { dermalFillersFAQSchema } from "@/content/schemas/treatments/dermalFillersFAQShema";
 import { JsonLd } from "@/components/JsonLD";
@@ -27,6 +28,7 @@ export default function DermalFillersPage() {
       />
       <DermalFillersIntroSection />
       <DermalFillersAreasSection />
+      <DermalFillersFAQSection />
       <CTASection variantKey="fillers"/>
       <Footer />
       </>
