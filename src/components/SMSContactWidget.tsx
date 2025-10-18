@@ -84,14 +84,14 @@ export function SMSContactWidget() {
         <div className="relative group">
           <button
             onClick={handleOpen}
-            className="flex items-center gap-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 pl-6 pr-5 py-4 border border-gray-100"
+            className="flex items-center gap-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 pl-5 py-2 pr-5 border border-gray-100"
             aria-label="Open contact widget"
           >
-            <span className="text-sm font-medium text-gray-700">
-              Text us
+            <span className="text-sm font-medium text-gray-900">
+              Text Us
             </span>
             <div className="relative">
-              <div className="w-10 h-10 bg-rose-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div className="w-10 h-10 bg-dimgray rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                 <svg 
                   className="w-5 h-5 text-white" 
                   fill="none" 
