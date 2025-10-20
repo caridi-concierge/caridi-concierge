@@ -21,7 +21,7 @@ const CheckIcon = () => (
 
 export default function HeroSection() {
   return (
-    <section id="home" className="bg-merino text-outer-space py-16">
+    <section id="home" className="bg-merino text-outer-space py-10">
       <Container className="container mx-auto space-y-8">
         {/* Top Row: Text + Image */}
         <div className="flex flex-col md:flex-row items-center gap-12">
@@ -58,12 +58,12 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-md pt-5 text-outer-space/70 font-fraunces">
-          <span>Private & Convenient</span>
-          <span className="hidden md:inline">•</span>
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-lg pt-7 text-outer-space/70 font-fraunces">
           <span>Natural-Looking Results</span>
           <span className="hidden md:inline">•</span>
-          <span>Same-Day Available</span>
+          <span>Radiant Skin</span>
+          <span className="hidden md:inline">•</span>
+          <span>Refreshed & Rejuvenated</span>
         </div>
       </Container>
     </section>
