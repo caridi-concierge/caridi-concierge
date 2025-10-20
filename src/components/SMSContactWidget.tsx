@@ -184,6 +184,7 @@ export function SMSContactWidget() {
 
             <button
               type="submit"
+              id="sms-contact-cta"
               className="w-full bg-dimgray text-white font-medium py-3 rounded-lg hover:bg-rose-600 transition-all duration-200 shadow-md hover:shadow-lg"
             >
               Send text message
