@@ -2,22 +2,13 @@
 import Image from "next/image";
 import PrimaryButton from "@/components/PrimaryButton";
 import Container from "@/components/Container";
+import FeatureCard from "@/components/FeatureCard";
 
-const CheckIcon = () => (
-  <svg
-    className="w-5 h-5 text-outer-space flex-shrink-0 mt-1"
-    fill="none"
-    strokeWidth="2"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M5 13l4 4L19 7"
-    />
-  </svg>
-);
+const features = [
+  { title: "Private & Convenient", subtitle: "Expert treatments in your own space." },
+  { title: "Natural-Looking Results", subtitle: "Get refreshed, natural results without the clinical wait." },
+  { title: "Refreshed & Rejuvenated", subtitle: "Subtle enhancements that bring out your best features." },
+];
 
 export default function HeroSection() {
   return (
@@ -38,7 +29,7 @@ export default function HeroSection() {
               refreshed results without the clinical wait. Private appointments
               across all five boroughs.
             </h2>
-            <div className="flex gap-4 justify-center md:justify-center">
+            <div className="flex gap-4 justify-center">
               <PrimaryButton href="/book" variant="secondary" id="hero-booking-cta">
                 Schedule a Consult
               </PrimaryButton>
@@ -58,12 +49,10 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-lg pt-7 text-outer-space/70 font-fraunces">
-          <span>Natural-Looking Results</span>
-          <span className="hidden md:inline">•</span>
-          <span>Radiant Skin</span>
-          <span className="hidden md:inline">•</span>
-          <span>Refreshed & Rejuvenated</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-7">
+          {features.map((item) => (
+            <FeatureCard key={item.title} {...item} />
+          ))}
         </div>
       </Container>
     </section>
