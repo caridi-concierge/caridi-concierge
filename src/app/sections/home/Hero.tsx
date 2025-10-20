@@ -5,9 +5,9 @@ import Container from "@/components/Container";
 import FeatureCard from "@/components/FeatureCard";
 
 const features = [
-  { title: "Private & Convenient", subtitle: "Expert treatments in your own space." },
-  { title: "Natural-Looking Results", subtitle: "Get refreshed, natural results without the clinical wait." },
-  { title: "Refreshed & Rejuvenated", subtitle: "Subtle enhancements that bring out your best features." },
+  { title: "Private & Convenient", subtitle: "Skip the medspa. Expert aesthetic care delivered in your own space." },
+  { title: "Effortlessly Natural", subtitle: "Balanced enhancements that highlight your authentic beauty." },
+  { title: "Refreshed & Renewed", subtitle: "Experience a revitalized glow that still feels entirely you." },
 ];
 
 export default function HeroSection() {
@@ -18,7 +18,7 @@ export default function HeroSection() {
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Left text content */}
           <div className="w-full md:basis-2/3 md:flex-none space-y-6">
-            <p className="font-fraunces text-lg md:text-xl text-outer-space/80 leading-relaxed">
+            <p className="font-fraunces text-lg md:text-lg text-outer-space/80 leading-relaxed">
               For Busy New Yorkers Who Value Privacy & Results
             </p>
             <h1 className="font-fraunces text-4xl md:text-5xl leading-tight">
@@ -26,7 +26,7 @@ export default function HeroSection() {
             </h1>
             <h2 className="font-fraunces text-lg md:text-xl text-outer-space/80 leading-relaxed">
               Physician-led aesthetic care delivered to your door. Get natural,
-              refreshed results without the clinical wait. Private appointments
+              refreshed results in your own setting. Private appointments
               across all five boroughs.
             </h2>
             <div className="flex gap-4 justify-center">
@@ -49,7 +49,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-7">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12">
           {features.map((item) => (
             <FeatureCard key={item.title} {...item} />
           ))}
