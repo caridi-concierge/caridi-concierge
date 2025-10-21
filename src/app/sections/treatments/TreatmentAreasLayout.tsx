@@ -24,7 +24,7 @@ export default function TreatmentAreasLayout({
             alt=""
             width={93}
             height={108}
-            className="h-auto"
+            className="h-auto w-12 sm:w-25 md:w-[93px]"
           />
         </div>
 
