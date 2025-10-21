@@ -4,6 +4,7 @@ export default function WrinkleReductionAreasSection() {
   return (
     <TreatmentAreasLayout
       sectionTitle="Treatment Areas"
+      summary=""
       ctaHref="/products"
       ctaText="Product Options"
       areas={[
