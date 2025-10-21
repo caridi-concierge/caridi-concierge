@@ -27,7 +27,7 @@ export function AccordionItem({ title, children }: AccordionItemProps) {
           onClick={() => setOpen(!open)}
           className="flex w-full items-center justify-between text-left"
         >
-          <h3 className="font-fraunces text-lg font-semibold text-outer-space">
+          <h3 className="font-fraunces text-xl font-semibold text-outer-space">
             {title}
           </h3>
           <ChevronRight
@@ -43,7 +43,7 @@ export function AccordionItem({ title, children }: AccordionItemProps) {
             open ? "max-h-[500px] opacity-100 translate-y-0 mt-3" : "max-h-0 opacity-0 -translate-y-2"
           }`}
         >
-          <div className="space-y-4 text-sm text-outer-space/80">
+          <div className="space-y-4 text-lg text-outer-space/80">
             {children}
           </div>
         </div>

@@ -16,6 +16,15 @@ export default function ServicesSection() {
           </h2>
         </div>
 
+        <div>
+          <p className="text-lg text-outer-space/80">
+            You&apos;re managing demanding schedules, endless commitments, and a life that doesn&apos;t slow down for self-care appointments. 
+            But you also don&apos;t want to look overdone, you want to look like yourself, just more refreshed. 
+            Whether you&apos;re seeking to smooth forehead wrinkles, enhance your lips with precision, or slim your jawline with masseter Botox, you deserve expert care that honors both your time and your aesthetic. 
+            That&apos;s exactly what Caridi Concierge delivers: physician-led treatments in the privacy of your home, tailored to your features and your life.
+          </p>
+        </div>
+
         {/* Accordion with services */}
         <Accordion className="py-5">
           <AccordionItem title="Botox Treatments">
