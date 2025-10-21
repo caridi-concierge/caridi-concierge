@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, ReactNode } from "react";
+import { useState, ReactNode, useEffect } from "react";
 import { ChevronRight } from "lucide-react";
 
 type AccordionProps = {
@@ -15,16 +15,22 @@ export function Accordion({ children, className = "" }: AccordionProps) {
 type AccordionItemProps = {
   title: string;
   children: ReactNode;
+  defaultOpen?: boolean;
 };
 
-export function AccordionItem({ title, children }: AccordionItemProps) {
-    const [open, setOpen] = useState(false);
-  
+export function AccordionItem({ title, children, defaultOpen = false }: AccordionItemProps) {
+    const [open, setOpen] = useState(defaultOpen);
+    
+    useEffect(() => {
+        setOpen(defaultOpen);
+    }, [defaultOpen]);
+    
     return (
       <div className="border-b border-gray-300 pb-6 pt-4">
         {/* Header */}
         <button
           onClick={() => setOpen(!open)}
+          aria-expanded={open}
           className="flex w-full items-center justify-between text-left"
         >
           <h3 className="font-fraunces text-lg font-semibold text-outer-space">

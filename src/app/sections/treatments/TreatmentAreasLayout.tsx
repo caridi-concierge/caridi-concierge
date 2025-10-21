@@ -9,6 +9,7 @@ import Container from "@/components/Container";
 
 export default function TreatmentAreasLayout({
   sectionTitle,
+  summary,
   areas,
   ctaHref,
   ctaText,
@@ -32,15 +33,21 @@ export default function TreatmentAreasLayout({
           {sectionTitle}
         </h2>
 
+        {/* Short summary paragraph */}
+        <p className="text-center text-gray-700 max-w-2xl mx-auto mb-12 leading-relaxed">
+          {summary}
+        </p>
+
         {/* Accordion grid */}
         <div className="max-w-4xl mx-auto">
           <Accordion className="space-y-6">
-              {areas.map((area) => (
-                <AccordionItem key={area.title} title={area.title}>
-                  <ul className="list-none space-y-3 text-sm text-gray-700">
+              {areas.map((area, index) => (
+                <AccordionItem key={index} title={area.title} defaultOpen={index === 0}>
+                  <ul className="list-none space-y-3 text-md text-gray-700">
                     {area.items.map((item) => (
                       <li key={item.label}>
-                        <strong>{item.label}</strong> | {item.description}
+                        <strong itemProp="name">{item.label}</strong> —{" "}
+                        <span itemProp="description">{item.description}</span>
                       </li>
                     ))}
                   </ul>
