@@ -1,79 +1,37 @@
 "use client";
-
-import { Accordion, AccordionItem } from "@/components/Accordion";
-import PrimaryButton from "@/components/PrimaryButton";
 import Container from "@/components/Container";
 import Image from "next/image";
+import { services } from "@/lib/constants/services";
+import ServiceCard from "@/components/ServiceCard";
 
 export default function ServicesSection() {
   return (
-    <section className="bg-merino py-16">
-      <Container className="container mx-auto grid grid-cols-1 gap-12 items-start">
-        {/* Heading */}
-        <div>
-          <h2 className="font-fraunces text-3xl md:text-4xl text-outer-space">
+    <section className="bg-outer-space pb-16 pt-12">
+      <Container className="container mx-auto">
+        {/* Section Intro */}
+        <div className="text-center mb-12 max-w-4xl mx-auto">
+          <h2 className="font-fraunces text-3xl md:text-4xl text-merino mb-5">
             Signature Aesthetic Services
           </h2>
         </div>
 
-        {/* Accordion with services */}
-        <Accordion className="py-5">
-          <AccordionItem title="Botox Treatments">
-            <p>
-              I offer advanced wrinkle-reduction treatments to help you achieve
-              a refreshed, natural look. These treatments can smooth frown
-              lines, crow’s feet, and more. They can refine the lips (lip flip)
-              or correct a gummy smile. Plans are tailored to your facial
-              anatomy and goals, in the comfort of your home.
-              <br />
-              <br />
-              Common product options are Botox, Xeomin, and Daxxify.
-            </p>
-            <PrimaryButton href="/treatments/wrinkle-reduction" variant="primary" className="text-sm px-6 py-1.5" ariaLabel="Learn more about botox treatments and wrinkle reduction">
-              Learn More <span className="sr-only">about Botox treatments and wrinkle reduction</span>
-            </PrimaryButton>
-          </AccordionItem>
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service) => (
+            <ServiceCard key={service.id} {...service} />
+          ))}
+        </div>
 
-          <AccordionItem title="Dermal Filler Treatments">
-            <p>
-              Dermal fillers (hyaluronic acid) enhance contours, restore volume,
-              and smooth lines. They work well in dynamic areas like the lips,
-              cheeks, and jawline. Results appear right away, look natural, and
-              are tailored to your features.
-              <br />
-              <br />
-              Common product options are Juvederm and the RHA Collection.
-            </p>
-            <PrimaryButton href="/treatments/dermal-fillers" variant="primary" className="text-sm px-6 py-1.5" ariaLabel="Learn more about dermal fillers and volume enhancers">
-              Learn More <span className="sr-only">about dermal fillers and volume enhancers</span>
-            </PrimaryButton>
-          </AccordionItem>
-
-          <AccordionItem title="Biostimulatory Filler Treatments">
-            <p>
-              Biostimulatory fillers stimulate your body to produce its own
-              collagen, restoring volume and improving skin texture. They’re
-              ideal for cheeks, temples, and jawline. Results build gradually,
-              look natural, and last over time.
-              <br />
-              <br />
-              Common product options are Radiesse and Sculptra.
-            </p>
-            <PrimaryButton href="/treatments/biostimulatory-fillers" variant="primary" className="text-sm px-6 py-1.5" ariaLabel="Learn more about biostimulatory fillers and collagen builders">
-              Learn More <span className="sr-only">about biostimulatory fillers and collagen builders</span>
-            </PrimaryButton>
-          </AccordionItem>
-        </Accordion>
-      </Container>
-      <div className="w-full flex justify-center py-15">
+        <div className="w-full flex justify-center pt-12 mt-12">
         <Image
-          src="/images/Decor01.svg"
+          src="/images/Decor02.svg"
           alt=""
           width={93}
           height={108}
-          className="w-auto h-auto"
+          className="h-auto w-12 sm:w-25 md:w-[93px]"
         />
       </div>
+      </Container>
     </section>
   );
 }

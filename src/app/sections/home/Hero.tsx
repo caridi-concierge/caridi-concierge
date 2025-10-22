@@ -2,13 +2,6 @@
 import Image from "next/image";
 import PrimaryButton from "@/components/PrimaryButton";
 import Container from "@/components/Container";
-import FeatureCard from "@/components/FeatureCard";
-
-const features = [
-  { title: "Private & Convenient", subtitle: "Skip the medspa. Expert aesthetic care delivered in your own space." },
-  { title: "Effortlessly Natural", subtitle: "Balanced enhancements that highlight your authentic beauty." },
-  { title: "Refreshed & Renewed", subtitle: "Experience a revitalized glow that still feels entirely you." },
-];
 
 export default function HeroSection() {
   return (
@@ -18,14 +11,14 @@ export default function HeroSection() {
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Left text content */}
           <div className="w-full md:basis-2/3 md:flex-none space-y-6">
-            <p className="font-fraunces text-lg md:text-lg text-outer-space/80 leading-relaxed">
+            <p className="font-fraunces text-lg sm:text-md text-outer-space/80 leading-relaxed">
               For Busy New Yorkers Who Value Privacy & Results
             </p>
-            <h1 className="font-fraunces text-4xl md:text-5xl leading-tight">
+            <h1 className="font-fraunces text-xl font-bold md:text-3xl lg:text-4xl leading-tight">
               Premium In-Home Botox &amp; Filler Treatments Across NYC
             </h1>
-            <h2 className="font-fraunces text-lg md:text-xl text-outer-space/80 leading-relaxed">
-              Physician-led aesthetic care delivered to your door. Get natural,
+            <h2 className="font-fraunces text-lg md:text-xl text-outer-space/80 pt-1 leading-relaxed">
+              Physician-led aesthetic care delivered to your door. Get effortlessly natural,
               refreshed results in your own setting. Private appointments
               across all five boroughs.
             </h2>
@@ -37,22 +30,27 @@ export default function HeroSection() {
           </div>
 
           {/* Right image */}
-          <div className="w-full md:basis-1/3 md:flex-none flex flex-col items-center text-center">
-            <Image
-              src="/images/cc_headshot_white_outside_hq_800px.webp"
-              alt="Dr Caridi delivers high-quality aesthetic care in the comfort and privacy of your home. Book your tailored experience today."
-              width={800}
-              height={800}
-              className="rounded-xl shadow-lg sm:w-[150px] md:w-[256px] h-auto"
-            />
-            <div className="mt-4 font-fraunces text-lg">Dr. Cristina Caridi</div>
+          <div className="md:basis-1/3 md:flex-none flex flex-col items-center text-center">
+            <div className="relative w-[220px] sm:w-[225px] md:w-[256px] lg:w-[300px] aspect-square">
+              <Image
+                src="/images/cc_headshot_white_outside_hq_800px.webp"
+                alt="Dr Caridi delivers high-quality aesthetic care in the comfort and privacy of your home."
+                fill
+                className="rounded-xl shadow-lg object-cover"
+              />
+            </div>
+            <div className="mt-4 font-fraunces text-lg">Cristina Caridi, MD</div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12">
-          {features.map((item) => (
-            <FeatureCard key={item.title} {...item} />
-          ))}
+        <div className="flex justify-center mb-12 pt-12">
+          <Image
+            src="/images/Decor01.svg"
+            alt=""
+            width={93}
+            height={108}
+            className="h-auto w-12 sm:w-25 md:w-[93px]"
+          />
         </div>
       </Container>
     </section>
