@@ -1,8 +1,9 @@
 // src/components/TreatmentIntroSection.tsx
-import Image from "next/image";
 import type { TreatmentIntroProps } from "@/model/treatments/Treatment";
 import PrimaryButton from "@/components/PrimaryButton";
 import Container from "@/components/Container";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function TreatmentIntroSection({
   title,
@@ -14,20 +15,22 @@ export default function TreatmentIntroSection({
   afterCare,
 }: TreatmentIntroProps) {
   return (
-    <section className="py-16 bg-cream">
+    <section className="pb-16 pt-10 bg-cream">
       <Container className="container mx-auto px-4">
-        {/* Decorative SVG */}
-        <div className="flex justify-center mb-12">
-          <Image
-            src="/images/Decor01.svg"
-            alt=""
-            width={93}
-            height={108}
-            className="h-auto"
-          />
-        </div>
-
         {/* Grid: 3 rows, 2 columns */}
+        <Link
+            href="/treatments"
+            className="inline-flex items-center mb-4 text-sm hover:underline"
+          >
+            <Image
+              src="/images/arrow-left.svg"
+              alt="Back to Treatments"
+              width={16}
+              height={16}
+              className="mr-2 bg-outer-space"
+            />
+            Treatments
+            </Link>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Row 1, Col 1 */}
           <div>

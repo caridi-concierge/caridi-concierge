@@ -17,12 +17,13 @@ export type Treatment = {
   };
 
   export type TreatmentArea = {
-    title: string;        // e.g. "Upper Face"
+    title: string;
     items: { label: string; description: string }[];
   };
   
   export type TreatmentAreasProps = {
     sectionTitle: string;
+    summary: string;
     areas: TreatmentArea[];
     ctaHref: string;
     ctaText: string;

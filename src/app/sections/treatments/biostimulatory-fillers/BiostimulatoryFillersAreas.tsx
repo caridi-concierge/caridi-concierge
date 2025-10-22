@@ -1,9 +1,10 @@
 import TreatmentAreasLayout from "@/app/sections/treatments/TreatmentAreasLayout";
 
-export default function BiostimulatoryFillerAreasSection() {
+export default function BiostimulatoryFillersAreasSection() {
   return (
     <TreatmentAreasLayout
       sectionTitle="Treatment Areas"
+      summary="Biostimulatory fillers gradually restore firmness and structure by stimulating collagen beneath the skin. These treatments can be used across the face, neck, and body to smooth fine lines, lift contours, and improve overall skin texture over time."
       ctaHref="/products"
       ctaText="Product Options"
       areas={[
@@ -11,44 +12,44 @@ export default function BiostimulatoryFillerAreasSection() {
           title: "Face",
           items: [
             {
-              label: "Overview",
-              description: "Biostimulatory fillers restore volume and reduce laxity to areas of the face affected by age-related collagen loss, such as the cheeks, temples, jawline, and lower face. By stimulating your body’s natural collagen production, these treatments improve facial contours, soften deep folds, and promote a smoother, more lifted appearance that evolves gradually and naturally.",
+              label: "Facial Rejuvenation",
+              description:
+                "Rebuild collagen in key areas like the cheeks, temples, and jawline to restore youthful lift and definition.",
+            },
+            {
+              label: "Lower Face",
+              description:
+                "Improve firmness around the mouth and chin, softening deeper folds for a smoother, natural contour.",
             },
           ],
         },
         {
-          title: "Neck",
+          title: "Neck & Chest",
           items: [
             {
-              label: "Overview",
-              description: "The neck is one of the first areas to show signs of aging, including crepey skin and horizontal lines. Biostimulatory fillers help thicken and tighten the skin by stimulating collagen production, leading to improved skin texture and a firmer, more youthful neckline without surgery or downtime.",
+              label: "Neck Tightening",
+              description:
+                "Reduce crepey skin and horizontal lines on the neck by stimulating collagen for a firmer, smoother texture.",
+            },
+            {
+              label: "Chest (Décolletage)",
+              description:
+                "Restore volume and elasticity to sun-exposed skin on the chest for a refreshed, even appearance.",
             },
           ],
         },
         {
-          title: "Chest",
+          title: "Body Contouring",
           items: [
             {
-              label: "Overview",
-              description: "Sun exposure and aging often lead to thinning, wrinkled skin on the chest. Biostimulatory fillers are used to restore volume and improve elasticity in this delicate area, smoothing fine lines and revitalizing skin quality for a more even, youthful décolletage.",
+              label: "Upper Arms",
+              description:
+                "Firm and smooth loose skin on the upper arms, improving tone and texture over time.",
             },
-          ],
-        },
-        {
-          title: "Upper Arms",
-          items: [
             {
-              label: "Overview",
-              description: "As collagen declines, the upper arms may appear loose or crepey. Biostimulatory fillers work beneath the skin to rebuild structure and improve firmness, offering a subtle skin-tightening effect that helps the arms look smoother and more toned over time.",
-            },
-          ],
-        },
-        {
-          title: "Butt",
-          items: [
-            {
-              label: "Overview",
-              description: "For patients seeking a non-surgical butt enhancement, biostimulatory fillers can add subtle volume while promoting collagen production for improved firmness and contour. This treatment is ideal for those who want to lift and shape the buttocks naturally, with results that build gradually and last.",
+              label: "Non-Surgical Butt Lift",
+              description:
+                "Add subtle volume and structure to the buttocks while stimulating collagen for natural lift and contour.",
             },
           ],
         },
