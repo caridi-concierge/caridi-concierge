@@ -14,10 +14,10 @@ export default function HeroSection() {
             <p className="font-fraunces text-lg sm:text-md text-outer-space/80 leading-relaxed">
               For Busy New Yorkers Who Value Privacy & Results
             </p>
-            <h1 className="font-fraunces text-2xl md:text-3xl lg:text-5xl leading-tight">
+            <h1 className="font-fraunces text-xl font-bold md:text-3xl lg:text-4xl leading-tight">
               Premium In-Home Botox &amp; Filler Treatments Across NYC
             </h1>
-            <h2 className="font-fraunces text-lg md:text-xl text-outer-space/80 leading-relaxed">
+            <h2 className="font-fraunces text-lg md:text-xl text-outer-space/80 pt-1 leading-relaxed">
               Physician-led aesthetic care delivered to your door. Get effortlessly natural,
               refreshed results in your own setting. Private appointments
               across all five boroughs.
@@ -30,15 +30,16 @@ export default function HeroSection() {
           </div>
 
           {/* Right image */}
-          <div className="w-full md:basis-1/3 md:flex-none flex flex-col items-center text-center">
-            <Image
-              src="/images/cc_headshot_white_outside_hq_800px.webp"
-              alt="Dr Caridi delivers high-quality aesthetic care in the comfort and privacy of your home. Book your tailored experience today."
-              width={600}
-              height={600}
-              className="rounded-xl shadow-lg sm:w-[150px] md:w-[256px] h-auto"
-            />
-            <div className="mt-4 font-fraunces text-lg">Dr. Cristina Caridi</div>
+          <div className="md:basis-1/3 md:flex-none flex flex-col items-center text-center">
+            <div className="relative w-[220px] sm:w-[225px] md:w-[256px] lg:w-[300px] aspect-square">
+              <Image
+                src="/images/cc_headshot_white_outside_hq_800px.webp"
+                alt="Dr Caridi delivers high-quality aesthetic care in the comfort and privacy of your home."
+                fill
+                className="rounded-xl shadow-lg object-cover"
+              />
+            </div>
+            <div className="mt-4 font-fraunces text-lg">Cristina Caridi, MD</div>
           </div>
         </div>
 
