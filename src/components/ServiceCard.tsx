@@ -1,4 +1,5 @@
 import PrimaryButton from "@/components/PrimaryButton";
+import Image from "next/image";
 
 export interface ServiceCardProps {
   id: string;
@@ -45,16 +46,23 @@ export default function ServiceCard({
       <h3 className="font-fraunces text-2xl text-outer-space mb-3 pr-24">
         {title}
       </h3>
-      <p className="text-outer-space/70 italic mb-5">{hook}</p>
+      <p className="text-outer-space/80 italic mb-5">{hook}</p>
 
       {/* Bullet Points */}
       <ul className="mb-6 space-y-2 flex-grow">
         {bullets.map((bullet, index) => (
           <li
             key={index}
-            className="flex items-start text-outer-space/80 text-[15px]"
+            className="flex items-start text-outer-space text-[15px]"
           >
-            <span className="text-outer-space font-bold mr-2 mt-0.5">✓</span>
+            <span className="text-outer-space font-bold mr-2 mt-0.5">
+                <Image
+                src="/images/CheckIcon.svg"
+                alt=""
+                width={16}
+                height={16}
+              />
+            </span>
             <span dangerouslySetInnerHTML={{ __html: bullet }} />
           </li>
         ))}
