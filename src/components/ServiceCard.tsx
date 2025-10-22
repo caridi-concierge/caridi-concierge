@@ -49,24 +49,26 @@ export default function ServiceCard({
       <p className="text-outer-space/80 italic mb-5">{hook}</p>
 
       {/* Bullet Points */}
-      <ul className="mb-6 space-y-2 flex-grow">
+        <ul className="mb-6 space-y-2 flex-grow">
         {bullets.map((bullet, index) => (
-          <li
+            <li
             key={index}
-            className="flex items-start text-outer-space text-[15px]"
-          >
-            <span className="text-outer-space font-bold mr-2 mt-0.5">
+            className="flex items-start gap-2 text-outer-space text-[15px]"
+            >
+            {/* Fixed-size icon wrapper */}
+            <span className="flex-shrink-0 w-4 h-4 mt-0.5">
                 <Image
                 src="/images/CheckIcon.svg"
                 alt=""
                 width={16}
                 height={16}
-              />
+                className="w-full h-full"
+                />
             </span>
             <span dangerouslySetInnerHTML={{ __html: bullet }} />
-          </li>
+            </li>
         ))}
-      </ul>
+        </ul>
 
       {/* Products */}
       <div className="mb-6 text-sm">
