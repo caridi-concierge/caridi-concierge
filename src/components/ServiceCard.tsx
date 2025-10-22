@@ -1,6 +1,6 @@
 import PrimaryButton from "@/components/PrimaryButton";
 
-interface ServiceCardProps {
+export interface ServiceCardProps {
   id: string;
   title: string;
   badge?: {
@@ -20,11 +20,10 @@ export default function ServiceCard({
   hook,
   bullets,
   products,
-  bookHref,
   learnMoreHref,
 }: ServiceCardProps) {
   const badgeStyles = {
-    popular: "bg-outer-space text-white",
+    popular: "bg-dimgray text-white",
     new: "bg-emerald-600 text-white",
     advanced: "bg-blue-600 text-white",
     gentle: "bg-rose-500 text-white",
@@ -71,14 +70,6 @@ export default function ServiceCard({
 
       {/* Card Actions */}
       <div className="flex flex-col items-center justify-center sm:flex-row sm:items-center gap-3 mt-auto">
-        {/* <PrimaryButton
-          href={bookHref}
-          variant="primary"
-          className="text-sm px-6 py-2 w-full sm:w-auto sm:flex-1"
-          ariaLabel={`Book ${title}`}
-        >
-          Book Now
-        </PrimaryButton> */}
         <PrimaryButton
           href={learnMoreHref}
           variant="primary"

@@ -1,12 +1,14 @@
+import type { ServiceCardProps } from "@/components/ServiceCard";
+
 export const services = [
     {
       id: "botox",
       title: "Botox & Neuromodulators",
       badge: {
         text: "Most Popular",
-        variant: "popular" as const,
+        variant: "popular",
       },
-      hook: "Soften wrinkles and reshape your jawline—without the clinical feel.",
+      hook: "Soften wrinkles and lift your features.",
       bullets: [
         "Smooth <strong>forehead lines, crow's feet</strong>, and frown lines (the \"11s\")",
         "<strong>Masseter Botox</strong> for jawline slimming and TMJ relief",
@@ -21,11 +23,8 @@ export const services = [
     {
       id: "fillers",
       title: "Dermal Fillers",
-      // badge: {
-      //   text: "Client Favorite",
-      //   variant: "popular" as const,
-      // },
-      hook: "Restore volume and definition where time has taken it away.",
+    //   badge: {},
+      hook: "Restore volume and definition.",
       bullets: [
         "<strong>Lip fillers</strong> and <strong>lip injections</strong> for balanced, natural fullness",
         "Cheek augmentation to restore youthful contours",
@@ -42,7 +41,7 @@ export const services = [
       title: "Biostimulatory Fillers",
       badge: {
         text: "Long-Lasting",
-        variant: "longLasting" as const,
+        variant: "longLasting",
       },
       hook: "Build your own collagen for gradual, lasting rejuvenation.",
       bullets: [
@@ -56,4 +55,4 @@ export const services = [
       bookHref: "/booking",
       learnMoreHref: "/treatments/biostimulatory-fillers",
     },
-  ];
+  ] satisfies ServiceCardProps[];
