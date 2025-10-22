@@ -62,7 +62,7 @@ export default function ServiceCard({
 
       {/* Products */}
       <div className="mb-6 text-sm">
-        <p className="text-outer-space/60">
+        <p className="text-outer-space/80">
           <span className="font-semibold text-outer-space">Products:</span>{" "}
           {products}
         </p>

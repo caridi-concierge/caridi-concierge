@@ -14,11 +14,11 @@ export default function HeroSection() {
             <p className="font-fraunces text-lg sm:text-md text-outer-space/80 leading-relaxed">
               For Busy New Yorkers Who Value Privacy & Results
             </p>
-            <h1 className="font-fraunces text-xl sm:text-2xl md:text-4xl lg:text-5xl leading-tight">
+            <h1 className="font-fraunces text-2xl md:text-3xl lg:text-5xl leading-tight">
               Premium In-Home Botox &amp; Filler Treatments Across NYC
             </h1>
             <h2 className="font-fraunces text-lg md:text-xl text-outer-space/80 leading-relaxed">
-              Physician-led aesthetic care delivered to your door. Get natural,
+              Physician-led aesthetic care delivered to your door. Get effortlessly natural,
               refreshed results in your own setting. Private appointments
               across all five boroughs.
             </h2>
