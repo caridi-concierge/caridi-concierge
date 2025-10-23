@@ -24,5 +24,6 @@ export const COMPANY = {
       linkedin: "https://www.linkedin.com/company/caridi-concierge/",
       tiktok: "https://tiktok.com/@caridiconcierge",
       yelp: "https://www.yelp.com/biz/caridi-concierge-brooklyn",
+      google: "https://maps.app.goo.gl/GdqFsMAwS6Q3ZWH88"
     },
   };

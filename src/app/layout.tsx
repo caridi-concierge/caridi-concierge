@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/JsonLD";
 import { GoogleTagManager } from "@next/third-parties/google";
 
 const fraunces = Fraunces({
-  variable: "--f-fraunces",           // note the name
+  variable: "--f-fraunces",
   subsets: ["latin"],
   display: "swap",
   weight: ["300", "400", "500", "600", "700"],
