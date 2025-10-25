@@ -16,7 +16,7 @@ export const treatments: TreatmentMetadata[] = [
     hook: "Soften wrinkles and lift your features.",
     description:
       "Smooth wrinkles and soften fine lines with targeted wrinkle reduction treatments, including Botox, Xeomin, and Daxxify. Enhance natural beauty and restore youthful balance.",
-    bullets: [
+    highlights: [
       "Smooth <strong>forehead lines, crow's feet</strong>, and frown lines (the \"11s\")",
       "<strong>Masseter Botox</strong> for jawline slimming and TMJ relief",
       "<strong>Lip flip</strong> for subtle upper lip enhancement without filler",
@@ -42,7 +42,7 @@ export const treatments: TreatmentMetadata[] = [
     hook: "Restore volume and definition.",
     description:
       "Dermal fillers can improve shape and restore lost volume to areas like the face, lips, neck, butt and arms. Common options include RHA Collection and Juvederm.",
-    bullets: [
+    highlights: [
       "<strong>Lip fillers</strong> and <strong>lip injections</strong> for balanced, natural fullness",
       "Cheek augmentation to restore youthful contours",
       "Under-eye hollows (tear troughs) for a refreshed appearance",
@@ -71,7 +71,7 @@ export const treatments: TreatmentMetadata[] = [
     hook: "Build collagen for lasting rejuvenation.",
     description:
       "Biostimulatory fillers encourage your body to produce its own collagen, gradually restoring volume and improving skin texture from within. Common options include Radiesse and Sculptra.",
-    bullets: [
+    highlights: [
       "Stimulate natural collagen production for long-term results",
       "Restore volume to cheeks, temples, and jawline",
       "Improve skin texture and firmness over time",
@@ -85,7 +85,7 @@ export const treatments: TreatmentMetadata[] = [
       "Decorative icon for biostimulatory fillers treatments page. Radiesse, Sculptra.",
     startingPrice: `$${priceBiostim}/syringe`,
     note: "Treatment series recommended",
-    frequency: "Typically a series of 3 treatments, spaced 6 weeks apart, followed by yearly maintenance.",
+    frequency: "A series of 3 treatments, spaced 6 weeks apart. Followed by yearly maintenance.",
     bookHref: "/booking",
     learnMoreHref: "/treatments/biostimulatory-fillers",
   },

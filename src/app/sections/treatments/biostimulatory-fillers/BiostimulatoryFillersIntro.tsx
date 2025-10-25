@@ -13,7 +13,6 @@ export default function BiostimulatoryFillersIntroSection() {
         "Biostimulatory fillers like Radiesse and Sculptra help your body rebuild what time has reduced, stimulating collagen production for gradual, lasting rejuvenation.",
         "At Caridi Concierge, these in-home treatments are performed by Dr. Caridi. The goal is to restore lift and improve skin texture across the face, neck, chest, and arms. The results appear subtly and strengthen over time, creating refreshed, natural-looking definition without adding bulk or weight."
     ]}
-      frequency="Typically administered as a series of 3 treatments, spaced 6 weeks apart, followed by yearly maintenance."
       frequencyCtaHref="/book"
       frequencyCtaText="Book Collagen Stimulators"
       beforeCare="To prepare for your biostimulatory filler appointment, you should avoid blood-thinning medications (ex. ibuprofen, aspirin, naproxen) or supplements such as fish oil, and vitamin E for 5-7 days unless prescribed.
@@ -24,6 +23,7 @@ export default function BiostimulatoryFillersIntroSection() {
           Some mild swelling or tenderness is normal; however, this typically resolves quickly. Because results build gradually, visible improvement usually begins within 4-6 weeks and continues for several months as new collagen forms. By following these biostimulatory filler aftercare tips, you’ll support lasting, natural results."
       startingPrice={details.startingPrice}
       note={details.note}
+      frequency={details.frequency}
     />
   );
 }

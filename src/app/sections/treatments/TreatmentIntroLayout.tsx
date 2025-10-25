@@ -42,7 +42,7 @@ export default function TreatmentIntroSection({
             {description.map((para, i) => (
               <p
                 key={i}
-                className="text-gray-700 leading-relaxed text-sm md:text-base mb-4 last:mb-0"
+                className="text-gray-700 leading-relaxed text-md md:text-base mb-4 last:mb-0"
               >
                 {para}
               </p>
@@ -65,7 +65,7 @@ export default function TreatmentIntroSection({
             <h2 className="font-fraunces font-bold text-xl text-outer-space mb-4">
               What to do before your treatment
             </h2>
-            <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+            <p className="text-gray-700 text-base md:text-base leading-relaxed">
               {beforeCare}
             </p>
           </div>
@@ -75,7 +75,7 @@ export default function TreatmentIntroSection({
             <h2 className="font-fraunces font-bold text-xl text-outer-space mb-4">
               What to do after your treatment
             </h2>
-            <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+            <p className="text-gray-700 text-base md:text-base leading-relaxed">
               {afterCare}
             </p>
           </div>

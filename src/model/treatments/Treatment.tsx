@@ -45,12 +45,12 @@ export type Treatment = {
   };
   hook: string;
   description: string; // For simple card view
-  bullets: string[]; // For detailed ServiceCard view
+  highlights: string[]; // For detailed ServiceCard view
   products: string;
   imgSrc: string;
   imgAlt: string;
   startingPrice: string;
-  frequency?: string;
+  frequency: string;
   note?: string;
   bookHref: string;
   learnMoreHref: string;

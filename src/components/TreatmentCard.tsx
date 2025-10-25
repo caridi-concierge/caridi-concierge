@@ -8,7 +8,7 @@ export default function TreatmentCard({
   title,
   badge,
   hook,
-  bullets,
+  highlights,
   products,
   learnMoreHref,
 }: TreatmentCardProps) {
@@ -39,7 +39,7 @@ export default function TreatmentCard({
 
       {/* Bullet Points */}
         <ul className="mb-6 space-y-2 flex-grow">
-        {bullets.map((bullet, index) => (
+        {highlights.map((highlight, index) => (
             <li
             key={index}
             className="flex items-start gap-2 text-outer-space text-[15px]"
@@ -54,7 +54,7 @@ export default function TreatmentCard({
                 className="w-full h-full"
                 />
             </span>
-            <span dangerouslySetInnerHTML={{ __html: bullet }} />
+            <span dangerouslySetInnerHTML={{ __html: highlight }} />
             </li>
         ))}
         </ul>
