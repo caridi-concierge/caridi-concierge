@@ -1,5 +1,9 @@
 import { COMPANY } from '@/lib/constants/company';
 
+const priceBotox = process.env.PRICE_BOTOX ?? 12;
+const priceFillers = process.env.PRICE_FILLERS ?? 600;
+const priceBiostim = process.env.PRICE_BIOSTIM ?? 850;
+
 export const botoxServiceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -24,10 +28,10 @@ export const botoxServiceSchema = {
       "@type": "Offer",
       "url": `${COMPANY.url}/treatments/wrinkle-reduction`,
       "priceCurrency": "USD",
-      "price": `${process.env.PRICE_BOTOX ?? 12}`,
+      "price": `${priceBotox}`,
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
-        "price": `${process.env.PRICE_BOTOX ?? 12}`,
+        "price": `${priceBotox}`,
         "priceCurrency": "USD",
         "unitText": "unit",
         "priceType": "FromPrice"
@@ -73,10 +77,10 @@ export const dermalFillerServiceSchema = {
       "@type": "Offer",
       "url": "https://caridiconcierge.com/treatments/dermal-fillers",
       "priceCurrency": "USD",
-      "price": `${process.env.PRICE_DERMAL_FILLER ?? 600}`,
+      "price": `${priceFillers}`,
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
-        "price": `${process.env.PRICE_DERMAL_FILLER ?? 600}`,
+        "price": `${priceFillers}`,
         "priceCurrency": "USD",
         "unitText": "syringe",
         "priceType": "FromPrice"
@@ -122,10 +126,10 @@ export const biostimulatoryFillerServiceSchema = {
       "@type": "Offer",
       "url": "https://caridiconcierge.com/treatments/biostimulatory-fillers",
       "priceCurrency": "USD",
-      "price": `${process.env.PRICE_BIOSTIMULATORY_FILLER ?? 825}`,
+      "price": `${priceBiostim}`,
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
-        "price": `${process.env.PRICE_BIOSTIMULATORY_FILLER ?? 825}`,
+        "price": `${priceBiostim}`,
         "priceCurrency": "USD",
         "unitText": "unit",
         "priceType": "FromPrice"

@@ -8,4 +8,6 @@ export const variants = {
     "bg-carnation border-peach-puff text-peach-puff hover:bg-peach-puff hover:text-carnation hover:border-carnation",
   light:
     "bg-white border-outer-space text-outer-space hover:bg-carnation hover:text-merino",
+  alt:
+    "bg-outer-space/40 border-outer-space text-outer-space hover:bg-peach-puff hover:text-outer-space hover:border-outer-space"
 };

@@ -1,5 +1,8 @@
 import { TreatmentMetadata } from "@/model/treatments/Treatment";
 
+const priceBotox = process.env.PRICE_BOTOX ?? 12;
+const priceFillers = process.env.PRICE_FILLERS ?? 600;
+const priceBiostim = process.env.PRICE_BIOSTIM ?? 850;
 
 export const treatments: TreatmentMetadata[] = [
   {
@@ -25,7 +28,7 @@ export const treatments: TreatmentMetadata[] = [
       "/images/facial_tx.webp",
     imgAlt:
       "Decorative image for the Wrinkle Reduction treatment page. Botox, Xeomin, Daxxify.",
-    startingPrice: "$12/unit",
+    startingPrice: `$${priceBotox}/unit`,
     note: "Typical treatment: 20-60 units",
     frequency: "This treatment should be repeated every 2-4 months.",
     bookHref: "/booking",
@@ -51,7 +54,7 @@ export const treatments: TreatmentMetadata[] = [
       "/images/lips_tx.webp",
     imgAlt:
       "Decorative image for the Dermal Fillers page. RHA Collection, Juvederm.",
-    startingPrice: "$650/syringe",
+    startingPrice: `$${priceFillers}/syringe`,
     note: "Most areas require 1-2 syringes",
     frequency: "This treatment should be repeated every 4-6 months.",
     bookHref: "/booking",
@@ -65,7 +68,7 @@ export const treatments: TreatmentMetadata[] = [
       text: "Long-Lasting",
       variant: "longLasting",
     },
-    hook: "Build your own collagen for gradual, lasting rejuvenation.",
+    hook: "Build collagen for lasting rejuvenation.",
     description:
       "Biostimulatory fillers encourage your body to produce its own collagen, gradually restoring volume and improving skin texture from within. Common options include Radiesse and Sculptra.",
     bullets: [
@@ -80,9 +83,9 @@ export const treatments: TreatmentMetadata[] = [
       "/images/biostim2_tx.webp",
     imgAlt:
       "Decorative icon for biostimulatory fillers treatments page. Radiesse, Sculptra.",
-    startingPrice: "$800/syringe",
+    startingPrice: `$${priceBiostim}/syringe`,
     note: "Treatment series recommended",
-    frequency: "Typically administered as a series of 3 treatments, spaced 6 weeks apart, followed by yearly maintenance.",
+    frequency: "Typically a series of 3 treatments, spaced 6 weeks apart, followed by yearly maintenance.",
     bookHref: "/booking",
     learnMoreHref: "/treatments/biostimulatory-fillers",
   },
