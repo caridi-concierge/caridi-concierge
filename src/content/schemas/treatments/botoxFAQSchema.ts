@@ -39,7 +39,7 @@ export const botoxFAQSchema = {
         name: "What’s the difference between Botox and other neuromodulators like Dysport, Xeomin, Jeuveau, or Daxxify?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "All are FDA-approved botulinum toxin type A products that smooth wrinkles by relaxing muscles. They differ slightly in onset, spread, and duration—for example, Dysport can take effect faster, while Daxxify often lasts longer, up to six to nine months."
+          text: "All are FDA-approved botulinum toxin type A products that smooth wrinkles by relaxing muscles. They differ slightly in onset, spread, and duration-for example, Dysport can take effect faster, while Daxxify often lasts longer, up to six to nine months."
         }
       },
       {

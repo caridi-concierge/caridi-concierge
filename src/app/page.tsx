@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Banner from "@/components/Banner";
 import HeroSection from "@/app/sections/home/Hero";
-import ServicesSection from "@/app/sections/home/Services";
+import TreatmentsSection from "@/app/sections/home/Treatments";
 import LocationsSection from "@/app/sections/home/Locations";
 import ReviewsSection from "@/app/sections/home/Reviews";
 import FAQSection from "@/app/sections/home/FAQ";
@@ -22,7 +22,7 @@ export default function HomePage() {
         alt="Dr. Cristina Caridi providing in-home Botox and filler treatments across NYC"
       />
       <HeroSection />
-      <ServicesSection />
+      <TreatmentsSection />
       <LocationsSection />
       <ReviewsSection />
       <FAQSection />

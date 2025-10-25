@@ -1,18 +1,20 @@
 // src/components/TreatmentIntroSection.tsx
 import type { TreatmentIntroProps } from "@/model/treatments/Treatment";
-import PrimaryButton from "@/components/PrimaryButton";
 import Container from "@/components/Container";
+import TreatmentPricingCard from "@/components/TreatmentPricingCard";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function TreatmentIntroSection({
   title,
   description,
-  frequency,
   frequencyCtaHref,
   frequencyCtaText,
   beforeCare,
   afterCare,
+  frequency,
+  note,
+  startingPrice,
 }: TreatmentIntroProps) {
   return (
     <section className="pb-16 pt-10 bg-cream">
@@ -49,15 +51,13 @@ export default function TreatmentIntroSection({
 
           {/* Row 1, Col 2 */}
           <div>
-            <h2 className="font-fraunces font-bold text-xl text-outer-space mb-4">
-              Treatment Frequency
-            </h2>
-            <p className="text-gray-700 text-sm md:text-base">{frequency}</p>
-            <div className="mt-6">
-              <PrimaryButton href={frequencyCtaHref} variant="secondary" ariaLabel={`Book a visit for ${title} treatments`}>
-                {frequencyCtaText}
-              </PrimaryButton>
-            </div>
+            <TreatmentPricingCard
+              startingPrice={startingPrice}
+              note={note}
+              frequency={frequency}
+              bookHref={frequencyCtaHref}
+              bookButtonText={frequencyCtaText}
+            />
           </div>
 
           {/* Row 2 spans 2 cols */}

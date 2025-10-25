@@ -5,7 +5,7 @@ import { base, variants } from "./ButtonStyles";
 type ButtonProps = {
   href: string;
   children: ReactNode;
-  variant?: "primary" | "secondary" | "light"; // add as needed
+  variant?: "primary" | "secondary" | "light" | "alt"; // add as needed
   className?: string;
   ariaLabel?: string;
   id?: string;

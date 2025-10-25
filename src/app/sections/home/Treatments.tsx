@@ -1,10 +1,10 @@
 "use client";
 import Container from "@/components/Container";
 import Image from "next/image";
-import { services } from "@/lib/constants/services";
-import ServiceCard from "@/components/ServiceCard";
+import { treatments } from "@/content/treatments/treatments";
+import TreatmentCard from "@/components/TreatmentCard";
 
-export default function ServicesSection() {
+export default function TreatmentsSection() {
   return (
     <section className="bg-outer-space pb-16 pt-12">
       <Container className="container mx-auto">
@@ -15,10 +15,10 @@ export default function ServicesSection() {
           </h2>
         </div>
 
-        {/* Services Grid */}
+        {/* Treatments Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service) => (
-            <ServiceCard key={service.id} {...service} />
+          {treatments.map((treatment) => (
+            <TreatmentCard key={treatment.id} {...treatment} />
           ))}
         </div>
 

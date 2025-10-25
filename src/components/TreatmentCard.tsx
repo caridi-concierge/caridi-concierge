@@ -1,28 +1,17 @@
 import PrimaryButton from "@/components/PrimaryButton";
 import Image from "next/image";
+import type { TreatmentMetadata } from "@/model/treatments/Treatment";
 
-export interface ServiceCardProps {
-  id: string;
-  title: string;
-  badge?: {
-    text: string;
-    variant: "popular" | "new" | "advanced" | "gentle" | "longLasting";
-  };
-  hook: string;
-  bullets: string[];
-  products: string;
-  bookHref: string;
-  learnMoreHref: string;
-}
+export type TreatmentCardProps = TreatmentMetadata;
 
-export default function ServiceCard({
+export default function TreatmentCard({
   title,
   badge,
   hook,
   bullets,
   products,
   learnMoreHref,
-}: ServiceCardProps) {
+}: TreatmentCardProps) {
   const badgeStyles = {
     popular: "bg-dimgray text-white",
     new: "bg-emerald-600 text-white",
@@ -44,9 +33,9 @@ export default function ServiceCard({
       )}
 
       <h3 className="font-fraunces text-2xl text-outer-space mb-3 pr-24">
-        {title}
+        {hook}
       </h3>
-      <p className="text-outer-space/80 italic mb-5">{hook}</p>
+      <p className="text-paleviolet/80 italic mb-5">{title}</p>
 
       {/* Bullet Points */}
         <ul className="mb-6 space-y-2 flex-grow">
@@ -82,7 +71,7 @@ export default function ServiceCard({
       <div className="flex flex-col items-center justify-center sm:flex-row sm:items-center gap-3 mt-auto">
         <PrimaryButton
           href={learnMoreHref}
-          variant="primary"
+          variant="alt"
           className="text-sm px-6 py-1.5"
           ariaLabel={`Learn more about ${title}`}
         >
