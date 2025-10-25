@@ -34,7 +34,7 @@ export default function TreatmentPricingCard({
       {/* Note (if provided) */}
       {note && (
         <div className="mb-6 pb-6 border-b border-gray-200">
-          <p className="text-xs text-gray-600 mb-1">Note</p>
+          <p className="text-xs text-gray-600 font-bold mb-1">Note</p>
           <p className="text-sm text-gray-700">{note}</p>
         </div>
       )}
