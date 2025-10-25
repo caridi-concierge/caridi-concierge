@@ -19,7 +19,7 @@ export default function ProductLayout({
             alt=""
             width={93}
             height={108}
-            className="mb-6 h-auto"
+            className="h-auto w-12 sm:w-25 md:w-[93px] pb-6"
           />
           <h2 className="font-fraunces text-3xl md:text-4xl text-outer-space mb-6">
             {sectionTitle}

@@ -49,7 +49,7 @@ export function AccordionItem({ title, children, defaultOpen = false }: Accordio
             open ? "max-h-[500px] opacity-100 translate-y-0 mt-3" : "max-h-0 opacity-0 -translate-y-2"
           }`}
         >
-          <div className="space-y-4 text-lg text-outer-space/80">
+          <div className="space-y-4 text-base text-outer-space/80">
             {children}
           </div>
         </div>
