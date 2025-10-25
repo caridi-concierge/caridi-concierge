@@ -39,6 +39,9 @@ export default function Footer() {
             <a href={COMPANY.social.yelp} target="_blank">
               <Image src="/images/merino_yelp.svg" alt="Yelp" width={24} height={24} />
             </a>
+            <a href={COMPANY.social.pinterest} target="_blank">
+              <Image src="/images/merino_pinterest.svg" alt="Pinterest" width={24} height={24} />
+            </a>
           </div>
         </div>
 

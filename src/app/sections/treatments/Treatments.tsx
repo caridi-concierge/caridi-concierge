@@ -39,6 +39,22 @@ export default function TreatmentsSection() {
                   <p className="text-sm text-gray-700 mb-6">
                     {treatment.description}
                   </p>
+
+                  {/* Pricing Section */}
+                    <div className="mb-6 py-3 px-4 bg-peach-puff/30 rounded-lg">
+                      <p className="font-satoshi text-xs text-gray-600 mb-1">
+                        Starting at
+                      </p>
+                      <p className="font-fraunces text-2xl text-outer-space font-semibold">
+                        {treatment.startingPrice}
+                      </p>
+                      {treatment.note && (
+                        <p className="text-xs text-gray-600 mt-1 italic">
+                          {treatment.note}
+                        </p>
+                      )}
+                    </div>
+
                   <div className="mt-auto">
                   <PrimaryButton
                     href={`/treatments/${treatment.slug}`}

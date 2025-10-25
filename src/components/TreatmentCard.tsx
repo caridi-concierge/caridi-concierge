@@ -1,28 +1,20 @@
 import PrimaryButton from "@/components/PrimaryButton";
 import Image from "next/image";
+import type { TreatmentMetadata } from "@/model/treatments/Treatment";
 
-export interface ServiceCardProps {
-  id: string;
-  title: string;
-  badge?: {
-    text: string;
-    variant: "popular" | "new" | "advanced" | "gentle" | "longLasting";
-  };
-  hook: string;
-  bullets: string[];
-  products: string;
-  bookHref: string;
-  learnMoreHref: string;
-}
+export type TreatmentCardProps = TreatmentMetadata;
 
-export default function ServiceCard({
+export default function TreatmentCard({
   title,
   badge,
   hook,
   bullets,
   products,
   learnMoreHref,
-}: ServiceCardProps) {
+  startingPrice,
+  note,
+  frequency,
+}: TreatmentCardProps) {
   const badgeStyles = {
     popular: "bg-dimgray text-white",
     new: "bg-emerald-600 text-white",

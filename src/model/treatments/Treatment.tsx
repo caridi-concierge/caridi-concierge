@@ -4,6 +4,10 @@ export type Treatment = {
     description: string;
     imgSrc: string;
     imgAlt: string;
+    pricing: {
+      startingPrice: string;
+      note: string;
+    };
   };
 
   export type TreatmentIntroProps = {
@@ -14,6 +18,8 @@ export type Treatment = {
     frequencyCtaText: string;
     beforeCare: string;
     afterCare: string;
+    startingPrice: string;
+    note?: string;
   };
 
   export type TreatmentArea = {
@@ -28,3 +34,24 @@ export type Treatment = {
     ctaHref: string;
     ctaText: string;
   };
+
+  export interface TreatmentMetadata {
+  id: string;
+  slug: string;
+  title: string;
+  badge?: {
+    text: string;
+    variant: "popular" | "new" | "advanced" | "gentle" | "longLasting";
+  };
+  hook: string;
+  description: string; // For simple card view
+  bullets: string[]; // For detailed ServiceCard view
+  products: string;
+  imgSrc: string;
+  imgAlt: string;
+  startingPrice: string;
+  frequency?: string;
+  note?: string;
+  bookHref: string;
+  learnMoreHref: string;
+}

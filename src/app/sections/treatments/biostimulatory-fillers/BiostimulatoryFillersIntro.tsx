@@ -1,7 +1,10 @@
-// src/sections/treatments/BiostimulatoryFillersIntroSection.tsx
 import TreatmentIntroSection from "@/app/sections/treatments/TreatmentIntroLayout";
+import { treatments } from "@/content/treatments/treatments";
 
 export default function BiostimulatoryFillersIntroSection() {
+  const details = treatments.find((t) => t.slug === "biostimulatory-fillers");
+  if (!details) return null;
+  
   return (
     <TreatmentIntroSection
       title="Biostimulatory Fillers"
@@ -19,6 +22,8 @@ export default function BiostimulatoryFillersIntroSection() {
       afterCare="After your treatment, avoid touching or massaging the area unless directed by your provider.
           Furthermore, skip strenuous activity, alcohol, and heat exposure (such as saunas or hot yoga) for 24-48 hours. Use gentle skincare products instead, and avoid exfoliants or actives like retinol for a few days.
           Some mild swelling or tenderness is normal; however, this typically resolves quickly. Because results build gradually, visible improvement usually begins within 4-6 weeks and continues for several months as new collagen forms. By following these biostimulatory filler aftercare tips, you’ll support lasting, natural results."
+      startingPrice={details.startingPrice}
+      note={details.note}
     />
   );
 }
