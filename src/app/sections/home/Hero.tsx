@@ -23,7 +23,7 @@ export default function HeroSection() {
               across all five boroughs.
             </h2>
             <div className="flex gap-4 justify-center">
-              <PrimaryButton href="/book" variant="secondary" id="hero-booking-cta">
+              <PrimaryButton href="/book" variant="secondary" id="hero-booking-cta" ariaLabel="Schedule a Consult">
                 Schedule a Consult
               </PrimaryButton>
             </div>

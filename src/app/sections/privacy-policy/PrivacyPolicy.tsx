@@ -69,7 +69,7 @@ export default function PrivacyPolicy() {
         </p>
         <br />
         <strong><h2>YOUR PERSONALLY IDENTIFIABLE INFORMATION (PII)</h2></strong>
-        <p>Caridi Concierge Medicine PLLC uses the PII collected from You for various purposes, including:
+        <p>Caridi Concierge Medicine PLLC uses the PII collected from You for various purposes, including:</p>
         <ul>
           <li>- providing the services you request</li>
           <li>
@@ -80,7 +80,6 @@ export default function PrivacyPolicy() {
             - and communicating with You by e-mail, postal mail, telephone, text message, or other means.
             </li>
           </ul>
-        </p>
         <br />
           
           <strong><h2>SHARING PII WITH THIRD PARTIES</h2></strong>
@@ -107,6 +106,7 @@ export default function PrivacyPolicy() {
           Caridi Concierge Medicine PLLC may also disclose information to outside companies that 
           help bring You the services Caridi Concierge Medicine PLLC offers. For example, Caridi Concierge Medicine PLLC 
           may work with an outside company to:
+          </p>
           <ul>
             <li>- manage a database of customer information;</li>
             <li>- assist in distributing emails;</li>
@@ -118,6 +118,7 @@ export default function PrivacyPolicy() {
                 business potential and maintaining the Site.</li>
           </ul>
           <br />
+          <p>
           Caridi Concierge Medicine PLLC requires that these outside companies agree to this Privacy Policy 
           and keep confidential all information Caridi Concierge Medicine PLLC shares with them and to use 
           the information only to perform their obligations in their agreements with Caridi Concierge Medicine PLLC.

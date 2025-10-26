@@ -49,7 +49,7 @@ export default function ContactFormCard() {
 
   return (
     <div className="bg-merino rounded-lg p-8 shadow-md">
-      <h3 className="font-fraunces text-lg text-charcoal mb-3">Send Us a Note</h3>
+      <h2 className="font-fraunces text-lg text-charcoal mb-3">Send Us a Note</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
       <input name="firstName" placeholder="First Name *" required className="w-full p-2 border rounded" />
       <input name="lastName" placeholder="Last Name *" required className="w-full p-2 border rounded" />

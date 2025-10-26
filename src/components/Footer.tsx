@@ -11,7 +11,7 @@ export default function Footer() {
       <Container className="py-12 grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Left: Logo, address, socials */}
         <div className="space-y-6">
-          <Link href="/" className="inline-block">
+          <Link href="/" className="inline-block" aria-label="Homepage">
             <Image
               src="/images/caridi_concierge_logo_contrast_fraunces.svg"
               alt="Caridi Concierge logo" 
@@ -50,24 +50,24 @@ export default function Footer() {
           <div>
             <h3 className="uppercase font-semibold text-alabaster mb-3">Navigate</h3>
             <ul className="space-y-2">
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/treatments">Treatments</Link></li>
-              <li><Link href="/products">Products</Link></li>
-              <li><Link href="/blog">Blog</Link></li>
+              <li><Link href="/" aria-label="Home">Home</Link></li>
+              <li><Link href="/treatments" aria-label="Treatments">Treatments</Link></li>
+              <li><Link href="/products" aria-label="Products">Products</Link></li>
+              <li><Link href="/blog" aria-label="Blog">Blog</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="uppercase font-semibold text-alabaster mb-3">Company</h3>
             <ul className="space-y-2">
-              <li><Link href="/about">About</Link></li>
-              <li><Link href="/staff">Staff</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
+              <li><Link href="/about" aria-label="About">About</Link></li>
+              <li><Link href="/staff" aria-label="Staff">Staff</Link></li>
+              <li><Link href="/contact" aria-label="Contact">Contact</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="uppercase font-semibold text-alabaster mb-3">Info</h3>
             <ul className="space-y-2">
-              <li><Link href="/blog">Blog</Link></li>
+              <li><Link href="/blog" aria-label="Blog">Blog</Link></li>
             </ul>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function Footer() {
       <div className="border-t border-merino/20 mt-8">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between py-6 text-xs">
           <p>©{new Date().getFullYear()} Caridi Concierge. All rights reserved.</p>
-          <Link href="/privacy-policy" className="hover:underline">
+          <Link href="/privacy-policy" className="hover:underline" aria-label="Privacy Policy">
             Privacy Policy
           </Link>
         </div>

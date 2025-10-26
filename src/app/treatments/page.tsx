@@ -7,7 +7,7 @@ import { botoxServiceSchema, dermalFillerServiceSchema, biostimulatoryFillerServ
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-    title: "Aesthetic Treatments | Wrinkle Reduction, Fillers & IV Therapy",
+    title: "Aesthetic Treatments | Botox, Fillers & Collagen Builders",
     description: "Explore Caridi Concierge’s in-home aesthetic treatments, including botox and fillers. Serving NYC with personalized, expert care.",
     path: "/treatments",
     keywords: ["Caridi Concierge", "Aesthetic Treatments", "Botox", "Dermal Fillers", "Biostimulatory Fillers", "In-Home Treatments", "Brooklyn", "New York City"],
