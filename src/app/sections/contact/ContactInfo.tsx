@@ -6,9 +6,9 @@ export default function ContactInfoCard() {
   return (
     <div className="bg-merino rounded-lg p-8 shadow-md flex flex-col items-center text-center space-y-8">
       <div>
-        <h3 className="font-fraunces text-xl text-charcoal mb-2">
+        <h2 className="font-fraunces text-xl text-charcoal mb-2">
           Reach us anytime
-        </h3>
+        </h2>
         <p className="text-gray-700 text-sm">
           Whether you&apos;re exploring options or ready to book, we&apos;re here to help. Call, text, or email -- whatever feels easiest. Or send us a note through the form.
         </p>
