@@ -2,7 +2,11 @@ import { COMPANY } from "@/lib/constants/company";
 
 export const businessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["MedicalBusiness", "HealthAndBeautyBusiness", "LocalBusiness"],
+  "@id": `${COMPANY.url}/#localbusiness`,
+  "parentOrganization": {
+    "@id": `${COMPANY.url}/#organization`
+  },
   "name": COMPANY.name,
   "url": COMPANY.url,
   "telephone": COMPANY.phoneHref.replace("tel:", ""),
@@ -91,5 +95,19 @@ export const businessSchema = {
     }
   ]
   },
-  "sameAs": Object.values(COMPANY.social)
+  "sameAs": Object.values(COMPANY.social),
+  "knowsAbout": [
+    "Botox",
+    "Daxxify",
+    "Dermal Fillers",
+    "Biostimulatory Fillers",
+    "Lip Filler",
+    "Lip Flip",
+    "Radiesse",
+    "Xeomin",
+    "Hyperhidrosis",
+    "Facial Rejuvenation",
+    "Aesthetic Medicine",
+    "In-home Aesthetic Services"
+]
 }

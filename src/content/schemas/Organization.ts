@@ -20,6 +20,7 @@ export const organizationSchema = {
       "contactType": "customer service",
       "areaServed": "US-NY",
       "availableLanguage": ["English"]
-    }
+    },
+    "employee": { "@id": `${COMPANY.url}/#dr-cristina-caridi` }
   }
   
