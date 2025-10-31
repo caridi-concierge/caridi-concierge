@@ -16,7 +16,7 @@ type JsonValue =
 type JsonLdObject = { [key: string]: JsonValue };
 
 type JsonLdProps = {
-  schema: JsonLdObject & { "@type": string };
+  schema: JsonLdObject & { "@type": string | string[] };
   id?: string;
 };
 
