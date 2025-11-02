@@ -31,7 +31,7 @@ const staff = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://caridiconcierge.com";
+  const baseUrl = "https://www.caridiconcierge.com";
 
   // Static pages
   const staticUrls = staticPages.map((page) => ({
