@@ -25,7 +25,7 @@ export function buildBlogSchema(slug: string, metadata: {
       name: COMPANY.name,
       logo: {
         "@type": "ImageObject",
-        url: `${COMPANY.url}/${COMPANY.logoWebclip}`,
+        url: `${COMPANY.url}${COMPANY.logoWebclip}`,
       },
     },
     datePublished: metadata.date,
