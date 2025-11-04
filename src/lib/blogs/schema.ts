@@ -10,32 +10,35 @@ export function buildBlogSchema(slug: string, metadata: {
   tags?: string[];
   authorPage?: string;
 }) {
+  const canonicalUrl = `${COMPANY.url}/blog/${slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": `${canonicalUrl}#blogpost`, 
     headline: metadata.title,
     description: metadata.description ?? "",
-    author: {
-      "@type": "Person",
-      name: metadata.author,
-      url: `${COMPANY.url}/${metadata.authorPage}`,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: COMPANY.name,
-      logo: {
-        "@type": "ImageObject",
-        url: `${COMPANY.url}/${COMPANY.logoWebclip}`,
-      },
-    },
+    url: canonicalUrl,
+    inLanguage: "en-US",
+    author: metadata.author.includes("Caridi")
+      ? { "@id": `${COMPANY.url}/#dr-cristina-caridi` }
+      : {
+          "@type": "Person",
+          "name": metadata.author,
+          "url": `${COMPANY.url}/${metadata.authorPage}`,
+        },
+    publisher: { "@id": `${COMPANY.url}/#organization` },
     datePublished: metadata.date,
     dateModified: metadata.date,
     image: `${COMPANY.url}${metadata.coverImage}`,
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${COMPANY.url}/blog/${slug}`,
+      "@id": canonicalUrl,
     },
-    "articleSection": metadata.category,
-    "keywords": metadata.tags
+    "articleSection": metadata.category ?? "Aesthetics",
+    "keywords": metadata.tags ?? [],
+    "potentialAction": {
+      "@type": "ReadAction",
+      "target": canonicalUrl,
+    },
   };
 }
