@@ -22,12 +22,14 @@ type JsonLdProps = {
 
 export function JsonLd({ schema, id }: JsonLdProps) {
     const pathname = usePathname();
-  return (
-    <Script
-      key={`${pathname}-${id ?? schema["@type"]}`}  // Route-based key
-      id={id ?? `${pathname}-${schema["@type"]}`}   // Route-based id
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    const json = JSON.stringify(schema, null, 2);
+  
+    return (
+      <Script
+        key={`${pathname}-${id ?? schema["@type"]}`}  // Route-based key
+        id={id ?? `${pathname}-${schema["@type"]}`}   // Route-based id
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: json }}
+      />
   );
 }
