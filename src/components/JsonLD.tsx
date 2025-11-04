@@ -22,7 +22,7 @@ type JsonLdProps = {
 
 export function JsonLd({ schema, id }: JsonLdProps) {
     const pathname = usePathname();
-    const json = JSON.stringify(schema, null, 2);
+    const json = JSON.stringify(schema);
   
     return (
       <Script
