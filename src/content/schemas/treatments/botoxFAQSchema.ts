@@ -1,6 +1,8 @@
 export const botoxFAQSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "@id": "https://www.caridiconcierge.com/treatments/wrinkle-reduction#faq",
+    "name": "Botox FAQs",
     mainEntity: [
       {
         "@type": "Question",
