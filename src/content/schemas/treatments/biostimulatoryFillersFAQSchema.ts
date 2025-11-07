@@ -1,6 +1,8 @@
 export const biostimulatoryFillersFAQSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "@id": "https://www.caridiconcierge.com/treatments/biostimulatory-fillers#faq",
+    "name": "Biostimulatory Fillers FAQs",
     mainEntity: [
       {
         "@type": "Question",

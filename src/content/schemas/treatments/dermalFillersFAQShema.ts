@@ -1,6 +1,8 @@
 export const dermalFillersFAQSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "@id": "https://www.caridiconcierge.com/treatments/dermal-fillers#faq",
+    "name": "Dermal Fillers FAQs",
     mainEntity: [
       {
         "@type": "Question",
