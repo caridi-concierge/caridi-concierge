@@ -3,7 +3,11 @@ import type { MetadataRoute } from "next";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      {userAgent: "*", allow: "/"},
+      {
+        userAgent: "*",
+        disallow: ["/_next/", "/api/"],
+        allow: "/",
+      },
       {userAgent: "MJ12bot", disallow: "/"},
       {userAgent: "DotBot", disallow: "/"},
       {userAgent: "Baiduspider", disallow: "/"},
