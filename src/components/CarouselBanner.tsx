@@ -102,6 +102,7 @@ export default function CarouselBanner({
                         href={currentSlide.cta.href}
                         ariaLabel={currentSlide.cta.text}
                         variant="light"
+                        id="carousel-cta"
                       >
                         {currentSlide.cta.text}
                       </PrimaryButton>
@@ -174,6 +175,7 @@ export default function CarouselBanner({
               <PrimaryButton
                 href={currentSlide.cta.href}
                 ariaLabel={currentSlide.cta.text}
+                id="carousel-cta"
               >
                 {currentSlide.cta.text}
               </PrimaryButton>
