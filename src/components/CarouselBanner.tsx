@@ -69,46 +69,47 @@ export default function CarouselBanner({
                   className="w-full h-auto object-cover"
                   priority={i === 0}
                 />
-                {/* Desktop overlay content */}
-                {(slide.title || slide.subtitle || slide.content || slide.cta) && (
-                  <div className="hidden md:block absolute inset-0 pointer-events-none">
-                    <div className="flex items-center h-full px-12">
-                      <div className="p-8 text-white font-fraunces max-w-2xl pointer-events-auto">
-                        {slide.title && (
-                          <h2 className="text-4xl font-bold mb-2 drop-shadow-lg">
-                            {slide.title}
-                          </h2>
-                        )}
-                        {slide.subtitle && (
-                          <p className="text-xl drop-shadow-md mb-4">
-                            {slide.subtitle}
-                          </p>
-                        )}
-                        {slide.content && slide.content.length > 0 && (
-                          <ul className="space-y-2 mb-6 drop-shadow-md text-gray-200">
-                            {slide.content.map((item, idx) => (
-                              <li key={idx} className="flex items-start">
-                                <span className="mr-2 text-gray-200">•</span>
-                                <span className="text-sm">{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                        {slide.cta && (
-                          <PrimaryButton
-                            href={slide.cta.href}
-                            ariaLabel={slide.cta.text}
-                            variant="light"
-                          >
-                            {slide.cta.text}
-                          </PrimaryButton>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
             ))}
+
+            {/* Desktop overlay content */}
+            {(currentSlide.title || currentSlide.subtitle || currentSlide.content || currentSlide.cta) && (
+              <div className="hidden md:block absolute inset-0 pointer-events-none z-10" aria-hidden="true">
+                <div className="flex items-center h-full px-12">
+                  <div className="p-8 text-white font-fraunces max-w-2xl pointer-events-auto">
+                    {currentSlide.title && (
+                      <h2 className="text-4xl font-bold mb-2 drop-shadow-lg">
+                        {currentSlide.title}
+                      </h2>
+                    )}
+                    {currentSlide.subtitle && (
+                      <p className="text-xl drop-shadow-md mb-4">
+                        {currentSlide.subtitle}
+                      </p>
+                    )}
+                    {currentSlide.content && currentSlide.content.length > 0 && (
+                      <ul className="space-y-2 mb-6 drop-shadow-md text-gray-200">
+                        {currentSlide.content.map((item, idx) => (
+                          <li key={idx} className="flex items-start">
+                            <span className="mr-2 text-gray-200">•</span>
+                            <span className="text-sm">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {currentSlide.cta && (
+                      <PrimaryButton
+                        href={currentSlide.cta.href}
+                        ariaLabel={currentSlide.cta.text}
+                        variant="light"
+                      >
+                        {currentSlide.cta.text}
+                      </PrimaryButton>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Arrows */}
@@ -146,9 +147,9 @@ export default function CarouselBanner({
           )}
         </div>
 
-        {/* Mobile content below banner */}
+        {/* Mobile content below banner - uses aria-hidden on desktop */}
         {(currentSlide.title || currentSlide.subtitle || currentSlide.content || currentSlide.cta) && (
-          <div className="md:hidden mt-6 text-gray-800">
+          <div className="md:hidden mt-6 text-outer-space">
             {currentSlide.title && (
               <h2 className="font-fraunces text-2xl font-bold mb-2">
                 {currentSlide.title}
@@ -160,7 +161,7 @@ export default function CarouselBanner({
               </p>
             )}
             {currentSlide.content && currentSlide.content.length > 0 && (
-              <ul className="space-y-2 mb-6 text-gray-800/80">
+              <ul className="space-y-2 mb-6 text-outer-space/80">
                 {currentSlide.content.map((item, idx) => (
                   <li key={idx} className="flex items-start">
                     <span className="mr-2">•</span>
@@ -173,7 +174,6 @@ export default function CarouselBanner({
               <PrimaryButton
                 href={currentSlide.cta.href}
                 ariaLabel={currentSlide.cta.text}
-                variant="primary"
               >
                 {currentSlide.cta.text}
               </PrimaryButton>

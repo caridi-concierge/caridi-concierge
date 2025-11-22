@@ -6,7 +6,17 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTA";
 import Container from "@/components/Container";
 import CountdownTimer from "@/components/CountdownTimer";
+import { createPageMetadata } from "@/lib/metadata";
+import { SMSContactWidget } from "@/components/SMSContactWidget";
 import Image from "next/image";
+
+export const metadata = createPageMetadata({
+    title: "Black Friday Special | Caridi Concierge Aesthetics in NYC",
+    description: "Limited time savings on our most popular treatments. Book now to secure your spot.",
+    path: "/black-friday-2025",
+    keywords: ["Caridi Concierge", "Black Friday", "Aesthetic Treatments", "Dermal Fillers", "Botox", "Brooklyn", "New York City"],
+    noIndex: false
+});
 
 
 export default function BlackFridayPage() {
@@ -55,7 +65,7 @@ export default function BlackFridayPage() {
       id: "bf-filler-package",
       slug: "black-friday-filler-package",
       title: "Premium Dermal Filler Package - $1500",
-      hook: "Restore & Volumize",
+      hook: "Restore & Add Volume",
       description: "Three syringes of premium dermal filler",
       highlights: [
         "3 full syringes of premium filler",
@@ -106,13 +116,22 @@ export default function BlackFridayPage() {
     <Navbar />
       {/* Hero Banner */}
       <CarouselBanner slides={bannerSlides} autoPlay={false} />
+      <section className="bg-merino text-outer-space py-8 md:pb-4">
+        <Container>
+        <div className="mx-auto w-[90%] max-w-7xl text-center pb-2">
+          <h1 className="text-3xl md:text-4xl font-fraunces font-bold mb-6">
+            Limited Time Botox &amp; Filler Specials in NYC
+          </h1>
+        </div>
+        </Container>
+      </section>
 
       {/* Countdown Timer */}
       <section className="bg-merino text-outer-space py-8 md:py-12">
         <Container>
         <div className="mx-auto w-[90%] max-w-7xl text-center pb-12">
-          <p className="text-xl md:text-2xl font-semibold mb-6">
-            Black Friday Sale Ends In:
+          <p className="text-xl md:text-2xl font-fraunces font-semibold text-carnation mb-6">
+            Black Friday Sale Ends In
           </p>
           <CountdownTimer endDate={new Date("2025-11-30T23:59:59")} />
         </div>
@@ -126,7 +145,7 @@ export default function BlackFridayPage() {
         <div className="mx-auto w-[90%] max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="font-fraunces text-4xl md:text-5xl text-merino mb-4">
-              Exclusive Black Friday Packages
+              Black Friday Packages
             </h2>
             <p className="text-lg text-merino max-w-2xl mx-auto">
               Take advantage of our biggest savings of the year. Limited
@@ -158,9 +177,9 @@ export default function BlackFridayPage() {
         <Container className="container mx-auto space-y-8">
         <div className="mx-auto w-[90%] max-w-7xl">
           <div>
-            <h3 className="font-fraunces text-4xl text-outer-space mb-6 text-center pb-6">
+            <h2 className="font-fraunces text-4xl text-outer-space mb-6 text-center pb-6">
               Terms & Conditions
-            </h3>
+            </h2>
             <div className="text-md text-outer-space/80 space-y-3 leading-relaxed max-w-5xl mx-auto">
               <p className="text-left">
                 • Offer valid for <b>appointments booked between November 22-30,
@@ -205,6 +224,7 @@ export default function BlackFridayPage() {
 
       <CTASection variantKey='blackFriday' id='black-friday-cta'/>
       <Footer />
+      <SMSContactWidget />
     </>
   );
 }
