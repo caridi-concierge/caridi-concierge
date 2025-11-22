@@ -84,5 +84,16 @@ export const ctaVariants: Record<string, CTASectionProps> = {
     ariaLabel: "Book an appointment with Dr. Cristina Caridi at Caridi Concierge",
     id: "staff-cta",
   },
+  blackFriday: {
+    title: "Luxury doesn't have to mean full price.",
+    subtitle: "Don't miss out on these exclusive offers.",
+    ctaHref: "/book",
+    ctaText: "Book Now",
+    variant: "secondary",
+    bgColor: "bg-outer-space",
+    textColor: "text-alabaster",
+    ariaLabel: "Book a visit to Caridi Concierge for personalized Botox and filler treatments",
+    id: "black-friday-cta",
+  },
 };
   

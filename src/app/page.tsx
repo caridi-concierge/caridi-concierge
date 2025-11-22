@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import Banner from "@/components/Banner";
+// import Banner from "@/components/Banner";
 import HeroSection from "@/app/sections/home/Hero";
 import TreatmentsSection from "@/app/sections/home/Treatments";
 import LocationsSection from "@/app/sections/home/Locations";
@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLD";
 import { faqSchema } from "@/content/schemas";
 import { SMSContactWidget } from "@/components/SMSContactWidget";
+import CarouselBanner from "@/components/CarouselBanner";
 
 
 export default function HomePage() {
@@ -17,9 +18,32 @@ export default function HomePage() {
     <>
       <JsonLd schema={faqSchema} />
       <Navbar />
-      <Banner
+      {/* <Banner
         src="/images/home-banner-edit.webp"
         alt="Dr. Cristina Caridi providing in-home Botox and filler treatments across NYC"
+      /> */}
+      <CarouselBanner
+        slides={[
+          {
+            src: "/images/black-friday-banner-alt.webp",
+            alt: "Black Friday Sale at Caridi Concierge",
+            title: "Black Friday Sale",
+            subtitle: "Luxury doesnt have to mean full price.",
+            content: [
+              "Full face/neck Botox - $1000",
+              "3 Syringes of dermal filler - $1500",
+              "100u Botox & 2 syringes of dermal filler - $2000",
+            ],
+            cta: {
+              text: "View Deals",
+              href: "/black-friday-2025"
+            }
+          },
+          {
+            src: "/images/home-banner-edit.webp",
+            alt: "Dr. Cristina Caridi providing in-home Botox and filler treatments across NYC",
+          }
+        ]}
       />
       <HeroSection />
       <TreatmentsSection />

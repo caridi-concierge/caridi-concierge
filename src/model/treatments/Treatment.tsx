@@ -1,3 +1,5 @@
+import { variants } from "@/components/ButtonStyles";
+
 export type Treatment = {
     slug: string;
     title: string;
@@ -41,7 +43,7 @@ export type Treatment = {
   title: string;
   badge?: {
     text: string;
-    variant: "popular" | "new" | "advanced" | "gentle" | "longLasting";
+    variant: "popular" | "new" | "advanced" | "gentle" | "longLasting" | "gold";
   };
   hook: string;
   description: string; // For simple card view
@@ -53,5 +55,7 @@ export type Treatment = {
   frequency: string;
   note?: string;
   bookHref: string;
-  learnMoreHref: string;
+  ctaHref: string;
+  ctaText: string;
+  ctaVariant: keyof typeof variants;
 }
