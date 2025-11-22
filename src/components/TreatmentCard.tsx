@@ -10,7 +10,9 @@ export default function TreatmentCard({
   hook,
   highlights,
   products,
-  learnMoreHref,
+  ctaHref,
+  ctaText = "Learn More",
+  ctaVariant = "alt"
 }: TreatmentCardProps) {
   const badgeStyles = {
     popular: "bg-dimgray text-white",
@@ -18,6 +20,7 @@ export default function TreatmentCard({
     advanced: "bg-blue-600 text-white",
     gentle: "bg-rose-500 text-white",
     longLasting: "bg-amber-600 text-white",
+    gold: "bg-amber-700 text-white",
   };
 
   return (
@@ -70,12 +73,12 @@ export default function TreatmentCard({
       {/* Card Actions */}
       <div className="flex flex-col items-center justify-center sm:flex-row sm:items-center gap-3 mt-auto">
         <PrimaryButton
-          href={learnMoreHref}
-          variant="alt"
+          href={ctaHref}
+          variant={ctaVariant}
           className="text-sm px-6 py-1.5"
           ariaLabel={`Learn more about ${title}`}
         >
-          Learn More
+          {ctaText}
         </PrimaryButton>
       </div>
     </div>

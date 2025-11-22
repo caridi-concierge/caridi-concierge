@@ -2,12 +2,18 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import PrimaryButton from "./PrimaryButton";
 
 interface CarouselSlide {
   src: string;
   alt: string;
   title?: string;
   subtitle?: string;
+  content?: string[];
+  cta?: {
+    text: string;
+    href: string;
+  };
 }
 
 interface CarouselBannerProps {
@@ -50,7 +56,7 @@ export default function CarouselBanner({
               <div
                 key={i}
                 className={`transition-opacity duration-700 ${
-                  i === current ? "opacity-100" : "opacity-0 absolute inset-0"
+                  i === current ? "opacity-100 z-10" : "opacity-0 absolute inset-0 z-0 pointer-events-none"
                 }`}
               >
                 <Image
@@ -61,11 +67,38 @@ export default function CarouselBanner({
                   className="w-full h-auto object-cover"
                   priority={i === 0}
                 />
-                {(slide.title || slide.subtitle) && (
-                  <div className="absolute inset-0 flex items-center px-12">
-                    <div className="p-8 text-white font-fraunces">
-                      {slide.title && <h2 className="text-4xl font-bold mb-2 drop-shadow-lg">{slide.title}</h2>}
-                      {slide.subtitle && <p className="text-xl drop-shadow-md">{slide.subtitle}</p>}
+                {(slide.title || slide.subtitle || slide.content || slide.cta) && (
+                  <div className="absolute inset-0 flex items-center px-12 pointer-events-none">
+                    <div className="p-8 text-white font-fraunces max-w-2xl pointer-events-auto">
+                      {slide.title && (
+                        <h2 className="text-4xl font-bold mb-2 drop-shadow-lg">
+                          {slide.title}
+                        </h2>
+                      )}
+                      {slide.subtitle && (
+                        <p className="text-xl drop-shadow-md mb-4">
+                          {slide.subtitle}
+                        </p>
+                      )}
+                      {slide.content && slide.content.length > 0 && (
+                        <ul className="space-y-2 mb-6 drop-shadow-md text-gray-200">
+                          {slide.content.map((item, idx) => (
+                            <li key={idx} className="flex items-start">
+                              <span className="mr-2 text-gray-200">•</span>
+                              <span className="text-sm">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                      {slide.cta && (
+                        <PrimaryButton
+                          href={slide.cta.href}
+                          ariaLabel={slide.cta.text}
+                          variant="light"
+                        >
+                          {slide.cta.text}
+                        </PrimaryButton>
+                      )}
                     </div>
                   </div>
                 )}

@@ -5,6 +5,7 @@ import "../styles/global.css";
 import { businessSchema, websiteSchema, organizationSchema } from "@/content/schemas";
 import { JsonLd } from "@/components/JsonLD";
 import { GoogleTagManager } from "@next/third-parties/google";
+import PromoBanner from "@/components/PromoBanner";
 
 const fraunces = Fraunces({
   variable: "--f-fraunces",
@@ -51,6 +52,11 @@ export default function RootLayout({
         <JsonLd schema={websiteSchema} id="layout-website"/>
         <JsonLd schema={organizationSchema} id="layout-organization"/>
         <GoogleTagManager gtmId="GTM-KN8MSZTK" />
+        <PromoBanner
+          text="Black Friday Is Here - Save Up To $400"
+          linkText="View Deals"
+          linkHref="/black-friday-2025"
+        />
         {children}
       </body>
     </html>
