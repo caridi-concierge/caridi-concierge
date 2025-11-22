@@ -21,10 +21,6 @@ export default function BlackFridayPage() {
         "3 Syringes of dermal filler - $1500",
         "100u Botox & 2 syringes of dermal filler - $2000",
       ],
-      cta: {
-        text: "View Deals",
-        href: "#deals",
-      },
     },
   ];
 
