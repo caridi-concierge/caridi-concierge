@@ -3,6 +3,7 @@ import { TreatmentMetadata } from "@/model/treatments/Treatment";
 const priceBotox = process.env.PRICE_BOTOX ?? 12;
 const priceFillers = process.env.PRICE_FILLERS ?? 600;
 const priceBiostim = process.env.PRICE_BIOSTIM ?? 850;
+const priceChemicalPeels = process.env.PRICE_CHEMICAL_PEELS ?? 400;
 
 export const treatments: TreatmentMetadata[] = [
   {
@@ -95,4 +96,31 @@ export const treatments: TreatmentMetadata[] = [
     ctaText: "Learn More",
     ctaVariant: "alt",
   },
+  {
+    id: "chemical-peels",
+    slug: "chemical-peels",
+    title: "Chemical Peels",
+    hook: "Revitalize skin with chemical peels.",
+    description:
+      "Chemical peels can improve skin texture, reduce hyperpigmentation, and remove fine lines and wrinkles. Common options include glycolic acid and salicylic acid.",
+    highlights: [
+      "<strong>Glycolic acid</strong> for gentle exfoliation and skin renewal",
+      "<strong>Salicylic acid</strong> for acne and blackheads",
+      "<strong>Tretinoin</strong> for deeper wrinkles and sun damage",
+      "<strong>Hydroquinone</strong> for hyperpigmentation",
+      "<strong>Lactic acid</strong> for gentle exfoliation and skin renewal",
+    ],
+    products: "Glycolic acid, Salicylic acid, Tretinoin, Hydroquinone, Lactic acid",
+    imgSrc:
+      "/images/peel_tx.webp",
+    imgAlt:
+      "Decorative icon for chemical peels treatments page. Glycolic acid, Salicylic acid, Tretinoin, Hydroquinone, Lactic acid.",
+    startingPrice: `$${priceChemicalPeels}/treatment`,
+    note: "Treatment series recommended",
+    frequency: "This treatment should be repeated every 2-4 months.",
+    bookHref: "/book",
+    ctaHref: "/treatments/chemical-peels",
+    ctaText: "Learn More",
+    ctaVariant: "alt",
+  }
 ];
