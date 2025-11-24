@@ -40,6 +40,19 @@ export default function ProductsSection() {
                 "Provide relief from TMJ and teeth grinding",
               ],
             },
+            {
+              title: "Xeomin®",
+              imgSrc: "/images/xeomin_products_300px.webp",
+              imgAlt: "Xeomin® vial. Gentle neurotoxin for wrinkle reduction.",
+              description:
+                "Xeomin is a highly purified neuromodulator used to soften frown lines, forehead lines, and crow's feet. Its unique purification process removes accessory proteins, leaving only the active ingredient, which helps smooth wrinkles while keeping expression natural.",
+              uses: [
+                "Relax frown lines between the brows",
+                "Soften forehead lines while maintaining movement",
+                "Reduce crow’s feet and squint lines",
+                "Prevent deeper lines from forming over time",
+              ],
+            },
           ]}
         />
 
@@ -92,6 +105,27 @@ export default function ProductsSection() {
                 "Sculpt and define the jawline",
                 "Restore volume in cheeks, hands, chest, and butt.",
                 "Improve skin elasticity with collagen stimulation.",
+              ],
+            },
+          ]}
+        />
+
+        <ProductSection
+          sectionTitle="Chemical Peels"
+          ctaHref="/treatments/chemical-peels"
+          ctaText="Treatment Options"
+          products={[
+            {
+              title: "VI Peel®",
+              imgSrc: "/images/vi_peel_product_300px.webp",
+              imgAlt: "VI Peel® product. Great for all Skin Types.",
+              description:
+                "VI Peel® is a medium-depth chemical peel that targets discoloration, acne, texture irregularities, and early signs of aging. It gently exfoliates damaged skin and stimulates healthy renewal, revealing a brighter, smoother, and more even complexion within about a week.",
+              uses: [
+                "Fade dark spots, sun damage, and melasma",
+                "Improve acne, clogged pores, and post-acne marks",
+                "Smooth uneven texture and refine pores",
+                "Brighten dull skin and support healthy cell turnover",
               ],
             },
           ]}
