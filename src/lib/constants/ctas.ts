@@ -75,7 +75,7 @@ export const ctaVariants: Record<string, CTASectionProps> = {
   peels: {
     title: "Revitalize skin with chemical peels.",
     subtitle:
-      "Chemical peels can improve skin texture, reduce hyperpigmentation, and remove fine lines and wrinkles. Common options include glycolic acid and salicylic acid.",
+      "Chemical peels can improve skin texture, reduce hyperpigmentation, and remove fine lines and wrinkles. Try the VI Peel®, it's great for all skin types!",
     ctaHref: "/book",
     ctaText: "Book Chemical Peels",
     variant: "secondary",
