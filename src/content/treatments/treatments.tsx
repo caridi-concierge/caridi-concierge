@@ -100,21 +100,21 @@ export const treatments: TreatmentMetadata[] = [
     id: "chemical-peels",
     slug: "chemical-peels",
     title: "Chemical Peels",
-    hook: "Revitalize skin with chemical peels.",
+    hook: "Reveal brighter, smoother, more even skin.",
     description:
-      "Chemical peels can improve skin texture, reduce hyperpigmentation, and remove fine lines and wrinkles. Common options include glycolic acid and salicylic acid.",
+      "Chemical peels gently exfoliate damaged skin and stimulate healthy renewal. VI Peel improves uneven tone, surface texture, acne, and pigmentation with minimal downtime.",
     highlights: [
-      "<strong>Glycolic acid</strong> for gentle exfoliation and skin renewal",
-      "<strong>Salicylic acid</strong> for acne and blackheads",
-      "<strong>Tretinoin</strong> for deeper wrinkles and sun damage",
-      "<strong>Hydroquinone</strong> for hyperpigmentation",
-      "<strong>Lactic acid</strong> for gentle exfoliation and skin renewal",
+      "<strong>Targets discoloration</strong> including sun spots and melasma",
+      "<strong>Improves acne</strong> by clearing clogged pores and reducing post-acne marks",
+      "<strong>Refines texture</strong> for smoother, more even skin",
+      "<strong>Brightens dullness</strong> and restores overall radiance",
+      "<strong>Safe for most skin tones</strong> with a customized in-home approach"
     ],
-    products: "Glycolic acid, Salicylic acid, Tretinoin, Hydroquinone, Lactic acid",
+    products: "VI Peel®",
     imgSrc:
       "/images/peel_tx.webp",
     imgAlt:
-      "Decorative icon for chemical peels treatments page. Glycolic acid, Salicylic acid, Tretinoin, Hydroquinone, Lactic acid.",
+      "Chemical peel treatment illustration for the Caridi Concierge chemical peels page. VI Peel®.",
     startingPrice: `$${priceChemicalPeels}/treatment`,
     note: "Treatment series recommended",
     frequency: "This treatment should be repeated every 2-4 months.",
