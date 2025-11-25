@@ -92,6 +92,15 @@ export const businessSchema = {
         "serviceType": "Radiesse Biostimulatory Filler",
         "areaServed": { "@type": "Place", "name": "Brooklyn, NY" }
       }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Chemical Peels",
+        "serviceType": "VI Peel®",
+        "areaServed": { "@type": "Place", "name": "Brooklyn, NY" }
+      }
     }
   ]
   },

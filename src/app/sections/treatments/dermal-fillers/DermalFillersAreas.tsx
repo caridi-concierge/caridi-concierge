@@ -1,6 +1,6 @@
 import TreatmentAreasLayout from "@/app/sections/treatments/TreatmentAreasLayout";
 
-export default function WrinkleReductionAreasSection() {
+export default function DermalFillerAreasSection() {
   return (
     <TreatmentAreasLayout
       sectionTitle="Treatment Areas"

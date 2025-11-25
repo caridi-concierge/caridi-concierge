@@ -23,6 +23,7 @@ const treatments = [
   "treatments/wrinkle-reduction",
   "treatments/dermal-fillers",
   "treatments/biostimulatory-fillers",
+  "treatments/chemical-peels",
 ];
 
 // Staff (index + known slugs)

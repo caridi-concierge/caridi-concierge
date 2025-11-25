@@ -72,6 +72,18 @@ export const ctaVariants: Record<string, CTASectionProps> = {
     ariaLabel: "Book a biostimulatory filler treatment with Caridi Concierge",
     id: "biostim-cta",
   },
+  peels: {
+    title: "Revitalize skin with chemical peels.",
+    subtitle:
+      "Chemical peels can improve skin texture, reduce hyperpigmentation, and remove fine lines and wrinkles.",
+    ctaHref: "/book",
+    ctaText: "Book Chemical Peels",
+    variant: "secondary",
+    bgColor: "bg-outer-space",
+    textColor: "text-alabaster",
+    ariaLabel: "Book a chemical peel treatment with Caridi Concierge",
+    id: "peels-cta",
+  },
   staff: {
     title: "Expert care, personally delivered.",
     subtitle:
