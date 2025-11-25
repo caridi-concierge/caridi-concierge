@@ -9,9 +9,9 @@ export default function ChemicalPeelsIntroSection() {
     <TreatmentIntroSection
       title="Chemical Peels"
       description={[
-        "Sun exposure, breakouts, and natural aging can leave the skin looking uneven or dull over time. Chemical peels offer a controlled way to exfoliate damaged skin and stimulate healthy cell turnover, revealing a brighter and smoother complexion.",
-        "Caridi Concierge provides in-home chemical peel treatments in New York City, performed exclusively by Dr. Cristina Caridi. Using safe, medical-grade formulations, she targets concerns like discoloration, melasma, acne, texture irregularities, and fine lines while respecting your skin’s integrity.",
-        "Whether your goal is clearer pores, softer texture, or a more even skin tone, each peel is customized to match your skin type and comfort level, supporting natural radiance without irritation or downtime you don’t need."
+        "Chemical peels offer a controlled way to exfoliate damaged skin and stimulate healthy cell turnover, revealing a brighter and smoother complexion.",
+        "Dr Caridi uses safe, medical-grade formulations to target concerns like discoloration, melasma, acne, texture irregularities, and fine lines while respecting your skin’s integrity.",
+        "Whether your goal is clearer pores, softer texture, or a more even skin tone, each peel is customized to match your skin type and comfort level."
       ]}
       frequencyCtaHref="/book"
       frequencyCtaText="Book Chemical Peel"
