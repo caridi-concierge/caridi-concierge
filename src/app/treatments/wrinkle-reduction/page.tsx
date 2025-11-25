@@ -23,11 +23,8 @@ export default function WrinkleReductionPage() {
       <JsonLd schema={botoxFAQSchema} />
       <Navbar />
       <Banner
-        src="/images/wrinkle-reduction-banner-green-opaque-stripes.webp"
-        alt="Caridi Concierge uses the following products for aesthetic treatments. 
-        For botox treatments, we use Botox, Daxxify, Xeomin, and Juvederm. 
-        For dermal fillers, we use RHA Collection and Juvederm. 
-        For biostimulatory fillers, we use Radiesse."
+        src="/images/wrinkle-reduction-banner-light.webp"
+        alt="Caridi Concierge offers botox, daxxify, and xeomin treatments for wrinkle reduction."
       />
       <WrinkleReductionIntroSection />
       <WrinkleReductionAreasSection />
