@@ -2,6 +2,7 @@ import type { MDXComponents } from 'mdx/types';
 import type { ComponentPropsWithoutRef } from 'react';
 import Image from 'next/image';
 import PrimaryButton from '@/components/PrimaryButton';
+import { InstagramEmbed } from '@/components/SocialEmbed';
 
 // This file is required when using @next/mdx in the app directory
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -87,6 +88,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     },
     PrimaryButton: (props: ComponentPropsWithoutRef<typeof PrimaryButton>) => (
       <PrimaryButton {...props} />
+    ),
+    InstagramEmbed: (props: ComponentPropsWithoutRef<typeof InstagramEmbed>) => (
+      <InstagramEmbed {...(props)} />
     ),
     ...components,
   };
