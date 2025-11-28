@@ -27,9 +27,9 @@ export default function BlackFridayPage() {
       title: "Black Friday Exclusive",
       subtitle: "Limited time savings on our most popular treatments",
       content: [
-        "Full face/neck Botox - $1000",
-        "3 Syringes of dermal filler - $1500",
-        "100u Botox & 2 syringes of dermal filler - $2000",
+        "Full face/neck Botox - 17% Off",
+        "3 Syringes of dermal filler - 17% Off",
+        "100u Botox & 2 syringes of dermal filler - 20% Off",
       ],
     },
   ];
@@ -38,7 +38,7 @@ export default function BlackFridayPage() {
     {
       id: "bf-botox-full-face",
       slug: "black-friday-botox-full-face",
-      title: "Full Face & Neck Botox Treatment - $1000",
+      title: "Full Face & Neck Botox Treatment - $1000 (17% Off)",
       badge: {
         text: "Popular",
         variant: "gentle",
@@ -64,7 +64,7 @@ export default function BlackFridayPage() {
     {
       id: "bf-filler-package",
       slug: "black-friday-filler-package",
-      title: "Premium Dermal Filler Package - $1500",
+      title: "Premium Dermal Filler Package - $1500 (17% Off)",
       hook: "Restore & Add Volume",
       description: "Three syringes of premium dermal filler",
       highlights: [
@@ -86,7 +86,7 @@ export default function BlackFridayPage() {
     {
       id: "bf-combo-package",
       slug: "black-friday-combo-package",
-      title: "Ultimate Package - $2000",
+      title: "Ultimate Package - $2000 (20% Off)",
       badge: {
         text: "Best Value",
         variant: "popular",
