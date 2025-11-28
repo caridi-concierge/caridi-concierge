@@ -25,14 +25,14 @@ export default function HomePage() {
       <CarouselBanner
         slides={[
           {
-            src: "/images/black-friday-banner-alt.webp",
+            src: "/images/black-friday-banner-alt2.webp",
             alt: "Black Friday Sale at Caridi Concierge",
             title: "Black Friday Sale",
             subtitle: "Luxury doesnt have to mean full price.",
             content: [
-              "Full face/neck Botox - $1000",
-              "3 Syringes of dermal filler - $1500",
-              "100u Botox & 2 syringes of dermal filler - $2000",
+              "Full face/neck Botox - 17% Off",
+              "3 Syringes of dermal filler - 17% Off",
+              "100u Botox & 2 syringes of dermal filler - 20% Off",
             ],
             cta: {
               text: "View Deals",
