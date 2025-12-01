@@ -133,7 +133,7 @@ export default function BlackFridayPage() {
           <p className="text-xl md:text-2xl font-fraunces font-semibold text-carnation mb-6">
             Black Friday Sale Ends In
           </p>
-          <CountdownTimer endDate={new Date("2025-11-30T23:59:59")} />
+          <CountdownTimer endDate={new Date("2025-12-01T23:59:59")} />
         </div>
         </Container>
       </section>
