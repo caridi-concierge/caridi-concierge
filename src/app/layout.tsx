@@ -52,11 +52,6 @@ export default function RootLayout({
         <JsonLd schema={websiteSchema} id="layout-website"/>
         <JsonLd schema={organizationSchema} id="layout-organization"/>
         <GoogleTagManager gtmId="GTM-KN8MSZTK" />
-        {/* <PromoBanner
-          text="Get radiant skin with chemical peels"
-          linkText="Learn More"
-          linkHref="/treatments/chemical-peels"
-        /> */}
         {children}
       </body>
     </html>

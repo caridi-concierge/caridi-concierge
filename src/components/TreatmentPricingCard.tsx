@@ -1,6 +1,3 @@
-// @/components/TreatmentPricingCard.tsx
-// Renamed from PricingCard - focused component for treatment pages
-
 import PrimaryButton from "@/components/PrimaryButton";
 import { TreatmentMetadata } from "@/model/treatments/Treatment";
 
