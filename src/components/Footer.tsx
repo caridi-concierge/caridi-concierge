@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { COMPANY } from "@/lib/constants/company";
 import Container from "@/components/Container";
+import { LOCATIONS } from "@/lib/constants/locations";
 
 export default function Footer() {
   return (
@@ -57,17 +58,22 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="uppercase font-semibold text-alabaster mb-3">Company</h3>
+            <h3 className="uppercase font-semibold text-alabaster mb-3">About</h3>
             <ul className="space-y-2">
               <li><Link href="/about" aria-label="About">About</Link></li>
               <li><Link href="/staff" aria-label="Staff">Staff</Link></li>
               <li><Link href="/contact" aria-label="Contact">Contact</Link></li>
+              <li><Link href="/blog" aria-label="Blog">Blog</Link></li>
             </ul>
           </div>
           <div>
-            <h3 className="uppercase font-semibold text-alabaster mb-3">Info</h3>
+            <h3 className="uppercase font-semibold text-alabaster mb-3">Locations</h3>
             <ul className="space-y-2">
-              <li><Link href="/blog" aria-label="Blog">Blog</Link></li>
+              {LOCATIONS.map((loc) => (
+                <li key={loc.id}>
+                  <Link href="/locations" aria-label={loc.name}>{loc.name}</Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
