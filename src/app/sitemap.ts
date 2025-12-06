@@ -13,6 +13,7 @@ const staticPages = [
   "contact",
   "privacy-policy",
   "products",
+  "locations",
   // "book", excluded because it redirects externally
 ];
 
