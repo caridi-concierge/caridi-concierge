@@ -82,6 +82,7 @@ export default function Navbar({
             <Link href="/" onClick={() => setSidebarIsOpen(false)}>Home</Link>
             <Link href="/about" onClick={() => setSidebarIsOpen(false)}>About</Link>
             <Link href="/treatments" onClick={() => setSidebarIsOpen(false)}>Treatments</Link>
+            <Link href="/locations" onClick={() => setSidebarIsOpen(false)}>Locations</Link>
             <Link href="/products" onClick={() => setSidebarIsOpen(false)}>Products</Link>
             <Link href="/blog" onClick={() => setSidebarIsOpen(false)}>Blog</Link>
           </nav>
