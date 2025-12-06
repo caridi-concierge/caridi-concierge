@@ -70,12 +70,12 @@ export function LocationCard({ loc }: { loc: Location }) {
 
       {/* CTAs (separate from main link) */}
       <div className="flex flex-wrap gap-3 pt-1">
-        <Link
+        {loc.ctaPrimaryHref && <Link
           href={loc.ctaPrimaryHref}
           className="inline-flex items-center justify-center rounded-full border border-outer-space bg-outer-space px-4 py-2 text-sm font-medium text-merino hover:bg-outer-space/90 transition"
         >
           {loc.ctaPrimaryLabel}
-        </Link>
+        </Link>}
 
         {loc.ctaSecondaryHref && (
           <Link

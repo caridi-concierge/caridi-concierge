@@ -33,33 +33,9 @@ export const LOCATIONS = [
         emailHref: "mailto:booking@caridiconcierge.com",
         hours: [
             {
-                label: "Monday",
-                value: "9:00 AM - 5:00 PM"
-            },
-            {
-                label: "Tuesday",
-                value: "9:00 AM - 5:00 PM"
-            },
-            {
                 label: "Wednesday",
-                value: "9:00 AM - 5:00 PM"
-            },
-            {
-                label: "Thursday",
-                value: "9:00 AM - 5:00 PM"
-            },
-            {
-                label: "Friday",
-                value: "9:00 AM - 5:00 PM"
-            },
-            {
-                label: "Saturday",
-                value: "Closed"
-            },
-            {
-                label: "Sunday",
-                value: "Closed"
-            },
+                value: "9:00 AM - 7:00 PM"
+            }
         ]
     },
     {
@@ -94,32 +70,68 @@ export const LOCATIONS = [
         hours: [
             {
                 label: "Monday",
-                value: "9:00 AM - 5:00 PM"
+                value: "Closed"
             },
             {
                 label: "Tuesday",
-                value: "9:00 AM - 5:00 PM"
+                value: "9:00 AM - 7:00 PM"
             },
             {
                 label: "Wednesday",
-                value: "9:00 AM - 5:00 PM"
+                value: "9:00 AM - 7:00 PM"
             },
             {
                 label: "Thursday",
-                value: "9:00 AM - 5:00 PM"
+                value: "9:00 AM - 7:00 PM"
             },
             {
                 label: "Friday",
-                value: "9:00 AM - 5:00 PM"
+                value: "9:00 AM - 7:00 PM"
             },
             {
                 label: "Saturday",
-                value: "Closed"
+                value: "9:00 AM - 5:00 PM"
             },
             {
                 label: "Sunday",
-                value: "Closed"
+                value: "10:00 AM - 3:00 PM"
             },
+        ]
+    },
+    {
+        id: "studio",
+        name: "Red Hook",
+        type: "Private Studio",
+        address: {
+          complete: "Red Hook, Brooklyn, NY 11231",
+          streetAddress1: "",
+          streetAddress2: "",
+          neighborhood: "Red Hook",
+          locality: "Brooklyn",
+          region: "NY",
+          postalCode: "11231",
+          country: "US"
+        },
+        description:
+          "A private studio in Red Hook. Invite Only.",
+        // ctaPrimaryLabel: "",
+        // ctaPrimaryHref: "",
+        // ctaSecondaryLabel: "",
+        // ctaSecondaryHref: "",
+        slug: "/locations/studio-red-hook",
+        heroImage: {
+          src: "/images/locations/studio-red-hook.jpg",
+          alt: "Gowanus Botox",
+        },
+        phoneDisplay: "(917) 439-9470",
+        phoneHref: "tel:+19174399470",
+        email: "booking@caridiconcierge.com",
+        emailHref: "mailto:booking@caridiconcierge.com",
+        hours: [
+            {
+                label: "Wednesday",
+                value: "9:00 AM - 7:00 PM"
+            }
         ]
     },
 ];
