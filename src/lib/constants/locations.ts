@@ -18,7 +18,7 @@ export const LOCATIONS = [
         description:
           "A quiet, clinical space in the heart of Gowanus. Available on select days. A private setting for injectable treatments.",
         ctaSecondaryLabel: "Get Directions",
-        ctaSecondaryHref: "https://maps.google.com/?q=472+4Th+Ave,+Brooklyn,+NY+11215",
+        ctaSecondaryHref: "https://maps.google.com/?q=south+slope+oral+surgery+brooklyn+4th+ave",
         ctaPrimaryLabel: "Book in Gowanus",
         ctaPrimaryHref: "/book",
         badge: "New",
@@ -114,10 +114,10 @@ export const LOCATIONS = [
         },
         description:
           "A private studio in Red Hook. Invite Only.",
-        // ctaPrimaryLabel: "",
-        // ctaPrimaryHref: "",
-        // ctaSecondaryLabel: "",
-        // ctaSecondaryHref: "",
+        ctaPrimaryLabel: "",
+        ctaPrimaryHref: "",
+        ctaSecondaryLabel: "",
+        ctaSecondaryHref: "",
         slug: "/locations/studio-red-hook",
         heroImage: {
           src: "/images/locations/studio-red-hook.jpg",
