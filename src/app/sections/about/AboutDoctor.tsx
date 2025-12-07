@@ -13,7 +13,7 @@ export default function AboutDoctorSection() {
             alt=""
             width={93}
             height={108}
-            className="mb-6 w-auto h-auto"
+            className="h-auto w-12 sm:w-25 md:w-[93px]"
           />
           <h1 className="font-fraunces text-3xl md:text-4xl text-outer-space mb-8">
             Meet Dr. Caridi

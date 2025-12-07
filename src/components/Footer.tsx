@@ -63,7 +63,6 @@ export default function Footer() {
               <li><Link href="/about" aria-label="About">About</Link></li>
               <li><Link href="/staff" aria-label="Staff">Staff</Link></li>
               <li><Link href="/contact" aria-label="Contact">Contact</Link></li>
-              <li><Link href="/blog" aria-label="Blog">Blog</Link></li>
             </ul>
           </div>
           <div>
