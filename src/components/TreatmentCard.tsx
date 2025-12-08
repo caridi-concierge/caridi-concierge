@@ -38,7 +38,7 @@ export default function TreatmentCard({
       <h3 className="font-fraunces text-2xl text-outer-space mb-3 pr-24">
         {hook}
       </h3>
-      <p className="text-paleviolet/80 italic mb-5">{title}</p>
+      <h4 className="text-paleviolet/80 italic mb-5">{title}</h4>
 
       {/* Bullet Points */}
         <ul className="mb-6 space-y-2 flex-grow">

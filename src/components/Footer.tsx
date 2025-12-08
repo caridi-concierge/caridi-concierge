@@ -49,7 +49,7 @@ export default function Footer() {
         {/* Right: Navigation columns */}
         <div className="grid grid-cols-3 gap-8 text-sm">
           <div>
-            <h3 className="uppercase font-semibold text-alabaster mb-3">Navigate</h3>
+            <p className="uppercase font-semibold text-alabaster mb-3 footer-heading">Navigate</p>
             <ul className="space-y-2">
               <li><Link href="/" aria-label="Home">Home</Link></li>
               <li><Link href="/treatments" aria-label="Treatments">Treatments</Link></li>
@@ -58,7 +58,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="uppercase font-semibold text-alabaster mb-3">About</h3>
+            <p className="uppercase font-semibold text-alabaster mb-3 footer-heading">About</p>
             <ul className="space-y-2">
               <li><Link href="/about" aria-label="About">About</Link></li>
               <li><Link href="/staff" aria-label="Staff">Staff</Link></li>
@@ -66,7 +66,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="uppercase font-semibold text-alabaster mb-3">Locations</h3>
+            <p className="uppercase font-semibold text-alabaster mb-3 footer-heading">Locations</p>
             <ul className="space-y-2">
               {LOCATIONS.map((loc) => (
                 <li key={loc.id}>
