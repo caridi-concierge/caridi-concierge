@@ -74,7 +74,7 @@ export default function FAQSection() {
 
             <AccordionItem title="Where are your NYC locations?">
               <div>
-                Wherever you are! I can, however, offer a more flexible schedule
+                For <strong>concierge service</strong>, wherever you are! I can, however, offer a more flexible schedule
                 in the following areas:
                 <br />
                 <br />
@@ -87,6 +87,13 @@ export default function FAQSection() {
                 <br />
                 <strong>Lower Manhattan</strong> | Lower East Side, SoHo,
                 Tribeca, Financial District (FiDi), West Village, etc.
+
+                <br />
+                <br />
+                For <strong>in-office service</strong>, visit our clinic in <u>Gowanus</u> starting January 2026!
+                <br />
+                <br />
+                See <a href="/locations" className="text-carnation font-medium underline">our locations page</a> for more information.
               </div>
             </AccordionItem>
           </Accordion>
