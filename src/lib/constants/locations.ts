@@ -53,7 +53,7 @@ export const LOCATIONS = [
           country: "US"
         },
         description:
-          "Physician-led Botox and filler treatments delivered to your home. A convenient, private option for receiving care without leaving your space.",
+          "Physician-led Botox and filler treatments delivered to your home. A convenient, discreet option for receiving care without leaving your space.",
         ctaPrimaryLabel: "Book In-Home Visit",
         ctaPrimaryHref: "/book",
         ctaSecondaryLabel: "Text Us",

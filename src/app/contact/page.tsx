@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import ContactLayout from "@/app/sections/contact/ContactLayout";
 import Footer from "@/components/Footer";
+import { SMSContactWidget } from "@/components/SMSContactWidget";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -17,6 +18,7 @@ export default function ContactPage() {
         <Navbar />
         <ContactLayout />
         <Footer />
+        <SMSContactWidget />
         </>
     );
 }
