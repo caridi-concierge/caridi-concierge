@@ -10,16 +10,11 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
-      {
-        source: "/post/:slug*",        // old Webflow-style URL
-        destination: "/blog/:slug*",   // new clean URL
-        permanent: true,               // 301
-      },
-      {
-        source: "/doctors/:slug*",        // old Webflow-style URL
-        destination: "/staff/:slug*",   // new clean URL
-        permanent: true,               // 301
-      },
+      // {
+      //   source: "/post/:slug*",        // old Webflow-style URL
+      //   destination: "/blog/:slug*",   // new clean URL
+      //   permanent: true,               // 301
+      // }
     ];
   },
 };
