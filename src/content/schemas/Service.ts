@@ -1,5 +1,6 @@
 import { COMPANY } from '@/lib/constants/company';
 
+const priceConsult = process.env.CONSULT_PRICE ?? 150;
 const priceBotox = process.env.PRICE_BOTOX ?? 12;
 const priceFillers = process.env.PRICE_FILLERS ?? 600;
 const priceBiostim = process.env.PRICE_BIOSTIM ?? 850;
@@ -143,6 +144,55 @@ export const biostimulatoryFillerServiceSchema = {
         "@type": "ScheduleAction",
         "target": COMPANY.bookingUrl,
         "name": "Book an appointment",
+        "provider": {
+          "@type": "Organization",
+          "name": COMPANY.name
+        }
+      }
+    }
+  }
+
+  export const consultServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Consultation",
+    "name": "Consultation",
+    "description": "Personalized consultation to discuss your aesthetic goals and create a treatment plan tailored to your needs.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": COMPANY.name,
+      "url": COMPANY.url,
+    },
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.6752831,
+        "longitude": -74.0130946
+      },
+      "geoRadius": 12875
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": `${COMPANY.url}/treatments/consult`,
+      "priceCurrency": "USD",
+      "price": `${priceConsult}`,
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": `${priceConsult}`,
+        "priceCurrency": "USD",
+        "unitText": "consultation",
+        "priceType": "FromPrice"
+      },
+      "eligibleRegion": {
+        "@type": "State",
+        "name": "New York"
+      },
+      "availability": "https://schema.org/InStock",
+      "potentialAction": {
+        "@type": "ScheduleAction",
+        "target": COMPANY.bookingUrl,
+        "name": "Book a Consultation",
         "provider": {
           "@type": "Organization",
           "name": COMPANY.name

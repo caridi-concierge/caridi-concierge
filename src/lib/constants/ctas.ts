@@ -13,7 +13,7 @@ export const ctaVariants: Record<string, CTASectionProps> = {
     ariaLabel: "Book a visit to Caridi Concierge for personalized Botox and filler treatments",
     id: "primary-cta",
   },
-  consult: {
+  contact: {
     title: "Ready to start your journey?",
     subtitle: "Discover treatments tailored just for you.",
     ctaHref: "/contact",
@@ -83,6 +83,17 @@ export const ctaVariants: Record<string, CTASectionProps> = {
     textColor: "text-alabaster",
     ariaLabel: "Book a chemical peel treatment with Caridi Concierge",
     id: "peels-cta",
+  },
+  consult: {
+    title: "Ready to plan your next steps?",
+    subtitle: "Schedule a physician-led aesthetic consultation to evaluate your goals and options.",
+    ctaHref: "/book",
+    ctaText: "Book a Consultation",
+    variant: "secondary",
+    bgColor: "bg-outer-space",
+    textColor: "text-alabaster",
+    ariaLabel: "Book a consultation with Dr. Cristina Caridi at Caridi Concierge",
+    id: "consult-cta",
   },
   staff: {
     title: "Expert care, personally delivered.",

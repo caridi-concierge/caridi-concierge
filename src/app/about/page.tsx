@@ -26,7 +26,7 @@ export default function AboutPage() {
         <AboutMissionSection />
         <AboutDoctorSection />
         <FAQSection />
-        <CTASection variantKey='consult' />
+        <CTASection variantKey='contact' />
         <Footer />
         </>
     );

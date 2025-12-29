@@ -1,11 +1,39 @@
 import { TreatmentMetadata } from "@/model/treatments/Treatment";
 
+const priceConsult = process.env.PRICE_CONSULT ?? 150;
 const priceBotox = process.env.PRICE_BOTOX ?? 12;
 const priceFillers = process.env.PRICE_FILLERS ?? 600;
 const priceBiostim = process.env.PRICE_BIOSTIM ?? 850;
 const priceChemicalPeels = process.env.PRICE_CHEMICAL_PEELS ?? 400;
 
 export const treatments: TreatmentMetadata[] = [
+  {
+    id: "consult",
+    slug: "consult",
+    title: "Consult",
+    hook: "Discover your perfect treatment plan.",
+    description:
+      "Get personalized guidance for your aesthetic goals. Our expert will assess your needs and create a customized treatment plan tailored to your unique features and desired results.",
+    highlights: [
+      "Personalized consultation with our aesthetic expert",
+      "Custom treatment plan based on your goals and anatomy",
+      "Transparent discussion of options, benefits, and expectations",
+      "No pressure sales - just honest recommendations",
+      "Flexible scheduling to fit your busy lifestyle",
+    ],
+    products: "Consultation only",
+    imgSrc:
+      "/images/consult_tx.webp",
+    imgAlt:
+      "Decorative image for the Consultation treatment page. Botox and fillers consultation",
+    startingPrice: `$${priceConsult}`,
+    note: "Decide you want services? We waive the fee.",
+    frequency: "Schedule as needed for personalized guidance",
+    bookHref: "/book",
+    ctaHref: "/treatments/consult",
+    ctaText: "Learn More",
+    ctaVariant: "alt",
+  },
   {
     id: "botox",
     slug: "wrinkle-reduction",
