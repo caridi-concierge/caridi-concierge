@@ -5,7 +5,7 @@ import "../styles/global.css";
 import { businessSchema, websiteSchema, organizationSchema } from "@/content/schemas";
 import { JsonLd } from "@/components/JsonLD";
 import { GoogleTagManager } from "@next/third-parties/google";
-import PromoBanner from "@/components/PromoBanner";
+// import PromoBanner from "@/components/PromoBanner";
 
 const fraunces = Fraunces({
   variable: "--f-fraunces",
