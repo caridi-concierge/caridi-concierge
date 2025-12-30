@@ -209,7 +209,7 @@ export function SMSContactWidget() {
               Text us now
             </button>
             <p className="text-[11px] text-gray-500 text-center pb-2">
-              Opens your Messages app with a prefilled text.
+              Opens your messaging app with a prefilled text.
             </p>
             </div>
 
