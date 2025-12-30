@@ -61,6 +61,7 @@ export default function TreatmentIntroSection({
           </div>
 
           {/* Row 2 spans 2 cols */}
+          {beforeCare && beforeCare.trim().length > 0 && (
           <div className="md:col-span-2">
             <h2 className="font-fraunces font-bold text-xl text-outer-space mb-4">
               What to do before your treatment
@@ -69,16 +70,19 @@ export default function TreatmentIntroSection({
               {beforeCare}
             </p>
           </div>
+          )}
 
           {/* Row 3 spans 2 cols */}
-          <div className="md:col-span-2">
-            <h2 className="font-fraunces font-bold text-xl text-outer-space mb-4">
-              What to do after your treatment
-            </h2>
-            <p className="text-gray-700 text-base md:text-base leading-relaxed">
-              {afterCare}
-            </p>
-          </div>
+          {afterCare && afterCare.trim().length > 0 && (
+            <div className="md:col-span-2">
+              <h2 className="font-fraunces font-bold text-xl text-outer-space mb-4">
+                What to do after your treatment
+              </h2>
+              <p className="text-gray-700 text-base md:text-base leading-relaxed">
+                {afterCare}
+              </p>
+            </div>
+          )}
         </div>
       </Container>
     </section>

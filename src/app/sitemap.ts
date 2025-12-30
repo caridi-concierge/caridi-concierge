@@ -24,6 +24,7 @@ const treatments = [
   "treatments/dermal-fillers",
   "treatments/biostimulatory-fillers",
   "treatments/chemical-peels",
+  "treatments/consult",
 ];
 
 // Staff (index + known slugs)
