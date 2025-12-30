@@ -4,7 +4,7 @@ export default function ConsultAreasSection() {
   return (
     <TreatmentAreasLayout
       sectionTitle="What We Can Cover in a Consultation"
-      summary="A consultation is a physician-led evaluation focused on your goals, facial anatomy, and the options that make sense for you, if any. We’ll discuss what you’re hoping to improve, review medical history, and map out a thoughtful plan. Some patients choose to treat the same day, others use the visit purely for guidance."
+      summary=""
       ctaHref="/treatments"
       ctaText="Explore Treatments"
       areas={[

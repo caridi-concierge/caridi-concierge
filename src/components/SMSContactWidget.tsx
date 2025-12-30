@@ -2,14 +2,34 @@
 
 import { useState, useEffect } from 'react';
 import { COMPANY } from '@/lib/constants/company';
+import { ChevronDown } from "lucide-react";
 
 
-const SERVICES = [
-  'Botox Treatment',
-  'Dermal Fillers',
-  'Biostimulatory Fillers',
-  'General Inquiry'
-];
+const SERVICE_SMS_LABELS: Record<string, string> = {
+  "Botox Treatment": "Botox",
+  "Dermal Fillers": "dermal filler",
+  "Biostimulatory Fillers": "collagen-stimulating filler",
+  "General Inquiry": ""
+};
+
+function buildPrefilledMessage(rawName: string, rawService: string) {
+  const name = rawName.trim();
+  const service = rawService.trim();
+
+  const mapped = SERVICE_SMS_LABELS[service];
+  const svc = (mapped !== undefined ? mapped : service).trim();
+
+  if (!svc) {
+    return `Hi! This is ${name}. I had a quick question about Caridi Concierge.`;
+  }
+
+  return `Hi! This is ${name}. I’m looking into ${svc} and had a quick question.`;
+}
+
+function buildSmsUrl(baseHref: string, body: string) {
+  const joinChar = baseHref.includes("?") ? "&" : "?";
+  return `${baseHref}${joinChar}body=${encodeURIComponent(body)}`;
+}
 
 const trackEvent = (eventName: string, params?: Record<string, unknown>) => {
   if (typeof window !== 'undefined' && window.dataLayer) {
@@ -60,20 +80,17 @@ export function SMSContactWidget() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    const message = service 
-      ? `Hi! I'm ${name} and I'm interested in ${service}. I'd like to book a consultation.`
-      : `Hi! I'm ${name} and I'd like to book a consultation.`;
-    
-    const smsUrl = `${COMPANY.smsHref}${/iPhone|iPad|iPod/.test(navigator.userAgent) ? '&' : '?'}body=${encodeURIComponent(message)}`;
-    
-    trackEvent('widget_sms_initiated', {
-      widget_type: 'sms_contact',
-      service_selected: service || 'none',
-      has_name: !!name
+
+    const message = buildPrefilledMessage(name.trim(), service);
+
+    trackEvent("widget_sms_initiated", {
+      widget_type: "sms_contact",
+      service_selected: service || "none",
+      has_name: !!name.trim(),
+      message_length: message.length
     });
-    
-    window.location.href = smsUrl;
+
+    window.location.href = buildSmsUrl(COMPANY.smsHref, message);
   };
 
   if (!isVisible) return null;
@@ -161,34 +178,40 @@ export function SMSContactWidget() {
               <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1.5">
                 Interested in
               </label>
-              <select
-                id="service"
-                value={service}
-                onChange={(e) => setService(e.target.value)}
-                className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-paleviolet focus:border-transparent outline-none transition-all text-gray-900 appearance-none bg-white cursor-pointer"
-                style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundPosition: 'right 0.75rem center',
-                  backgroundSize: '1.25rem'
-                }}
-              >
-                <option value="">Select a service</option>
-                {SERVICES.map((svc) => (
-                  <option key={svc} value={svc}>
-                    {svc}
-                  </option>
-                ))}
-              </select>
+              <div className="relative">
+                <select
+                  id="service"
+                  value={service}
+                  onChange={(e) => setService(e.target.value)}
+                  className="w-full pr-10 px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-paleviolet focus:border-transparent outline-none transition-all text-gray-900 appearance-none bg-white cursor-pointer"
+                >
+                  <option value="">Select a service</option>
+                  {Object.keys(SERVICE_SMS_LABELS).map((svc) => (
+                    <option key={svc} value={svc}>
+                      {svc}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown
+                  className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
+                  size={20}
+                  aria-hidden="true"
+                />
+              </div>
             </div>
-
+            
+            <div className="space-y-1.5">
             <button
               type="submit"
               id="sms-contact-cta"
               className="w-full bg-dimgray text-white font-medium py-3 rounded-lg hover:bg-rose-600 transition-all duration-200 shadow-md hover:shadow-lg"
             >
-              Send text message
+              Text us now
             </button>
+            <p className="text-[11px] text-gray-500 text-center pb-2">
+              Opens your Messages app with a prefilled text.
+            </p>
+            </div>
 
             <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
               <div className="relative">

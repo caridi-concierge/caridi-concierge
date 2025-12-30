@@ -15,10 +15,9 @@ export const treatments: TreatmentMetadata[] = [
     description:
       "Get personalized guidance for your aesthetic goals. Our expert will assess your needs and create a customized treatment plan tailored to your unique features and desired results.",
     highlights: [
-      "Personalized consultation with our aesthetic expert",
+      "Personalized consultation with Dr. Caridi",
       "Custom treatment plan based on your goals and anatomy",
       "Transparent discussion of options, benefits, and expectations",
-      "No pressure sales - just honest recommendations",
       "Flexible scheduling to fit your busy lifestyle",
     ],
     products: "Consultation only",
