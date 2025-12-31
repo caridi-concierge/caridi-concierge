@@ -46,6 +46,11 @@ export default async function BlogPost({ params }: { params: { slug: string } })
           month: "long",
           day: "numeric",
         })}
+        updatedDate={metadata.updatedDate ? new Date(metadata.updatedDate).toLocaleDateString(undefined, {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        }) : undefined}
         coverImage={metadata.coverImage}
       />
       <BlogPostBodySection>

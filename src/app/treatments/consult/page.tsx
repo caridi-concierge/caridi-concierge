@@ -10,8 +10,8 @@ import { consultFAQSchema } from "@/content/schemas/treatments/consultFAQShema";
 import { JsonLd } from "@/components/JsonLD";
 
 export const metadata = createPageMetadata({
-    title: "Consult | Schedule Your Personalized Treatment Plan with Dr. Caridi",
-    description: "Learn about our personalized consultation process and how we create custom treatment plans for your unique aesthetic goals.",
+    title: "Aesthetic Consultation in NYC | Caridi Concierge",
+    description: "Book a personalized aesthetic consultation in NYC with Dr. Caridi. Thoughtful, physician-led care focused on natural, balanced results.",
     path: "/treatments/consult",
     keywords: ["Caridi Concierge", "Aesthetic Consultation", "Personalized Treatments", "In-Home Aesthetics", "Brooklyn", "New York City", "Custom Treatment Plans"],
     noIndex: false

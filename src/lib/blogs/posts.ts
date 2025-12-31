@@ -8,6 +8,7 @@ export type BlogPostMeta = {
   title: string;
   author: string;
   date: string;
+  updatedDate?: string;
   coverImage?: string;
   description?: string;
   tags?: string[];
