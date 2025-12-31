@@ -53,9 +53,9 @@ export const treatments: TreatmentMetadata[] = [
     ],
     products: "Botox, Xeomin, Daxxify",
     imgSrc:
-      "/images/facial_tx.webp",
+      "/images/botox_tx.webp",
     imgAlt:
-      "Decorative image for the Wrinkle Reduction treatment page. Botox, Xeomin, Daxxify.",
+      "Decorative image for the Wrinkle Reduction treatment page. Botox, Xeomin, Daxxify. Botox can be used to smooth wrinkles and soften fine lines, crows feet, 11s, and lip flips",
     startingPrice: `$${priceBotox}/unit`,
     note: "Typical treatment: 20-60 units",
     frequency: "This treatment should be repeated every 2-4 months.",
@@ -83,7 +83,7 @@ export const treatments: TreatmentMetadata[] = [
     imgSrc:
       "/images/lips_tx.webp",
     imgAlt:
-      "Decorative image for the Dermal Fillers page. RHA Collection, Juvederm.",
+      "Decorative image for the Dermal Fillers page. RHA Collection, Juvederm. Juvederm can be used to restore lost volume to areas like the face, lips, neck, butt and arms.",
     startingPrice: `$${priceFillers}/syringe`,
     note: "Most areas require 1-2 syringes",
     frequency: "This treatment should be repeated every 4-6 months.",
@@ -114,7 +114,7 @@ export const treatments: TreatmentMetadata[] = [
     imgSrc:
       "/images/biostim2_tx.webp",
     imgAlt:
-      "Decorative icon for biostimulatory fillers treatments page. Radiesse, Sculptra.",
+      "Decorative icon for biostimulatory fillers treatments page. Radiesse, Sculptra. Radiesse can be used to build collagen for long-term results, restore lost volume to areas like the face, lips, neck, butt and arms.",
     startingPrice: `$${priceBiostim}/syringe`,
     note: "Treatment series recommended",
     frequency: "A series of 3 treatments, spaced 6 weeks apart. Followed by yearly maintenance.",
@@ -141,7 +141,7 @@ export const treatments: TreatmentMetadata[] = [
     imgSrc:
       "/images/peel_tx.webp",
     imgAlt:
-      "Chemical peel treatment illustration for the Caridi Concierge chemical peels page. VI Peel®.",
+      "Chemical peel treatment illustration for the Caridi Concierge chemical peels page. VI Peel®. VI Peel® can be used to improve uneven tone, surface texture, acne, and pigmentation with minimal downtime.",
     startingPrice: `$${priceChemicalPeels}/treatment`,
     note: "Treatment series recommended",
     frequency: "This treatment should be repeated every 2-4 months.",
