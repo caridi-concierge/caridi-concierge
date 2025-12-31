@@ -5,6 +5,7 @@ type BlogPostHeroProps = {
   title: string;
   author: string;
   date: string;
+  updatedDate?: string;
   coverImage: string;
 };
 
@@ -12,6 +13,7 @@ export default function BlogPostHeroSection({
   title,
   author,
   date,
+  updatedDate,
   coverImage,
 }: BlogPostHeroProps) {
   return (
@@ -37,7 +39,8 @@ export default function BlogPostHeroSection({
         <h1 className="text-3xl md:text-4xl font-bold mb-2">{title}</h1>
         <div className="flex flex-col md:flex-row md:justify-between text-sm text-gray-200">
           <span>{author}</span>
-          <span className="mt-1 md:mt-0">{date}</span>
+          <span className="mt-1 md:mt-0">Published: {date}</span>
+          {updatedDate && <span className="mt-1 md:mt-0">Updated: {updatedDate}</span>}
         </div>
       </div>
     </section>

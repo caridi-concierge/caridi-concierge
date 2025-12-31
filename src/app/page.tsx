@@ -11,7 +11,15 @@ import { JsonLd } from "@/components/JsonLD";
 import { faqSchema } from "@/content/schemas";
 import { SMSContactWidget } from "@/components/SMSContactWidget";
 import CarouselBanner from "@/components/CarouselBanner";
+import { createPageMetadata } from "@/lib/metadata";
 
+export const metadata = createPageMetadata({
+    title: "Caridi Concierge | Luxury Aesthetic Treatments in NYC",
+    description: "Caridi Concierge offers premium, in-home aesthetic treatments in NYC. From botox to fillers, experience luxury skincare at your convenience. Book today!",
+    path: "/",
+    keywords: ["Caridi Concierge", "Botox NYC", "Fillers NYC", "In-Home Treatments", "Aesthetic Medicine", "Brooklyn Aesthetics", "New York City Aesthetics"],
+    noIndex: false
+});
 
 export default function HomePage() {
   return (

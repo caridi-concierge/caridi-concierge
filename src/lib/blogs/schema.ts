@@ -4,6 +4,7 @@ export function buildBlogSchema(slug: string, metadata: {
   title: string;
   author: string;
   date: string;
+  updatedDate?: string;
   coverImage: string;
   description?: string;
   category?: string;
@@ -28,7 +29,7 @@ export function buildBlogSchema(slug: string, metadata: {
         },
     publisher: { "@id": `${COMPANY.url}/#organization` },
     datePublished: metadata.date,
-    dateModified: metadata.date,
+    dateModified: metadata.updatedDate ?? metadata.date,
     image: `${COMPANY.url}${metadata.coverImage}`,
     mainEntityOfPage: {
       "@type": "WebPage",

@@ -3,13 +3,14 @@ import { COMPANY } from '@/lib/constants/company';
 export const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "name": "Caridi Concierge Aesthetic Treatment FAQs",
     mainEntity: [
         {
         "@type": "Question",
         name: "How do I schedule an appointment?",
         acceptedAnswer: {
             "@type": "Answer",
-            text: `You can visit ${COMPANY.url}, call/text (${COMPANY.phoneHref.replace("tel:", "")}) or email (${COMPANY.emailHref.replace("mailto:", "")}) for availability and booking!"`,
+            text: `You can schedule an appointment online through our website or by contacting our office directly for availability. Visit ${COMPANY.url}, call/text (${COMPANY.phoneHref.replace("tel:", "")}) or email (${COMPANY.emailHref.replace("mailto:", "")}) for availability and booking!"`,
         },
         },
         {
@@ -17,7 +18,7 @@ export const faqSchema = {
         name: "What aesthetic services do you offer?",
         acceptedAnswer: {
             "@type": "Answer",
-            text: "We offer wrinkle relaxing botox treatments (Botox, Daxxify, Xeomin), dermal filler treaments (RHA, Juveau), and collagen-bulding biostimulatory fillers (Radiesse, Sculptra). All treatments are administered safely and privately in the comfort of your own space.",
+            text: "We offer wrinkle relaxing botox treatments (Botox, Daxxify, Xeomin), dermal filler treatments (RHA, Jeuveau), and collagen-building biostimulatory fillers (Radiesse, Sculptra). All treatments are administered safely and privately in the comfort of your own space.",
         },
         },
         {
@@ -33,7 +34,7 @@ export const faqSchema = {
         name: "Where in NYC do you offer in-home Botox and other aesthetic treatments?",
         acceptedAnswer: {
             "@type": "Answer",
-            text: "We serve the greater New York City area, including Brooklyn, Manhattan, Queens, Staten Island, and parts ofLong Island",
+            text: "We serve the greater New York City area, including Brooklyn, Manhattan, Queens, Staten Island, and parts of Long Island.",
         },
         },
         {
