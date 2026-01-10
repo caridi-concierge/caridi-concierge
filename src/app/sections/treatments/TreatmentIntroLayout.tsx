@@ -4,6 +4,8 @@ import Container from "@/components/Container";
 import TreatmentPricingCard from "@/components/TreatmentPricingCard";
 import Link from "next/link";
 import Image from "next/image";
+import PrimaryButton from "@/components/PrimaryButton";
+import { COMPANY } from "@/lib/constants/company";
 
 export default function TreatmentIntroSection({
   title,
@@ -47,6 +49,25 @@ export default function TreatmentIntroSection({
                 {para}
               </p>
             ))}
+
+            {/* Mobile-only CTA, desktop already has the pricing card */}
+            <div className="mt-6 md:hidden flex items-center gap-4">
+              <PrimaryButton
+                href={COMPANY.smsHref}
+                variant="secondary"
+                aria-label="Text for a consultation"
+              >
+                Text for a Consult
+              </PrimaryButton>
+
+              <Link
+                href={COMPANY.phoneHref}
+                aria-label="Call for a consultation"
+                className="text-sm font-semibold text-carnation underline underline-offset-4 hover:text-outer-space transition-colors"
+              >
+                Or Call
+              </Link>
+            </div>
           </div>
 
           {/* Row 1, Col 2 */}

@@ -8,7 +8,7 @@ export type CTASectionProps = {
   ctaHref: string;
   ctaText: string;
   ariaLabel?: string;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "light";
   bgColor?: string;
   textColor?: string;
   id?: string;
