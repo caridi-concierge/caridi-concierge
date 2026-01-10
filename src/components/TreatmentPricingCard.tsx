@@ -51,7 +51,7 @@ export default function TreatmentPricingCard({
       <div className="flex justify-center">
         <PrimaryButton
           href={bookHref}
-          variant="secondary"
+          variant="primary"
           ariaLabel={`Book ${bookButtonText}`}
         >
           {bookButtonText}

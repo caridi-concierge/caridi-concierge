@@ -42,7 +42,7 @@ export default function TreatmentAreasLayout({
         <div className="max-w-4xl mx-auto">
           <Accordion className="space-y-6">
               {areas.map((area, index) => (
-                <AccordionItem key={index} title={area.title} defaultOpen={index === 0}>
+                <AccordionItem key={index} title={area.title}>
                   <ul className="list-none space-y-3 text-md text-gray-700">
                     {area.items.map((item) => (
                       <li key={item.label}>
