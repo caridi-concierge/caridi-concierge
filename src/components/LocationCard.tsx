@@ -17,12 +17,12 @@ export function LocationCard({ loc }: { loc: Location }) {
     <article className="rounded-2xl border border-outer-space/10 bg-white/70 backdrop-blur-sm p-5 md:p-6 shadow-sm flex flex-col gap-4">
       <div className="relative">
         {/* Clickable main area */}
-        {/* <Link href={loc.slug} className="group block"> */}
+        <Link href={`/locations/${loc.slug}`} className="group block">
           {/* Header */}
           <div className="flex items-start justify-between gap-3 pr-8">
             <div>
               <div className="flex items-center gap-3">
-                <h2 className="font-fraunces text-xl md:text-2xl">
+                <h2 className="font-fraunces text-xl md:text-2xl group-hover:text-outer-space/80 transition-colors">
                   {loc.name}
                 </h2>
                 {loc.badge && (
@@ -39,20 +39,20 @@ export function LocationCard({ loc }: { loc: Location }) {
 
           {/* Address as H3 */}
           {hasAddress && (
-            <h3 className="font-medium text-base text-outer-space/80 mt-3">
+            <h3 className="font-medium text-base text-outer-space/80 mt-3 group-hover:text-outer-space/60 transition-colors">
               {primaryAddress}
             </h3>
           )}
 
           {/* Description */}
-          <p className="text-sm md:text-base text-outer-space/80 mt-2">
+          <p className="text-sm md:text-base text-outer-space/80 mt-2 group-hover:text-outer-space/60 transition-colors">
             {loc.description}
           </p>
 
           {/* Right-facing arrow */}
-          {/* <div className="absolute right-0 top-[1.4rem] pr-1 md:pr-2">
+          <div className="absolute right-0 top-[1.4rem] pr-1 md:pr-2">
             <svg
-              className="h-5 w-5 text-outer-space/60 group-hover:text-outer-space transition"
+              className="h-5 w-5 text-outer-space/40 group-hover:text-outer-space group-hover:translate-x-1 transition-all duration-200"
               fill="none"
               stroke="currentColor"
               strokeWidth="1.5"
@@ -64,8 +64,8 @@ export function LocationCard({ loc }: { loc: Location }) {
                 d="M9 5l7 7-7 7"
               />
             </svg>
-          </div> */}
-        {/* </Link> */}
+          </div>
+        </Link>
       </div>
 
       {/* CTAs (separate from main link) */}
