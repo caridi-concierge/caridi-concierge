@@ -135,7 +135,7 @@ export const LOCATIONS = [
         emailHref: COMPANY.emailHref,
         
         hours: [
-            {label: "Wednesday", value: "9:00 AM - 7:00 PM"}
+            {label: "Availability", value: "By appointment only"}
         ]
     },
 ];
