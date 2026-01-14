@@ -1,4 +1,5 @@
 // app/sections/locations/LocationDetailHero.tsx
+import PrimaryButton from "@/components/PrimaryButton";
 import type { Location } from "@/lib/constants/locations";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,11 +8,11 @@ export default function LocationDetailHero({ loc }: { loc: Location }) {
   return (
     <section className="py-16 md:py-20 bg-champagne">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Card container with rounded edges */}
-        <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
-          <div className="grid lg:grid-cols-2">
+        {/* Card container with rounded edges and minimum height */}
+        <div className="bg-white rounded-2xl overflow-hidden shadow-lg min-h-[600px] lg:min-h-[500px]">
+          <div className="grid lg:grid-cols-2 h-full">
             {/* Image Column - Left Half */}
-            <div className="aspect-[4/3] lg:aspect-auto relative">
+            <div className="aspect-[4/3] lg:aspect-auto lg:min-h-[500px] relative">
               <Image
                 src={loc.heroImage?.src || "/images/home-banner-edit.webp"}
                 alt={loc.heroImage?.alt || loc.name}
@@ -21,7 +22,7 @@ export default function LocationDetailHero({ loc }: { loc: Location }) {
             </div>
 
             {/* Content Column - Right Half */}
-            <div className="p-8 lg:p-12 flex flex-col justify-center">
+            <div className="p-8 lg:p-12 flex flex-col justify-center min-h-[400px] lg:min-h-[500px]">
               {/* Breadcrumbs */}
               <div className="text-sm text-outer-space/60 mb-4">
                 <Link href="/locations" className="hover:text-outer-space">All Locations</Link>
@@ -106,23 +107,21 @@ export default function LocationDetailHero({ loc }: { loc: Location }) {
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-3">
                 {loc.ctaPrimaryLabel && (
-                  <Link
+                  <PrimaryButton
                     href={loc.ctaPrimaryHref}
-                    className="inline-flex items-center justify-center px-6 py-3 bg-outer-space text-white rounded-lg hover:bg-outer-space/90 transition-colors"
+                    variant="primary"
                   >
                     {loc.ctaPrimaryLabel}
-                  </Link>
+                  </PrimaryButton>
                 )}
                 
                 {loc.ctaSecondaryLabel && loc.ctaSecondaryHref && (
-                  <a
+                  <PrimaryButton
                     href={loc.ctaSecondaryHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-6 py-3 border border-outer-space/20 text-outer-space rounded-lg hover:bg-outer-space/5 transition-colors"
+                    variant="light"
                   >
                     {loc.ctaSecondaryLabel}
-                  </a>
+                  </PrimaryButton>
                 )}
               </div>
             </div>

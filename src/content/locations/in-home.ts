@@ -1,83 +1,114 @@
-import type { LocationContent } from './types';
+import type { LocationContent } from "./types";
 
 export const inHomeContent: LocationContent = {
-  slug: 'in-home',
+  slug: "in-home",
   metadata: {
-    title: 'In-Home Botox & Fillers NYC | Mobile Concierge Service Brooklyn Manhattan',
-    description: 'Professional Botox and dermal filler treatments delivered to your home in Brooklyn, Manhattan, and NYC. Board-certified practitioners bring clinical-grade care to your space.',
+    title: "In-home Botox and Fillers NYC | Caridi Concierge",
+    description:
+      "Physician-led Botox and dermal fillers delivered in your home across Brooklyn, Manhattan, and Greater NYC. Private, thoughtful care with natural results.",
     keywords: [
-      'in-home Botox NYC',
-      'mobile Botox Brooklyn',
-      'concierge Botox Manhattan',
-      'at-home dermal fillers',
-      'mobile aesthetic treatments NYC',
-      'in-home cosmetic injections',
-      'Botox delivery service Brooklyn',
-      'private Botox treatments NYC'
-    ]
+      "in-home Botox NYC",
+      "mobile Botox Brooklyn",
+      "in-home filler NYC",
+      "concierge Botox Manhattan",
+      "at-home Botox Brooklyn",
+      "in-home dermal fillers",
+      "physician-led Botox NYC",
+      "private Botox NYC"
+    ],
   },
   studioExperience: {
-    title: 'Concierge service unlike any other',
-    description: 'Experience the ultimate in convenience and privacy with our concierge service. Our board-certified practitioners bring clinical-grade treatments directly to your home, creating a spa-like experience in your own space across Brooklyn, Manhattan, and Greater NYC.'
+    title: "Physician-led care, in the comfort of your home",
+    description:
+      "In-home appointments are ideal if you value privacy, convenience, and a calm setting. I bring the same medical standards I use in a clinical space, including careful assessment, sterile supplies, and conservative technique, so your experience feels personal, safe, and unhurried.",
   },
   offerings: {
-    title: 'Our Mobile Services',
-    subtitle: 'Professional treatments delivered to your location',
-    treatments: [
-      {
-        title: 'Mobile Botox Service',
-        description: 'Professional wrinkle treatment in the comfort of your home',
-        image: '/images/botox_consult.webp',
-        href: '/treatments/wrinkle-reduction'
-      },
-      {
-        title: 'In-Home Fillers',
-        description: 'Dermal filler treatments in your private space',
-        image: '/images/lips_tx.webp',
-        href: '/treatments/dermal-fillers'
-      },
-      {
-        title: 'Concierge Consultation',
-        description: 'Personalized assessment and planning in your home',
-        image: '/images/consult_tx.webp',
-        href: '/treatments/consult'
-      }
+    title: "In-home treatments",
+    subtitle: "A discreet, physician-led visit with a focus on natural-looking outcomes",
+    services: [
+  {
+    title: "Wrinkle Reduction",
+    subtitle: "Botox treatments in a private, familiar setting",
+    whyHere:
+      "In-home visits work well for wrinkle reduction when privacy and convenience matter. The calm setting allows for thoughtful assessment and conservative dosing without the rush of a clinic environment.",
+    bullets: [
+      "Softens forehead lines, frown lines, and crow’s feet",
+      "Planned to preserve expression and facial balance",
+      "Ideal if you prefer not to travel for appointments",
     ],
+    ctaHref: "/treatments/wrinkle-reduction",
+    ctaText: "Learn about wrinkle reduction",
+  },
+  {
+    title: "Dermal Fillers",
+    subtitle: "Subtle volume and contour refinement at home",
+    whyHere:
+      "For patients who value discretion, in-home appointments provide a comfortable setting for careful filler planning without time pressure or a public waiting room.",
+    bullets: [
+      "Restore soft volume and refine contours conservatively",
+      "Focused on proportion, symmetry, and natural results",
+      "Performed with the same medical standards as in-office care",
+    ],
+    ctaHref: "/treatments/dermal-fillers",
+    ctaText: "Learn about dermal fillers",
+  },
+  {
+    title: "Treatment Planning",
+    subtitle: "Personalized assessment and long-term strategy",
+    whyHere:
+      "In-home consultations are helpful when you want to discuss goals, timing, and options in a relaxed, familiar environment before deciding on treatment.",
+    bullets: [
+      "Clear recommendations based on your goals and anatomy",
+      "Discussion of what makes sense now versus later",
+      "No pressure to proceed with treatment the same day",
+    ],
+    ctaHref: "/treatments/consult",
+    ctaText: "Learn about consultations",
+  },
+],
     features: [
       {
-        title: 'We do mobile better',
-        description: 'Board-certified practitioners with specialized mobile expertise, bringing all necessary equipment and maintaining the highest safety standards in your home.'
+        title: "Physician-led planning and treatment",
+        description:
+          "Every visit is guided by anatomy, your goals, and a conservative approach to dosing and placement.",
       },
       {
-        title: 'Complete privacy and comfort',
-        description: 'Enjoy treatments in the privacy of your own space, with flexible scheduling that works around your life.'
+        title: "Private, convenient appointments",
+        description:
+          "No travel time, no waiting rooms, and a calm setting that fits your schedule and comfort level.",
       },
       {
-        title: 'No compromise on quality',
-        description: 'Same premium products and clinical standards as our clinic, delivered wherever you are most comfortable.'
-      }
-    ]
+        title: "Medical standards, brought to you",
+        description:
+          "Sterile supplies and careful technique, with the same premium products and clinical judgment as an in-office visit.",
+      },
+    ],
   },
   faqs: [
     {
-      question: 'What areas do you serve for in-home visits?',
-      answer: 'We provide in-home services throughout Brooklyn, Manhattan, and Greater NYC. Contact us to confirm availability in your specific area.'
+      question: "What areas do you serve for in-home visits?",
+      answer:
+        "In-home appointments are available across Brooklyn, Manhattan, and parts of Greater NYC. If you’re unsure about coverage, text us and we’ll confirm availability.",
     },
     {
-      question: 'What do I need to prepare for an in-home visit?',
-      answer: 'We bring all necessary equipment and supplies. You just need to provide a clean, well-lit space with a comfortable chair or bed where you can recline. We\'ll guide you through any specific preparation during booking.'
+      question: "What do I need to prepare for an in-home visit?",
+      answer:
+        "A clean, well-lit space and a comfortable chair is usually enough. We’ll send simple prep guidance ahead of your appointment so you know exactly what to expect.",
     },
     {
-      question: 'Is there a minimum charge for in-home visits?',
-      answer: 'Yes, there is a travel fee for in-home services to cover the practitioner\'s time and transportation. This will be discussed during your consultation and booking.'
+      question: "Do in-home visits include travel or time considerations?",
+      answer:
+        "Depending on location and timing, in-home appointments may include travel or scheduling considerations. We’ll confirm details when you book.",
     },
     {
-      question: 'How do you maintain safety and sterility in my home?',
-      answer: 'We follow the same strict safety and sterility protocols as in our clinic. All equipment is medical-grade and properly sterilized, and we bring our own sterile supplies and disposal containers.'
+      question: "How do you maintain safety and sterility in my home?",
+      answer:
+        "I use sterile, single-use supplies and follow strict medical protocols, including proper disposal of materials, the same way I would in a clinical setting.",
     },
     {
-      question: 'Can I book evening or weekend appointments?',
-      answer: 'Yes! One of the benefits of our concierge service is flexible scheduling, including evenings and weekends based on practitioner availability.'
-    }
-  ]
+      question: "Can I book evening or weekend appointments?",
+      answer:
+        "Yes. In-home scheduling can include evenings and weekends depending on availability.",
+    },
+  ],
 };

@@ -1,8 +1,7 @@
 // app/sections/locations/LocationOfferings.tsx
 import Container from "@/components/Container";
-import Image from "next/image";
-import Link from "next/link";
 import type { LocationContent } from "@/content/locations/types";
+import LocationServiceCard from "@/components/LocationServiceCard";
 
 interface LocationOfferingsProps {
   content: LocationContent['offerings'];
@@ -23,52 +22,9 @@ export default function LocationOfferings({ content }: LocationOfferingsProps) {
 
         {/* Treatment Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {content.treatments.map((treatment, index) => {
-            const CardContent = (
-              <>
-                <div className="aspect-square relative mb-6 rounded-xl overflow-hidden">
-                  <Image
-                    src={treatment.image}
-                    alt={treatment.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                
-                <h3 className="font-fraunces text-xl text-outer-space mb-3">
-                  {treatment.title}
-                </h3>
-                
-                <p className="text-outer-space/70 leading-relaxed">
-                  {treatment.description}
-                </p>
-              </>
-            );
-
-            if (treatment.href) {
-              return (
-                <Link
-                  key={index}
-                  href={treatment.href}
-                  className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 block group"
-                >
-                  {CardContent}
-                  <div className="mt-4 text-outer-space/60 group-hover:text-outer-space transition-colors text-sm">
-                    Learn more →
-                  </div>
-                </Link>
-              );
-            }
-
-            return (
-              <div 
-                key={index}
-                className="bg-white rounded-2xl p-8 shadow-sm"
-              >
-                {CardContent}
-              </div>
-            );
-          })}
+          {content.services.map((svc) => (
+            <LocationServiceCard key={svc.title} {...svc} />
+          ))}
         </div>
 
         {/* Features */}

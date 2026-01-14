@@ -1,4 +1,6 @@
 // Content types for location detail pages
+import type { LocationServiceCardProps } from "@/components/LocationServiceCard";
+
 export interface LocationContent {
   slug: string;
   metadata: {
@@ -13,16 +15,8 @@ export interface LocationContent {
   offerings: {
     title: string;
     subtitle: string;
-    treatments: Array<{
-      title: string;
-      description: string;
-      image: string;
-      href?: string; // Link to treatment page
-    }>;
-    features: Array<{
-      title: string;
-      description: string;
-    }>;
+    services: LocationServiceCardProps[];
+    features: { title: string; description: string }[];
   };
   faqs: Array<{
     question: string;

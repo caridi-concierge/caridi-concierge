@@ -34,8 +34,8 @@ export const LOCATIONS = [
         slug: "gowanus",
         
         heroImage: {
-          src: "/images/botox_appt_drcaridi.webp",
-          alt: "Gowanus Botox",
+          src: "/images/gowanus_neighborhood_1000px.webp",
+          alt: "Gowanus Brooklyn Botox and Fillers by Caridi Concierge",
         },
         
         phoneDisplay: COMPANY.phone,
@@ -75,7 +75,7 @@ export const LOCATIONS = [
         slug: "in-home",
         
         heroImage: {
-          src: "/images/cc_headshot_white_outside_hq_800px.webp",
+          src: "/images/concierge_nyc_1000px.webp",
           alt: "Concierge Botox",
         },
         
@@ -124,7 +124,7 @@ export const LOCATIONS = [
         slug: "red-hook-studio",
         
         heroImage: {
-          src: "/images/home-banner-edit.webp",
+          src: "/images/red_hook_1000px.webp",
           alt: "Red Hook Studio",
         },
         
