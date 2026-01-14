@@ -14,6 +14,9 @@ const staticPages = [
   "privacy-policy",
   "products",
   "locations",
+  "locations/gowanus",
+  "locations/in-home",
+  "locations/red-hook"
   // "book", excluded because it redirects externally
 ];
 

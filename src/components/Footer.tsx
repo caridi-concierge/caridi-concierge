@@ -70,7 +70,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {LOCATIONS.map((loc) => (
                 <li key={loc.id}>
-                  <Link href="/locations" aria-label={loc.name}>{loc.name}</Link>
+                  <Link href={`/locations/${loc.slug}`} aria-label={loc.name}>{loc.name}</Link>
                 </li>
               ))}
             </ul>

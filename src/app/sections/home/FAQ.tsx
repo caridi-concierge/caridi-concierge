@@ -3,6 +3,7 @@
 import { Accordion, AccordionItem } from "@/components/Accordion";
 import { COMPANY } from "@/lib/constants/company";
 import Container from "@/components/Container";
+import Link from "next/link";
 
 export default function FAQSection() {
   return (
@@ -93,7 +94,7 @@ export default function FAQSection() {
                 For <strong>in-office service</strong>, visit our clinic in <u>Gowanus</u> starting January 2026!
                 <br />
                 <br />
-                See <a href="/locations" className="text-carnation font-medium underline">our locations page</a> for more information.
+                See <Link href="/locations" className="text-carnation font-medium underline">our locations page</Link> for more information.
               </div>
             </AccordionItem>
           </Accordion>
