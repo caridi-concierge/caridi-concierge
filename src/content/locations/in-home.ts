@@ -23,7 +23,7 @@ export const inHomeContent: LocationContent = {
       "In-home appointments are ideal if you value privacy, convenience, and a calm setting. I bring the same medical standards I use in a clinical space, including careful assessment, sterile supplies, and conservative technique, so your experience feels personal, safe, and unhurried.",
   },
   offerings: {
-    title: "In-home treatments",
+    title: "In-home Treatments",
     subtitle: "A discreet, physician-led visit with a focus on natural-looking outcomes",
     services: [
   {
@@ -94,11 +94,6 @@ export const inHomeContent: LocationContent = {
       question: "What do I need to prepare for an in-home visit?",
       answer:
         "A clean, well-lit space and a comfortable chair is usually enough. We’ll send simple prep guidance ahead of your appointment so you know exactly what to expect.",
-    },
-    {
-      question: "Do in-home visits include travel or time considerations?",
-      answer:
-        "Depending on location and timing, in-home appointments may include travel or scheduling considerations. We’ll confirm details when you book.",
     },
     {
       question: "How do you maintain safety and sterility in my home?",

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function LocationDetailHero({ loc }: { loc: Location }) {
   return (
-    <section className="py-16 md:py-20 bg-champagne">
+    <section className="py-16 md:py-20 bg-merino">
       <div className="max-w-7xl mx-auto px-6">
         {/* Card container with rounded edges and minimum height */}
         <div className="bg-white rounded-2xl overflow-hidden shadow-lg min-h-[600px] lg:min-h-[500px]">

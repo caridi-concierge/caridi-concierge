@@ -16,7 +16,7 @@ const staticPages = [
   "locations",
   "locations/gowanus",
   "locations/in-home",
-  "locations/red-hook-studio"
+  "locations/red-hook"
   // "book", excluded because it redirects externally
 ];
 

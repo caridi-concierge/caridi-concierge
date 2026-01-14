@@ -121,7 +121,7 @@ export const LOCATIONS = [
         ctaSecondaryLabel: "",
         ctaSecondaryHref: "",
         
-        slug: "red-hook-studio",
+        slug: "red-hook",
         
         heroImage: {
           src: "/images/red_hook_1000px.webp",

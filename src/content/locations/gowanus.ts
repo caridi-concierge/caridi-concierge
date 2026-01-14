@@ -27,7 +27,7 @@ export const gowanusContent: LocationContent = {
         title: "Wrinkle Reduction",
         subtitle: "Botox treatments with a conservative approach",
         whyHere:
-          "I use the Gowanus setting when patients want an in-office visit with time for careful assessment before treatment.",
+          "Not sure about in-home treatments? We can treat you here in our private clinical setting.",
         bullets: [
           "Softens forehead lines, frown lines, and crow’s feet",
           "Dosing and placement planned to preserve natural expression",
@@ -35,7 +35,6 @@ export const gowanusContent: LocationContent = {
         ],
         ctaHref: "/treatments/wrinkle-reduction",
         ctaText: "Learn about wrinkle reduction",
-        badge: { text: "Most booked", variant: "popular" },
       },
       {
         title: "Dermal Fillers",
@@ -62,6 +61,7 @@ export const gowanusContent: LocationContent = {
         ],
         ctaHref: "/treatments/biostimulatory-fillers",
         ctaText: "Learn about collagen builders",
+        badge: { text: "Long Lasting", variant: "popular" },
       },
     ],
     features: [
@@ -88,12 +88,18 @@ export const gowanusContent: LocationContent = {
       answer: 'The Gowanus location is a private clinical space I use for patients who prefer an in-office setting. Appointments are unhurried and focused on careful assessment and planning.'
     },
     {
-      question: 'What days is the Gowanus clinic open?',
-      answer: 'Currently, the Gowanus clinic is open on Wednesdays from 9:00 AM to 7:00 PM. I\'m planning to expand our hours as demand grows.'
+      question: "What treatments do you offer at the Gowanus location?",
+      answer:
+        "The Gowanus location offers physician-led wrinkle reduction with Botox, dermal fillers, and biostimulatory fillers. Treatments are planned conservatively and tailored to your anatomy and goals."
     },
     {
       question: 'Is parking available at the Gowanus location?',
       answer: 'Yes, there is street parking available on 4th Avenue and surrounding streets. The location is also easily accessible by public transportation via the Union St-4th Ave subway station.'
+    },
+    {
+      question: "What do I need to know before my appointment?",
+      answer:
+        "You’ll receive details ahead of your visit, including what to expect and how to prepare. Appointments include time for consultation and questions before any treatment begins."
     },
     {
       question: 'What should I expect during my first visit?',

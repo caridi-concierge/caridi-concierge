@@ -9,13 +9,13 @@ export default function TreatmentsSection() {
       <h1 className="font-fraunces text-3xl md:text-4xl text-center text-outer-space mb-12">
         Signature Aesthetic Treatments
       </h1>
-      <div className="w-full bg-champagne py-12">
+      <div className="w-full bg-merino py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {treatments.map((treatment) => (
               <div
                 key={treatment.slug}
-                className="flex flex-col items-center text-center bg-merino rounded-2xl shadow-[4px_6px_12px_rgba(0,0,0,0.25)] overflow-hidden"
+                className="flex flex-col items-center text-center bg-white rounded-2xl shadow-[4px_6px_12px_rgba(0,0,0,0.25)] overflow-hidden"
               >
                 <Link
                   href={`/treatments/${treatment.slug}`}

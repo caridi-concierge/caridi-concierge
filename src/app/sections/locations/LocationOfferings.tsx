@@ -28,7 +28,10 @@ export default function LocationOfferings({ content }: LocationOfferingsProps) {
         </div>
 
         {/* Features */}
-        <div className="bg-white rounded-2xl p-8 md:p-12">
+        <div className="bg-white rounded-2xl p-8 md:p-12 text-center">
+          <h2 className="font-fraunces text-3xl pb-10 text-outer-space mb-4">
+            Why Caridi Concierge?
+          </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {content.features.map((feature, index) => (
               <div key={index} className="text-center">
