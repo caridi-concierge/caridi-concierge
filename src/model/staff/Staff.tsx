@@ -6,4 +6,6 @@ export type Staff = {
     imgAlt: string;
     email?: string;    // optional
     bio: string[];
+    metaDescription?: string;
+    titleTag?: string;
   };

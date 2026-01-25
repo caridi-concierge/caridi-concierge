@@ -5,6 +5,7 @@ import TreatmentsSection from "@/app/sections/home/Treatments";
 import LocationsSection from "@/app/sections/home/Locations";
 import ReviewsSection from "@/app/sections/home/Reviews";
 import FAQSection from "@/app/sections/home/FAQ";
+// import ResultsCarouselSection from "@/app/sections/home/Results";
 import CTASection from "@/components/CTA";
 import Footer from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLD";
@@ -39,8 +40,9 @@ export default function HomePage() {
         ]}
       />
       <HeroSection />
-      <TreatmentsSection />
       <LocationsSection />
+      <TreatmentsSection />
+      {/* <ResultsCarouselSection /> */}
       <ReviewsSection />
       <FAQSection />
       <CTASection variantKey='default' id='homepage-cta'/>
