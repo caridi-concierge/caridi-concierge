@@ -30,6 +30,7 @@ Important notes:
 - [Where Botox really works, forehead to jawline](https://www.caridiconcierge.com/blog/where-botox-really-works-from-forehead-to-jawline): common areas and indications.
 - [Lip flip, a simple guide](https://www.caridiconcierge.com/blog/simple-guide-to-lip-flips): what it is and when to choose it.
 - [Lip filler migration, what to know](https://www.caridiconcierge.com/blog/worried-about-lip-filler-migration): causes and aftercare.
+- [Lip Flips vs Lip Fillers](https://www.caridiconcierge.com/blog/lip-injections-lip-fillers-nyc): comparison between very popular treatments. what they are and when to get them.
 - [Blog index](https://www.caridiconcierge.com/blog): latest educational posts.
 
 ## Coverage and contact
@@ -47,6 +48,7 @@ Important notes:
   - /about.md
   - /treatments/index.html.md
   - /products.md
+  - /locations/index.html.md
   - /blog/how-to-prepare-for-botox-your-complete-pre-and-post-treatment-guide.md
   - /blog/where-botox-really-works-from-forehead-to-jawline.md
 (If a mirror does not exist yet, skip it.)
