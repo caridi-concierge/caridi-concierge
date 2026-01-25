@@ -10,9 +10,9 @@ import { chemicalPeelsFAQSchema } from "@/content/schemas/treatments/chemicalPee
 import { JsonLd } from "@/components/JsonLD";
 
 export const metadata = createPageMetadata({
-  title: "Chemical Peels in NYC | Brighten Skin, Fade Pigmentation, Improve Texture",
+  title: "Chemical Peels NYC | Brighten Skin, Fade Pigmentation",
   description:
-    "Medical-grade chemical peels to treat discoloration, melasma, acne marks, and uneven texture, performed in-home across NYC.",
+    "Medical-grade chemical peels in NYC to treat discoloration, melasma, acne marks, and uneven texture. Physician-led, in-home care.",
   path: "/treatments/chemical-peels",
   keywords: [
     "Chemical Peels NYC",

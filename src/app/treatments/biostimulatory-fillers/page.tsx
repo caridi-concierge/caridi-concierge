@@ -10,8 +10,8 @@ import { biostimulatoryFillersFAQSchema } from "@/content/schemas/treatments/bio
 import { JsonLd } from "@/components/JsonLD";
 
 export const metadata = createPageMetadata({
-    title: "Biostimulatory Fillers in NYC | Natural Collagen-Stimulating Treatments",
-    description: "Restore volume and rejuvenate your skin from within with biostimulatory fillers. Serving NYC with personalized care for natural, long-lasting results.",
+    title: "Biostimulatory Fillers in NYC | Build Collagen Naturally",
+    description: "Restore volume and improve skin quality with biostimulatory fillers in NYC. Physician-led, personalized care focused on natural, long-lasting results.",
     path: "/treatments/biostimulatory-fillers",
     keywords: ["Caridi Concierge", "Aesthetic Treatments", "Biostimulatory Fillers", "Radiesse", "Collagen-building", "In-Home Treatments", "Brooklyn", "New York City"],
     noIndex: false
