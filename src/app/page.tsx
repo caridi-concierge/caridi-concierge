@@ -39,8 +39,8 @@ export default function HomePage() {
         ]}
       />
       <HeroSection />
-      <TreatmentsSection />
       <LocationsSection />
+      <TreatmentsSection />
       <ReviewsSection />
       <FAQSection />
       <CTASection variantKey='default' id='homepage-cta'/>

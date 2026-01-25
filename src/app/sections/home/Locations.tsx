@@ -8,18 +8,24 @@ export default function LocationsSection() {
   const slides: CarouselSlide[] = [
     {
       src: "/images/concierge_nyc_1000px.webp",
-      alt: "New York City skyline",
-      caption: "Concierge care across NYC",
+      alt: "A view of the Manhattan Bridge from DUMBO. There is an iconic yellow taxi center frame.",
+      caption: "Concierge in-home care across NYC",
+      hTag: 3,
+      link: "/locations/in-home"
     },
     {
       src: "/images/red_hook_1000px.webp",
-      alt: "Brooklyn neighborhood street",
-      caption: "Brooklyn: Red Hook, Carroll Gardens, Park Slope",
+      alt: "Iconic Brick Artists' building in Red Hook, Brooklyn",
+      caption: "Private Studio in Red Hook, Brooklyn",
+      hTag: 3,
+      link: "/locations/red-hook"
     },
     {
       src: "/images/gowanus_neighborhood_1000px.webp",
       alt: "Brownstone neighborhood in Brooklyn",
-      caption: "Manhattan + Queens by request",
+      caption: "In-office treatments in Gowanus, Brooklyn",
+      hTag: 3,
+      link: "/locations/gowanus"
     },
   ];
 
@@ -53,7 +59,7 @@ export default function LocationsSection() {
             <ImageCarousel
               slides={slides}
               ariaLabel="Locations carousel"
-              headerText="Concierge service areas"
+              headerText="Concierge Service Areas"
             />
           </div>
         </div>

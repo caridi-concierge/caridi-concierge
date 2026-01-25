@@ -3,27 +3,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useMemo, useRef, useState } from "react";
+import Container from "@/components/Container";
 
-// Replace with your actual Container component if you have one.
-function Container({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <div className={`mx-auto w-full max-w-screen-2xl px-4 sm:px-6 ${className}`}>
-      {children}
-    </div>
-  );
-}
 
 export type CarouselSlide = {
-  src: string; // local path like "/images/results/xx.jpg"
+  src: string;
   alt: string;
-  caption?: string; // short, optional
+  caption?: string;
+  hTag?: number;
+  link?: string;
 };
+
+type HeadingTagName = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 type ImageCarouselProps = {
   slides: CarouselSlide[];
@@ -90,14 +81,30 @@ export function ImageCarousel({
   if (slides.length === 0) return null;
 
   const showHeader = headerText !== null || showArrows;
+  const getHeadingTag = (level?: number) => {
+    if (level == null) return null;
+    const safeLevel = Math.max(1, Math.min(6, level));
+    return `h${safeLevel}` as HeadingTagName;
+  };
+  const renderCaptionContent = (slide: CarouselSlide) => {
+    if (!slide.caption) return null;
+    if (slide.link) {
+      return (
+        <Link href={slide.link} className="underline underline-offset-4 hover:text-outer-space">
+          {slide.caption}
+        </Link>
+      );
+    }
+    return slide.caption;
+  };
 
   return (
     <div className={className}>
-      <div className="bg-champagne rounded-2xl p-4 md:p-6 border border-gray-200 shadow-sm">
+      <div className="bg-merino rounded-2xl p-4 md:p-6 border border-gray-200 shadow-sm">
         {showHeader && (
           <div className="flex items-center justify-between gap-3">
             {headerText !== null ? (
-              <p className="font-satoshi text-sm text-outer-space/80">{headerText}</p>
+              <p className="font-satoshi text-sm font-bold text-outer-space/80">{headerText}</p>
             ) : (
               <span aria-hidden="true" />
             )}
@@ -156,7 +163,25 @@ export function ImageCarousel({
 
                 {showCaption && (s.caption || slides.length > 1) && (
                   <div className="p-4 flex items-center justify-between gap-4">
-                    <p className="text-sm text-outer-space/80">{s.caption ?? ""}</p>
+                    {s.caption ? (
+                      (() => {
+                        const HeadingTag = getHeadingTag(s.hTag);
+                        if (HeadingTag) {
+                          return (
+                            <HeadingTag className="text-sm font-semibold text-outer-space/80">
+                              {renderCaptionContent(s)}
+                            </HeadingTag>
+                          );
+                        }
+                        return (
+                          <p className="text-sm text-outer-space/80">
+                            {renderCaptionContent(s)}
+                          </p>
+                        );
+                      })()
+                    ) : (
+                      <span aria-hidden="true" />
+                    )}
                     <p className="text-xs text-outer-space/60">
                       {active + 1} / {slides.length}
                     </p>
