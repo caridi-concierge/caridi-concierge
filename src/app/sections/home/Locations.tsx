@@ -59,7 +59,8 @@ export default function LocationsSection() {
             <ImageCarousel
               slides={slides}
               ariaLabel="Locations carousel"
-              headerText="Concierge Service Areas"
+              headerText="Concierge Service Locations"
+              className="max-w-2xl mx-auto"
             />
           </div>
         </div>
