@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { CarouselSlide, ImageCarousel } from "@/components/ImageCarousel";
 import Container from "@/components/Container";
+import PrimaryButton from "@/components/PrimaryButton";
 
 export default function LocationsSection() {
   const slides: CarouselSlide[] = [
@@ -46,12 +46,13 @@ export default function LocationsSection() {
               Staten Island, the Bronx, and parts of Long Island.
             </p>
             <div className="mt-6">
-              <Link
-                href="/treatments/consult"
-                className="inline-flex items-center justify-center rounded-full border px-7 py-2.5 font-satoshi text-base font-medium transition-colors bg-white border-outer-space text-outer-space hover:bg-carnation hover:text-merino"
+              <PrimaryButton
+                id="view-locations-button"
+                href="/locations"
+                variant="light"
               >
-                Request a consultation
-              </Link>
+                View Our Locations
+              </PrimaryButton>
             </div>
           </div>
 
