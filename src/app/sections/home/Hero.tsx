@@ -19,8 +19,8 @@ export default function HeroSection() {
             </h1>
             <h2 className="font-fraunces text-lg md:text-xl text-outer-space/80 pt-1 leading-relaxed">
               Physician-led aesthetic care delivered to your door. Get effortlessly natural,
-              refreshed results in your own setting. Private appointments
-              across all five boroughs.
+              refreshed results in your own setting. Private appointments available
+              throughout the city.
             </h2>
             <div className="flex gap-4 justify-center">
               <PrimaryButton href="/book" variant="secondary" id="hero-booking-cta" ariaLabel="Schedule a Consult">

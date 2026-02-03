@@ -108,6 +108,7 @@ export default function LocationDetailHero({ loc }: { loc: Location }) {
               <div className="flex flex-col sm:flex-row gap-3">
                 {loc.ctaPrimaryLabel && (
                   <PrimaryButton
+                    id={`location-${loc.slug}-primary-cta`}
                     href={loc.ctaPrimaryHref}
                     variant="primary"
                   >
@@ -117,6 +118,7 @@ export default function LocationDetailHero({ loc }: { loc: Location }) {
                 
                 {loc.ctaSecondaryLabel && loc.ctaSecondaryHref && (
                   <PrimaryButton
+                    id={`location-${loc.slug}-secondary-cta`}
                     href={loc.ctaSecondaryHref}
                     variant="light"
                   >

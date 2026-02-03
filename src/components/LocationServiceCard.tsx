@@ -59,8 +59,14 @@ export default function LocationServiceCard({
         ))}
       </ul>
 
-      <div className="mt-auto">
-        <PrimaryButton href={ctaHref} variant="alt" className="text-sm px-6 py-1.5">
+      <div className="mt-auto flex flex-col items-center justify-center">
+        <PrimaryButton
+          ariaLabel={`Learn more about ${title}`}
+          id={`learn-more-${title.toLowerCase().replace(/\s+/g, "-")}`}
+          href={ctaHref} 
+          variant="alt" 
+          className="text-sm px-6 py-1.5"
+        >
           {ctaText}
         </PrimaryButton>
       </div>
