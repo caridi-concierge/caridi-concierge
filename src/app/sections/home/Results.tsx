@@ -2,7 +2,6 @@
 
 import Container from "@/components/Container";
 import Image from "next/image";
-import Link from "next/link";
 import { useMemo, useRef } from "react";
 
 type ResultsCard = {
@@ -17,34 +16,35 @@ export default function ResultsCarouselSection() {
     () => [
       {
         src: "/images/results/cheek-filler-before-after.webp",
+        alt: "Full face refresh result with softened lines and balanced facial contours",
+        title: "Full Face Harmony",
+        description: "Full face and neck Botox, plus filler in cheeks, nasolabial folds, and chin to restore harmony.",
+      },
+      {
+        src: "/images/results/botox-cheek-filler-before-after.webp",
         alt: "Before and after placeholder result",
-        title: "Subtle Lift, Natural Contour",
-        description: "Cheek and midface support with balanced definition.",
+        title: "Gentle Lift & Clean Lines",
+        description: "Forehead Botox paired with cheek filler for a gentle lift and cleaner lines.",
       },
       {
-        src: "/images/results/placeholder-02.jpg",
-        alt: "Skin quality improvement placeholder result",
-        title: "Skin Quality Focus",
-        description: "Refined texture and glow with a conservative approach.",
+        // 3
+        src: "/images/results/botox-cheek-lip-chin-filler-before-after.webp",
+        alt: "Facial balancing result with refined symmetry through cheeks, lips, and chin",
+        title: "Facial Balancing",
+        description: "Full face and neck Botox with filler in cheeks, lips, and chin to fine‑tune proportion.",
       },
-      {
-        src: "/images/results/placeholder-03.jpg",
-        alt: "Jawline definition placeholder result",
-        title: "Refined Structure",
-        description: "Jawline definition that looks like you, just rested.",
-      },
-      {
-        src: "/images/results/placeholder-04.jpg",
-        alt: "Wrinkle reduction placeholder result",
-        title: "Natural Movement Preserved",
-        description: "Softened expression lines without a frozen look.",
-      },
-      {
-        src: "/images/results/placeholder-05.jpg",
-        alt: "Lip balance placeholder result",
-        title: "Balanced Lip Shape",
-        description: "Hydration and shape with proportion-first planning.",
-      },
+      // {
+      //   src: "/images/results/placeholder-04.jpg",
+      //   alt: "Wrinkle reduction placeholder result",
+      //   title: "Natural Movement Preserved",
+      //   description: "Softened expression lines without a frozen look.",
+      // },
+      // {
+      //   src: "/images/results/placeholder-05.jpg",
+      //   alt: "Lip balance placeholder result",
+      //   title: "Balanced Lip Shape",
+      //   description: "Hydration and shape with proportion-first planning.",
+      // },
     ],
     []
   );
@@ -66,12 +66,11 @@ export default function ResultsCarouselSection() {
       <Container>
         <div className="flex items-end justify-between gap-6">
           <div>
-            <p className="font-fraunces text-3xl md:text-4xl font-bold text-outer-space">
-              Real People. Real Results.
-            </p>
+            <h2 className="font-fraunces text-3xl md:text-4xl font-bold text-outer-space">
+              Results that still look like you
+            </h2>
             <p className="mt-3 text-outer-space/80 text-base md:text-lg max-w-2xl">
-              A curated look at subtle, physician-led outcomes focused on balance, restraint,
-              and skin quality over time.
+              A curated look at physician-led Botox and dermal filler outcomes focused on balance, restraint, and long-term skin quality.
             </p>
           </div>
 
@@ -104,9 +103,9 @@ export default function ResultsCarouselSection() {
             <div
               key={card.src}
               ref={index === 0 ? cardRef : null}
-              className="min-w-[80%] md:min-w-[48%] lg:min-w-[32%] snap-start"
+              className="flex-none w-[70%] md:w-[45%] lg:w-[30%] snap-start"
             >
-              <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+              <div className="h-full overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm flex flex-col">
                 <div className="relative aspect-[4/3] w-full">
                   <Image
                     src={card.src}
@@ -117,37 +116,18 @@ export default function ResultsCarouselSection() {
                     priority={index === 0}
                   />
                 </div>
-                <div className="p-5">
-                  <p className="text-base font-semibold text-outer-space">{card.title}</p>
-                  <p className="mt-2 text-sm text-outer-space/70">{card.description}</p>
+                <div className="p-5 min-h-[96px]">
+                  <h3 className="text-base font-semibold text-outer-space line-clamp-1">
+                    {card.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-outer-space/70 line-clamp-2">
+                    {card.description}
+                  </p>
                 </div>
               </div>
             </div>
           ))}
         </div>
-
-        {/* <div className="mt-6 flex flex-wrap items-center gap-4">
-          <Link
-            href="https://www.instagram.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-full border px-8 py-2.5 font-satoshi text-base font-medium transition-colors bg-white border-outer-space text-outer-space hover:bg-carnation hover:text-merino"
-            aria-label="View more results on Instagram"
-          >
-            View more results on Instagram
-          </Link>
-          <Link
-            href="/treatments/consult"
-            className="text-sm font-semibold text-carnation underline underline-offset-4 hover:text-outer-space transition-colors"
-            aria-label="Request a consultation"
-          >
-            Request a consultation
-          </Link>
-        </div> */}
-{/* 
-        <p className="mt-3 text-xs text-outer-space/60 leading-relaxed">
-          Results vary by individual and treatment plan. Images reflect real patients with consent.
-        </p> */}
       </Container>
     </section>
   );
