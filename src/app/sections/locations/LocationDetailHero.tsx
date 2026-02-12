@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function LocationDetailHero({ loc }: { loc: Location }) {
+  const heroCtaClass = "w-full sm:w-auto sm:min-w-[11rem] sm:flex-none px-6";
+
   return (
     <section className="py-16 md:py-20 bg-merino">
       <div className="max-w-7xl mx-auto px-6">
@@ -105,12 +107,13 @@ export default function LocationDetailHero({ loc }: { loc: Location }) {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3">
                 {loc.ctaPrimaryLabel && (
                   <PrimaryButton
                     id={`location-${loc.slug}-primary-cta`}
                     href={loc.ctaPrimaryHref}
                     variant="primary"
+                    className={heroCtaClass}
                   >
                     {loc.ctaPrimaryLabel}
                   </PrimaryButton>
@@ -121,8 +124,20 @@ export default function LocationDetailHero({ loc }: { loc: Location }) {
                     id={`location-${loc.slug}-secondary-cta`}
                     href={loc.ctaSecondaryHref}
                     variant="light"
+                    className={heroCtaClass}
                   >
                     {loc.ctaSecondaryLabel}
+                  </PrimaryButton>
+                )}
+
+                {loc.ctaTertiaryLabel && loc.ctaTertiaryHref && (
+                  <PrimaryButton
+                    id={`location-${loc.slug}-tertiary-cta`}
+                    href={loc.ctaTertiaryHref}
+                    variant="zocdoc"
+                    className={heroCtaClass}
+                  >
+                    {loc.ctaTertiaryLabel}
                   </PrimaryButton>
                 )}
               </div>

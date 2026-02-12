@@ -29,6 +29,9 @@ export const LOCATIONS = [
         ctaPrimaryLabel: "Book in Gowanus",
         ctaPrimaryHref: "/book",
         
+        ctaTertiaryLabel: "Book on Zocdoc",
+        ctaTertiaryHref: "https://www.zocdoc.com/practice/caridi-concierge-medicine-146934?lock=true&isNewPatient=false&referrerType=widget",
+
         badge: "New",
         
         slug: "gowanus",

@@ -85,6 +85,15 @@ export function LocationCard({ loc }: { loc: Location }) {
             {loc.ctaSecondaryLabel}
           </Link>
         )}
+
+        {loc.ctaTertiaryHref && (
+          <Link
+            href={loc.ctaTertiaryHref}
+            className="inline-flex items-center justify-center rounded-full border border-prussian-blue/30 bg-gorse px-4 py-2 text-sm font-medium text-prussian-blue hover:bg-hawkes-blue transition"
+          >
+            {loc.ctaTertiaryLabel}
+          </Link>
+        )}
       </div>
     </article>
   );

@@ -13,6 +13,10 @@
     --color-steel-blue: #4f778b;
     --color-paleviolet: #8c4672;
     --color-dimgray: #6A3556;
+    /* Zocdoc Colors */
+    --color-gorse: #FFF04B;
+    --color-prussian-blue: #00234B;
+    --color-hawkes-blue: #DCE9FD;
   
     /* Fonts - tokens used by Tailwind classes */
     --font-sans: var(--f-satoshi), system-ui, sans-serif;  /* Tailwind default alias */

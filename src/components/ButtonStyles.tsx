@@ -1,5 +1,5 @@
 export const base =
-  "inline-flex items-center justify-center rounded-full border px-10 py-2.5 font-satoshi text-base font-medium transition-colors";
+  "inline-flex items-center justify-center whitespace-nowrap rounded-full border px-10 py-2.5 font-satoshi text-base font-medium transition-colors";
 
 export const variants = {
   primary:
@@ -9,5 +9,7 @@ export const variants = {
   light:
     "bg-white border-outer-space text-outer-space hover:bg-carnation hover:text-merino",
   alt:
-    "bg-outer-space/40 border-outer-space text-outer-space hover:bg-peach-puff hover:text-outer-space hover:border-outer-space"
+    "bg-outer-space/40 border-outer-space text-outer-space hover:bg-peach-puff hover:text-outer-space hover:border-outer-space",
+  zocdoc:
+    "bg-gorse text-prussian-blue border-prussian-blue/30 hover:bg-hawkes-blue"
 };
