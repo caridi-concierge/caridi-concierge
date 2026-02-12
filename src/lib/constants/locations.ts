@@ -29,6 +29,9 @@ export const LOCATIONS = [
         ctaPrimaryLabel: "Book in Gowanus",
         ctaPrimaryHref: "/book",
         
+        ctaTertiaryLabel: "Book on Zocdoc",
+        ctaTertiaryHref: "https://www.zocdoc.com/practice/caridi-concierge-medicine-146934?lock=true&isNewPatient=false&referrerType=widget",
+
         badge: "New",
         
         slug: "gowanus",
@@ -139,3 +142,19 @@ export const LOCATIONS = [
         ]
     },
 ];
+
+            {/* <div>
+              <a
+                href="https://www.zocdoc.com/practice/caridi-concierge-medicine-146934?lock=true&isNewPatient=false&referrerType=widget"
+                target="_blank"
+                rel="noreferrer noopener"
+                title="Caridi Concierge Medicine"
+              >
+                <img
+                  src="https://offsiteSchedule.zocdoc.com/images/remote/zd_bookonline_162x48.png?type=bobhtml&monolith_provider_id=146934&practice_id=pt_ODmI4HUMG0a2Dv1mzjmL5g"
+                  alt="Caridi Concierge Medicine"
+                  title="Caridi Concierge Medicine"
+                  style={{ border: 0 }}
+                />
+              </a>
+            </div> */}
