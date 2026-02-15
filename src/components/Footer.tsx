@@ -21,7 +21,7 @@ export default function Footer() {
               className="h-auto w-[180px]"
             />
           </Link>
-          <p className="font-fraunces text-sm">{COMPANY.address.neighborhood} <br />{COMPANY.address.locality}, {COMPANY.address.region} {COMPANY.address.postalCode}</p>
+          <p className="font-fraunces text-sm">{COMPANY.address.neighborhood} <br />{COMPANY.address.locality}, {COMPANY.address.region} {COMPANY.address.postalCode} <br /> {COMPANY.phone}</p>
 
           {/* Social icons */}
           <div className="flex gap-4">
