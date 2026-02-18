@@ -5,7 +5,7 @@ import LocationDetailHero from "@/app/sections/locations/LocationDetailHero";
 import LocationStudioExperience from "@/app/sections/locations/LocationStudioExperience";
 import LocationOfferings from "@/app/sections/locations/LocationOfferings";
 import LocationFAQ from "@/app/sections/locations/LocationFAQ";
-
+import ResultsCarouselSection from "@/app/sections/home/Results";
 
 export default function LocationDetailLayout({ loc }: { loc: Location }) {
   const content = getLocationContent(loc.slug);
@@ -24,6 +24,7 @@ export default function LocationDetailLayout({ loc }: { loc: Location }) {
       <LocationDetailHero loc={loc} />
       <LocationStudioExperience content={content.studioExperience} />
       <LocationOfferings content={content.offerings} />
+      <ResultsCarouselSection />
       <LocationFAQ content={content.faqs} locationName={loc.name} />
     </main>
   );
