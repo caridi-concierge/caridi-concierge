@@ -29,7 +29,7 @@ export default function LocationOfferings({ content }: LocationOfferingsProps) {
 
         {/* Features */}
         <div className="bg-white rounded-2xl p-8 md:p-12 text-center">
-          <h2 className="font-fraunces text-3xl pb-10 text-outer-space mb-4">
+          <h2 className="font-fraunces font-bold text-3xl pb-10 text-outer-space mb-4">
             Why Caridi Concierge?
           </h2>
           <div className="grid md:grid-cols-3 gap-8">

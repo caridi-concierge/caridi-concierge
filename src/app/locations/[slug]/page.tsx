@@ -5,6 +5,7 @@ import LocationDetailLayout from "@/app/sections/locations/LocationDetailLayout"
 import { createPageMetadata } from "@/lib/metadata";
 import { LOCATIONS } from "@/lib/constants/locations";
 import { getLocationContent } from "@/content/locations";
+import { SMSContactWidget } from "@/components/SMSContactWidget";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
@@ -51,6 +52,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
       <Navbar />
       <LocationDetailLayout loc={loc} />
       <Footer />
+      <SMSContactWidget />
     </>
   );
 }

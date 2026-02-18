@@ -2,6 +2,7 @@
 import Navbar from "@/components/Navbar";
 import LocationsLayoutSection from "@/app/sections/locations/LocationsLayout";
 import Footer from "@/components/Footer";
+import { SMSContactWidget } from "@/components/SMSContactWidget";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -19,6 +20,7 @@ export default function LocationsPage() {
     <Navbar />
     <LocationsLayoutSection />
     <Footer />
+    <SMSContactWidget />
     </>
   );
 }
