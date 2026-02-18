@@ -70,15 +70,19 @@ export function LocationCard({ loc }: { loc: Location }) {
 
       {/* CTAs (separate from main link) */}
       <div className="flex flex-wrap gap-3 pt-1">
-        {loc.ctaPrimaryHref && <Link
-          href={loc.ctaPrimaryHref}
-          className="inline-flex items-center justify-center rounded-full border border-outer-space bg-outer-space px-4 py-2 text-sm font-medium text-merino hover:bg-outer-space/90 transition"
-        >
-          {loc.ctaPrimaryLabel}
-        </Link>}
+        {loc.ctaPrimaryHref && (
+          <Link
+            id={`${loc.slug}-primary-cta`}
+            href={loc.ctaPrimaryHref}
+            className="inline-flex items-center justify-center rounded-full border border-outer-space bg-outer-space px-4 py-2 text-sm font-medium text-merino hover:bg-outer-space/90 transition"
+          >
+            {loc.ctaPrimaryLabel}
+          </Link>
+      )}
 
         {loc.ctaSecondaryHref && (
           <Link
+            id={`location-${loc.slug}-secondary-cta`}
             href={loc.ctaSecondaryHref}
             className="inline-flex items-center justify-center rounded-full border border-outer-space/30 px-4 py-2 text-sm font-medium text-outer-space hover:bg-white transition"
           >
@@ -88,6 +92,7 @@ export function LocationCard({ loc }: { loc: Location }) {
 
         {loc.ctaTertiaryHref && (
           <Link
+            id={`location-${loc.slug}-zocdoc-cta`}
             href={loc.ctaTertiaryHref}
             className="inline-flex items-center justify-center rounded-full border border-prussian-blue/30 bg-gorse px-4 py-2 text-sm font-medium text-prussian-blue hover:bg-hawkes-blue transition"
           >

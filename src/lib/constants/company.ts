@@ -30,5 +30,6 @@ export const COMPANY = {
       yellowpages: "https://www.yellowpages.com/brooklyn-ny/mip/caridi-concierge-579762754",
       googlesite: "https://sites.google.com/caridiconcierge.com/caridiconcierge-nyc/home",
       zocdoc: "https://www.zocdoc.com/practice/caridi-concierge-medicine-146934",
+      github: "https://github.com/caridi-concierge/caridi-concierge"
     },
   };
