@@ -14,12 +14,12 @@ type ResultsCard = {
 export default function ResultsCarouselSection() {
   const cards: ResultsCard[] = useMemo(
     () => [
-      {
-        src: "/images/results/cheek-filler-before-after.webp",
-        alt: "Full face refresh result with softened lines and balanced facial contours",
-        title: "Full Face Harmony",
-        description: "Full face and neck Botox, plus filler in cheeks, nasolabial folds, and chin to restore harmony.",
-      },
+      // {
+      //   src: "/images/results/cheek-filler-before-after.webp",
+      //   alt: "Full face refresh result with softened lines and balanced facial contours",
+      //   title: "Full Face Harmony",
+      //   description: "Full face and neck Botox, plus filler in cheeks, nasolabial folds, and chin to restore harmony.",
+      // },
       {
         src: "/images/results/botox-cheek-filler-before-after.webp",
         alt: "Before and after placeholder result",
