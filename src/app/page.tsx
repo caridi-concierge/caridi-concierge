@@ -1,17 +1,16 @@
 import Navbar from "@/components/Navbar";
-// import Banner from "@/components/Banner";
 import HeroSection from "@/app/sections/home/Hero";
+import PhilosophySection from "@/app/sections/home/Philosophy";
 import TreatmentsSection from "@/app/sections/home/Treatments";
 import LocationsSection from "@/app/sections/home/Locations";
+import ResultsSection from "@/app/sections/home/Results";
 import ReviewsSection from "@/app/sections/home/Reviews";
 import FAQSection from "@/app/sections/home/FAQ";
-import ResultsCarouselSection from "@/app/sections/home/Results";
 import CTASection from "@/components/CTA";
 import Footer from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLD";
 import { faqSchema } from "@/content/schemas";
 import { SMSContactWidget } from "@/components/SMSContactWidget";
-import CarouselBanner from "@/components/CarouselBanner";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -27,27 +26,16 @@ export default function HomePage() {
     <>
       <JsonLd schema={faqSchema} />
       <Navbar />
-      {/* <Banner
-        src="/images/home-banner-edit.webp"
-        alt="Dr. Cristina Caridi providing in-home Botox and filler treatments across NYC"
-      /> */}
-      <CarouselBanner
-        slides={[
-          {
-            src: "/images/home-banner-edit.webp",
-            alt: "Dr. Cristina Caridi providing in-home Botox and filler treatments across NYC",
-          }
-        ]}
-      />
       <HeroSection />
-      <LocationsSection />
+      <PhilosophySection />
       <TreatmentsSection />
-      <ResultsCarouselSection />
+      <LocationsSection />
+      <ResultsSection />
       <ReviewsSection />
       <FAQSection />
-      <CTASection variantKey='default' id='homepage-cta'/>
+      <CTASection variantKey="default" id="homepage-cta" />
       <Footer />
       <SMSContactWidget />
     </>
-  )
+  );
 }

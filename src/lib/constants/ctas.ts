@@ -2,15 +2,13 @@ import type { CTASectionProps } from "@/components/CTA";
 
 export const ctaVariants: Record<string, CTASectionProps> = {
   default: {
-    title: "Modern beauty, made effortless.",
-    subtitle:
-      "Personalized Botox and filler treatments that restore balance, volume, and confidence.",
+    title: "Begin with a conversation. <em>The rest is bespoke.</em>",
     ctaHref: "/book",
-    ctaText: "Book a Visit",
-    variant: "secondary",
-    bgColor: "bg-outer-space",
-    textColor: "text-alabaster",
-    ariaLabel: "Book a visit to Caridi Concierge for personalized Botox and filler treatments",
+    ctaText: "Schedule a consultation",
+    variant: "primary",
+    bgColor: "bg-teal",
+    textColor: "text-ivory",
+    ariaLabel: "Schedule a consultation with Caridi Concierge",
     id: "primary-cta",
   },
   contact: {

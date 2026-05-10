@@ -3,105 +3,134 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Menu, X } from "lucide-react";
-import PrimaryButton from "./PrimaryButton";
 import { COMPANY } from "@/lib/constants/company";
+import IconArrow from "@/components/icons/IconArrow";
+
+const NAV_LINKS = [
+  { href: "/treatments", label: "Treatments" },
+  { href: "/locations", label: "Locations" },
+  { href: "/about", label: "About" },
+  { href: "/blog", label: "Journal" },
+];
+
+const linkClass =
+  "font-body text-[11px] font-medium uppercase tracking-[0.32em] text-ivory/75 transition-colors duration-200 hover:text-ivory";
 
 export default function Navbar({
   ctaId = "navbar-cta",
   overlayCtaId = "navbar-overlay-cta",
 }) {
-  const [isOpen, setSidebarIsOpen] = useState(false);
-  
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <header className="bg-merino text-outerSpace">
-      <div className="w-full max-w-[1600px] mx-auto grid grid-cols-[auto_1fr] lg:grid-cols-[1fr_auto_1fr] items-center py-4 px-4">
-        {/* Left nav (desktop only) */}
-        <nav className="hidden lg:flex items-center gap-4 lg:gap-6 font-satoshi text-sm justify-start">
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/treatments">Treatments</Link>
-          <Link href="/locations">Locations</Link>
-          <Link href="/blog">Blog</Link>
+    <header className="bg-teal text-ivory border-b border-line-on-teal">
+      <div className="mx-auto max-w-[1600px] grid grid-cols-[auto_1fr] lg:grid-cols-[1fr_auto_1fr] items-center px-4 sm:px-6 lg:px-14 py-5">
+        {/* Left links (desktop) */}
+        <nav className="hidden lg:flex items-center gap-8 justify-start">
+          {NAV_LINKS.map((l) => (
+            <Link key={l.href} href={l.href} className={linkClass}>
+              {l.label}
+            </Link>
+          ))}
         </nav>
-        
-        {/* Center logo */}
+
+        {/* Center brand */}
         <div className="flex justify-start lg:justify-center">
-          <Link href="/">
+          <Link href="/" aria-label="Caridi Concierge — Home">
             <Image
-              src="/images/caridi_concierge_flat_logo.svg"
-              alt="Caridi Concierge logo"
-              width={200}
+              src="/images/caridi_concierge_logo_contrast_fraunces.svg"
+              alt="Caridi Concierge"
+              width={240}
               height={60}
-              className="w-[200px] sm:w-[250px] md:w-[280px] lg:w-[300px] h-auto"
+              className="w-[180px] sm:w-[220px] lg:w-[240px] h-auto"
+              priority
             />
           </Link>
         </div>
-        
+
         {/* Right actions */}
-        <div className="flex items-center justify-end gap-3 lg:gap-4 font-satoshi text-sm min-w-0">
+        <div className="flex items-center justify-end gap-4 lg:gap-6 min-w-0">
           {/* Desktop only */}
-          <div className="hidden lg:flex items-center gap-3 lg:gap-4">
-            <a href={COMPANY.phoneHref} className="flex items-center gap-2 whitespace-nowrap">
-              <Phone size={16} /> 
-              <span className="hidden lg:inline">{COMPANY.phone}</span>
-              <span className="lg:hidden">Call</span>
-            </a>
-            <PrimaryButton 
-              href="/book" 
-              variant="primary" 
-              className="text-sm px-4 py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-1.5 whitespace-nowrap"
-              id={ctaId}
+          <div className="hidden lg:flex items-center gap-6">
+            <a
+              href={COMPANY.phoneHref}
+              className={`${linkClass} flex items-center gap-2 normal-case tracking-normal text-[13px]`}
+              aria-label={`Call ${COMPANY.phone}`}
             >
-              Book a visit
-            </PrimaryButton>
+              <Phone size={14} aria-hidden="true" />
+              <span>{COMPANY.phone}</span>
+            </a>
+            <Link
+              href="/book"
+              id={ctaId}
+              className="inline-flex items-center gap-2 rounded-full border border-brass-soft px-5 py-2.5 font-body text-[11px] font-medium uppercase tracking-[0.32em] text-ivory transition-colors duration-200 hover:bg-brass-soft hover:text-teal-deep"
+            >
+              Book a visit <IconArrow className="w-3 h-3" />
+            </Link>
           </div>
-          
+
           {/* Mobile hamburger */}
           <button
-            onClick={() => setSidebarIsOpen(true)}
-            className="lg:hidden text-outerSpace"
-            aria-label="Open mobile menu"
+            onClick={() => setIsOpen(true)}
+            className="lg:hidden text-ivory"
+            aria-label="Open menu"
             aria-controls="mobile-menu"
           >
-            <Menu size={28} />
+            <Menu size={26} />
           </button>
         </div>
       </div>
-      
+
       {/* Mobile overlay */}
       {isOpen && (
-        <div className="fixed inset-0 bg-merino z-50 flex flex-col items-center justify-center p-6 touch-none">
+        <div
+          id="mobile-menu"
+          className="fixed inset-0 z-50 bg-teal text-ivory flex flex-col items-center justify-center p-6"
+        >
           <button
-            onClick={() => setSidebarIsOpen(false)}
-            className="absolute top-6 right-6 text-outerSpace touch-auto"
+            onClick={() => setIsOpen(false)}
+            className="absolute top-6 right-6 text-ivory"
+            aria-label="Close menu"
           >
-            <X size={28} />
+            <X size={26} />
           </button>
-          
-          <nav className="flex flex-col items-center gap-6 mb-8 font-fraunces text-outer-space text-2xl text-center touch-auto">
-            <Link href="/" onClick={() => setSidebarIsOpen(false)}>Home</Link>
-            <Link href="/about" onClick={() => setSidebarIsOpen(false)}>About</Link>
-            <Link href="/treatments" onClick={() => setSidebarIsOpen(false)}>Treatments</Link>
-            <Link href="/locations" onClick={() => setSidebarIsOpen(false)}>Locations</Link>
-            <Link href="/products" onClick={() => setSidebarIsOpen(false)}>Products</Link>
-            <Link href="/blog" onClick={() => setSidebarIsOpen(false)}>Blog</Link>
+
+          <nav className="flex flex-col items-center gap-8 mb-10 font-display text-2xl">
+            {NAV_LINKS.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                onClick={() => setIsOpen(false)}
+                className="hover:text-brass-soft transition-colors"
+              >
+                {l.label}
+              </Link>
+            ))}
+            <Link
+              href="/contact"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-brass-soft transition-colors"
+            >
+              Contact
+            </Link>
           </nav>
-          
-          <div className="flex flex-col gap-4 w-full max-w-[200px] px-4 touch-auto">
+
+          <div className="flex flex-col gap-4 w-full max-w-[260px]">
             <Link
               href="/book"
               id={overlayCtaId}
-              className="bg-carnation text-merino px-4 py-2 rounded-full text-center text-sm"
-              onClick={() => setSidebarIsOpen(false)}
+              onClick={() => setIsOpen(false)}
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-ivory text-teal-deep px-6 py-3 font-body text-[11px] font-medium uppercase tracking-[0.32em]"
             >
-              Book a visit
+              Book a visit <IconArrow className="w-3 h-3" />
             </Link>
             <a
               href={COMPANY.phoneHref}
-              className="bg-outer-space text-merino px-4 py-2 rounded-full text-center text-sm"
-              onClick={() => setSidebarIsOpen(false)}
+              onClick={() => setIsOpen(false)}
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-brass-soft px-6 py-3 font-body text-[11px] font-medium uppercase tracking-[0.32em] text-brass-soft"
             >
-              Contact
+              <Phone size={14} aria-hidden="true" />
+              {COMPANY.phone}
             </a>
           </div>
         </div>

@@ -1,86 +1,62 @@
-import PrimaryButton from "@/components/PrimaryButton";
 import Image from "next/image";
+import Link from "next/link";
 import type { TreatmentMetadata } from "@/model/treatments/Treatment";
+import Eyebrow from "@/components/Eyebrow";
+import IconArrow from "@/components/icons/IconArrow";
 
-export type TreatmentCardProps = TreatmentMetadata;
+export type TreatmentCardProps = TreatmentMetadata & {
+  index?: number;
+};
 
+/**
+ * Editorial treatment card — image, brass eyebrow ("0N · subtitle"),
+ * Cormorant title, copy, "Learn more →".
+ * Used in the home Treatments grid (`@/app/sections/home/Treatments.tsx`).
+ */
 export default function TreatmentCard({
   title,
-  badge,
-  hook,
-  highlights,
+  description,
   products,
+  imgSrc,
+  imgAlt,
   ctaHref,
-  ctaText = "Learn More",
-  ctaVariant = "alt"
+  index,
 }: TreatmentCardProps) {
-  const badgeStyles = {
-    popular: "bg-dimgray text-white",
-    new: "bg-emerald-600 text-white",
-    advanced: "bg-blue-600 text-white",
-    gentle: "bg-rose-500 text-white",
-    longLasting: "bg-amber-600 text-white",
-    gold: "bg-amber-700 text-white",
-  };
+  const number = typeof index === "number" ? `0${index + 1}` : null;
 
   return (
-    <div className="bg-white rounded-xl p-8 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300 relative h-full flex flex-col">
-      {badge && (
-        <span
-          className={`absolute top-5 right-5 px-3 py-1 rounded-full text-xs font-semibold ${
-            badgeStyles[badge.variant]
-          }`}
-        >
-          {badge.text}
-        </span>
-      )}
+    <Link
+      href={ctaHref}
+      aria-label={`Learn more about ${title}`}
+      className="group flex h-full flex-col gap-[18px] bg-ivory-2 p-8 pb-9 transition-colors duration-200 hover:bg-ivory-3"
+    >
+      <div className="relative w-full aspect-[5/4] overflow-hidden bg-bone">
+        <Image
+          src={imgSrc}
+          alt={imgAlt}
+          fill
+          sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw"
+          className="object-cover"
+          style={{ filter: "saturate(0.9)" }}
+        />
+      </div>
 
-      <h3 className="font-fraunces text-2xl text-outer-space mb-3 pr-24">
-        {hook}
+      <Eyebrow className="text-brass text-[10px]">
+        {number ? <span>{number} · </span> : null}
+        {products}
+      </Eyebrow>
+
+      <h3 className="font-display font-normal text-3xl leading-[1.1]">
+        {title}
       </h3>
-      <h4 className="text-paleviolet/80 italic mb-5">{title}</h4>
 
-      {/* Bullet Points */}
-        <ul className="mb-6 space-y-2 flex-grow">
-        {highlights.map((highlight, index) => (
-            <li
-            key={index}
-            className="flex items-start gap-2 text-outer-space text-[15px]"
-            >
-            {/* Fixed-size icon wrapper */}
-            <span className="flex-shrink-0 w-4 h-4 mt-0.5">
-                <Image
-                src="/images/CheckIcon.svg"
-                alt=""
-                width={16}
-                height={16}
-                className="w-full h-full"
-                />
-            </span>
-            <span dangerouslySetInnerHTML={{ __html: highlight }} />
-            </li>
-        ))}
-        </ul>
+      <p className="font-body text-sm leading-[1.7] text-ink/70">
+        {description}
+      </p>
 
-      {/* Products */}
-      <div className="mb-6 text-sm">
-        <p className="text-outer-space/80">
-          <span className="font-semibold text-outer-space">Products:</span>{" "}
-          {products}
-        </p>
-      </div>
-
-      {/* Card Actions */}
-      <div className="flex flex-col items-center justify-center sm:flex-row sm:items-center gap-3 mt-auto">
-        <PrimaryButton
-          href={ctaHref}
-          variant={ctaVariant}
-          className="text-sm px-6 py-1.5"
-          ariaLabel={`Learn more about ${title}`}
-        >
-          {ctaText}
-        </PrimaryButton>
-      </div>
-    </div>
+      <span className="mt-auto pt-2 inline-flex items-center gap-2 font-body text-[10px] font-medium uppercase tracking-[0.32em] text-ink transition-colors duration-200 group-hover:text-brass">
+        Learn more <IconArrow className="w-3 h-3" />
+      </span>
+    </Link>
   );
 }

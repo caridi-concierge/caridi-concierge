@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-    /* Custom colors */
+    /* Existing brand colors (kept for backwards compatibility) */
     --color-alabaster: #f2f4eb;
     --color-outer-space: #2a414b;
     --color-midnight: #01152c;
@@ -17,11 +17,40 @@
     --color-gorse: #FFF04B;
     --color-prussian-blue: #00234B;
     --color-hawkes-blue: #DCE9FD;
-  
-    /* Fonts - tokens used by Tailwind classes */
-    --font-sans: var(--f-satoshi), system-ui, sans-serif;  /* Tailwind default alias */
-    --font-satoshi: var(--f-satoshi), system-ui, sans-serif; /* use with class: font-sans */
-    --font-fraunces: var(--f-fraunces), ui-serif, Georgia, serif; /* use with class: font-fraunces */
+
+    /* Editorial Refined tokens (Direction A) — homepage refresh 2026 */
+    --color-teal: #2a414b;
+    --color-teal-deep: #1a2c33;
+    --color-teal-mid: #3a5560;
+    --color-ivory: #fdfcf8;
+    --color-ivory-2: #f7f5ee;
+    --color-ivory-3: #fbfaf6;
+    --color-bone: #ede9dc;
+    --color-brass: #b08953;
+    --color-brass-soft: #c9a674;
+    --color-ink: #142026;
+    --color-line: rgba(20, 32, 38, 0.14);
+    --color-line-strong: rgba(20, 32, 38, 0.24);
+    --color-line-on-teal: rgba(253, 252, 248, 0.18);
+
+    /* Fonts - --f-cormorant / --f-inter come from next/font in layout.tsx */
+    --font-sans: var(--f-inter), system-ui, sans-serif;
+    --font-display: var(--f-cormorant), 'Cormorant Garamond', ui-serif, Georgia, serif;
+    --font-body: var(--f-inter), -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    /* Compat aliases — existing font-fraunces / font-satoshi classes keep working */
+    --font-fraunces: var(--f-cormorant), 'Cormorant Garamond', ui-serif, Georgia, serif;
+    --font-satoshi: var(--f-inter), -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+    /* Editorial tracking */
+    --tracking-eyebrow: 0.32em;
+    --tracking-display: -0.01em;
+  }
+
+  body {
+    font-family: var(--f-inter), system-ui, sans-serif;
+    color: var(--color-ink, #142026);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7:not(:empty) + #reviews-fallback {
@@ -32,23 +61,23 @@
   .blog-table {
     @apply min-w-full border-collapse border border-gray-300 my-6;
   }
-  
+
   .blog-table thead {
     @apply bg-outer-space;
   }
-  
+
   .blog-table th {
     @apply px-4 py-3 text-left font-semibold text-white border-r border-gray-300 last:border-r-0;
   }
-  
+
   .blog-table td {
     @apply px-4 py-3 text-outer-space/80 border-r border-gray-300 last:border-r-0;
   }
-  
+
   .blog-table tbody tr {
     @apply border-b border-gray-200 hover:bg-carnation/60 bg-white;
   }
-  
+
   .blog-table caption {
     @apply text-center font-semibold mb-2;
   }
