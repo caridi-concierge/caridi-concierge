@@ -57,6 +57,125 @@
     display: none;
   }
 
+  /* ─────────────────────────────────────────────────────────────
+   * Elfsight Google Reviews — editorial overrides
+   * Widget renders without Shadow DOM, so parent CSS reaches its
+   * stable `es-*` semantic classes. `!important` is required only
+   * where the widget paints inline styles (legacy dashboard config:
+   * teal bg, 24px outer radius, peach/carnation Load More button).
+   * Long-term: clear those overrides in the Elfsight dashboard
+   * so this block can drop the !important hacks.
+   * ───────────────────────────────────────────────────────────── */
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7 .es-embed-root {
+    max-width: 100% !important;
+  }
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7 .es-background-base,
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7 .es-background-overlay {
+    background-color: transparent !important;
+  }
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7 .es-widget-background-container,
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7 .es-widget-background-wrapper,
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7 .es-background-container {
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  /* Hide the widget's built-in title — our editorial header carries that role */
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7 .es-widget-title-container {
+    display: none;
+  }
+
+  /* Rating header */
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7 .es-rating-value {
+    font-family: var(--f-cormorant), 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 28px;
+    color: var(--color-ink);
+  }
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7 .es-header-rating-reviews-count {
+    font-family: var(--f-inter), sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--color-brass);
+  }
+
+  /* Stars → brass */
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7 .es-rating-item-filled svg path {
+    fill: var(--color-brass) !important;
+  }
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7 .es-rating-item-unfilled svg path {
+    fill: rgba(176, 137, 83, 0.2) !important;
+  }
+
+  /* Review cards — hairline editorial */
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7 .es-review-background-container {
+    background-color: var(--color-ivory-2) !important;
+    border: 1px solid var(--color-line);
+    border-radius: 0 !important;
+    padding: 24px !important;
+  }
+
+  /* Author name + link */
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7 .es-review-author-name {
+    font-family: var(--f-cormorant), 'Cormorant Garamond', serif !important;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--color-ink);
+  }
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7 .es-review-link-container {
+    text-decoration: none !important;
+  }
+
+  /* Date */
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7 .es-review-info-date {
+    font-family: var(--f-inter), sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(20, 32, 38, 0.55);
+  }
+
+  /* Body text + "Read more" affordance */
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7 .es-text-shortener {
+    font-family: var(--f-inter), sans-serif !important;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(20, 32, 38, 0.78) !important;
+  }
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7 .es-text-shortener-control {
+    font-family: var(--f-inter), sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 10px !important;
+    letter-spacing: 0.32em !important;
+    text-transform: uppercase !important;
+    color: var(--color-brass) !important;
+    margin-top: 8px;
+  }
+
+  /* "Load More" → editorial brass-outlined pill */
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7 .es-load-more-button {
+    font-family: var(--f-inter), sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 11px !important;
+    letter-spacing: 0.32em !important;
+    text-transform: uppercase !important;
+    color: var(--color-teal-deep) !important;
+    background-color: var(--color-ivory) !important;
+    border: 1px solid var(--color-brass) !important;
+    border-radius: 999px !important;
+    transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease !important;
+  }
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7 .es-load-more-button:hover {
+    background-color: var(--color-brass-soft) !important;
+    border-color: var(--color-brass-soft) !important;
+    color: var(--color-teal-deep) !important;
+  }
+
   /* Blog Table Definitions */
   .blog-table {
     @apply min-w-full border-collapse border border-gray-300 my-6;

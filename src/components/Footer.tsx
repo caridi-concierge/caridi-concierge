@@ -34,6 +34,7 @@ export default function Footer() {
               Physician-led aesthetic care, delivered to private clients
               across New York City.
             </p>
+            <p className="font-body text-sm">{COMPANY.address.neighborhood} <br />{COMPANY.address.locality}, {COMPANY.address.region} {COMPANY.address.postalCode} <br /> {COMPANY.phone}</p>
             <div className="flex flex-wrap gap-3 pt-1">
               <a href={COMPANY.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <Image src="/images/merino_instagram.svg" alt="" width={20} height={20} />
@@ -63,7 +64,7 @@ export default function Footer() {
               <li><Link href="/treatments" className={linkBase}>Treatments</Link></li>
               <li><Link href="/locations" className={linkBase}>Locations</Link></li>
               <li><Link href="/about" className={linkBase}>About Dr. Caridi</Link></li>
-              <li><Link href="/blog" className={linkBase}>Journal</Link></li>
+              <li><Link href="/blog" className={linkBase}>Blog</Link></li>
             </ul>
           </div>
 

@@ -70,9 +70,8 @@ export default function FAQSection() {
               <AccordionItem title="Where are your NYC service areas?">
                 <p>
                   Concierge service throughout Brooklyn, Manhattan, and Queens,
-                  with a private studio in Gowanus opening January 2026. Select
-                  appointments available in Staten Island, the Bronx, and Long
-                  Island.
+                  with a private studio in Gowanus. Select appointments available 
+                  in Staten Island, the Bronx, and Long Island.
                 </p>
                 <p className="mt-3">
                   See{" "}

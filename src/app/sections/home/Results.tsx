@@ -29,12 +29,18 @@ export default function ResultsSection() {
           "Full-face neuromodulator with cheek, lip, and chin filler. Proportion fine-tuning.",
       },
       {
-        src: "/images/results/botox-cheek-filler-before-after.webp",
-        alt: "Lip refinement — before and after",
-        title: "Lip refinement",
-        description:
-          "Hydration and shape with proportion-first planning. No over-volumization.",
+        src: "/images/results/cheek-filler-before-after.webp",
+        alt: "Full face refresh result with softened lines and balanced facial contours",
+        title: "Full Face Harmony",
+        description: "Full face and neck Botox, plus filler in cheeks, nasolabial folds, and chin to restore harmony.",
       },
+      // {
+      //   src: "/images/results/botox-cheek-filler-before-after.webp",
+      //   alt: "Lip refinement — before and after",
+      //   title: "Lip refinement",
+      //   description:
+      //     "Hydration and shape with proportion-first planning. No over-volumization.",
+      // },
     ],
     []
   );

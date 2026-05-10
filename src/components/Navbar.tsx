@@ -10,7 +10,7 @@ const NAV_LINKS = [
   { href: "/treatments", label: "Treatments" },
   { href: "/locations", label: "Locations" },
   { href: "/about", label: "About" },
-  { href: "/blog", label: "Journal" },
+  { href: "/blog", label: "Blog" },
 ];
 
 const linkClass =
@@ -38,7 +38,7 @@ export default function Navbar({
         <div className="flex justify-start lg:justify-center">
           <Link href="/" aria-label="Caridi Concierge — Home">
             <Image
-              src="/images/caridi_concierge_logo_contrast_fraunces.svg"
+              src="/images/cc_logo_ivory_flat.svg"
               alt="Caridi Concierge"
               width={240}
               height={60}
