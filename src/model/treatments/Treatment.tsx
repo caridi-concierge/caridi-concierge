@@ -37,6 +37,16 @@ export type Treatment = {
     ctaText: string;
   };
 
+  /**
+   * Editorial categories used by the /treatments index filter.
+   * Keep in sync with `T_CATEGORIES` in the index page.
+   */
+  export type TreatmentCategory =
+    | "Neuromodulators"
+    | "Filler"
+    | "Skin"
+    | "Consults";
+
   export interface TreatmentMetadata {
   id: string;
   slug: string;
@@ -58,4 +68,15 @@ export type Treatment = {
   ctaHref: string;
   ctaText: string;
   ctaVariant: keyof typeof variants;
+
+  // Editorial fields used by /treatments listing
+  category: TreatmentCategory;
+  /** Numeric "from" price (USD). Render as `From $${from.toLocaleString()}`. */
+  from: number;
+  /** Pricing unit suffix shown after the price (e.g. "/ unit", "/ syringe"). Empty string for flat-fee treatments. */
+  unit: string;
+  /** Visit duration (e.g. "30–45 min"). */
+  duration: string;
+  /** Featured treatment is promoted into the big hero row on the index page. Set on exactly one entry. */
+  featured?: boolean;
 }

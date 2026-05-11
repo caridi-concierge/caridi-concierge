@@ -1,5 +1,9 @@
 import Navbar from "@/components/Navbar";
-import TreatmentsSection from "@/app/sections/treatments/Treatments";
+import TreatmentsHero from "@/app/sections/treatments/TreatmentsHero";
+import TreatmentsIndex from "@/app/sections/treatments/TreatmentsIndex";
+import TreatmentsDetail from "@/app/sections/treatments/TreatmentsDetail";
+import TreatmentsProcess from "@/app/sections/treatments/TreatmentsProcess";
+import TreatmentsFAQ from "@/app/sections/treatments/TreatmentsFAQ";
 import CTASection from "@/components/CTA";
 import Footer from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLD";
@@ -22,8 +26,12 @@ export default function TreatmentsPage() {
       <JsonLd schema={dermalFillerServiceSchema}/>
       <JsonLd schema={biostimulatoryFillerServiceSchema}/>
       <Navbar />
-      <TreatmentsSection />
-      <CTASection />
+      <TreatmentsHero />
+      <TreatmentsIndex />
+      <TreatmentsDetail />
+      <TreatmentsProcess />
+      <TreatmentsFAQ />
+      <CTASection variantKey="default" id="treatments-cta" />
       <Footer />
     </>
   )

@@ -1,10 +1,10 @@
 import { TreatmentMetadata } from "@/model/treatments/Treatment";
 
-const priceConsult = process.env.PRICE_CONSULT ?? 150;
-const priceBotox = process.env.PRICE_BOTOX ?? 12;
-const priceFillers = process.env.PRICE_FILLERS ?? 600;
-const priceBiostim = process.env.PRICE_BIOSTIM ?? 850;
-const priceChemicalPeels = process.env.PRICE_CHEMICAL_PEELS ?? 400;
+const priceConsult = Number(process.env.PRICE_CONSULT ?? 150);
+const priceBotox = Number(process.env.PRICE_BOTOX ?? 12);
+const priceFillers = Number(process.env.PRICE_FILLERS ?? 600);
+const priceBiostim = Number(process.env.PRICE_BIOSTIM ?? 850);
+const priceChemicalPeels = Number(process.env.PRICE_CHEMICAL_PEELS ?? 400);
 
 export const treatments: TreatmentMetadata[] = [
   {
@@ -32,6 +32,10 @@ export const treatments: TreatmentMetadata[] = [
     ctaHref: "/treatments/consult",
     ctaText: "Learn More",
     ctaVariant: "alt",
+    category: "Consults",
+    from: priceConsult,
+    unit: "· credited to first visit",
+    duration: "60 min",
   },
   {
     id: "botox",
@@ -63,6 +67,11 @@ export const treatments: TreatmentMetadata[] = [
     ctaHref: "/treatments/wrinkle-reduction",
     ctaText: "Learn More",
     ctaVariant: "alt",
+    category: "Neuromodulators",
+    from: priceBotox,
+    unit: "/ unit",
+    duration: "30–45 min",
+    featured: true,
   },
   {
     id: "fillers",
@@ -91,6 +100,10 @@ export const treatments: TreatmentMetadata[] = [
     ctaHref: "/treatments/dermal-fillers",
     ctaText: "Learn More",
     ctaVariant: "alt",
+    category: "Filler",
+    from: priceFillers,
+    unit: "/ syringe",
+    duration: "45–60 min",
   },
   {
     id: "biostim",
@@ -122,6 +135,10 @@ export const treatments: TreatmentMetadata[] = [
     ctaHref: "/treatments/biostimulatory-fillers",
     ctaText: "Learn More",
     ctaVariant: "alt",
+    category: "Skin",
+    from: priceBiostim,
+    unit: "/ syringe",
+    duration: "45 min",
   },
   {
     id: "chemical-peels",
@@ -149,5 +166,9 @@ export const treatments: TreatmentMetadata[] = [
     ctaHref: "/treatments/chemical-peels",
     ctaText: "Learn More",
     ctaVariant: "alt",
+    category: "Skin",
+    from: priceChemicalPeels,
+    unit: "",
+    duration: "30 min",
   }
 ];
