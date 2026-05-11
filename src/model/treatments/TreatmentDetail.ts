@@ -107,25 +107,25 @@ export interface TreatmentDetailContent {
   /** Italic display callout, brand voice. */
   pullquote?: { body: string; attr: string };
 
-  /** Suitability split list. */
-  bestFor: {
+  /** Suitability split list. Omit on pages where suitability doesn't apply (e.g. consult). */
+  bestFor?: {
     yes: string[];
     no: string[];
   };
 
-  /** Product table rows. */
-  products: TreatmentDetailProduct[];
-  /** Areas treated. */
-  areas: TreatmentDetailArea[];
+  /** Product table rows. Omit/empty on pages without products. */
+  products?: TreatmentDetailProduct[];
+  /** Areas treated. Omit/empty on pages without anatomic areas. */
+  areas?: TreatmentDetailArea[];
 
-  /** Pricing ranges table. */
-  pricing: TreatmentDetailPricingRow[];
+  /** Pricing ranges table. Omit/empty to hide the section. */
+  pricing?: TreatmentDetailPricingRow[];
 
   /** Visit timeline phases (typically 3 or 4). */
   process: TreatmentDetailProcessPhase[];
 
-  /** Downtime + aftercare. */
-  downtime: TreatmentDetailDowntime;
+  /** Downtime + aftercare. Omit on pages with no procedure-related downtime. */
+  downtime?: TreatmentDetailDowntime;
 
   /** Optional before/after gallery. When empty, the section can be hidden. */
   beforeAfter?: TreatmentDetailBeforeAfter[];

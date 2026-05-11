@@ -1,10 +1,8 @@
-import Banner from "@/components/Banner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTA";
-import BiostimulatoryFillersIntroSection from "@/app/sections/treatments/biostimulatory-fillers/BiostimulatoryFillersIntro";
-import BiostimulatoryFillersAreasSection from "@/app/sections/treatments/biostimulatory-fillers/BiostimulatoryFillersAreas"
-import BiostimulatoryFillersFAQSection from "@/app/sections/treatments/biostimulatory-fillers/BiostimulatoryFillersFAQ"
+import TreatmentDetailLayout from "@/app/sections/treatments/TreatmentDetailLayout";
+import { biostimulatoryFillersDetail } from "@/content/treatments/details/biostimulatory-fillers";
 import { createPageMetadata } from "@/lib/metadata";
 import { biostimulatoryFillersFAQSchema } from "@/content/schemas/treatments/biostimulatoryFillersFAQSchema";
 import { JsonLd } from "@/components/JsonLD";
@@ -20,17 +18,11 @@ export const metadata = createPageMetadata({
 export default function BiostimulatoryFillersPage() {
     return (
       <>
-      <JsonLd schema={biostimulatoryFillersFAQSchema} />
-      <Navbar />
-      <Banner
-        src="/images/biostim-filler-banner-light.webp"
-        alt="Biostimulatory fillers are are advanced treatments that can help help your body to produce more collagen and restore volume. At Caridi Concierge, we use Radiesse for biostimulatory fillers."
-      />
-      <BiostimulatoryFillersIntroSection />
-      <BiostimulatoryFillersAreasSection />
-      <BiostimulatoryFillersFAQSection />
-      <CTASection variantKey="biostim"/>
-      <Footer />
+        <JsonLd schema={biostimulatoryFillersFAQSchema} />
+        <Navbar />
+        <TreatmentDetailLayout content={biostimulatoryFillersDetail} />
+        <CTASection variantKey="biostim" id="biostimulatory-fillers-cta" />
+        <Footer />
       </>
     );
   }

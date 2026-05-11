@@ -1,10 +1,8 @@
-import Banner from "@/components/Banner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTA";
-import ConsultIntroSection from "@/app/sections/treatments/consult/ConsultIntro";
-import ConsultAreasSection from "@/app/sections/treatments/consult/ConsultAreas";
-import ConsultFAQSection from "@/app/sections/treatments/consult/ConsultFAQ";
+import TreatmentDetailLayout from "@/app/sections/treatments/TreatmentDetailLayout";
+import { consultDetail } from "@/content/treatments/details/consult";
 import { createPageMetadata } from "@/lib/metadata";
 import { consultFAQSchema } from "@/content/schemas/treatments/consultFAQShema";
 import { JsonLd } from "@/components/JsonLD";
@@ -20,17 +18,11 @@ export const metadata = createPageMetadata({
 export default function ConsultPage() {
     return (
       <>
-      <JsonLd schema={consultFAQSchema} />
-      <Navbar />
-      <Banner
-        src="/images/consult-banner-light.webp"
-        alt="Consultation banner for Caridi Concierge aesthetic treatments."
-      />
-      <ConsultIntroSection />
-      <ConsultAreasSection />
-      <ConsultFAQSection />
-      <CTASection variantKey="consult"/>
-      <Footer />
+        <JsonLd schema={consultFAQSchema} />
+        <Navbar />
+        <TreatmentDetailLayout content={consultDetail} />
+        <CTASection variantKey="consult" id="consult-cta" />
+        <Footer />
       </>
     );
   }

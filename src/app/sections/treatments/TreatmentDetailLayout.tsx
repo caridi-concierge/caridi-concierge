@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Eyebrow from "@/components/Eyebrow";
@@ -80,15 +81,12 @@ function Hero({ content }: { content: TreatmentDetailContent }) {
 
 function SpecRail({ content }: { content: TreatmentDetailContent }) {
   return (
-    <div
-      className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 bg-ivory border-t border-line"
-    >
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 bg-ivory border-t border-line">
       {content.spec.map((s, i) => (
         <div
           key={s.l}
           className={[
             "px-6 sm:px-7 py-6 sm:py-[26px]",
-            // hairline grid dividers (right and bottom on small, right only on lg)
             i % 2 === 1 ? "" : "border-r border-line",
             "sm:[&:nth-child(3n)]:border-r-0 sm:[&:not(:nth-child(3n))]:border-r sm:border-line",
             "lg:[&:nth-child(6n)]:border-r-0 lg:[&:not(:nth-child(6n))]:border-r lg:border-line",
@@ -107,24 +105,10 @@ function SpecRail({ content }: { content: TreatmentDetailContent }) {
 
 /* ─────────────────────────  Section nav  ───────────────────────── */
 
-const SECTION_NAV = [
-  { anchor: "overview", label: "Overview" },
-  { anchor: "best-for", label: "Best for" },
-  { anchor: "products", label: "Products & areas" },
-  { anchor: "process", label: "A visit" },
-  { anchor: "pricing", label: "Pricing" },
-  { anchor: "downtime", label: "Downtime" },
-  { anchor: "before-after", label: "Before & after" },
-  { anchor: "faqs", label: "FAQs" },
-  { anchor: "pairs", label: "Pairs with" },
-];
+type NavItem = { anchor: string; label: string };
 
-function SectionNav({
-  hideAnchors,
-}: {
-  hideAnchors?: string[];
-}) {
-  const items = SECTION_NAV.filter((s) => !hideAnchors?.includes(s.anchor));
+function SectionNav({ items }: { items: NavItem[] }) {
+  if (items.length === 0) return null;
   return (
     <div
       className="sticky top-0 z-10 bg-ivory border-y border-line"
@@ -151,16 +135,22 @@ function SectionNav({
   );
 }
 
-/* ─────────────────────────  Overview  ───────────────────────── */
+/* ─────────────────────────  Section components  ───────────────────────── */
 
-function Overview({ content }: { content: TreatmentDetailContent }) {
+type NumberedProps = {
+  content: TreatmentDetailContent;
+  /** Two-digit section number assigned by the layout (e.g. "01", "02"). */
+  n: string;
+};
+
+function Overview({ content, n }: NumberedProps) {
   return (
     <section id="overview" className="bg-ivory scroll-mt-20">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-20 py-20 lg:py-[110px]">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20 items-start">
           <div className="lg:sticky lg:top-24">
             <Eyebrow withDash className="text-brass mb-4">
-              01 · The treatment
+              {n} · The treatment
             </Eyebrow>
             <h2 className="font-display font-light text-[40px] sm:text-5xl lg:text-[56px] leading-[1.05]">
               What it is,{" "}
@@ -183,9 +173,9 @@ function Overview({ content }: { content: TreatmentDetailContent }) {
   );
 }
 
-/* ─────────────────────────  Best for  ───────────────────────── */
-
-function BestFor({ content }: { content: TreatmentDetailContent }) {
+function BestFor({ content, n }: NumberedProps) {
+  const bf = content.bestFor;
+  if (!bf || (bf.yes.length === 0 && bf.no.length === 0)) return null;
   return (
     <section
       id="best-for"
@@ -193,7 +183,7 @@ function BestFor({ content }: { content: TreatmentDetailContent }) {
     >
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-20 py-20 lg:py-[110px]">
         <Eyebrow withDash className="text-brass mb-4">
-          02 · Suitability
+          {n} · Suitability
         </Eyebrow>
         <h2 className="font-display font-light text-[40px] sm:text-5xl lg:text-[56px] leading-[1.05] mb-14 max-w-[760px]">
           Best for,{" "}
@@ -205,7 +195,7 @@ function BestFor({ content }: { content: TreatmentDetailContent }) {
               Right for you if
             </Eyebrow>
             <ul className="list-none p-0 m-0">
-              {content.bestFor.yes.map((item) => (
+              {bf.yes.map((item) => (
                 <li
                   key={item}
                   className="grid grid-cols-[20px_1fr] gap-4 py-4 border-t border-line font-body text-[15px] leading-[1.6] text-ink"
@@ -224,7 +214,7 @@ function BestFor({ content }: { content: TreatmentDetailContent }) {
           <div className="bg-ivory-2 md:pl-12 py-10 md:py-10">
             <Eyebrow className="text-ink/55 text-[10px] mb-6">Hold off if</Eyebrow>
             <ul className="list-none p-0 m-0">
-              {content.bestFor.no.map((item) => (
+              {bf.no.map((item) => (
                 <li
                   key={item}
                   className="grid grid-cols-[20px_1fr] gap-4 py-4 border-t border-line font-body text-[15px] leading-[1.6] text-ink/70"
@@ -243,9 +233,16 @@ function BestFor({ content }: { content: TreatmentDetailContent }) {
   );
 }
 
-/* ─────────────────────────  Products & areas  ───────────────────────── */
+function ProductsAreas({ content, n }: NumberedProps) {
+  const products = content.products ?? [];
+  const areas = content.areas ?? [];
+  if (products.length === 0 && areas.length === 0) return null;
 
-function ProductsAreas({ content }: { content: TreatmentDetailContent }) {
+  // Filler logic so partial last rows in the areas grid don't show as gray bands.
+  const smFillers = (2 - (areas.length % 2)) % 2;
+  const lgFillers = (3 - (areas.length % 3)) % 3;
+  const fillerCount = Math.max(smFillers, lgFillers);
+
   return (
     <section
       id="products"
@@ -255,7 +252,7 @@ function ProductsAreas({ content }: { content: TreatmentDetailContent }) {
         <div className="flex flex-wrap items-end justify-between gap-6 mb-14">
           <div>
             <Eyebrow withDash className="text-brass mb-4">
-              03 · Products & areas
+              {n} · Products & areas
             </Eyebrow>
             <h2 className="font-display font-light text-[40px] sm:text-5xl lg:text-[56px] leading-[1.05] max-w-[820px]">
               What we use,{" "}
@@ -267,67 +264,82 @@ function ProductsAreas({ content }: { content: TreatmentDetailContent }) {
           </Eyebrow>
         </div>
 
-        {/* Products table */}
-        <div className="mb-16 lg:mb-[70px]">
-          <Eyebrow withDash className="text-brass text-[10px] mb-5">
-            Products
-          </Eyebrow>
-          {/* Header row — hidden on small */}
-          <div className="hidden md:grid grid-cols-[1.3fr_1fr_2fr_1.3fr] gap-8 py-4 border-b border-line">
-            <Eyebrow className="text-ink/55 text-[9px]">Product</Eyebrow>
-            <Eyebrow className="text-ink/55 text-[9px]">By</Eyebrow>
-            <Eyebrow className="text-ink/55 text-[9px]">Notes</Eyebrow>
-            <Eyebrow className="text-ink/55 text-[9px]">Used for</Eyebrow>
+        {products.length > 0 && (
+          <div className="mb-16 lg:mb-[70px]">
+            <Eyebrow withDash className="text-brass text-[10px] mb-5">
+              Products
+            </Eyebrow>
+            <div className="hidden md:grid grid-cols-[1.3fr_1fr_2fr_1.3fr] gap-8 py-4 border-b border-line">
+              <Eyebrow className="text-ink/55 text-[9px]">Product</Eyebrow>
+              <Eyebrow className="text-ink/55 text-[9px]">By</Eyebrow>
+              <Eyebrow className="text-ink/55 text-[9px]">Notes</Eyebrow>
+              <Eyebrow className="text-ink/55 text-[9px]">Used for</Eyebrow>
+            </div>
+            <ul className="list-none p-0 m-0">
+              {products.map((p) => (
+                <li
+                  key={p.name}
+                  className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr_2fr_1.3fr] gap-3 md:gap-8 py-6 md:py-[22px] border-b border-line items-baseline"
+                >
+                  <div className="font-display font-normal text-[22px]">
+                    {p.name}
+                  </div>
+                  <Eyebrow className="text-ink/55 text-[10px]">{p.by}</Eyebrow>
+                  <p className="font-body text-sm leading-[1.6] text-ink/70 max-w-[560px]">
+                    {p.note}
+                  </p>
+                  <Eyebrow className="text-brass text-[10px]">{p.use}</Eyebrow>
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul className="list-none p-0 m-0">
-            {content.products.map((p) => (
-              <li
-                key={p.name}
-                className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr_2fr_1.3fr] gap-3 md:gap-8 py-6 md:py-[22px] border-b border-line items-baseline"
-              >
-                <div className="font-display font-normal text-[22px]">
-                  {p.name}
-                </div>
-                <Eyebrow className="text-ink/55 text-[10px]">{p.by}</Eyebrow>
-                <p className="font-body text-sm leading-[1.6] text-ink/70 max-w-[560px]">
-                  {p.note}
-                </p>
-                <Eyebrow className="text-brass text-[10px]">{p.use}</Eyebrow>
-              </li>
-            ))}
-          </ul>
-        </div>
+        )}
 
-        {/* Areas grid */}
-        <div>
-          <Eyebrow withDash className="text-brass text-[10px] mb-5">
-            Areas treated
-          </Eyebrow>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-line">
-            {content.areas.map((a, i) => (
-              <div
-                key={a.name}
-                className="bg-ivory p-7 sm:p-8 pb-9 border-t border-line"
-              >
-                <Eyebrow className="text-brass text-[10px] mb-3">
-                  {(i + 1).toString().padStart(2, "0")}
-                </Eyebrow>
-                <h3 className="font-display font-normal text-[26px] leading-[1.1] mb-3">
-                  {a.name}
-                </h3>
-                <p className="font-body text-sm leading-[1.7] text-ink/70">
-                  {a.copy}
-                </p>
-              </div>
-            ))}
+        {areas.length > 0 && (
+          <div>
+            <Eyebrow withDash className="text-brass text-[10px] mb-5">
+              Areas treated
+            </Eyebrow>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-line">
+              {areas.map((a, i) => (
+                <div
+                  key={a.name}
+                  className="bg-ivory p-7 sm:p-8 pb-9 border-t border-line"
+                >
+                  <Eyebrow className="text-brass text-[10px] mb-3">
+                    {(i + 1).toString().padStart(2, "0")}
+                  </Eyebrow>
+                  <h3 className="font-display font-normal text-[26px] leading-[1.1] mb-3">
+                    {a.name}
+                  </h3>
+                  <p className="font-body text-sm leading-[1.7] text-ink/70">
+                    {a.copy}
+                  </p>
+                </div>
+              ))}
+              {Array.from({ length: fillerCount }).map((_, i) => {
+                const visibleAtSm = i < smFillers;
+                const visibleAtLg = i < lgFillers;
+                return (
+                  <div
+                    key={`filler-${i}`}
+                    aria-hidden="true"
+                    className={[
+                      "bg-ivory",
+                      "hidden",
+                      visibleAtSm ? "sm:block" : "sm:hidden",
+                      visibleAtLg ? "lg:block" : "lg:hidden",
+                    ].join(" ")}
+                  />
+                );
+              })}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
 }
-
-/* ─────────────────────────  Pullquote  ───────────────────────── */
 
 function Pullquote({ content }: { content: TreatmentDetailContent }) {
   if (!content.pullquote) return null;
@@ -348,22 +360,26 @@ function Pullquote({ content }: { content: TreatmentDetailContent }) {
   );
 }
 
-/* ─────────────────────────  Process  ───────────────────────── */
-
-function ProcessTimeline({ content }: { content: TreatmentDetailContent }) {
+function ProcessTimeline({ content, n }: NumberedProps) {
   const phases = content.process;
+  if (phases.length === 0) return null;
   return (
     <section id="process" className="bg-ivory-2 scroll-mt-20">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-20 py-20 lg:py-[110px]">
         <Eyebrow withDash className="text-brass mb-4">
-          04 · A visit, step by step
+          {n} · A visit, step by step
         </Eyebrow>
         <h2 className="font-display font-light text-[40px] sm:text-5xl lg:text-[56px] leading-[1.05] mb-14 max-w-[880px]">
-          Four quiet steps.{" "}
-          <em className="not-italic italic font-light text-brass">One visit.</em>
+          {phases.length === 4 ? (
+            <>Four quiet steps. <em className="not-italic italic font-light text-brass">One visit.</em></>
+          ) : (
+            <>Quiet steps. <em className="not-italic italic font-light text-brass">No surprises.</em></>
+          )}
         </h2>
         <div
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${phases.length} border-t border-line`}
+          className={`grid grid-cols-1 md:grid-cols-2 ${
+            phases.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"
+          } border-t border-line`}
         >
           {phases.map((p, i) => (
             <div
@@ -391,9 +407,9 @@ function ProcessTimeline({ content }: { content: TreatmentDetailContent }) {
   );
 }
 
-/* ─────────────────────────  Pricing  ───────────────────────── */
-
-function PricingTable({ content }: { content: TreatmentDetailContent }) {
+function PricingTable({ content, n }: NumberedProps) {
+  const pricing = content.pricing ?? [];
+  if (pricing.length === 0) return null;
   return (
     <section
       id="pricing"
@@ -403,7 +419,7 @@ function PricingTable({ content }: { content: TreatmentDetailContent }) {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20 items-start">
           <div>
             <Eyebrow withDash className="text-brass mb-4">
-              05 · Pricing
+              {n} · Pricing
             </Eyebrow>
             <h2 className="font-display font-light text-4xl sm:text-5xl lg:text-[52px] leading-[1.08]">
               Concierge ranges,{" "}
@@ -424,7 +440,7 @@ function PricingTable({ content }: { content: TreatmentDetailContent }) {
               <Eyebrow className="text-ink/55 text-[9px] text-right">Up to</Eyebrow>
             </div>
             <ul className="list-none p-0 m-0">
-              {content.pricing.map((row) => (
+              {pricing.map((row) => (
                 <li
                   key={row.area}
                   className="grid grid-cols-1 sm:grid-cols-[2fr_1fr_1fr] gap-1 sm:gap-6 py-5 border-b border-line items-baseline"
@@ -458,15 +474,14 @@ function PricingTable({ content }: { content: TreatmentDetailContent }) {
   );
 }
 
-/* ─────────────────────────  Downtime & aftercare  ───────────────────────── */
-
-function DowntimeAftercare({ content }: { content: TreatmentDetailContent }) {
+function DowntimeAftercare({ content, n }: NumberedProps) {
   const d = content.downtime;
+  if (!d) return null;
   return (
     <section id="downtime" className="bg-ivory-2 scroll-mt-20">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-20 py-20 lg:py-[110px]">
         <Eyebrow withDash className="text-brass mb-4">
-          06 · Downtime & aftercare
+          {n} · Downtime & aftercare
         </Eyebrow>
         <h2 className="font-display font-light text-[40px] sm:text-5xl lg:text-[56px] leading-[1.05] mb-14 max-w-[880px]">
           What to expect,{" "}
@@ -476,7 +491,6 @@ function DowntimeAftercare({ content }: { content: TreatmentDetailContent }) {
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-16 items-start">
-          {/* Immediate symptoms + work-ready */}
           <div>
             <Eyebrow withDash className="text-brass text-[10px] mb-5">
               Immediate
@@ -501,7 +515,6 @@ function DowntimeAftercare({ content }: { content: TreatmentDetailContent }) {
             </div>
           </div>
 
-          {/* Aftercare numbered list */}
           <div>
             <Eyebrow withDash className="text-brass text-[10px] mb-5">
               Aftercare
@@ -528,11 +541,10 @@ function DowntimeAftercare({ content }: { content: TreatmentDetailContent }) {
   );
 }
 
-/* ─────────────────────────  Before & after  ───────────────────────── */
-
-function BeforeAfter({ content }: { content: TreatmentDetailContent }) {
+function BeforeAfter({ content, n }: NumberedProps) {
+  if (content.beforeAfter === undefined) return null;
   const items =
-    content.beforeAfter && content.beforeAfter.length > 0
+    content.beforeAfter.length > 0
       ? content.beforeAfter
       : [
           { src: "", alt: "Lip · before / 2 wk", label: "Lip · before / 2 wk" },
@@ -550,7 +562,7 @@ function BeforeAfter({ content }: { content: TreatmentDetailContent }) {
         <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
           <div>
             <Eyebrow withDash className="text-brass mb-4">
-              07 · Before & after
+              {n} · Before & after
             </Eyebrow>
             <h2 className="font-display font-light text-[40px] sm:text-5xl lg:text-[56px] leading-[1.05] max-w-[760px]">
               Quiet results,{" "}
@@ -607,16 +619,15 @@ function StripedPlaceholder({ label }: { label: string }) {
   );
 }
 
-/* ─────────────────────────  FAQs  ───────────────────────── */
-
-function FAQs({ content }: { content: TreatmentDetailContent }) {
+function FAQs({ content, n }: NumberedProps) {
+  if (content.faqs.length === 0) return null;
   return (
     <section id="faqs" className="bg-ivory-2 scroll-mt-20">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-20 py-20 lg:py-[110px]">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20 items-start">
           <div>
             <Eyebrow withDash className="text-brass mb-4">
-              08 · {content.category} questions
+              {n} · {content.category} questions
             </Eyebrow>
             <h2 className="font-display font-light text-4xl sm:text-5xl lg:text-[52px] leading-[1.08]">
               Honest answers,{" "}
@@ -644,9 +655,8 @@ function FAQs({ content }: { content: TreatmentDetailContent }) {
   );
 }
 
-/* ─────────────────────────  Pairs well with  ───────────────────────── */
-
-function Related({ content }: { content: TreatmentDetailContent }) {
+function Related({ content, n }: NumberedProps) {
+  if (content.related.length === 0) return null;
   return (
     <section
       id="pairs"
@@ -656,7 +666,7 @@ function Related({ content }: { content: TreatmentDetailContent }) {
         <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
           <div>
             <Eyebrow withDash className="text-brass mb-4">
-              09 · Pairs well with
+              {n} · Pairs well with
             </Eyebrow>
             <h2 className="font-display font-light text-[40px] sm:text-5xl lg:text-[56px] leading-[1.05] max-w-[760px]">
               What we often{" "}
@@ -718,27 +728,120 @@ export type TreatmentDetailLayoutProps = {
   content: TreatmentDetailContent;
 };
 
+/**
+ * Build the section list for a given content, including only sections with content.
+ * Numbered sections are renumbered sequentially; the pullquote is unnumbered.
+ */
+function buildSections(content: TreatmentDetailContent) {
+  const numbered: { anchor: string; label: string; node: (n: string) => React.ReactNode }[] = [];
+
+  numbered.push({
+    anchor: "overview",
+    label: "Overview",
+    node: (n) => <Overview content={content} n={n} />,
+  });
+
+  if (
+    content.bestFor &&
+    (content.bestFor.yes.length > 0 || content.bestFor.no.length > 0)
+  ) {
+    numbered.push({
+      anchor: "best-for",
+      label: "Best for",
+      node: (n) => <BestFor content={content} n={n} />,
+    });
+  }
+
+  const hasProducts = (content.products?.length ?? 0) > 0;
+  const hasAreas = (content.areas?.length ?? 0) > 0;
+  if (hasProducts || hasAreas) {
+    numbered.push({
+      anchor: "products",
+      label: "Products & areas",
+      node: (n) => <ProductsAreas content={content} n={n} />,
+    });
+  }
+
+  if (content.process.length > 0) {
+    numbered.push({
+      anchor: "process",
+      label: "A visit",
+      node: (n) => <ProcessTimeline content={content} n={n} />,
+    });
+  }
+
+  if ((content.pricing?.length ?? 0) > 0) {
+    numbered.push({
+      anchor: "pricing",
+      label: "Pricing",
+      node: (n) => <PricingTable content={content} n={n} />,
+    });
+  }
+
+  if (content.downtime) {
+    numbered.push({
+      anchor: "downtime",
+      label: "Downtime",
+      node: (n) => <DowntimeAftercare content={content} n={n} />,
+    });
+  }
+
+  if (content.beforeAfter !== undefined) {
+    numbered.push({
+      anchor: "before-after",
+      label: "Before & after",
+      node: (n) => <BeforeAfter content={content} n={n} />,
+    });
+  }
+
+  if (content.faqs.length > 0) {
+    numbered.push({
+      anchor: "faqs",
+      label: "FAQs",
+      node: (n) => <FAQs content={content} n={n} />,
+    });
+  }
+
+  if (content.related.length > 0) {
+    numbered.push({
+      anchor: "pairs",
+      label: "Pairs with",
+      node: (n) => <Related content={content} n={n} />,
+    });
+  }
+
+  return numbered;
+}
+
 export default function TreatmentDetailLayout({
   content,
 }: TreatmentDetailLayoutProps) {
-  const hideAnchors: string[] = [];
-  // Hide before-after if there are no images and we want to skip the placeholders.
-  // For now we always render with placeholders, so don't hide.
+  const numbered = buildSections(content);
+  const navItems: NavItem[] = numbered.map(({ anchor, label }) => ({
+    anchor,
+    label,
+  }));
+
+  // Pullquote slots in just after the latest of products / best-for / overview
+  // (whichever is present), preserving the design's rhythm of body → quote → process.
+  const pullquoteCandidates = ["products", "best-for", "overview"];
+  const pullquoteAfterIndex = numbered.reduce(
+    (acc, s, i) => (pullquoteCandidates.includes(s.anchor) ? Math.max(acc, i) : acc),
+    -1
+  );
 
   return (
     <>
       <Hero content={content} />
-      <SectionNav hideAnchors={hideAnchors} />
-      <Overview content={content} />
-      <BestFor content={content} />
-      <ProductsAreas content={content} />
-      {content.pullquote ? <Pullquote content={content} /> : null}
-      <ProcessTimeline content={content} />
-      <PricingTable content={content} />
-      <DowntimeAftercare content={content} />
-      <BeforeAfter content={content} />
-      <FAQs content={content} />
-      <Related content={content} />
+      <SectionNav items={navItems} />
+      {numbered.map(({ anchor, node }, i) => (
+        <Fragment key={anchor}>
+          {node((i + 1).toString().padStart(2, "0"))}
+          {i === pullquoteAfterIndex && content.pullquote ? (
+            <Pullquote content={content} />
+          ) : null}
+        </Fragment>
+      ))}
     </>
   );
 }

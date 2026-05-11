@@ -1,10 +1,8 @@
-import Banner from "@/components/Banner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTA";
-import ChemicalPeelsIntroSection from "@/app/sections/treatments/chemical-peels/ChemicalPeelsIntro";
-import ChemicalPeelsAreasSection from "@/app/sections/treatments/chemical-peels/ChemicalPeelsAreas";
-import ChemicalPeelsFAQSection from "@/app/sections/treatments/chemical-peels/ChemicalPeelsFAQs";
+import TreatmentDetailLayout from "@/app/sections/treatments/TreatmentDetailLayout";
+import { chemicalPeelsDetail } from "@/content/treatments/details/chemical-peels";
 import { createPageMetadata } from "@/lib/metadata";
 import { chemicalPeelsFAQSchema } from "@/content/schemas/treatments/chemicalPeelsFAQSchema";
 import { JsonLd } from "@/components/JsonLD";
@@ -31,17 +29,11 @@ export const metadata = createPageMetadata({
 export default function ChemicalPeelsPage() {
     return (
       <>
-      <JsonLd schema={chemicalPeelsFAQSchema} />
-      <Navbar />
-      <Banner
-        src="/images/chemical-peels-banner-light.webp"
-        alt="Chemical peels are a non-surgical treatment that can help reduce the appearance of wrinkles and fine lines. At Caridi Concierge, we use RHA Collection and Juvederm for dermal fillers."
-      />
-      <ChemicalPeelsIntroSection />
-      <ChemicalPeelsAreasSection />
-      <ChemicalPeelsFAQSection />
-      <CTASection variantKey="peels"/>
-      <Footer />
+        <JsonLd schema={chemicalPeelsFAQSchema} />
+        <Navbar />
+        <TreatmentDetailLayout content={chemicalPeelsDetail} />
+        <CTASection variantKey="peels" id="chemical-peels-cta" />
+        <Footer />
       </>
     );
   }
