@@ -9,13 +9,13 @@ interface LocationOfferingsProps {
 
 export default function LocationOfferings({ content }: LocationOfferingsProps) {
   return (
-    <section className="py-16 bg-merino">
+    <section className="py-16 bg-ivory-2">
       <Container>
         <div className="text-center mb-12">
-          <h2 className="font-fraunces text-4xl md:text-5xl text-outer-space mb-4">
+          <h2 className="font-display text-4xl md:text-5xl text-ink mb-4">
             {content.title}
           </h2>
-          <p className="text-lg text-outer-space/80 max-w-2xl mx-auto">
+          <p className="text-lg text-ink/70 max-w-2xl mx-auto">
             {content.subtitle}
           </p>
         </div>
@@ -28,17 +28,17 @@ export default function LocationOfferings({ content }: LocationOfferingsProps) {
         </div>
 
         {/* Features */}
-        <div className="bg-white rounded-2xl p-8 md:p-12 text-center">
-          <h2 className="font-fraunces font-bold text-3xl pb-10 text-outer-space mb-4">
+        <div className="bg-ivory rounded-2xl p-8 md:p-12 text-center">
+          <h2 className="font-display font-bold text-3xl pb-10 text-ink mb-4">
             Why Caridi Concierge?
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {content.features.map((feature, index) => (
               <div key={index} className="text-center">
-                <h3 className="font-fraunces text-xl text-outer-space mb-4">
+                <h3 className="font-display text-xl text-ink mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-outer-space/80 leading-relaxed">
+                <p className="text-ink/70 leading-relaxed">
                   {feature.description}
                 </p>
               </div>

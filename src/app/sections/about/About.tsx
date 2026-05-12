@@ -1,19 +1,20 @@
 // src/components/AboutMissionSection.tsx
 import Image from "next/image";
-import PrimaryButton from "@/components/PrimaryButton";
+import Link from "next/link";
 import Container from "@/components/Container";
+import IconArrow from "@/components/icons/IconArrow";
 
 export default function AboutMissionSection() {
   return (
-    <section className="py-16 bg-merino">
+    <section className="py-16 bg-ivory-2">
       <Container className="container mx-auto px-4 max-w-3xl text-start">
         {/* Heading */}
-        <h2 className="font-fraunces text-3xl md:text-4xl text-outer-space mb-6">
+        <h2 className="font-display text-3xl md:text-4xl text-ink mb-6">
           My mission to you
         </h2>
 
         {/* Paragraphs */}
-        <div className="space-y-4 text-sm md:text-base text-gray-700 leading-relaxed mb-8">
+        <div className="space-y-4 text-sm md:text-base text-ink/70 leading-relaxed mb-8">
           <p>
             Your health and beauty are as unique as you are, and I believe your
             care should reflect that. At Caridi Concierge, I&apos;m dedicated to
@@ -36,12 +37,13 @@ export default function AboutMissionSection() {
 
         {/* CTA */}
         <div className="mb-12">
-          <PrimaryButton
+          <Link
             href="/book"
-            variant="primary"
+            id="about-mission-book-cta"
+            className="inline-flex items-center gap-3 rounded-full bg-teal px-7 py-4 font-body text-[11px] font-medium uppercase tracking-[0.32em] text-ivory transition-colors duration-200 hover:bg-teal-deep"
           >
-            Book a visit
-          </PrimaryButton>
+            Book a visit <IconArrow />
+          </Link>
         </div>
 
         {/* Image */}

@@ -1,105 +1,70 @@
 import Link from "next/link";
+import Image from "next/image";
+import Eyebrow from "@/components/Eyebrow";
+import IconArrow from "@/components/icons/IconArrow";
 import { Location } from "@/lib/constants/locations";
 
-export function LocationCard({ loc }: { loc: Location }) {
-  const { address } = loc;
+const TYPE_LABEL: Record<string, string> = {
+  studio: "Private Studio",
+  gowanus: "Clinic",
+  concierge: "Concierge",
+};
 
-  // Prefer `complete`, otherwise combine numbered address fields
+const TITLE_OVERRIDE: Record<string, string> = {
+  concierge: "Your home",
+};
+
+export function LocationCard({ loc, ordinal }: { loc: Location; ordinal: number }) {
+  const { address } = loc;
   const primaryAddress =
     address.complete ||
-    [address.streetAddress1, address.streetAddress2]
-      .filter(Boolean)
-      .join(", ");
-
-  const hasAddress = Boolean(primaryAddress);
+    [address.streetAddress1, address.streetAddress2].filter(Boolean).join(", ");
+  const eyebrowLabel = TYPE_LABEL[loc.id] ?? loc.type;
+  const title = TITLE_OVERRIDE[loc.id] ?? loc.name;
+  const padded = ordinal.toString().padStart(2, "0");
 
   return (
-    <article className="rounded-2xl border border-outer-space/10 bg-white/70 backdrop-blur-sm p-5 md:p-6 shadow-sm flex flex-col gap-4">
-      <div className="relative">
-        {/* Clickable main area */}
-        <Link href={`/locations/${loc.slug}`} className="group block">
-          {/* Header */}
-          <div className="flex items-start justify-between gap-3 pr-8">
-            <div>
-              <div className="flex items-center gap-3">
-                <h2 className="font-fraunces text-xl md:text-2xl group-hover:text-outer-space/80 transition-colors">
-                  {loc.name}
-                </h2>
-                {loc.badge && (
-                  <span className="inline-flex items-center rounded-full border border-outer-space/20 px-2.5 py-0.5 text-xs uppercase tracking-[0.16em] text-outer-space/70">
-                    {loc.badge}
-                  </span>
-                )}
-              </div>
-              <p className="text-xs uppercase tracking-[0.18em] text-outer-space/60 mt-1">
-                {loc.type}
-              </p>
-            </div>
-          </div>
-
-          {/* Address as H3 */}
-          {hasAddress && (
-            <h3 className="font-medium text-base text-outer-space/80 mt-3 group-hover:text-outer-space/60 transition-colors">
+    <article className="border-b border-line first:border-t">
+      <Link
+        href={`/locations/${loc.slug}`}
+        aria-label={`${eyebrowLabel} — ${title}`}
+        className="group grid grid-cols-[96px_1fr] sm:grid-cols-[120px_1fr_auto] items-center gap-5 sm:gap-7 py-7 sm:py-8 transition-colors duration-200"
+      >
+        <div className="relative w-[96px] sm:w-[120px] h-[72px] sm:h-[88px] overflow-hidden bg-bone">
+          <Image
+            src={loc.heroImage.src}
+            alt={loc.heroImage.alt}
+            fill
+            sizes="120px"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            style={{ filter: "saturate(0.85)" }}
+          />
+        </div>
+        <div className="min-w-0">
+          <Eyebrow className="text-brass text-[10px] mb-2">
+            {padded} — {eyebrowLabel}
+            {loc.badge && (
+              <span className="ml-3 text-ink/55">· {loc.badge}</span>
+            )}
+          </Eyebrow>
+          <h2 className="font-display font-normal text-2xl sm:text-[28px] leading-[1.1] text-ink transition-colors duration-200 group-hover:text-brass">
+            {title}
+          </h2>
+          {primaryAddress && (
+            <p className="font-body text-[13px] leading-[1.6] text-ink/55 mt-1.5">
               {primaryAddress}
-            </h3>
+            </p>
           )}
-
-          {/* Description */}
-          <p className="text-sm md:text-base text-outer-space/80 mt-2 group-hover:text-outer-space/60 transition-colors">
+          <p className="font-body text-[14px] leading-[1.7] text-ink/70 mt-2 max-w-[520px]">
             {loc.description}
           </p>
-
-          {/* Right-facing arrow */}
-          <div className="absolute right-0 top-[1.4rem] pr-1 md:pr-2">
-            <svg
-              className="h-5 w-5 text-outer-space/40 group-hover:text-outer-space group-hover:translate-x-1 transition-all duration-200"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </div>
-        </Link>
-      </div>
-
-      {/* CTAs (separate from main link) */}
-      <div className="flex flex-wrap gap-3 pt-1">
-        {loc.ctaPrimaryHref && (
-          <Link
-            id={`${loc.slug}-primary-cta`}
-            href={loc.ctaPrimaryHref}
-            className="inline-flex items-center justify-center rounded-full border border-outer-space bg-outer-space px-4 py-2 text-sm font-medium text-merino hover:bg-outer-space/90 transition"
-          >
-            {loc.ctaPrimaryLabel}
-          </Link>
-      )}
-
-        {loc.ctaSecondaryHref && (
-          <Link
-            id={`location-${loc.slug}-secondary-cta`}
-            href={loc.ctaSecondaryHref}
-            className="inline-flex items-center justify-center rounded-full border border-outer-space/30 px-4 py-2 text-sm font-medium text-outer-space hover:bg-white transition"
-          >
-            {loc.ctaSecondaryLabel}
-          </Link>
-        )}
-
-        {loc.ctaTertiaryHref && (
-          <Link
-            id={`location-${loc.slug}-zocdoc-cta`}
-            href={loc.ctaTertiaryHref}
-            className="inline-flex items-center justify-center rounded-full border border-prussian-blue/30 bg-gorse px-4 py-2 text-sm font-medium text-prussian-blue hover:bg-hawkes-blue transition"
-          >
-            {loc.ctaTertiaryLabel}
-          </Link>
-        )}
-      </div>
+        </div>
+        <div className="hidden sm:block text-right col-start-3 self-center">
+          <span className="inline-flex items-center gap-2 font-body text-[11px] font-medium uppercase tracking-[0.32em] text-ink transition-colors duration-200 group-hover:text-brass">
+            Visit <IconArrow className="w-3 h-3" />
+          </span>
+        </div>
+      </Link>
     </article>
   );
 }

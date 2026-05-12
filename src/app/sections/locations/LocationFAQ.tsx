@@ -12,14 +12,14 @@ interface LocationFAQProps {
 
 export default function LocationFAQ({ content, locationName }: LocationFAQProps) {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-ivory">
       <Container>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-fraunces text-4xl md:text-5xl text-outer-space mb-4">
+            <h2 className="font-display text-4xl md:text-5xl text-ink mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-outer-space/80">
+            <p className="text-lg text-ink/70">
               Common questions about our {locationName} location
             </p>
           </div>
@@ -27,7 +27,7 @@ export default function LocationFAQ({ content, locationName }: LocationFAQProps)
           <Accordion>
             {content.map((faq, index) => (
               <AccordionItem key={index} title={faq.question}>
-                <div className="text-outer-space/80 leading-relaxed">
+                <div className="text-ink/70 leading-relaxed">
                   {faq.answer}
                 </div>
               </AccordionItem>

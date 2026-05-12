@@ -4,7 +4,7 @@ import Container from "@/components/Container";
 
 export default function AboutDoctorSection() {
   return (
-    <section className="py-16 bg-champagne">
+    <section className="py-16 bg-bone">
       <Container className="container mx-auto px-4 text-center">
         {/* Header */}
         <div className="flex flex-col items-center mb-12">
@@ -15,7 +15,7 @@ export default function AboutDoctorSection() {
             height={108}
             className="h-auto w-12 sm:w-25 md:w-[93px]"
           />
-          <h1 className="font-fraunces text-3xl md:text-4xl text-outer-space mb-8">
+          <h1 className="font-display text-3xl md:text-4xl text-ink mb-8">
             Meet Dr. Caridi
           </h1>
         </div>
@@ -24,7 +24,7 @@ export default function AboutDoctorSection() {
         <div className="flex justify-center">
           <Link
             href="/staff/cristina-caridi"
-            className="flex flex-col items-center bg-champagne"
+            className="flex flex-col items-center bg-bone"
           >
             <div className="mb-6">
               <Image
@@ -36,10 +36,10 @@ export default function AboutDoctorSection() {
               />
             </div>
             <div className="text-center space-y-2">
-              <div className="font-bold text-lg text-outer-space">
+              <div className="font-bold text-lg text-ink">
                 Cristina Caridi, MD
               </div>
-              <div className="text-sm text-outer-space">
+              <div className="text-sm text-ink">
                 Personalized aesthetics, grounded in science, crafted with care.
               </div>
             </div>

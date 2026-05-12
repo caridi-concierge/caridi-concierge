@@ -9,18 +9,18 @@ import ResultsCarouselSection from "@/app/sections/home/Results";
 
 export default function LocationDetailLayout({ loc }: { loc: Location }) {
   const content = getLocationContent(loc.slug);
-  
+
   if (!content) {
     // Fallback if no content is found
     return (
-      <main className="bg-merino text-outer-space">
+      <main className="bg-ivory text-ink">
         <LocationDetailHero loc={loc} />
       </main>
     );
   }
 
   return (
-    <main className="bg-merino text-outer-space">
+    <main className="bg-ivory text-ink">
       <LocationDetailHero loc={loc} />
       <LocationStudioExperience content={content.studioExperience} />
       <LocationOfferings content={content.offerings} />

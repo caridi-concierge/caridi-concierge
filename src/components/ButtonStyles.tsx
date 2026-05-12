@@ -1,15 +1,16 @@
 export const base =
-  "inline-flex items-center justify-center whitespace-nowrap rounded-full border px-10 py-2.5 font-satoshi text-base font-medium transition-colors";
+  "inline-flex items-center justify-center whitespace-nowrap rounded-full border px-10 py-2.5 font-body text-base font-medium transition-colors";
 
 export const variants = {
   primary:
-    "bg-outer-space border-outer-space text-merino hover:bg-peach-puff hover:border-outer-space hover:text-outer-space",
+    "bg-teal border-teal text-ivory hover:bg-teal-deep hover:border-teal-deep",
   secondary:
-    "bg-carnation border-peach-puff text-peach-puff hover:bg-peach-puff hover:text-carnation hover:border-carnation",
+    "bg-brass border-brass text-ivory hover:bg-brass-soft hover:border-brass-soft",
   light:
-    "bg-white border-outer-space text-outer-space hover:bg-carnation hover:text-merino",
+    "bg-ivory border-ink text-ink hover:bg-bone hover:border-ink hover:text-ink",
   alt:
-    "bg-outer-space/40 border-outer-space text-outer-space hover:bg-peach-puff hover:text-outer-space hover:border-outer-space",
+    "bg-ivory-2 border-line text-ink hover:bg-bone hover:text-ink hover:border-line",
+  // Zocdoc retains its brand palette intentionally.
   zocdoc:
-    "bg-gorse text-prussian-blue border-prussian-blue/30 hover:bg-hawkes-blue"
+    "bg-gorse text-prussian-blue border-prussian-blue/30 hover:bg-hawkes-blue",
 };

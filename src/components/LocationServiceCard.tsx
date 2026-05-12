@@ -24,13 +24,13 @@ export default function LocationServiceCard({
   badge,
 }: LocationServiceCardProps) {
   const badgeStyles: Record<BadgeVariant, string> = {
-    popular: "bg-dimgray text-white",
-    new: "bg-emerald-600 text-white",
-    private: "bg-outer-space text-alabaster",
+    popular: "bg-brass text-white",
+    new: "bg-teal text-white",
+    private: "bg-teal text-ivory",
   };
 
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300 relative h-full flex flex-col">
+    <div className="bg-ivory rounded-2xl p-8 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300 relative h-full flex flex-col">
       {badge && (
         <span
           className={`absolute top-5 right-5 px-3 py-1 rounded-full text-xs font-semibold ${
@@ -42,18 +42,18 @@ export default function LocationServiceCard({
       )}
 
       <div className="mb-5 pr-20">
-        <h3 className="font-fraunces text-2xl text-outer-space">{title}</h3>
+        <h3 className="font-display text-2xl text-ink">{title}</h3>
         {subtitle ? (
-          <p className="text-outer-space/70 mt-1">{subtitle}</p>
+          <p className="text-ink/70 mt-1">{subtitle}</p>
         ) : null}
       </div>
 
-      <p className="text-outer-space/80 leading-relaxed mb-6">{whyHere}</p>
+      <p className="text-ink/70 leading-relaxed mb-6">{whyHere}</p>
 
-      <ul className="space-y-2 mb-8 text-[15px] text-outer-space flex-grow">
+      <ul className="space-y-2 mb-8 text-[15px] text-ink flex-grow">
         {bullets.map((b) => (
           <li key={b} className="flex items-start gap-2">
-            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-outer-space/50 flex-shrink-0" />
+            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-ink/55 flex-shrink-0" />
             <span>{b}</span>
           </li>
         ))}
