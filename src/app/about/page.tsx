@@ -1,8 +1,10 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AboutHero from "@/app/sections/about/AboutHero";
+import AboutModesSection from "@/app/sections/about/AboutModes";
 import AboutMissionSection from "@/app/sections/about/About";
-import AboutDoctorSection from "@/app/sections/about/AboutDoctor";
+import AboutLinksSection from "@/app/sections/about/AboutLinks";
 import FAQSection from "@/app/sections/home/FAQ";
 import CTASection from "@/components/CTA";
 import { JsonLd } from "@/components/JsonLD";
@@ -23,8 +25,10 @@ export default function AboutPage() {
         <>
         <JsonLd schema={physicianSchema}/>
         <Navbar />
+        <AboutHero />
+        <AboutModesSection />
         <AboutMissionSection />
-        <AboutDoctorSection />
+        <AboutLinksSection />
         <FAQSection />
         <CTASection variantKey='contact' />
         <Footer />
