@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import Eyebrow from "@/components/Eyebrow";
 import IconArrow from "@/components/icons/IconArrow";
 import { Location } from "@/lib/constants/locations";
@@ -28,21 +27,12 @@ export function LocationCard({ loc, ordinal }: { loc: Location; ordinal: number 
       <Link
         href={`/locations/${loc.slug}`}
         aria-label={`${eyebrowLabel} — ${title}`}
-        className="group grid grid-cols-[96px_1fr] sm:grid-cols-[120px_1fr_auto] items-center gap-5 sm:gap-7 py-7 sm:py-8 transition-colors duration-200"
+        className="group grid grid-cols-1 sm:grid-cols-[1fr_auto] items-start sm:items-center gap-3 sm:gap-7 py-7 sm:py-8 transition-colors duration-200"
       >
-        <div className="relative w-[96px] sm:w-[120px] h-[72px] sm:h-[88px] overflow-hidden bg-bone">
-          <Image
-            src={loc.heroImage.src}
-            alt={loc.heroImage.alt}
-            fill
-            sizes="120px"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-            style={{ filter: "saturate(0.85)" }}
-          />
-        </div>
         <div className="min-w-0">
           <Eyebrow className="text-brass text-[10px] mb-2">
             {padded} — {eyebrowLabel}
+            <span className="ml-3 text-ink/55">· {loc.statusLine}</span>
             {loc.badge && (
               <span className="ml-3 text-ink/55">· {loc.badge}</span>
             )}
@@ -59,7 +49,7 @@ export function LocationCard({ loc, ordinal }: { loc: Location; ordinal: number 
             {loc.description}
           </p>
         </div>
-        <div className="hidden sm:block text-right col-start-3 self-center">
+        <div className="hidden sm:block text-right self-center">
           <span className="inline-flex items-center gap-2 font-body text-[11px] font-medium uppercase tracking-[0.32em] text-ink transition-colors duration-200 group-hover:text-brass">
             Visit <IconArrow className="w-3 h-3" />
           </span>
