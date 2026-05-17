@@ -7,8 +7,6 @@ import AboutMissionSection from "@/app/sections/about/About";
 import AboutLinksSection from "@/app/sections/about/AboutLinks";
 import FAQSection from "@/app/sections/home/FAQ";
 import CTASection from "@/components/CTA";
-import { JsonLd } from "@/components/JsonLD";
-import { physicianSchema } from "@/content/schemas";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -23,7 +21,6 @@ export const metadata = createPageMetadata({
 export default function AboutPage() {
     return (
         <>
-        <JsonLd schema={physicianSchema}/>
         <Navbar />
         <AboutHero />
         <AboutModesSection />

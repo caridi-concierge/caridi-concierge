@@ -2,8 +2,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AllStaffSection from "@/app/sections/staff/AllStaff";
 import CTASection from "@/components/CTA";
-import { JsonLd } from "@/components/JsonLD";
-import { physicianSchema } from "@/content/schemas";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -17,7 +15,6 @@ export const metadata = createPageMetadata({
 export default function StaffPage() {
     return (
         <>
-        <JsonLd schema={physicianSchema}/>
         <Navbar />
         <AllStaffSection />
         <CTASection variantKey="staff"/>
