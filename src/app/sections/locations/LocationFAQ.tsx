@@ -12,7 +12,7 @@ interface LocationFAQProps {
 
 export default function LocationFAQ({ content, locationName }: LocationFAQProps) {
   return (
-    <section className="py-16 bg-ivory">
+    <section className="py-16 bg-ivory-2">
       <Container>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
