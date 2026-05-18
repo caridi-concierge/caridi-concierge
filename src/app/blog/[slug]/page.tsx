@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import BlogPostHeroSection from "@/app/sections/blog/BlogPostHero";
 import BlogPostBodySection from "@/app/sections/blog/BlogPostBody";
+import BlogPostRelated from "@/app/sections/blog/BlogPostRelated";
 import { getAllPosts, getPostBySlug } from "@/lib/blogs/posts";
+import { resolveRelatedPosts, resolveRelatedTreatment } from "@/lib/blogs/related";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLD";
@@ -17,7 +19,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPostBySlug(slug)
-  
+
   return createPageMetadata({
     title: post.metadata.title,
     description: post.metadata.description,
@@ -26,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   })
 }
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
   if (!post) return notFound();
@@ -34,10 +36,16 @@ export default async function BlogPost({ params }: { params: { slug: string } })
   const { metadata, Content } = post;
   const blogSchema = buildBlogSchema(slug, metadata);
 
+  const currentMeta = { ...metadata, slug };
+  const [relatedPosts, relatedTreatment] = await Promise.all([
+    resolveRelatedPosts(currentMeta, 3),
+    Promise.resolve(resolveRelatedTreatment(currentMeta)),
+  ]);
+
   return (
     <>
       <JsonLd schema={blogSchema} />
-      <Navbar />  
+      <Navbar />
       <BlogPostHeroSection
         title={metadata.title}
         author={metadata.author}
@@ -56,6 +64,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
       <BlogPostBodySection>
         <Content />
       </BlogPostBodySection>
+      <BlogPostRelated treatment={relatedTreatment} posts={relatedPosts} />
       <Footer />
     </>
   );

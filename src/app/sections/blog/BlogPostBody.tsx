@@ -4,8 +4,10 @@ type BlogPostBodyProps = {
 
 export default function BlogPostBodySection({ children }: BlogPostBodyProps) {
   return (
-    <section className="container mx-auto max-w-3xl px-6 py-12 prose prose-lg prose-headings:font-fraunces prose-p:text-outer-space/80">
-      {children}
+    <section className="bg-ivory">
+      <div className="mx-auto max-w-[720px] px-6 sm:px-10 lg:px-0 pt-8 pb-20 lg:pb-[120px]">
+        {children}
+      </div>
     </section>
   );
 }
