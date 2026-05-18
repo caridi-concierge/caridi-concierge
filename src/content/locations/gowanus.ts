@@ -85,7 +85,7 @@ export const gowanusContent: LocationContent = {
   ],
   doctorsNote: {
     body:
-      "The Gowanus space is small by design. It holds one client at a time, with no signage on the door and no shared waiting. If that's the kind of visit you've been looking for, write to me and I'll find you a Wednesday.",
+      "The Gowanus location is a more traditional medical setting. Its a great option for clents that arent interested in in-home treatments.",
     attr: "Cristina Caridi, MD",
   },
   offerings: {

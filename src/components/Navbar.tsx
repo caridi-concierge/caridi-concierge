@@ -7,9 +7,9 @@ import { COMPANY } from "@/lib/constants/company";
 import IconArrow from "@/components/icons/IconArrow";
 
 const NAV_LINKS = [
+  { href: "/about", label: "About" },
   { href: "/treatments", label: "Treatments" },
   { href: "/locations", label: "Locations" },
-  { href: "/about", label: "About" },
   { href: "/blog", label: "Blog" },
 ];
 

@@ -29,10 +29,19 @@ export default function ReviewsSection() {
 
         {/* Live Google reviews via Elfsight */}
         <div className="mt-20 lg:mt-24 pt-12 border-t border-line">
-          <div className="text-center mb-8">
-            <Eyebrow withDash className="text-brass">
-              From Google
+          <div className="text-center max-w-[760px] mx-auto mb-10 lg:mb-12">
+            <Eyebrow withDash className="text-brass mb-5">
+              In their own words
             </Eyebrow>
+            <h2 className="font-display font-light text-[32px] sm:text-[40px] lg:text-[44px] leading-[1.1] tracking-[-0.01em] text-ink">
+              Client{" "}
+              <em className="not-italic italic font-light text-brass">
+                Testimonials.
+              </em>
+            </h2>
+            <p className="mt-5 font-body text-[14px] sm:text-[15px] leading-[1.7] text-ink/70">
+              Reviews from clients of the practice, verified on Google.
+            </p>
           </div>
           <div
             className="elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7 w-full min-h-[500px]"

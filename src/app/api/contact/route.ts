@@ -4,10 +4,10 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
-  const { firstName, lastName, email, phone, message } = await req.json();
+  const { firstName, lastName, email, phone, message, prefer } = await req.json();
 
   const fullName = [firstName, lastName].filter(Boolean).join(" ").trim() || "Unknown";
-  const bodyText = `Name: ${fullName}\nEmail: ${email}\nPhone: ${phone || "N/A"}\n\nMessage:\n${message || ""}`;
+  const bodyText = `Name: ${fullName}\nEmail: ${email}\nPhone: ${phone || "N/A"}\nPreferred reply: ${prefer || "No preference"}\n\nMessage:\n${message || ""}`;
 
   try {
     await resend.emails.send({

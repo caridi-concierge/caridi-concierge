@@ -40,7 +40,7 @@ export default function TreatmentsHero() {
               </em>
             </h1>
             <p className="mt-9 max-w-[520px] text-base leading-[1.7] font-light text-ink/70">
-              Six services, one physician. Each treatment is calibrated to
+              Five services, one physician. Each treatment is calibrated to
               your face, your downtime, your calendar—not a menu of upsells.
             </p>
           </div>

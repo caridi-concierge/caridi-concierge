@@ -29,11 +29,11 @@ const LINKS: LinkCard[] = [
     href: "/locations",
   },
   {
-    eyebrow: "Journal",
+    eyebrow: "Blog",
     title: "Notes from the",
     italicTail: "practice.",
     body: "Pre-treatment guides, aftercare, and the occasional clinical aside — written by me.",
-    ctaLabel: "Read the journal",
+    ctaLabel: "Read the blog",
     href: "/blog",
   },
 ];
