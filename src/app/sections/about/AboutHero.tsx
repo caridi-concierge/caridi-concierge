@@ -48,7 +48,7 @@ export default function AboutHero() {
           <div className="w-full">
             <div className="relative aspect-[4/5] w-full max-w-[420px] mx-auto lg:ml-auto bg-bone overflow-hidden">
               <Image
-                src="/images/cc_headshot_white_outside_hq_800px.webp"
+                src="/images/cc_headshot_white_hq_crop_edit.webp"
                 alt="Dr. Cristina Caridi, founder of Caridi Concierge."
                 fill
                 sizes="(min-width: 1024px) 420px, 80vw"
