@@ -16,6 +16,11 @@ export interface CoverageTier {
   areas: string;
 }
 
+export interface SpaceDetail {
+  label: string;
+  value: string;
+}
+
 export interface ProcessStep {
   meta: string;
   title: string;
@@ -49,6 +54,7 @@ export interface LocationContent {
   overview?: string[];
   whatWeBring?: WhatWeBringItem[];
   coverage?: CoverageTier[];
+  space?: SpaceDetail[];
   process?: ProcessStep[];
   doctorsNote?: DoctorsNote;
   offerings: {

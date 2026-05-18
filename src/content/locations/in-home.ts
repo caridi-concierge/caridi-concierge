@@ -121,11 +121,10 @@ export const inHomeContent: LocationContent = {
     title: "In-home Treatments",
     subtitle: "A discreet, physician-led visit with a focus on natural-looking outcomes",
     treatments: [
+      "consult",
       "wrinkle-reduction",
       "dermal-fillers",
       "biostimulatory-fillers",
-      "chemical-peels",
-      "consult",
     ],
     services: [
   {

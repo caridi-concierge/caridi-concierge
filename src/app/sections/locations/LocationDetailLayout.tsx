@@ -3,6 +3,7 @@ import { getLocationContent } from "@/content/locations";
 import LocationDetailHero from "@/app/sections/locations/LocationDetailHero";
 import LocationOverview from "@/app/sections/locations/LocationOverview";
 import LocationCoverage from "@/app/sections/locations/LocationCoverage";
+import LocationSpace from "@/app/sections/locations/LocationSpace";
 import LocationProcess from "@/app/sections/locations/LocationProcess";
 import LocationOfferings from "@/app/sections/locations/LocationOfferings";
 import LocationDoctorsNoteSection from "@/app/sections/locations/LocationDoctorsNote";
@@ -34,6 +35,9 @@ export default function LocationDetailLayout({ loc }: { loc: Location }) {
       />
       {content.coverage && content.coverage.length > 0 && (
         <LocationCoverage coverage={content.coverage} />
+      )}
+      {content.space && content.space.length > 0 && (
+        <LocationSpace space={content.space} />
       )}
       {content.process && content.process.length > 0 && (
         <LocationProcess process={content.process} />

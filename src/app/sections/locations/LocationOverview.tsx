@@ -12,11 +12,10 @@ export default function LocationOverview({
   overview,
   whatWeBring,
 }: Props) {
-  const hasEditorial =
-    (overview && overview.length > 0) ||
-    (whatWeBring && whatWeBring.length > 0);
+  const hasOverview = overview && overview.length > 0;
+  const hasWhatWeBring = whatWeBring && whatWeBring.length > 0;
 
-  if (!hasEditorial) {
+  if (!hasOverview && !hasWhatWeBring) {
     return (
       <section className="bg-ivory-2 border-t border-line">
         <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-20 py-16 lg:py-[100px]">
@@ -33,33 +32,33 @@ export default function LocationOverview({
     );
   }
 
-  return (
-    <section className="bg-ivory-2 border-t border-line">
-      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-20 py-16 lg:py-[100px]">
-        <div className="max-w-[760px] mb-12 lg:mb-16">
-          <Eyebrow className="text-brass mb-5" withDash>
-            The service
-          </Eyebrow>
-          <h2 className="font-display font-light text-[36px] sm:text-[44px] lg:text-[48px] leading-[1.05] tracking-[-0.01em] text-ink">
-            {studioExperience.title}
-          </h2>
-        </div>
+  if (hasWhatWeBring) {
+    return (
+      <section className="bg-ivory-2 border-t border-line">
+        <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-20 py-16 lg:py-[100px]">
+          <div className="max-w-[760px] mb-12 lg:mb-16">
+            <Eyebrow className="text-brass mb-5" withDash>
+              The service
+            </Eyebrow>
+            <h2 className="font-display font-light text-[36px] sm:text-[44px] lg:text-[48px] leading-[1.05] tracking-[-0.01em] text-ink">
+              {studioExperience.title}
+            </h2>
+          </div>
 
-        <div className="grid gap-12 lg:gap-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-start">
-          {overview && overview.length > 0 && (
-            <div className="space-y-5 font-body text-[15px] sm:text-[16px] leading-[1.75] text-ink/70 font-light max-w-[560px]">
-              {overview.map((para, i) => (
-                <p key={i}>{para}</p>
-              ))}
-            </div>
-          )}
-          {whatWeBring && whatWeBring.length > 0 && (
+          <div className="grid gap-12 lg:gap-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-start">
+            {hasOverview && (
+              <div className="space-y-5 font-body text-[15px] sm:text-[16px] leading-[1.75] text-ink/70 font-light max-w-[560px]">
+                {overview!.map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+            )}
             <div>
               <Eyebrow className="text-brass mb-5" withDash>
                 What I bring
               </Eyebrow>
               <dl className="m-0 border-t border-line">
-                {whatWeBring.map((item) => (
+                {whatWeBring!.map((item) => (
                   <div
                     key={item.label}
                     className="grid grid-cols-[140px_1fr] gap-6 py-4 border-b border-line"
@@ -74,7 +73,28 @@ export default function LocationOverview({
                 ))}
               </dl>
             </div>
-          )}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Single-column centered essay (studio pages without whatWeBring)
+  return (
+    <section className="bg-ivory-2 border-t border-line">
+      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-20 py-16 lg:py-[100px]">
+        <div className="mx-auto max-w-[680px] text-center">
+          <Eyebrow className="text-brass mb-5 justify-center" withDash>
+            The service
+          </Eyebrow>
+          <h2 className="font-display font-light text-[36px] sm:text-[44px] lg:text-[48px] leading-[1.05] tracking-[-0.01em] text-ink">
+            {studioExperience.title}
+          </h2>
+          <div className="mt-10 space-y-5 font-body text-[15px] sm:text-[16px] leading-[1.75] text-ink/70 font-light text-left">
+            {overview!.map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
+          </div>
         </div>
       </div>
     </section>
