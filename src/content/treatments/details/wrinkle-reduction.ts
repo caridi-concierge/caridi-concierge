@@ -26,7 +26,7 @@ export const wrinkleReductionDetail: TreatmentDetailContent = {
     "Soften expression lines while keeping your face yours. Physician-led Botox, Xeomin, and Daxxify—dosed conservatively, placed precisely, calibrated so your expression still reads as you.",
 
   heroImage: {
-    src: "/images/botox_tx.webp",
+    src: "/images/treatments/botox_crowsfeet_tx.webp",
     alt: "Neuromodulator treatment — Botox, Xeomin, Daxxify — at Caridi Concierge.",
   },
 
@@ -240,7 +240,7 @@ export const wrinkleReductionDetail: TreatmentDetailContent = {
       title: "Dermal Fillers",
       subtitle: "RHA · Juvederm · Radiesse",
       copy: "Often paired with Botox — filler restores volume and structure while neuromodulators soften expression lines.",
-      img: { src: "/images/lips_tx.webp", alt: "Dermal fillers treatment" },
+      img: { src: "/images/treatments/filler_lip_tx.webp", alt: "Dermal fillers treatment" },
     },
     {
       id: "biostim",
@@ -248,7 +248,7 @@ export const wrinkleReductionDetail: TreatmentDetailContent = {
       title: "Biostimulators",
       subtitle: "Sculptra · Radiesse",
       copy: "The long game on skin quality. Stages well alongside Botox over a six- to twelve-month plan.",
-      img: { src: "/images/biostim2_tx.webp", alt: "Biostimulator treatment" },
+      img: { src: "/images/treatments/filler_chin_tx.webp", alt: "Biostimulator treatment" },
     },
     {
       id: "consult",
@@ -256,7 +256,7 @@ export const wrinkleReductionDetail: TreatmentDetailContent = {
       title: "Aesthetic Consultations",
       subtitle: "60 min · Private",
       copy: "Not sure where to begin? Start with a conversation. The fee is credited toward your first treatment.",
-      img: { src: "/images/consult_tx.webp", alt: "Consultation" },
+      img: { src: "/images/treatments/consult_2.webp", alt: "Consultation" },
     },
   ],
 };

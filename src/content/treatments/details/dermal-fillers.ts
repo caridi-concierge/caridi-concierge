@@ -15,7 +15,7 @@ export const dermalFillersDetail: TreatmentDetailContent = {
     "Restore volume and define contour with restraint. Lips, cheeks, chin, jawline, tear troughs—planned around proportion, never volume for its own sake.",
 
   heroImage: {
-    src: "/images/lips_tx.webp",
+    src: "/images/treatments/filler_lip_tx.webp",
     alt:
       "Editorial portrait — dermal filler treatment by Dr. Cristina Caridi at Caridi Concierge.",
   },
@@ -234,7 +234,7 @@ export const dermalFillersDetail: TreatmentDetailContent = {
       title: "Neuromodulators",
       subtitle: "Botox · Xeomin · Daxxify",
       copy: "Frequently paired with filler — soften expression lines while volume restores structure.",
-      img: { src: "/images/botox_tx.webp", alt: "Neuromodulators treatment" },
+      img: { src: "/images/treatments/botox_crowsfeet_tx.webp", alt: "Neuromodulators treatment" },
     },
     {
       id: "biostim",
@@ -242,7 +242,7 @@ export const dermalFillersDetail: TreatmentDetailContent = {
       title: "Biostimulators",
       subtitle: "Sculptra · Radiesse",
       copy: "For the long game on skin quality. Stages well with filler over a 6–12 month plan.",
-      img: { src: "/images/biostim2_tx.webp", alt: "Biostimulator treatment" },
+      img: { src: "/images/treatments/filler_chin_tx.webp", alt: "Biostimulator treatment" },
     },
     {
       id: "consult",
@@ -250,7 +250,7 @@ export const dermalFillersDetail: TreatmentDetailContent = {
       title: "Aesthetic Consultations",
       subtitle: "60 min · Private",
       copy: "Not sure where to begin? Start with a conversation. The fee is credited toward your first treatment.",
-      img: { src: "/images/consult_tx.webp", alt: "Consultation" },
+      img: { src: "/images/treatments/consult_2.webp", alt: "Consultation" },
     },
   ],
 };

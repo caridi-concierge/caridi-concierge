@@ -31,7 +31,7 @@ export const consultDetail: TreatmentDetailContent = {
     "Begin with a conversation. A clinical assessment and a treatment plan—pressure-free, in your space or ours.",
 
   heroImage: {
-    src: "/images/consult_tx.webp",
+    src: "/images/treatments/consult_2.webp",
     alt: "Aesthetic consultation with Dr. Cristina Caridi at Caridi Concierge.",
   },
 
@@ -114,7 +114,7 @@ export const consultDetail: TreatmentDetailContent = {
       title: "Neuromodulators",
       subtitle: "Botox · Xeomin · Daxxify",
       copy: "Soften wrinkles and refine expression while keeping your face yours. The most common first treatment after consult.",
-      img: { src: "/images/botox_tx.webp", alt: "Neuromodulators treatment" },
+      img: { src: "/images/treatments/botox_crowsfeet_tx.webp", alt: "Neuromodulators treatment" },
     },
     {
       id: "fillers",
@@ -122,7 +122,7 @@ export const consultDetail: TreatmentDetailContent = {
       title: "Dermal Fillers",
       subtitle: "RHA · Juvederm · Radiesse",
       copy: "Restore volume and define contour with restraint — planned around proportion, not volume for its own sake.",
-      img: { src: "/images/lips_tx.webp", alt: "Dermal fillers treatment" },
+      img: { src: "/images/treatments/filler_lip_tx.webp", alt: "Dermal fillers treatment" },
     },
     {
       id: "biostim",
@@ -130,7 +130,7 @@ export const consultDetail: TreatmentDetailContent = {
       title: "Biostimulators",
       subtitle: "Sculptra · Radiesse",
       copy: "Long-game collagen support. Built into a thoughtful plan over six to twelve months.",
-      img: { src: "/images/biostim2_tx.webp", alt: "Biostimulator treatment" },
+      img: { src: "/images/treatments/filler_chin_tx.webp", alt: "Biostimulator treatment" },
     },
   ],
 };

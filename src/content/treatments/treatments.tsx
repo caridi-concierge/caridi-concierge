@@ -22,7 +22,7 @@ export const treatments: TreatmentMetadata[] = [
     ],
     products: "Consultation only",
     imgSrc:
-      "/images/consult_tx.webp",
+      "/images/treatments/consult_2.webp",
     imgAlt:
       "Decorative image for the Consultation treatment page. Botox and fillers consultation",
     startingPrice: `$${priceConsult}`,
@@ -57,7 +57,7 @@ export const treatments: TreatmentMetadata[] = [
     ],
     products: "Botox, Xeomin, Daxxify",
     imgSrc:
-      "/images/botox_tx.webp",
+      "/images/treatments/botox_crowsfeet_tx.webp",
     imgAlt:
       "Decorative image for the Wrinkle Reduction treatment page. Botox, Xeomin, Daxxify. Botox can be used to smooth wrinkles and soften fine lines, crows feet, 11s, and lip flips",
     startingPrice: `$${priceBotox}/unit`,
@@ -90,7 +90,7 @@ export const treatments: TreatmentMetadata[] = [
     ],
     products: "Juvederm, RHA Collection",
     imgSrc:
-      "/images/lips_tx.webp",
+      "/images/treatments/filler_lip_tx.webp",
     imgAlt:
       "Decorative image for the Dermal Fillers page. RHA Collection, Juvederm. Juvederm can be used to restore lost volume to areas like the face, lips, neck, butt and arms.",
     startingPrice: `$${priceFillers}/syringe`,
@@ -123,9 +123,9 @@ export const treatments: TreatmentMetadata[] = [
       "Ideal for deeper volume loss and facial structure",
       "Results last 2+ years with gradual improvement",
     ],
-    products: "Radiesse, Sculptra",
+    products: "Radiesse",
     imgSrc:
-      "/images/biostim2_tx.webp",
+      "/images/results/filler_chin_tx.webp",
     imgAlt:
       "Decorative icon for biostimulatory fillers treatments page. Radiesse, Sculptra. Radiesse can be used to build collagen for long-term results, restore lost volume to areas like the face, lips, neck, butt and arms.",
     startingPrice: `$${priceBiostim}/syringe`,
@@ -156,7 +156,7 @@ export const treatments: TreatmentMetadata[] = [
     ],
     products: "VI Peel®",
     imgSrc:
-      "/images/peel_tx.webp",
+      "/images/treatments/facial_chemical_peel_1500px.webp",
     imgAlt:
       "Chemical peel treatment illustration for the Caridi Concierge chemical peels page. VI Peel®. VI Peel® can be used to improve uneven tone, surface texture, acne, and pigmentation with minimal downtime.",
     startingPrice: `$${priceChemicalPeels}/treatment`,

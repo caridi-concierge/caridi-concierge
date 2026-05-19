@@ -31,7 +31,7 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
     "Medical-grade peels that refine texture, tone, and clarity—calibrated to your skin, your downtime, your calendar. Brighter skin emerges as the surface sheds; the work underneath continues for weeks.",
 
   heroImage: {
-    src: "/images/peel_tx.webp",
+    src: "/images/facial_chemical_peel_1500px.webp",
     alt:
       "Chemical peel treatment — medical-grade VI Peel® formulations — at Caridi Concierge.",
   },
@@ -243,7 +243,7 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
       title: "Neuromodulators",
       subtitle: "Botox · Xeomin · Daxxify",
       copy: "Often layered with peels — Botox softens expression while a peel refines surface tone and texture.",
-      img: { src: "/images/botox_tx.webp", alt: "Neuromodulators treatment" },
+      img: { src: "/images/treatments/botox_crowsfeet_tx.webp", alt: "Neuromodulators treatment" },
     },
     {
       id: "fillers",
@@ -251,7 +251,7 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
       title: "Dermal Fillers",
       subtitle: "RHA · Juvederm · Radiesse",
       copy: "Peels work the surface; filler works the structure. We sequence them across visits for a more complete plan.",
-      img: { src: "/images/lips_tx.webp", alt: "Dermal fillers treatment" },
+      img: { src: "/images/treatments/filler_lip_tx.webp", alt: "Dermal fillers treatment" },
     },
     {
       id: "consult",
@@ -259,7 +259,7 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
       title: "Aesthetic Consultations",
       subtitle: "60 min · Private",
       copy: "Not sure where to begin? Start with a conversation. The fee is credited toward your first treatment.",
-      img: { src: "/images/consult_tx.webp", alt: "Consultation" },
+      img: { src: "/images/treatments/consult_2.webp", alt: "Consultation" },
     },
   ],
 };

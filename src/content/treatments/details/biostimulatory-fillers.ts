@@ -26,7 +26,7 @@ export const biostimulatoryFillersDetail: TreatmentDetailContent = {
     "Rebuild the collagen scaffold underneath your skin. Sculptra and Radiesse work gradually—results that look like skin quality, not product. Planned in a series, calibrated to your skin, paced to your calendar.",
 
   heroImage: {
-    src: "/images/biostim2_tx.webp",
+    src: "/images/treatments/filler_chin_tx.webp",
     alt:
       "Biostimulatory filler treatment — Sculptra and Radiesse — at Caridi Concierge.",
   },
@@ -226,7 +226,7 @@ export const biostimulatoryFillersDetail: TreatmentDetailContent = {
       title: "Dermal Fillers",
       subtitle: "RHA · Juvederm · Radiesse",
       copy: "Frequently staged with biostimulators — HA filler restores volume now while collagen rebuilds underneath.",
-      img: { src: "/images/lips_tx.webp", alt: "Dermal fillers treatment" },
+      img: { src: "/images/treatments/filler_lip_tx.webp", alt: "Dermal fillers treatment" },
     },
     {
       id: "botox",
@@ -234,7 +234,7 @@ export const biostimulatoryFillersDetail: TreatmentDetailContent = {
       title: "Neuromodulators",
       subtitle: "Botox · Xeomin · Daxxify",
       copy: "Softens expression lines while biostim does the long-game work on skin quality and structure.",
-      img: { src: "/images/botox_tx.webp", alt: "Neuromodulators treatment" },
+      img: { src: "/images/treatments/botox_crowsfeet_tx.webp", alt: "Neuromodulators treatment" },
     },
     {
       id: "consult",
@@ -242,7 +242,7 @@ export const biostimulatoryFillersDetail: TreatmentDetailContent = {
       title: "Aesthetic Consultations",
       subtitle: "60 min · Private",
       copy: "Not sure where to begin? Start with a conversation. The fee is credited toward your first treatment.",
-      img: { src: "/images/consult_tx.webp", alt: "Consultation" },
+      img: { src: "/images/treatments/consult_2.webp", alt: "Consultation" },
     },
   ],
 };
