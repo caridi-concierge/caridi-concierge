@@ -547,10 +547,10 @@ function BeforeAfter({ content, n }: NumberedProps) {
     content.beforeAfter.length > 0
       ? content.beforeAfter
       : [
-          { src: "", alt: "Lip · before / 2 wk", label: "Lip · before / 2 wk" },
-          { src: "", alt: "Cheek · before / 4 mo", label: "Cheek · before / 4 mo" },
-          { src: "", alt: "Jawline · before / 6 mo", label: "Jawline · before / 6 mo" },
-          { src: "", alt: "Tear trough · before / 4 mo", label: "Tear trough · before / 4 mo" },
+          { src: "/images/results/botox-crowsfeet-before-after.webp", alt: "Crow's feet treatment before/after", label: "Softened Crow's Feet lines" },
+          { src: "/images/results/botox-cheek-lip-chin-filler-before-after.webp", alt: "Full face botox", label: "Full face botox" },
+          { src: "/images/results/botox-cheek-filler-before-after.webp", alt: "Forehead botox", label: "Forehead botox" },
+          { src: "", alt: "", label: "" },
         ];
 
   return (
@@ -570,13 +570,9 @@ function BeforeAfter({ content, n }: NumberedProps) {
                 documented honestly.
               </em>
             </h2>
-            <p className="mt-5 font-body text-sm leading-[1.7] text-ink/70 max-w-[540px]">
-              Photographed under consistent light, with consent. Replace with
-              photoshoot deliverables (booking week of May 11–17, 2026).
-            </p>
           </div>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-line">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3">
           {items.map((item, i) => (
             <div key={i} className="bg-ivory">
               {item.src ? (

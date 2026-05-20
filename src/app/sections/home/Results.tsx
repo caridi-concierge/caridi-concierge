@@ -34,13 +34,13 @@ export default function ResultsSection() {
         title: "Full Face Harmony",
         description: "Full face and neck Botox, plus filler in cheeks, nasolabial folds, and chin to restore harmony.",
       },
-      // {
-      //   src: "/images/results/botox-cheek-filler-before-after.webp",
-      //   alt: "Lip refinement — before and after",
-      //   title: "Lip refinement",
-      //   description:
-      //     "Hydration and shape with proportion-first planning. No over-volumization.",
-      // },
+      {
+        src: "/images/results/botox-crowsfeet-before-after.webp",
+        alt: "Crows feet reduction — before and after",
+        title: "Deep lines, No more",
+        description:
+          "Softening deep lines around the eyes with precision Botox.",
+      },
     ],
     []
   );
@@ -58,7 +58,7 @@ export default function ResultsSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {cards.map((card, i) => (
             <article key={i} className="flex flex-col gap-[18px]">
               <div className="relative w-full aspect-[4/5] overflow-hidden bg-bone">
@@ -66,7 +66,7 @@ export default function ResultsSection() {
                   src={card.src}
                   alt={card.alt}
                   fill
-                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw"
+                  sizes="(min-width: 1024px) 22vw, (min-width: 640px) 45vw, 100vw"
                   className="object-cover"
                   style={{ filter: "saturate(0.85)" }}
                 />
