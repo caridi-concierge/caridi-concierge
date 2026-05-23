@@ -19,7 +19,7 @@ export const COMPANY = {
     logo: "/images/caridi_concierge_flat_logo.svg",
     logoWebclip: "/images/cc_contrast_webclip.png",
     social: {
-      instagram: "https://www.instagram.com/caridiconcierge/",
+      instagram: "https://www.instagram.com/caridiconciergemd/",
       facebook: "https://www.facebook.com/profile.php?id=61572501036242",
       linkedin: "https://www.linkedin.com/company/caridi-concierge/",
       tiktok: "https://tiktok.com/@caridiconcierge",

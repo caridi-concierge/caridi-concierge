@@ -74,7 +74,7 @@ function FeatureRow({
             aria-label={`Read about ${t.title}`}
             className="ml-auto inline-flex items-center gap-2.5 pb-1 border-b border-ink font-body text-[11px] font-medium uppercase tracking-[0.32em] text-ink transition-colors duration-200 hover:text-brass hover:border-brass"
           >
-            Read the detail <IconArrow className="w-3 h-3" />
+            Learn more <IconArrow className="w-3 h-3" />
           </Link>
         </div>
       </div>

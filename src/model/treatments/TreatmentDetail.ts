@@ -32,8 +32,6 @@ export type TreatmentDetailPricingRow = {
   area: string;
   /** Lower bound (USD). */
   from: number;
-  /** Upper bound (USD). */
-  to: number;
   /** Pricing unit displayed under the area label (e.g. "/ syringe", "/ visit"). */
   unit: string;
 };
@@ -45,8 +43,6 @@ export type TreatmentDetailProcessPhase = {
   t: string;
   /** Phase copy. */
   c: string;
-  /** Right-aligned meta (e.g. "30–45 min"). */
-  meta: string;
 };
 
 export type TreatmentDetailDowntime = {

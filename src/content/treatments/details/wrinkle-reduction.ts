@@ -23,7 +23,7 @@ export const wrinkleReductionDetail: TreatmentDetailContent = {
   subtitle: "Botox · Xeomin · Daxxify",
 
   lede:
-    "Soften expression lines while keeping your face yours. Physician-led Botox, Xeomin, and Daxxify—dosed conservatively, placed precisely, calibrated so your expression still reads as you.",
+    "Soften expression lines while keeping your face yours. Physician-led Botox, Xeomin, and Daxxify, dosed conservatively, placed precisely, calibrated so your expression still reads as you.",
 
   heroImage: {
     src: "/images/treatments/botox_crowsfeet_tx.webp",
@@ -36,7 +36,7 @@ export const wrinkleReductionDetail: TreatmentDetailContent = {
     { l: "Longevity", v: "3–4 months" },
     { l: "Downtime", v: "None" },
     { l: "Anesthetic", v: "Optional ice or topical" },
-    { l: "Performed by", v: "Dr. Caridi, MD" },
+    { l: "Performed by", v: "Cristina Caridi, MD" },
   ],
 
   overview: [
@@ -44,15 +44,12 @@ export const wrinkleReductionDetail: TreatmentDetailContent = {
     "Your skin will look smoother, your features appear lifted, and your expression will reflect how you truly feel.",
   ],
 
-  // DRAFT — practice should review/replace before publishing.
   pullquote: {
     body:
-      "We treat muscles, not expressions. The face still tells your story — just with less effort.",
-    attr: "Dr. Cristina Caridi, MD",
+      "We treat muscles, not expressions. The face still tells your story, just with less effort.",
+    attr: "Dr Cardi",
   },
 
-  // DRAFT — review with practice. Yes-list maps to current treatment scope;
-  // no-list reflects standard contraindications.
   bestFor: {
     yes: [
       "Softening horizontal forehead lines, glabellar 11s, and crow's feet",
@@ -66,7 +63,6 @@ export const wrinkleReductionDetail: TreatmentDetailContent = {
       "Neuromuscular conditions (myasthenia gravis, Lambert-Eaton, ALS) without specialist clearance",
       "Active infection at the proposed injection sites",
       "Known allergy to botulinum toxin or formulation excipients",
-      "Wanting a completely immobile, expressionless result — not our practice",
     ],
   },
 
@@ -90,7 +86,7 @@ export const wrinkleReductionDetail: TreatmentDetailContent = {
       name: "Daxxify",
       by: "Revance",
       note:
-        "Longer-lasting in many clients — up to six to nine months. Newer to market; we use it where the duration trade-off makes sense.",
+        "Longer-lasting in many clients, up to six to nine months. Newer to market; we use it where the duration trade-off makes sense.",
       use: "All areas",
     },
     {
@@ -128,7 +124,7 @@ export const wrinkleReductionDetail: TreatmentDetailContent = {
     },
     {
       name: "Nefertiti lift (neck)",
-      copy: "Relax the platysma to smooth the neckline and subtly lift the jawline — no surgery.",
+      copy: "Relax the platysma to smooth the neckline and gently lift the jawline. No surgery.",
     },
     {
       name: "Hyperhidrosis",
@@ -136,77 +132,64 @@ export const wrinkleReductionDetail: TreatmentDetailContent = {
     },
   ],
 
-  // DRAFT — pricing is best-guess concierge-tier ranges.
-  // The practice must validate these numbers before publishing.
   pricing: [
-    { area: "Botox / Xeomin · per unit", from: 12, to: 16, unit: "/ unit" },
+    { area: "Botox / Xeomin · per unit", from: 12, unit: "/ unit" },
     {
       area: "Daxxify · per unit (longer-lasting)",
       from: 20,
-      to: 26,
       unit: "/ unit",
     },
     {
       area: "Lip flip",
       from: 80,
-      to: 140,
       unit: "/ visit · 5–7 units",
     },
     {
       area: "Forehead + glabella + crow's feet",
       from: 480,
-      to: 720,
       unit: "/ visit · 40–60 units",
     },
     {
       area: "Masseter / TMJ",
       from: 720,
-      to: 1100,
       unit: "/ visit · 50–80 units",
     },
     {
       area: "Hyperhidrosis (underarms)",
       from: 1100,
-      to: 1500,
       unit: "/ visit · ~100 units",
     },
   ],
 
-  // DRAFT — review with practice.
   process: [
     {
       n: "01",
       t: "Consult & plan",
       c: "We discuss goals, watch how your muscles move, and plan a conservative dose. No pressure to treat the day-of.",
-      meta: "20–30 min",
     },
     {
       n: "02",
       t: "Numb & prep",
       c: "Optional topical anesthetic or ice. Photographs from three angles for your chart.",
-      meta: "10 min",
     },
     {
       n: "03",
       t: "Treatment",
       c: "Brief, precise injections placed by Dr. Caridi personally. The whole appointment is usually under an hour.",
-      meta: "10–15 min",
     },
     {
       n: "04",
       t: "Two-week review",
-      c: "Onset is gradual — most clients see results within a week and full effect at two. Refinements within that window are included.",
-      meta: "Included",
+      c: "Onset is gradual, most clients see results within a week and full effect at two. Virtual follow-up included.",
     },
   ],
 
-  // DRAFT — review with practice. Maps to standard post-Botox guidance.
   downtime: {
     immediate: [
       { t: "Pinpoint redness", c: "Resolves within 30 minutes." },
       {
         t: "Mild swelling",
-        c: "Localized, subtle — most clients see none.",
+        c: "Localized. Most clients see none.",
       },
       {
         t: "Headache",
@@ -215,17 +198,28 @@ export const wrinkleReductionDetail: TreatmentDetailContent = {
     ],
     aftercare: [
       "Stay upright for 4 hours after treatment.",
-      "Gently activate the treated muscles (smile, frown, raise your brows) over the first afternoon — this helps even settling.",
+      "Gently activate the treated muscles (smile, frown, raise your brows) over the first afternoon, this helps even settling.",
       "Skip strenuous exercise, saunas, and hot yoga for 24 hours.",
       "No facials, peels, or laser for two weeks in the treated area.",
       "Avoid rubbing or massaging the area for 24 hours.",
-      "Text the practice if anything feels asymmetric or unexpected — Dr. Caridi answers personally.",
+      "Text the practice if anything feels asymmetric or unexpected, Dr. Caridi answers personally.",
     ],
     workReady:
-      "Botox is the original lunchtime treatment — most clients return to work or onto a camera immediately. Plan onset (5–7 days) around any high-stakes events.",
+      "Botox is the original lunchtime treatment. Most clients return to work or onto a camera immediately. Plan onset (5–7 days) around any high-stakes events.",
   },
 
-  beforeAfter: [],
+  beforeAfter: [
+    {
+      src: "/images/results/botox-crowsfeet-before-after.webp",
+      alt: "Crow's feet, before and after neuromodulator treatment",
+      label: "Softened crow's feet",
+    },
+    {
+      src: "/images/results/botox-cheek-filler-before-after.webp",
+      alt: "Forehead botox treatment",
+      label: "Forehead botox",
+    },
+  ],
 
   // FAQs pulled verbatim from botoxFAQSchema so SEO rich-results stay in sync.
   faqs: botoxFAQSchema.mainEntity.map((q) => ({
@@ -238,7 +232,7 @@ export const wrinkleReductionDetail: TreatmentDetailContent = {
       id: "fillers",
       slug: "dermal-fillers",
       title: "Dermal Fillers",
-      subtitle: "RHA · Juvederm · Radiesse",
+      subtitle: "RHA · Juvederm",
       copy: "Often paired with Botox — filler restores volume and structure while neuromodulators soften expression lines.",
       img: { src: "/images/treatments/filler_lip_tx.webp", alt: "Dermal fillers treatment" },
     },
@@ -254,7 +248,7 @@ export const wrinkleReductionDetail: TreatmentDetailContent = {
       id: "consult",
       slug: "consult",
       title: "Aesthetic Consultations",
-      subtitle: "60 min · Private",
+      subtitle: "Tailored",
       copy: "Not sure where to begin? Start with a conversation. The fee is credited toward your first treatment.",
       img: { src: "/images/treatments/consult_2.webp", alt: "Consultation" },
     },

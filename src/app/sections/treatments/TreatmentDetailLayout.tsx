@@ -347,7 +347,7 @@ function Pullquote({ content }: { content: TreatmentDetailContent }) {
     <section className="bg-teal text-ivory border-y border-line-on-teal">
       <div className="mx-auto max-w-[1080px] px-6 sm:px-10 lg:px-20 py-24 lg:py-[120px]">
         <Eyebrow withDash className="text-brass-soft mb-7">
-          A note from Dr. Caridi
+          A note from the practice
         </Eyebrow>
         <blockquote className="font-display font-light italic text-[32px] sm:text-[44px] lg:text-[56px] leading-[1.15] tracking-[-0.01em] max-w-[980px] m-0">
           &ldquo;{content.pullquote.body}&rdquo;
@@ -387,11 +387,11 @@ function ProcessTimeline({ content, n }: NumberedProps) {
               className={[
                 "pt-9 pb-2 md:pr-8",
                 i < phases.length - 1 ? "lg:border-r border-line" : "",
-                i > 0 ? "border-t lg:border-t-0 border-line" : "",
+                i > 0 ? "border-t lg:border-t-0 border-line lg:pl-8" : "",
               ].join(" ")}
             >
               <Eyebrow className="text-brass mb-4 text-[11px]">
-                {p.n} · {p.meta}
+                {p.n}
               </Eyebrow>
               <h3 className="font-display font-normal text-[26px] leading-tight mb-3.5">
                 {p.t}
@@ -429,21 +429,20 @@ function PricingTable({ content, n }: NumberedProps) {
             </h2>
             <p className="mt-7 font-body text-sm leading-[1.7] text-ink/70 max-w-[360px]">
               Pricing varies with anatomy, product, and the visit length we
-              plan together. The figures below are typical ranges — your final
+              plan together. The figures below are typical ranges, your final
               plan, with cost, is reviewed before any product is opened.
             </p>
           </div>
           <div>
-            <div className="hidden sm:grid grid-cols-[2fr_1fr_1fr] gap-6 py-4 border-b border-line">
+            <div className="hidden sm:grid grid-cols-[2fr_1fr] gap-6 py-4 border-b border-line">
               <Eyebrow className="text-ink/55 text-[9px]">Plan</Eyebrow>
               <Eyebrow className="text-ink/55 text-[9px] text-right">From</Eyebrow>
-              <Eyebrow className="text-ink/55 text-[9px] text-right">Up to</Eyebrow>
             </div>
             <ul className="list-none p-0 m-0">
               {pricing.map((row) => (
                 <li
                   key={row.area}
-                  className="grid grid-cols-1 sm:grid-cols-[2fr_1fr_1fr] gap-1 sm:gap-6 py-5 border-b border-line items-baseline"
+                  className="grid grid-cols-1 sm:grid-cols-[2fr_1fr] gap-1 sm:gap-6 py-5 border-b border-line items-baseline"
                 >
                   <div>
                     <div className="font-display font-normal text-[20px] leading-[1.2]">
@@ -456,15 +455,12 @@ function PricingTable({ content, n }: NumberedProps) {
                   <div className="font-display font-light italic text-2xl text-brass sm:text-right">
                     ${row.from.toLocaleString()}
                   </div>
-                  <div className="font-display font-light text-2xl text-ink sm:text-right">
-                    ${row.to.toLocaleString()}
-                  </div>
                 </li>
               ))}
             </ul>
             <p className="mt-6 font-mono text-[11px] leading-[1.7] text-ink/55">
               * Concierge service includes travel within Manhattan, Brooklyn,
-              and Queens. Studio visits in Gowanus from January 2026. Series
+              and Queens. Studio visits in Gowanus. Series
               and bundled visits are quoted at consultation.
             </p>
           </div>
@@ -542,16 +538,10 @@ function DowntimeAftercare({ content, n }: NumberedProps) {
 }
 
 function BeforeAfter({ content, n }: NumberedProps) {
-  if (content.beforeAfter === undefined) return null;
-  const items =
-    content.beforeAfter.length > 0
-      ? content.beforeAfter
-      : [
-          { src: "/images/results/botox-crowsfeet-before-after.webp", alt: "Crow's feet treatment before/after", label: "Softened Crow's Feet lines" },
-          { src: "/images/results/botox-cheek-lip-chin-filler-before-after.webp", alt: "Full face botox", label: "Full face botox" },
-          { src: "/images/results/botox-cheek-filler-before-after.webp", alt: "Forehead botox", label: "Forehead botox" },
-          { src: "", alt: "", label: "" },
-        ];
+  if (content.beforeAfter === undefined || content.beforeAfter.length === 0) {
+    return null;
+  }
+  const items = content.beforeAfter;
 
   return (
     <section
@@ -564,7 +554,7 @@ function BeforeAfter({ content, n }: NumberedProps) {
             <Eyebrow withDash className="text-brass mb-4">
               {n} · Before & after
             </Eyebrow>
-            <h2 className="font-display font-light text-[40px] sm:text-5xl lg:text-[56px] leading-[1.05] max-w-[760px]">
+            <h2 className="font-display font-light text-[40px] sm:text-5xl lg:text-[56px] leading-[1.05]">
               Quiet results,{" "}
               <em className="not-italic italic font-light text-brass">
                 documented honestly.
@@ -589,6 +579,11 @@ function BeforeAfter({ content, n }: NumberedProps) {
               ) : (
                 <StripedPlaceholder label={item.label ?? item.alt} />
               )}
+              {item.src && item.label ? (
+                <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.2em] text-ink/45">
+                  {item.label}
+                </p>
+              ) : null}
             </div>
           ))}
         </div>
@@ -632,7 +627,7 @@ function FAQs({ content, n }: NumberedProps) {
               </em>
             </h2>
             <p className="mt-6 font-body text-sm leading-[1.7] text-ink/70 max-w-[320px]">
-              Have a question we haven&apos;t covered? Text the practice — Dr.
+              Have a question we haven&apos;t covered? Text the practice, Dr.
               Caridi answers personally.
             </p>
           </div>
@@ -782,7 +777,7 @@ function buildSections(content: TreatmentDetailContent) {
     });
   }
 
-  if (content.beforeAfter !== undefined) {
+  if (content.beforeAfter !== undefined && content.beforeAfter.length > 0) {
     numbered.push({
       anchor: "before-after",
       label: "Before & after",

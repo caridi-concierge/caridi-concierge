@@ -12,31 +12,6 @@ export type Treatment = {
     };
   };
 
-  export type TreatmentIntroProps = {
-    title: string;
-    description: string[];
-    frequency: string;
-    frequencyCtaHref: string;
-    frequencyCtaText: string;
-    beforeCare: string;
-    afterCare: string;
-    startingPrice: string;
-    note?: string;
-  };
-
-  export type TreatmentArea = {
-    title: string;
-    items: { label: string; description: string }[];
-  };
-  
-  export type TreatmentAreasProps = {
-    sectionTitle: string;
-    summary: string;
-    areas: TreatmentArea[];
-    ctaHref: string;
-    ctaText: string;
-  };
-
   /**
    * Editorial categories used by the /treatments index filter.
    * Keep in sync with `T_CATEGORIES` in the index page.

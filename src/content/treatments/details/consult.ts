@@ -24,8 +24,8 @@ export const consultDetail: TreatmentDetailContent = {
 
   title: "Aesthetic Consultations",
   italic: "to begin with.",
-  eyebrow: "60 min · Private",
-  subtitle: "60 min · Private",
+  eyebrow: "30 min · Private",
+  subtitle: "30 min · Private",
 
   lede:
     "Begin with a conversation. A clinical assessment and a treatment plan—pressure-free, in your space or ours.",
@@ -36,12 +36,12 @@ export const consultDetail: TreatmentDetailContent = {
   },
 
   spec: [
-    { l: "Visit", v: "60 min" },
+    { l: "Visit", v: "30 min" },
     { l: "Format", v: "In-home or studio" },
     { l: "Privacy", v: "Discreet · no signage" },
     { l: "Fee", v: "$150 · credited to first visit" },
     { l: "Outcome", v: "Personalized plan" },
-    { l: "Performed by", v: "Dr. Caridi, MD" },
+    { l: "Performed by", v: "Cristina Caridi, MD" },
   ],
 
   overview: [
@@ -60,13 +60,11 @@ export const consultDetail: TreatmentDetailContent = {
     {
       area: "Aesthetic consultation",
       from: 150,
-      to: 150,
       unit: "/ visit · credited toward first treatment",
     },
     {
       area: "Virtual planning consultation",
       from: 150,
-      to: 150,
       unit: "/ visit · select concerns only",
     },
   ],
@@ -77,25 +75,21 @@ export const consultDetail: TreatmentDetailContent = {
       n: "01",
       t: "Booking & intake",
       c: "Choose a time online and share basic skin history. We confirm visit details and address before the day-of.",
-      meta: "5 min",
     },
     {
       n: "02",
       t: "Conversation",
-      c: "We sit down — at your residence, hotel, or our studio — and talk through what brought you here. Goals, concerns, daily routine, anything you've tried before.",
-      meta: "25–30 min",
+      c: "We sit down at your residence, hotel, or our studio, and talk through what brought you here. Goals, concerns, daily routine, anything you've tried before.",
     },
     {
       n: "03",
       t: "Clinical assessment",
       c: "Dr. Caridi reviews skin quality, facial balance, and the anatomy underneath. Photographs from three angles for your chart.",
-      meta: "15–20 min",
     },
     {
       n: "04",
       t: "Plan",
       c: "Recommended treatments, the order to do them in, and the realistic timeline. If treating today makes sense, we'll discuss; if it doesn't, we won't.",
-      meta: "10 min",
     },
   ],
 

@@ -125,7 +125,7 @@ export const treatments: TreatmentMetadata[] = [
     ],
     products: "Radiesse",
     imgSrc:
-      "/images/results/filler_chin_tx.webp",
+      "/images/treatments/filler_chin_tx.webp",
     imgAlt:
       "Decorative icon for biostimulatory fillers treatments page. Radiesse, Sculptra. Radiesse can be used to build collagen for long-term results, restore lost volume to areas like the face, lips, neck, butt and arms.",
     startingPrice: `$${priceBiostim}/syringe`,

@@ -7,12 +7,12 @@ export const dermalFillersDetail: TreatmentDetailContent = {
   number: "02",
 
   title: "Dermal Fillers",
-  italic: "of proportion.",
+  italic: "in proportion.",
   eyebrow: "Filler · Volume · Contour",
-  subtitle: "RHA · Juvederm · Radiesse · Restylane",
+  subtitle: "RHA · Juvederm",
 
   lede:
-    "Restore volume and define contour with restraint. Lips, cheeks, chin, jawline, tear troughs—planned around proportion, never volume for its own sake.",
+    "Restore volume and define contour. Lips, cheeks, chin, jawline, tear troughs, planned around proportion, never volume for its own sake.",
 
   heroImage: {
     src: "/images/treatments/filler_lip_tx.webp",
@@ -26,33 +26,32 @@ export const dermalFillersDetail: TreatmentDetailContent = {
     { l: "Longevity", v: "9–18 months" },
     { l: "Downtime", v: "24–72 hours" },
     { l: "Anesthetic", v: "Topical · in-product lidocaine" },
-    { l: "Performed by", v: "Dr. Caridi, MD" },
+    { l: "Performed by", v: "Cristina Caridi, MD" },
   ],
 
   overview: [
-    "Filler is a hyaluronic-acid (or calcium-hydroxylapatite) gel used to restore volume the face has lost, refine a contour, or balance proportion. It is not a face-lift, a filter, or a fix for tired sleep. Done well, it is unrecognizable as treatment—you simply look like yourself, refined.",
-    "We work proportion-first. That means a plan that begins with the bones of your face: the angle of the jaw, the height of the cheek, the support beneath the eye. Lip projection or chin balance follow from that, never the reverse. Most clients begin with one to two syringes; many never need more.",
+    "Filler is a hyaluronic-acid (or calcium-hydroxylapatite) gel used to restore volume the face has lost, refine a contour, or balance proportion. It is not a face-lift, a filter, or a fix for tired sleep. Done well, it is unrecognizable as treatment. You simply look like yourself, refined.",
+    "We work proportion-first. That means a plan that begins with the bones of your face: the angle of the jaw, the height of the cheek, the support beneath the eye. Lip projection or chin balance follow from that, never the reverse.",
   ],
 
   pullquote: {
     body:
-      "Filler should answer a question your face is asking — not impose a shape it isn't.",
-    attr: "Dr. Cristina Caridi, MD",
+      "Filler is great for refined volume restoration",
+    attr: "Dr. Caridi",
   },
 
   bestFor: {
     yes: [
       "Restoring midface volume after weight loss or aging",
       "Defining the jawline or chin without surgery",
-      "Subtle lip hydration, definition, or a quiet flip",
+      "Subtle lip hydration, definition, or a gentle flip",
       "Softening tear troughs in the right anatomy",
       "Re-balancing facial proportion after prior work",
     ],
     no: [
       "Acute swelling, infection, or active cold sore in the area",
       "Pregnancy or active breastfeeding",
-      "Wanting a dramatically over-volumised look — not our practice",
-      "Allergy to lidocaine or hyaluronic acid",
+      "Allergy to lidocaine, hyaluronic acid, bee or wasp venom",
     ],
   },
 
@@ -60,8 +59,14 @@ export const dermalFillersDetail: TreatmentDetailContent = {
     {
       name: "RHA 2 / 3 / 4",
       by: "Revance",
-      note: "Resilient HA — moves with expression. Default for tear trough, lip, perioral.",
+      note: "Resilient HA, moves with expression. Default for tear trough, lip, perioral.",
       use: "Tear trough · Lip · Perioral",
+    },
+    {
+      name: "RHA Redensity",
+      by: "Revance",
+      note: "Ideal for dynamic areas like perioral lines, lips, and under-eye areas.",
+      use: "Perioral · Lip · Under-eye",
     },
     {
       name: "Juvederm Voluma",
@@ -69,34 +74,16 @@ export const dermalFillersDetail: TreatmentDetailContent = {
       note: "Lifting capacity for cheek and midface. Lasts ~18 months in most clients.",
       use: "Cheek · Midface",
     },
-    {
-      name: "Juvederm Volux",
-      by: "Allergan",
-      note: "Highest G-prime — built for jawline and chin definition.",
-      use: "Jawline · Chin",
-    },
-    {
-      name: "Restylane Kysse",
-      by: "Galderma",
-      note: "Soft, flexible lip product. Used when expression matters more than projection.",
-      use: "Lip",
-    },
-    {
-      name: "Radiesse",
-      by: "Merz",
-      note: "Calcium-hydroxylapatite — biostimulator that doubles as contour. Jaw, hand.",
-      use: "Jawline · Hand",
-    },
   ],
 
   areas: [
     {
       name: "Cheek & midface",
-      copy: "Lift, support, restore the angle that quietly drops with time.",
+      copy: "Lift, support, restore the angle that drops with time.",
     },
     {
       name: "Lips",
-      copy: "Hydration, definition, a subtle flip — never inflation.",
+      copy: "Hydration, definition, a gentle flip, never inflation.",
     },
     {
       name: "Chin & jawline",
@@ -112,36 +99,21 @@ export const dermalFillersDetail: TreatmentDetailContent = {
     },
     {
       name: "Temple",
-      copy: "Quiet structural support that frames the upper face.",
+      copy: "Structural support that frames the upper face.",
     },
   ],
 
   pricing: [
-    { area: "RHA · per syringe", from: 1100, to: 1400, unit: "/ syringe" },
+    { area: "RHA · per syringe", from: 600, unit: "/ syringe" },
     {
-      area: "Juvederm Voluma / Volux · per syringe",
-      from: 1300,
-      to: 1600,
+      area: "Juvederm Voluma · per syringe",
+      from: 600,
       unit: "/ syringe",
     },
-    {
-      area: "Restylane Kysse · per syringe",
-      from: 1100,
-      to: 1300,
-      unit: "/ syringe",
-    },
-    { area: "Radiesse · per syringe", from: 1200, to: 1400, unit: "/ syringe" },
     {
       area: "Two-syringe plan (cheek + chin, etc.)",
-      from: 2200,
-      to: 2800,
+      from: 1200,
       unit: "/ visit",
-    },
-    {
-      area: "Refresh visit (returning client)",
-      from: 950,
-      to: 1250,
-      unit: "/ syringe",
     },
   ],
 
@@ -150,25 +122,21 @@ export const dermalFillersDetail: TreatmentDetailContent = {
       n: "01",
       t: "Consult & plan",
       c: "We map the bones of your face, talk through goals, and plan in proportion. No pressure to treat the day-of.",
-      meta: "30–45 min",
     },
     {
       n: "02",
       t: "Numb & prep",
       c: "Topical anesthetic, sterile prep, photographs from three angles for your chart.",
-      meta: "15 min",
     },
     {
       n: "03",
       t: "Treatment",
-      c: "Injections placed by Dr. Caridi personally — cannula or needle as the anatomy calls for. Calm, quiet, conservative.",
-      meta: "20–30 min",
+      c: "Injections placed by Dr. Caridi personally, cannula or needle as the anatomy calls for. Calm and conservative.",
     },
     {
       n: "04",
       t: "Two-week review",
-      c: "We see you back (or message) at two weeks. Refinements within that window are included.",
-      meta: "Included",
+      c: "We will check in with you at two weeks to assess results and discuss any refinements needed.",
     },
   ],
 
@@ -181,7 +149,7 @@ export const dermalFillersDetail: TreatmentDetailContent = {
       },
       {
         t: "Bruising",
-        c: "Possible — most visible at days 2–4. Arnica & cold compress help.",
+        c: "Possible. Most visible at days 2–4. Arnica & cold compress may help.",
       },
     ],
     aftercare: [
@@ -190,15 +158,30 @@ export const dermalFillersDetail: TreatmentDetailContent = {
       "No facials, peels, or laser for two weeks.",
       "Sleep slightly elevated the first night.",
       "Skip blood thinners (aspirin, fish oil, ibuprofen) 48h before & after, with your physician's blessing.",
-      "Text the practice at any sign of asymmetric pain, blanching, or vision change — Dr. Caridi answers personally.",
+      "Text the practice at any sign of asymmetric pain, blanching, or vision change. Dr. Caridi answers personally.",
     ],
     workReady:
       "Most clients return to work the same afternoon. Plan camera-on meetings 3–4 days out for filler in the lower face.",
   },
 
-  // Before/after photography pending May 2026 photoshoot — striped placeholders
-  // are rendered when this array is empty.
-  beforeAfter: [],
+
+  beforeAfter: [
+    {
+      src: "/images/results/botox-cheek-lip-chin-filler-before-after.webp",
+      alt: "Cheek, lip, and chin filler, before and after",
+      label: "Cheek, lip & chin",
+    },
+    {
+      src: "/images/results/botox-cheek-filler-before-after.webp",
+      alt: "Cheek filler, before and after",
+      label: "Cheek refinement",
+    },
+    {
+      src: "/images/results/cheek-filler-before-after.webp",
+      alt: "Full face refresh result with softened lines and balanced facial contours",
+      label: "Full Face Harmony",
+    },
+  ],
 
   faqs: [
     {
@@ -207,11 +190,11 @@ export const dermalFillersDetail: TreatmentDetailContent = {
     },
     {
       q: "How long does HA filler last?",
-      a: "Lip filler typically lasts 9–12 months. Cheek and jawline products (Voluma, Volux) last 15–18 months in most clients. Tear trough placement can last well over a year because of how slowly the area metabolises product.",
+      a: "Lip filler typically lasts 9–12 months. Cheek and jawline products (Voluma) last 15–18 months in most clients. Tear trough placement can last well over a year because of how slowly the area metabolises product.",
     },
     {
       q: "Can it be reversed?",
-      a: "Hyaluronic acid filler can be dissolved with hyaluronidase if needed. We rarely reverse — the goal of a careful first plan is to not need to. Radiesse is not reversible; we use it only when the plan calls for it.",
+      a: "Hyaluronic acid filler can be dissolved with hyaluronidase if needed. The goal of a careful first plan is to not need to.",
     },
     {
       q: "Does it hurt?",
@@ -248,7 +231,7 @@ export const dermalFillersDetail: TreatmentDetailContent = {
       id: "consult",
       slug: "consult",
       title: "Aesthetic Consultations",
-      subtitle: "60 min · Private",
+      subtitle: "Tailored",
       copy: "Not sure where to begin? Start with a conversation. The fee is credited toward your first treatment.",
       img: { src: "/images/treatments/consult_2.webp", alt: "Consultation" },
     },

@@ -37,7 +37,7 @@ export default function TreatmentsProcess() {
               key={p.n}
               className={`pt-10 pb-2 md:pr-10 ${
                 i < phases.length - 1 ? "md:border-r border-line" : ""
-              } ${i > 0 ? "border-t md:border-t-0 border-line" : ""}`}
+              } ${i > 0 ? "border-t md:border-t-0 border-line md:pl-10" : ""}`}
             >
               <Eyebrow className="text-brass mb-5">{p.n}</Eyebrow>
               <h3 className="font-display font-normal text-[28px] leading-tight mb-3.5">

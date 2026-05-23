@@ -33,7 +33,7 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
   heroImage: {
     src: "/images/facial_chemical_peel_1500px.webp",
     alt:
-      "Chemical peel treatment — medical-grade VI Peel® formulations — at Caridi Concierge.",
+      "Chemical peel treatment using medical-grade VI Peel® formulations at Caridi Concierge.",
   },
 
   spec: [
@@ -42,7 +42,7 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
     { l: "Longevity", v: "4–6 weeks per visit" },
     { l: "Downtime", v: "3–7 days peeling" },
     { l: "Anesthetic", v: "None needed" },
-    { l: "Performed by", v: "Dr. Caridi, MD" },
+    { l: "Performed by", v: "Cristina Caridi, MD" },
   ],
 
   overview: [
@@ -50,14 +50,12 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
     "Dr. Caridi customizes each peel to target concerns such as discoloration, melasma, acne, and fine lines while respecting your skin's integrity and comfort level—resulting in brighter, smoother skin with controlled, predictable results.",
   ],
 
-  // DRAFT — practice should review/replace before publishing.
   pullquote: {
     body:
-      "A peel earns its place in a plan. We don't chase the deepest one — we choose the one that respects your skin.",
-    attr: "Dr. Cristina Caridi, MD",
+      "A peel earns its place in a plan. We don't chase the deepest one, we choose the one that respects your skin.",
+    attr: "Cristina Caridi, MD",
   },
 
-  // DRAFT — review with practice.
   bestFor: {
     yes: [
       "Discoloration, sun spots, melasma, and post-acne pigmentation",
@@ -76,7 +74,7 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
     ],
   },
 
-  // DRAFT — confirm which VI Peel variants the practice actually carries.
+
   products: [
     {
       name: "VI Peel® (Original)",
@@ -142,31 +140,26 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
     {
       area: "VI Peel® (Original) · single visit",
       from: 350,
-      to: 500,
       unit: "/ treatment",
     },
     {
       area: "VI Peel Precision Plus (pigmentation)",
       from: 450,
-      to: 600,
       unit: "/ treatment",
     },
     {
       area: "VI Peel Purify (acne)",
       from: 350,
-      to: 500,
       unit: "/ treatment",
     },
     {
       area: "Series of three (face)",
       from: 1000,
-      to: 1350,
       unit: "/ 3 treatments",
     },
     {
       area: "VI Peel Body (back / chest / hands)",
       from: 600,
-      to: 900,
       unit: "/ treatment",
     },
   ],
@@ -177,25 +170,21 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
       n: "01",
       t: "Consult & skin assessment",
       c: "Skin type, history, and concerns are reviewed. We choose the formulation, plan a series if needed, and set expectations for the peeling phase.",
-      meta: "20–30 min",
     },
     {
       n: "02",
       t: "Prep",
       c: "Skin is cleansed and degreased so the peel can absorb evenly.",
-      meta: "5 min",
     },
     {
       n: "03",
       t: "Application",
       c: "Layers are applied by Dr. Caridi personally. Warmth and brief tingling are normal; the room stays calm.",
-      meta: "15–20 min",
     },
     {
       n: "04",
       t: "At-home protocol",
-      c: "Specific post-peel regimen for the next 5–7 days — leave-on time, cleansing, moisturizer, and strict daily SPF.",
-      meta: "5–7 days",
+      c: "Specific post-peel regimen for the next 5–7 days, including leave-on time, cleansing, moisturizer, and strict daily SPF.",
     },
   ],
 
@@ -222,10 +211,10 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
       "Daily broad-spectrum SPF 30+ is non-negotiable for the next two weeks.",
       "Skip retinol, exfoliants, scrubs, waxing, and laser in the treated area for two weeks.",
       "Avoid strenuous sweating, saunas, hot yoga, and direct sun for one week.",
-      "Text the practice with any concerns — Dr. Caridi answers personally.",
+      "Text the practice with any concerns. Dr. Caridi answers personally.",
     ],
     workReady:
-      "Camera-on meetings within 24–48 hours are usually fine. Plan visible events 7–10 days out — the peeling phase is short but noticeable.",
+      "Camera-on meetings within 24–48 hours are usually fine. Plan visible events 7–10 days out, the peeling phase is short but noticeable.",
   },
 
   beforeAfter: [],
@@ -249,7 +238,7 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
       id: "fillers",
       slug: "dermal-fillers",
       title: "Dermal Fillers",
-      subtitle: "RHA · Juvederm · Radiesse",
+      subtitle: "RHA · Juvederm",
       copy: "Peels work the surface; filler works the structure. We sequence them across visits for a more complete plan.",
       img: { src: "/images/treatments/filler_lip_tx.webp", alt: "Dermal fillers treatment" },
     },
@@ -257,7 +246,7 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
       id: "consult",
       slug: "consult",
       title: "Aesthetic Consultations",
-      subtitle: "60 min · Private",
+      subtitle: "Tailored",
       copy: "Not sure where to begin? Start with a conversation. The fee is credited toward your first treatment.",
       img: { src: "/images/treatments/consult_2.webp", alt: "Consultation" },
     },
