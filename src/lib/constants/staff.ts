@@ -7,7 +7,7 @@ export const staff: Staff[] = [
       tagline: "AESTHETIC MEDICINE",
       eyebrow: "Physician",
       subtitle: "Founder · Aesthetic Medicine",
-      img: "/images/cc_headshot_white.webp",
+      img: "/images/headshots/cc_headshot_white.webp",
       imgAlt: "Cristina Caridi MD, offers botox, fillers, and chemical peels in-home and in-office.",
       email: "drcaridi@caridiconcierge.com",
       bio: [

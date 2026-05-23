@@ -64,7 +64,7 @@ export default function AboutMissionSection() {
           <div className="w-full">
             <div className="relative aspect-[4/5] w-full max-w-[480px] mx-auto lg:ml-auto bg-bone overflow-hidden">
               <Image
-                src="/images/cc_headshot_white_outside_hq_800px.webp"
+                src="/images/headshots/cc_headshot_white_outside_hq_800px.webp"
                 alt="Dr. Cristina Caridi, photographed at the practice."
                 fill
                 sizes="(min-width: 1024px) 480px, 90vw"

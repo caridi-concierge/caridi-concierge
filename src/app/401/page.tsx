@@ -11,7 +11,7 @@ export default function UnauthorizedPage() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-ivory-2 text-ink px-6 text-center">
       <Image
-        src="/images/caridi_concierge_flat_logo.svg"
+        src="/images/logos/caridi_concierge_flat_logo.svg"
         alt="Caridi Concierge logo"
         width={200}
         height={60}

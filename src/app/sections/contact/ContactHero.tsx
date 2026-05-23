@@ -76,7 +76,7 @@ export default function ContactHero() {
             <div className="mt-12 pt-7 border-t border-line flex items-center gap-5 max-w-[520px]">
               <div className="relative w-14 h-14 shrink-0 rounded-full overflow-hidden bg-bone">
                 <Image
-                  src="/images/cc_headshot_white_hq_crop_edit.webp"
+                  src="/images/headshots/cc_headshot_white_hq_crop_edit.webp"
                   alt="Dr. Cristina Caridi"
                   fill
                   sizes="56px"

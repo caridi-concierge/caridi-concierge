@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     canonical: "https://www.caridiconcierge.com",
   },
   icons: {
-    icon: "/images/favicon.png",
-    shortcut: "/images/cc_contrast_favicon.png",
-    apple: "/images/cc_contrast_webclip.png",
+    icon: "/images/logos/favicon.png",
+    shortcut: "/images/logos/cc_contrast_favicon.png",
+    apple: "/images/logos/cc_contrast_webclip.png",
   },
 };
 

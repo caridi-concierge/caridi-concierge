@@ -56,7 +56,7 @@ export default function HeroSection() {
         <div className="relative px-6 sm:px-10 lg:pl-0 lg:pr-20 pb-12 lg:py-15">
           <div className="relative w-full h-full min-h-[420px] lg:min-h-0 overflow-hidden rounded-[2px]">
             <Image
-              src="/images/cc_headshot_white_hq_crop_edit.webp"
+              src="/images/headshots/cc_headshot_white_hq_crop_edit.webp"
               alt="Dr. Cristina Caridi, founder and physician"
               fill
               priority

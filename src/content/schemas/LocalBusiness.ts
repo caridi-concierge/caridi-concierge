@@ -13,7 +13,7 @@ export const businessSchema = {
   "email": COMPANY.emailHref.replace("mailto:", ""),
   "description": "Concierge aesthetic services offering Botox, dermal fillers, and collagen-building biostimulatory fillers in the comfort of your home. Serving Brooklyn and greater NYC with personalized, doctor-led care.",
   "logo": `${COMPANY.url}/${COMPANY.logoWebclip}`,
-  "image": `${COMPANY.url}/images/cc_headshot_white_hq_crop_edit.webp`,
+  "image": `${COMPANY.url}/images/headshots/cc_headshot_white_hq_crop_edit.webp`,
   "address": {
     "@type": "PostalAddress",
     "addressLocality": COMPANY.address.locality,

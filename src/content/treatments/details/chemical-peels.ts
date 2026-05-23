@@ -31,7 +31,7 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
     "Medical-grade peels that refine texture, tone, and clarity—calibrated to your skin, your downtime, your calendar. Brighter skin emerges as the surface sheds; the work underneath continues for weeks.",
 
   heroImage: {
-    src: "/images/facial_chemical_peel_1500px.webp",
+    src: "/images/treatments/facial_chemical_peel_1500px.webp",
     alt:
       "Chemical peel treatment using medical-grade VI Peel® formulations at Caridi Concierge.",
   },

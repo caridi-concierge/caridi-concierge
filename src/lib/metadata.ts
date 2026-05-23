@@ -12,7 +12,7 @@ interface PageMetadataOptions {
 }
 
 const SITE_CONFIG = {
-  defaultImage: '/images/cc_logo_brand_contrast_full.webp',
+  defaultImage: '/images/logos/cc_logo_brand_contrast_full.webp',
   defaultImageAlt: 'Caridi Concierge - Redefined Botox and Filler Treatments in NYC'
 }
 

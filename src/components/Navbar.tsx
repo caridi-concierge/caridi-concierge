@@ -38,7 +38,7 @@ export default function Navbar({
         <div className="flex justify-start lg:justify-center">
           <Link href="/" aria-label="Caridi Concierge — Home">
             <Image
-              src="/images/cc_logo_ivory_flat.svg"
+              src="/images/logos/cc_logo_ivory_flat.svg"
               alt="Caridi Concierge"
               width={240}
               height={60}

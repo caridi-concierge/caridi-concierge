@@ -23,7 +23,7 @@ export default function Footer() {
               aria-label="Caridi Concierge — Home"
             >
               <Image
-                src="/images/caridi_concierge_logo_contrast_fraunces.svg"
+                src="/images/logos/caridi_concierge_logo_contrast_fraunces.svg"
                 alt="Caridi Concierge"
                 width={226}
                 height={60}
@@ -37,22 +37,22 @@ export default function Footer() {
             <p className="font-body text-sm">{COMPANY.address.neighborhood} <br />{COMPANY.address.locality}, {COMPANY.address.region} {COMPANY.address.postalCode} <br /> {COMPANY.phone}</p>
             <div className="flex flex-wrap gap-3 pt-1">
               <a href={COMPANY.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <Image src="/images/merino_instagram.svg" alt="" width={20} height={20} />
+                <Image src="/images/icons/merino_instagram.svg" alt="" width={20} height={20} />
               </a>
               <a href={COMPANY.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <Image src="/images/merino_facebook.svg" alt="" width={20} height={20} />
+                <Image src="/images/icons/merino_facebook.svg" alt="" width={20} height={20} />
               </a>
               <a href={COMPANY.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <Image src="/images/merino_linkedin.svg" alt="" width={20} height={20} />
+                <Image src="/images/icons/merino_linkedin.svg" alt="" width={20} height={20} />
               </a>
               <a href={COMPANY.social.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                <Image src="/images/merino_tiktok.svg" alt="" width={20} height={20} />
+                <Image src="/images/icons/merino_tiktok.svg" alt="" width={20} height={20} />
               </a>
               <a href={COMPANY.social.yelp} target="_blank" rel="noopener noreferrer" aria-label="Yelp">
-                <Image src="/images/merino_yelp.svg" alt="" width={20} height={20} />
+                <Image src="/images/icons/merino_yelp.svg" alt="" width={20} height={20} />
               </a>
               <a href={COMPANY.social.pinterest} target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
-                <Image src="/images/merino_pinterest.svg" alt="" width={20} height={20} />
+                <Image src="/images/icons/merino_pinterest.svg" alt="" width={20} height={20} />
               </a>
             </div>
           </div>
