@@ -29,7 +29,7 @@ export const LOCATIONS = [
         ctaSecondaryHref: "https://maps.google.com/?q=south+slope+oral+surgery+brooklyn+4th+ave",
         
         ctaPrimaryLabel: "Book in Gowanus",
-        ctaPrimaryHref: "/book",
+        ctaPrimaryHref: "/book?source=location_gowanus",
         
         ctaTertiaryLabel: "Book on Zocdoc",
         ctaTertiaryHref: "https://www.zocdoc.com/practice/caridi-concierge-medicine-146934?lock=true&isNewPatient=false&referrerType=widget",
@@ -74,7 +74,7 @@ export const LOCATIONS = [
         statusLine: "Tuesday through Sunday",
 
         ctaPrimaryLabel: "Book In-Home Visit",
-        ctaPrimaryHref: "/book",
+        ctaPrimaryHref: "/book?source=location_in-home",
         
         ctaSecondaryLabel: "Text Us",
         ctaSecondaryHref: COMPANY.smsHref,

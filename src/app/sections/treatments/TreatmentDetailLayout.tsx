@@ -47,7 +47,7 @@ function Hero({ content }: { content: TreatmentDetailContent }) {
           </p>
           <div className="mt-14 flex flex-wrap items-center gap-3.5">
             <Link
-              href="/book"
+              href="/book?source=treatment_detail"
               id="detail-hero-cta"
               className="inline-flex items-center gap-3 rounded-full bg-teal px-7 py-4 font-body text-[11px] font-medium uppercase tracking-[0.32em] text-ivory transition-colors duration-200 hover:bg-teal-deep"
             >

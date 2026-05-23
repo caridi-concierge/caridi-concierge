@@ -34,7 +34,7 @@ const MODES: Mode[] = [
     italicTail: "conversation.",
     body: "Sixty private minutes. The fee credits to your first treatment.",
     ctaLabel: "Schedule a consult",
-    href: "/book",
+    href: "/book?source=about_modes",
   },
 ];
 

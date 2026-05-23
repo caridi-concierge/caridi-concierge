@@ -73,7 +73,7 @@ export default function Footer() {
           <div>
             <Eyebrow className="text-brass-soft text-[10px] mb-4">Visit</Eyebrow>
             <ul className="space-y-2.5 font-body text-[13px]">
-              <li><Link href="/book" className={linkBase}>Schedule</Link></li>
+              <li><Link href="/book?source=footer" className={linkBase}>Schedule</Link></li>
               {LOCATIONS.map((loc) => (
                 <li key={loc.id}>
                   <Link href={`/locations/${loc.slug}`} className={linkBase}>

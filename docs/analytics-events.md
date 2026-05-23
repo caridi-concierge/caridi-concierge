@@ -40,11 +40,27 @@ and the GTM / GA4 setup needed to turn these events into reportable Key Events.
 ### `begin_booking` source attribution
 
 `source` resolves to, in order: a `?source=` query param on the `/book` URL,
-then `document.referrer`, then `"direct"`. Because most `/book` clicks are
-client-side (SPA) navigations, `document.referrer` often reflects the landing
-page rather than the originating CTA. For precise attribution, append a source
-to specific CTAs, e.g. `/book?source=treatments-hero`, and it flows straight
-through. No CTA changes are required for the event itself to fire.
+then `document.referrer`, then `"direct"`.
+
+**Every Book CTA on the site passes an explicit `?source=`**, so `source`
+identifies the originating CTA rather than falling back to the referrer:
+
+| `source` value | CTA |
+| --- | --- |
+| `navbar_desktop` / `navbar_mobile` | Navbar "Book a visit" |
+| `home_hero` | Home hero |
+| `home_faq` | Home FAQ inline link |
+| `footer` | Footer "Schedule" |
+| `treatment_detail` | Treatment detail-page hero |
+| `card_{slug}` | Treatment cards (`card_consult`, `card_dermal-fillers`, …) |
+| `about` / `about_modes` | About page CTAs |
+| `staff_bio` | Staff bio |
+| `location_gowanus` / `location_in-home` | Location hero primary CTA |
+| the CTA's `id` (e.g. `homepage-cta`, `treatments-cta`, `botox-cta`) | any `CTASection` band — appended automatically from the rendered `id` in `CTA.tsx` |
+
+When adding a new Book CTA, append `?source=<surface>` to its `/book` href
+(`CTASection` does this automatically from its `id`). The event still fires
+without it — you'd just lose the attribution.
 
 ## Element IDs (for GTM click triggers)
 

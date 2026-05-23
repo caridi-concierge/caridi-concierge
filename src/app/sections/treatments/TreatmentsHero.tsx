@@ -34,9 +34,9 @@ export default function TreatmentsHero() {
               Treatments · The Repertoire
             </Eyebrow>
             <h1 className="font-display font-light text-[48px] sm:text-[72px] lg:text-[96px] leading-[0.98] tracking-[-0.015em]">
-              A discreet repertoire{" "}
+              Botox, Fillers, and Peels–{""}
               <em className="not-italic italic font-light text-brass">
-                of refinements.
+                refined.
               </em>
             </h1>
             <p className="mt-9 max-w-[520px] text-base leading-[1.7] font-light text-ink/70">

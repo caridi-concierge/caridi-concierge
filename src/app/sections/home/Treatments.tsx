@@ -23,8 +23,8 @@ export default function TreatmentsSection() {
               Signature services
             </Eyebrow>
             <h2 className="font-display font-light text-[40px] sm:text-5xl lg:text-[56px] leading-[1.05] max-w-[640px]">
-              A discreet repertoire{" "}
-              <em className="not-italic italic font-light">of refinements.</em>
+              A curated set{" "}
+              <em className="not-italic italic font-light">of treatments.</em>
             </h2>
           </div>
           <Link

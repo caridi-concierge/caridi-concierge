@@ -64,7 +64,7 @@ export default function Navbar({
               <span>{COMPANY.phone}</span>
             </a>
             <Link
-              href="/book"
+              href="/book?source=navbar_desktop"
               id={ctaId}
               className="inline-flex items-center gap-2 rounded-full border border-brass-soft px-5 py-2.5 font-body text-[11px] font-medium uppercase tracking-[0.32em] text-ivory transition-colors duration-200 hover:bg-brass-soft hover:text-teal-deep"
             >
@@ -120,7 +120,7 @@ export default function Navbar({
 
           <div className="flex flex-col gap-4 w-full max-w-[260px]">
             <Link
-              href="/book"
+              href="/book?source=navbar_mobile"
               id={overlayCtaId}
               onClick={() => setIsOpen(false)}
               className="inline-flex items-center justify-center gap-2 rounded-full bg-ivory text-teal-deep px-6 py-3 font-body text-[11px] font-medium uppercase tracking-[0.32em]"

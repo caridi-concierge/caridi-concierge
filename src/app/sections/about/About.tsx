@@ -39,7 +39,7 @@ export default function AboutMissionSection() {
 
             <div className="mt-10">
               <Link
-                href="/book"
+                href="/book?source=about"
                 id="about-mission-book-cta"
                 className="inline-flex items-center gap-3 rounded-full bg-teal px-7 py-4 font-body text-[11px] font-medium uppercase tracking-[0.32em] text-ivory transition-colors duration-200 hover:bg-teal-deep"
               >

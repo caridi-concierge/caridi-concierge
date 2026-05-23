@@ -29,7 +29,7 @@ export default function FAQSection() {
               <AccordionItem title="How do I schedule an appointment?">
                 <p>
                   Book online, or call/text the practice directly through{" "}
-                  <Link href="/book" className="text-brass underline underline-offset-2">
+                  <Link href="/book?source=home_faq" className="text-brass underline underline-offset-2">
                     our booking page
                   </Link>
                   . New clients begin with a 60-minute consultation in your

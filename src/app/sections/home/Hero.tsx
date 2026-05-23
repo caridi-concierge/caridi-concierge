@@ -29,14 +29,14 @@ export default function HeroSection() {
 
           <p className="mt-8 max-w-[460px] text-base lg:text-[16px] leading-[1.7] font-light text-ivory/80">
             Physician-led Botox and dermal filler, performed in the privacy of
-            your own setting—across Manhattan, Brooklyn, and Queens. Effortless
+            your own setting, across Manhattan, Brooklyn, and Queens. Effortless
             results, on your schedule.
           </p>
 
           <div className="mt-12 flex flex-wrap items-center gap-4">
             <Link
               id="hero-booking-cta"
-              href="/book"
+              href="/book?source=home_hero"
               aria-label="Schedule a consultation"
               className="inline-flex items-center gap-2.5 rounded-full bg-ivory px-8 py-4 font-body text-[11px] font-medium uppercase tracking-[0.32em] text-teal-deep transition-colors duration-200 hover:bg-brass-soft hover:text-teal-deep"
             >

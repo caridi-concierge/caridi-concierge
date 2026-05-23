@@ -44,6 +44,14 @@ export default function CTASection({
   const text = config.textColor ?? "text-ivory";
   const eyebrow = config.eyebrow === undefined ? "— Begin" : config.eyebrow;
 
+  // Attribute booking source by the rendered CTA id so begin_booking (fired on
+  // /book) knows which CTA drove the click.
+  const resolvedId = id ?? config.id;
+  const ctaHref =
+    config.ctaHref.startsWith("/book") && !config.ctaHref.includes("?")
+      ? `/book?source=${resolvedId ?? "cta"}`
+      : config.ctaHref;
+
   return (
     <section className={`${bg} ${text}`}>
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-20 py-24 lg:py-[140px] text-center">
@@ -64,8 +72,8 @@ export default function CTASection({
 
         <div className="mt-12">
           <Link
-            href={config.ctaHref}
-            id={id ?? config.id}
+            href={ctaHref}
+            id={resolvedId}
             aria-label={config.ariaLabel}
             className="inline-flex items-center gap-2.5 rounded-full bg-ivory px-9 py-[18px] font-body text-[11px] font-medium uppercase tracking-[0.32em] text-teal-deep transition-colors duration-200 hover:bg-brass-soft"
           >

@@ -4,7 +4,7 @@ const principles = [
   {
     n: "01",
     t: "Physician-led",
-    c: "Every consultation, plan, and injection is performed personally by Dr. Caridi—no associates, no rotating injectors.",
+    c: "Every consultation, plan, and injection is performed personally by Dr. Caridi. No associates, no rotating injectors.",
   },
   {
     n: "02",
