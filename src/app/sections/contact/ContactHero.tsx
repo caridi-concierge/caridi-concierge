@@ -2,13 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { COMPANY } from "@/lib/constants/company";
 import Eyebrow from "@/components/Eyebrow";
+import TrackedLink from "@/components/TrackedLink";
 
 type Channel = {
   label: string;
   primary: string;
   primaryHref: string;
+  /** GTM event name + element id for the primary link. */
+  event: string;
+  id: string;
   secondary?: string;
   secondaryHref?: string;
+  secondaryEvent?: string;
+  secondaryId?: string;
 };
 
 const CHANNELS: Channel[] = [
@@ -16,18 +22,26 @@ const CHANNELS: Channel[] = [
     label: "Call or text",
     primary: COMPANY.phone,
     primaryHref: COMPANY.phoneHref,
+    event: "phone_click",
+    id: "contact-phone-cta",
     secondary: "Or send a text",
     secondaryHref: COMPANY.smsHref,
+    secondaryEvent: "sms_click",
+    secondaryId: "contact-sms-cta",
   },
   {
     label: "Email",
     primary: COMPANY.email,
     primaryHref: COMPANY.emailHref + "?subject=Booking%20Inquiry",
+    event: "email_click",
+    id: "contact-email-cta",
   },
   {
     label: "Instagram",
     primary: "@caridiconcierge",
     primaryHref: COMPANY.social.instagram,
+    event: "social_click",
+    id: "contact-instagram-cta",
   },
 ];
 
@@ -109,21 +123,27 @@ export default function ContactHero() {
                     {channel.label}
                   </dt>
                   <dd className="m-0">
-                    <Link
+                    <TrackedLink
                       href={channel.primaryHref}
+                      id={channel.id}
+                      event={channel.event}
+                      eventParams={{ location: "contact_hero" }}
                       className="font-display font-light text-[22px] sm:text-[24px] leading-[1.2] text-ink transition-colors duration-200 hover:text-brass"
                     >
                       {channel.primary}
-                    </Link>
+                    </TrackedLink>
                     {channel.secondary && channel.secondaryHref && (
                       <>
                         {" · "}
-                        <Link
+                        <TrackedLink
                           href={channel.secondaryHref}
+                          id={channel.secondaryId}
+                          event={channel.secondaryEvent ?? "link_click"}
+                          eventParams={{ location: "contact_hero" }}
                           className="font-body text-[11px] font-medium uppercase tracking-[0.32em] text-brass transition-colors duration-200 hover:text-ink"
                         >
                           {channel.secondary}
-                        </Link>
+                        </TrackedLink>
                       </>
                     )}
                   </dd>

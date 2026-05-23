@@ -1,8 +1,14 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import Script from "next/script";
 import Eyebrow from "@/components/Eyebrow";
 import IconArrow from "@/components/icons/IconArrow";
 import { noPhoneNumberFormat, formatPhoneNumber } from "@/app/utils/formatters";
+import { pushEvent } from "@/lib/analytics";
+
+// Turnstile activates only when the public site key is configured, so the form
+// keeps working in environments where the key isn't set yet.
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 type HelpfulItem = { title: string; copy: string };
 
@@ -27,6 +33,8 @@ const HELPFUL: HelpfulItem[] = [
 
 export default function ContactFormCard() {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  // Captured at first render; the server rejects submissions completed too fast.
+  const renderedAt = useRef(Date.now());
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -56,6 +64,11 @@ export default function ContactFormCard() {
       email: form.email.value,
       message: form.message.value,
       prefer,
+      company: form.company.value, // honeypot — must stay empty
+      t: renderedAt.current, // form-render timestamp for the timing check
+      turnstileToken:
+        (form.elements.namedItem("cf-turnstile-response") as HTMLInputElement | null)
+          ?.value ?? "",
     };
 
     try {
@@ -66,13 +79,22 @@ export default function ContactFormCard() {
       });
 
       if (res.ok) {
+        const result = await res.json().catch(() => ({}));
         setStatus("success");
+        // Only count real (server-accepted) submissions as a lead; bot-dropped
+        // ones return accepted:false and must not pollute the conversion.
+        if (result.accepted !== false) {
+          pushEvent("generate_lead", { method: "contact_form", contact_pref: prefer });
+        }
         form.reset();
       } else {
         setStatus("error");
       }
     } catch {
       setStatus("error");
+    } finally {
+      // Turnstile tokens are single-use; refresh for any retry.
+      (window as Window & { turnstile?: { reset: () => void } }).turnstile?.reset();
     }
   }
 
@@ -104,6 +126,23 @@ export default function ContactFormCard() {
             className="space-y-6"
             aria-label="Send a note to Caridi Concierge"
           >
+            {/* Honeypot: hidden from users and assistive tech; bots fill it and
+                get silently dropped server-side. */}
+            <div
+              aria-hidden="true"
+              className="absolute -left-[9999px] top-[-9999px] h-0 w-0 overflow-hidden"
+            >
+              <label>
+                Company
+                <input
+                  type="text"
+                  name="company"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  defaultValue=""
+                />
+              </label>
+            </div>
             <div className="grid sm:grid-cols-2 gap-6">
               <input
                 name="firstName"
@@ -178,6 +217,20 @@ export default function ContactFormCard() {
                 ))}
               </div>
             </fieldset>
+
+            {TURNSTILE_SITE_KEY && (
+              <>
+                <Script
+                  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+                  strategy="afterInteractive"
+                />
+                <div
+                  className="cf-turnstile"
+                  data-sitekey={TURNSTILE_SITE_KEY}
+                  data-theme="light"
+                />
+              </>
+            )}
 
             <div className="pt-2 flex flex-wrap items-center gap-x-7 gap-y-4">
               <button

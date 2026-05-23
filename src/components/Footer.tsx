@@ -5,6 +5,7 @@ import Link from "next/link";
 import { COMPANY } from "@/lib/constants/company";
 import { LOCATIONS } from "@/lib/constants/locations";
 import Eyebrow from "@/components/Eyebrow";
+import { pushEvent } from "@/lib/analytics";
 
 export default function Footer() {
   const linkBase =
@@ -89,10 +90,25 @@ export default function Footer() {
             <Eyebrow className="text-brass-soft text-[10px] mb-4">Contact</Eyebrow>
             <ul className="space-y-2.5 font-body text-[13px]">
               <li>
-                <a href={COMPANY.emailHref} className={linkBase}>{COMPANY.email}</a>
+                <Link href="/contact" className={linkBase}>
+                  Contact Page
+                </Link>
               </li>
               <li>
-                <a href={COMPANY.phoneHref} className={linkBase}>{COMPANY.phone}</a>
+                <a
+                  href={COMPANY.emailHref}
+                  id="footer-email-cta"
+                  onClick={() => pushEvent("email_click", { location: "footer" })}
+                  className={linkBase}
+                >{COMPANY.email}</a>
+              </li>
+              <li>
+                <a
+                  href={COMPANY.phoneHref}
+                  id="footer-phone-cta"
+                  onClick={() => pushEvent("phone_click", { location: "footer" })}
+                  className={linkBase}
+                >{COMPANY.phone}</a>
               </li>
               <li>
                 <a href={COMPANY.social.instagram} target="_blank" rel="noopener noreferrer" className={linkBase}>

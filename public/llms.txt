@@ -47,7 +47,6 @@ Important notes:
 - Markdown mirrors: if you support them, publish clean Markdown copies at the same URL with “.md” appended, for example:
   - /about.md
   - /treatments/index.html.md
-  - /products.md
   - /locations/index.html.md
   - /blog/how-to-prepare-for-botox-your-complete-pre-and-post-treatment-guide.md
   - /blog/where-botox-really-works-from-forehead-to-jawline.md

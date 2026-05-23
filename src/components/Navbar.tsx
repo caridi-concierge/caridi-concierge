@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Phone, Menu, X } from "lucide-react";
 import { COMPANY } from "@/lib/constants/company";
 import IconArrow from "@/components/icons/IconArrow";
+import { pushEvent } from "@/lib/analytics";
 
 const NAV_LINKS = [
   { href: "/about", label: "About" },
@@ -54,6 +55,8 @@ export default function Navbar({
           <div className="hidden lg:flex items-center gap-6">
             <a
               href={COMPANY.phoneHref}
+              id="nav-phone-cta"
+              onClick={() => pushEvent("phone_click", { location: "navbar_desktop" })}
               className={`${linkClass} flex items-center gap-2 normal-case tracking-normal text-[13px]`}
               aria-label={`Call ${COMPANY.phone}`}
             >
@@ -126,7 +129,11 @@ export default function Navbar({
             </Link>
             <a
               href={COMPANY.phoneHref}
-              onClick={() => setIsOpen(false)}
+              id="nav-mobile-phone-cta"
+              onClick={() => {
+                setIsOpen(false);
+                pushEvent("phone_click", { location: "navbar_mobile" });
+              }}
               className="inline-flex items-center justify-center gap-2 rounded-full border border-brass-soft px-6 py-3 font-body text-[11px] font-medium uppercase tracking-[0.32em] text-brass-soft"
             >
               <Phone size={14} aria-hidden="true" />
