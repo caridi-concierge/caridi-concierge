@@ -1,134 +1,66 @@
 # Testing Conventions
 
-## Test separation
-
-| Type | Common location | Suffix | Purpose |
-| --- | --- | --- | --- |
-| Unit | `src/**/__tests__/` or `tests/unit/` | `*.test.ts` | Fast, isolated logic |
-| Integration | `tests/integration/` or colocated `*.int.test.ts` | `*.int.test.ts` | Real boundaries: DB, queues, HTTP clients, API routes |
-| End-to-end | `tests/e2e/` | `*.e2e.test.ts` | Critical user flows across the running app |
-
-Use the repo's existing convention if one already exists. Do not introduce a second test layout without a reason.
+The test runner is **Vitest**. Tests run under Node and exercise pure logic and
+typed content — there is no database, server bootstrap, or browser layer to
+spin up. Keep tests fast and deterministic.
 
 ## Commands
 
-Use Yarn only.
-
 ```bash
-yarn test          # test suite
-yarn test:unit     # unit tests, if configured
-yarn test:int      # integration tests, if configured
-yarn test:e2e      # end-to-end tests, if configured
-yarn lint          # lint checks
-yarn typecheck     # TypeScript checks
-yarn build         # production build
+yarn test          # run the suite once (vitest run)
+yarn test:watch    # watch mode
+yarn typecheck     # tsc --noEmit
+yarn lint          # ESLint
+yarn build         # production build (also type-checks)
 ```
 
-If the repo has different script names, inspect `package.json` and use the actual scripts. Do not invent commands.
+## Layout
 
-## Coverage rule
+- Co-locate tests with the code they cover, named `*.test.ts`
+  (e.g. `src/lib/metadata.test.ts` next to `src/lib/metadata.ts`).
+- Vitest picks up `src/**/*.test.ts` (see `vitest.config.ts`). The `@/` alias
+  resolves the same way it does in the app.
+- The test environment is `node`. There is no React/DOM test layer yet; if a
+  component test genuinely needs the DOM, add `jsdom` and a testing-library, set
+  `environment: "jsdom"` in the config, and explain the additions.
 
-Public behavior must be covered by tests. Prioritize:
+## What to test
 
-- service orchestration
-- domain invariants
-- API status codes and response shapes
-- validation and error handling
-- persistence queries or data access logic
-- external integration adapters
-- critical background jobs and webhook handlers
+Prioritize logic with a real contract:
 
-Do not chase coverage percentage by testing getters, generated code, framework behavior, or trivial pass-throughs.
+- **Pure helpers** in `src/lib/` — e.g. `createPageMetadata` (canonical/OG URL
+  building, conditional keywords/robots), related-post resolution
+  (`lib/blogs/related.ts`), the analytics `pushEvent` dataLayer behavior.
+- **Content registries and lookups** — `getTreatmentDetail`,
+  `getLocationContent`, and that every catalog entry has a matching detail
+  entry and a valid slug. These guards catch content drift cheaply.
+- **Structured-data/schema builders** — that JSON-LD output reflects `PRICES`
+  and stays consistent with displayed copy.
+- **Contact route logic** — the bot heuristics and validation in
+  `src/app/api/contact/route.ts`: honeypot, timing window, and field
+  validation. Stub the Resend client and `fetch` (Turnstile); never send real
+  mail or make network calls in a test.
 
-## Unit tests
+## What not to test
 
-- Unit tests should be fast and deterministic.
-- Mock collaborators that cross architectural boundaries: databases, queues, HTTP clients, file systems, provider SDKs, and clocks.
-- Use real domain/value objects within the same bounded context.
-- Keep tests structured as Arrange / Act / Assert separated by blank lines.
-- Prefer table-driven tests for variants of the same behavior.
-- Avoid snapshots for complex behavior unless the snapshot is small, intentional, and reviewed like code.
+- Framework behavior, library behavior, generated code.
+- Trivial type-only modules, getters, or pass-through wrappers.
+- Don't chase a coverage percentage by testing presentational markup. Assert
+  behavior and contracts, not incidental render details.
 
-Example table-driven shape:
+## Style
 
-```ts
-describe('normalizeKeyword', () => {
-  it.each([
-    [' Botox Near Me ', 'botox near me'],
-    ['lip-filler', 'lip filler'],
-  ])('normalizes %s', (input, expected) => {
-    expect(normalizeKeyword(input)).toBe(expected);
-  });
-});
-```
+- Arrange / Act / Assert, separated by blank lines.
+- Prefer table-driven tests (`it.each`) for variants of one behavior.
+- Assert outcomes and contracts, not implementation details. For errors, assert
+  the status/shape (the contact route returns specific status codes and bodies).
+- Use small inline fixtures or builders; avoid giant shared fixtures.
+- Mock only what crosses a boundary: the mail client, `fetch`, the filesystem,
+  `window`/`dataLayer`, and the clock. Use fake timers for the timing checks and
+  reset them after each test. Keep content/value objects real.
+- Tests must not depend on wall-clock time, randomness, network, or execution
+  order.
 
-## Integration tests
+## When fixing a bug
 
-- Use the real database/schema for persistence tests when feasible.
-- Prefer test containers or ephemeral local services for databases, queues, and caches.
-- Do not mock the database in integration tests.
-- Reset state between tests with transactions, truncation, isolated schemas, or fresh test data.
-- Keep integration tests narrower than full end-to-end tests when possible.
-- Stub third-party APIs unless the test is explicitly verifying provider connectivity.
-
-## API tests
-
-- Test status codes, response shape, headers where relevant, and important body fields.
-- Test validation failures and domain error mappings.
-- Test authorization boundaries where applicable.
-- Do not assert on incidental implementation details.
-
-For route handlers, use the framework's recommended test approach:
-
-- Next.js: test pure handlers/services directly where possible; use integration tests for route behavior.
-- Express/Fastify/Hono: use request-level tests with the app instance and an HTTP test client.
-
-## Time and clocks
-
-- Inject or centralize time access instead of calling `new Date()` throughout business logic.
-- Tests that depend on time must use a fixed clock or fake timers.
-- Reset fake timers after each test.
-- Store backend timestamps in UTC.
-
-## Test data
-
-- Use small builders/factories for repeated setup.
-- Builders should provide sensible defaults and let tests override only what matters.
-- Avoid giant shared fixtures that make tests hard to understand.
-- Keep test data local to the test unless it is truly reused.
-
-Example:
-
-```ts
-const order = buildOrder({ status: 'paid', totalCents: 5000 });
-```
-
-## Assertions
-
-- Assert outcomes, not implementation details.
-- Prefer precise assertions over broad snapshots.
-- For errors, assert the error type/code and meaningful message.
-- For arrays, assert order only when order is part of the contract.
-
-## Naming
-
-- Test names should describe behavior: `returns 404 when order is missing`.
-- Test files should mirror the subject: `order-service.test.ts`, `orders-route.int.test.ts`.
-- Use `describe` blocks to group by module and method/use case.
-
-## What we do not test
-
-- Framework behavior.
-- Library behavior.
-- Generated code.
-- Simple type-only definitions.
-- Trivial getters/setters or pass-through wrappers unless they encode a contract.
-
-## What we always test
-
-- Domain invariants and edge cases.
-- Service orchestration with mocked external boundaries.
-- API validation, status codes, and response shapes.
-- Custom database queries or data mapping.
-- Webhook idempotency and signature failure paths.
-- Background jobs that mutate state or call external systems.
+Add a regression test that fails before the fix and passes after.

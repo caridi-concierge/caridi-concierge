@@ -8,11 +8,14 @@ Claude loads `AGENTS.md` automatically. Keep durable project guidance there.
 ## Project facts and conventions
 @AGENTS.md
 
-## When writing or editing Node.js / TypeScript code
+## Project structure and layering
+@.ai/rules/architecture.md
+
+## When writing or editing TypeScript / React code
 @.ai/rules/coding.md
 
 ## When writing or editing tests
 @.ai/rules/testing.md
 
-## When touching HTTP routes, API handlers, DTOs, or OpenAPI
+## When touching the contact API route or adding a new route handler
 @.ai/rules/api-design.md

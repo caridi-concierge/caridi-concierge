@@ -1,33 +1,46 @@
-# AGENTS.md — AI Coding Assistant Guide (Codex / Node.js)
+# AGENTS.md — AI Coding Assistant Guide
 
-This file is loaded automatically by AI coding agents (Codex, Copilot, Cursor, etc.).
-It defines how to work in this project and how to run it correctly.
+This file is loaded automatically by AI coding agents (Claude, Codex, Copilot, Cursor, etc.).
+It defines what this project is and how to work in it correctly.
 
 For working style and decision-making, see `.ai/rules/doctrine.md`.
+For structure and layering, see `.ai/rules/architecture.md`.
 For coding conventions, see `.ai/rules/coding.md`.
 
 ---
 
 ## Project overview
 
-Node.js + TypeScript application.
+**Caridi Concierge is a marketing/content website for a medical-aesthetics
+practice.** It is a **Next.js 15 App Router** site (React 19, TypeScript,
+Tailwind CSS v4), statically rendered where possible and deployed on Vercel.
 
-Architecture is modular and service-oriented. Keep boundaries clear:
-- `api/` — HTTP layer (routes, controllers)
-- `services/` — business logic
-- `domain/` — core models and invariants
-- `infra/` — external integrations (DB, APIs, queues)
+What it is:
 
-Avoid mixing concerns across layers.
+- A content site: pages, editorial copy, blog posts (MDX), treatment and
+  location detail pages, JSON-LD structured data, and SEO metadata.
+- One server endpoint: `POST /api/contact` (sends a contact email via Resend,
+  with bot mitigation). See `.ai/rules/api-design.md`.
+
+What it is **not** (do not add these without an explicit product reason):
+
+- No database, ORM, or migrations.
+- No queues, background jobs, or webhooks.
+- No authentication or user accounts.
+- No service / domain / infrastructure layering. This is a presentation-first
+  content app; content lives as typed data and MDX, not behind repositories.
+
+Most "logic" here is content modelling and presentation. Treat content
+correctness, SEO/structured-data integrity, and the analytics tracking
+contract as the things most likely to break.
 
 ---
 
 ## Environment
 
-- **Node.js**: LTS (use nvm or asdf)
-- **Package manager**: **Yarn only**
-
-> This project uses Yarn. Do not use npm or pnpm.
+- **Node.js**: LTS.
+- **Package manager**: **Yarn 4 (Berry)** — see `packageManager` in
+  `package.json`. **Do not use npm or pnpm.** Do not create a second lockfile.
 
 Install dependencies:
 
@@ -35,126 +48,128 @@ Install dependencies:
 yarn install
 ```
 
+The user typically runs `yarn dev` themselves. Don't auto-start the dev server;
+verify changes with `yarn typecheck`, `yarn lint`, `yarn test`, and `yarn build`.
+
 ---
 
 ## Key commands
 
 ```bash
-yarn install        # install dependencies
-yarn dev            # run local development server
-yarn build          # production build
-yarn start          # run production build
-yarn test           # run tests
-yarn lint           # lint code
-yarn typecheck      # TypeScript checks
-yarn command        # run a JSON-payload CLI command (see docs/cli-commands.md)
+yarn dev          # local dev server (Next + Turbopack)
+yarn build        # production build (also type-checks the app)
+yarn start        # serve the production build
+yarn typecheck    # tsc --noEmit
+yarn test         # run the Vitest suite once
+yarn test:watch   # Vitest in watch mode
+yarn lint         # ESLint (next/core-web-vitals + next/typescript)
 ```
 
-If a command fails, fix forward — do not skip steps.
-
-The `yarn command` runner dispatches operator tools (GSC sync/backfill/repair,
-GBP publish queue, etc.). See [`docs/cli-commands.md`](docs/cli-commands.md)
-for the full payload reference.
+These are the scripts that exist. Do not invent others.
 
 ---
 
-## Testing
+## Environment variables
 
-- Unit tests: fast, isolated, no network or DB
-- Integration tests: real integrations or test containers
-- All public-facing behavior must be covered
+Read `.env.example` for the full list. Notable ones:
 
-Before completing any task:
+- `RESEND_API_KEY` — required for the contact route to send mail.
+- `TURNSTILE_SECRET_KEY` — optional; when set, the contact route enforces
+  Cloudflare Turnstile verification.
+- `PRICE_*` (e.g. `PRICE_BOTOX`, `PRICE_DERMAL_FILLER`) — service prices.
 
-```bash
-yarn test
-```
-
-Do not claim success without passing tests.
-
----
-
-## Code organization rules
-
-- No business logic in route handlers
-- Services contain orchestration logic
-- Domain contains pure logic and validation
-- Infra handles side effects only
-
-If a file starts doing multiple jobs, split it.
+Prices are read **once** in `src/lib/constants/pricing.ts` (the single source
+of truth) and imported elsewhere as `PRICES`. Do not re-read `process.env` for
+prices in individual files or reintroduce inline price literals.
 
 ---
 
-## API design
+## Code organization
 
-- Validate all inputs at the boundary
-- Return consistent response shapes
-- Do not leak internal models directly
-- Use explicit DTOs when needed
+See `.ai/rules/architecture.md` for the full map. In short:
+
+- `src/app/` — routes (App Router pages), `sections/` (page-specific composed
+  sections), `api/` (the contact route), and small route-local helpers.
+- `src/components/` — shared, reusable UI components.
+- `src/content/` — editorial content as data and MDX: blog posts, location
+  content, treatment details, reviews, and JSON-LD schemas.
+- `src/lib/` — non-UI logic: analytics, blog file reads, constants, metadata.
+- `src/model/` — shared TypeScript types.
+
+Keep presentation in components/sections, content in `content/`, and shared
+constants/types in `lib/` and `model/`.
 
 ---
 
-## Error handling
+## Conventions that matter here
 
-- Fail loudly and explicitly
-- Do not swallow errors or return silent defaults
-- Use typed errors where possible
-- Log context, not raw payloads
+- **Pricing single-source**: import `PRICES` from
+  `src/lib/constants/pricing.ts`. Never inline a price or re-read `PRICE_*`.
+- **Analytics is a contract**: conversion tracking is GTM keyed on event names
+  (`src/lib/analytics.ts`) and on element `id` attributes. Renaming or dropping
+  an event name or a button/link `id` can silently break a configured Key
+  Event. Preserve them across refactors.
+- **SEO metadata**: build page metadata with `createPageMetadata` from
+  `src/lib/metadata.ts` rather than hand-rolling `Metadata` objects.
+- **Structured data**: JSON-LD lives in `src/content/schemas/` and is rendered
+  via the `JsonLd` component. Keep schema values consistent with on-page copy
+  and with `PRICES`.
+- **Blog posts**: MDX files in `src/content/blog/` with exported `metadata`.
+  `src/lib/blogs/posts.ts` reads them. Frontmatter/metadata shape is
+  `BlogPostMeta`.
+- **Images**: optimized `.webp` under `public/images/`, organized by area
+  (`logos/`, `headshots/`, `treatments/`, `results/`, `icons/`).
 
 ---
 
-## Logging
+## Error handling and logging
 
-- No `console.log` in production code
-- Use structured logging (pino, winston, etc.)
-- Never log:
-  - credentials
-  - tokens
-  - sensitive user data
+- Fail loudly; don't swallow errors or return silent defaults to hide failures.
+- This project has **no structured-logging dependency**. The contact route uses
+  `console.error` for server-side failures, which is acceptable for its scope.
+  Do not add pino/winston or a logging framework without a reason.
+- Never log credentials, tokens, or submitted personal data.
 
 ---
 
 ## Safety rules
 
-- Never commit secrets
-- Never delete or overwrite large data without confirmation
-- Avoid destructive operations without clear intent
+- Never commit secrets. If you find one committed, stop and escalate.
+- Preserve SEO: keep existing redirects (`next.config.ts`) and canonical URLs
+  intact when moving or renaming pages.
+- Avoid destructive operations without clear intent.
 
 ---
 
 ## What not to do
 
-- Do not introduce new frameworks without justification
-- Do not guess APIs — verify before using
-- Do not leave dead code or commented blocks
-- Do not bypass linting or type checks
+- Do not introduce a backend architecture (DB, services, repositories, queues)
+  for a content site.
+- Do not add frameworks or large dependencies for small helpers.
+- Do not guess APIs — verify before using.
+- Do not leave dead code, commented-out blocks, or orphaned files.
+- Do not bypass linting or type checks.
 
 ---
 
 ## Definition of done
 
-A task is complete when:
+A change is complete when:
 
-- Code builds successfully (`yarn build`)
-- Tests pass (`yarn test`)
-- Types are valid (`yarn typecheck`)
-- Lint passes (`yarn lint`)
-- Behavior is verified (not assumed)
+- Types are valid (`yarn typecheck`).
+- Lint passes (`yarn lint`).
+- Tests pass (`yarn test`).
+- The production build succeeds (`yarn build`).
+- Behavior is verified, not assumed.
 
----
-
-## Notes for agents
-
-- Prefer small, incremental changes
-- Read existing patterns before introducing new ones
-- Match the style of the codebase
-- When unsure, investigate — do not guess
+Report exactly what you ran and the result.
 
 ---
 
 ## Rule files
 
 - `.ai/rules/doctrine.md` — how to work
-- `.ai/rules/coding.md` — Node.js + TypeScript conventions
+- `.ai/rules/architecture.md` — project structure and layering
+- `.ai/rules/coding.md` — TypeScript / React conventions
 - `.ai/rules/testing.md` — testing patterns
-- `.ai/rules/api-design.md` — API conventions
+- `.ai/rules/api-design.md` — the contact route and any new route handlers

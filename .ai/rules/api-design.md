@@ -1,184 +1,90 @@
 # API Design Rules
 
-## URL conventions
+This site has **one** server endpoint: `POST /api/contact`
+(`src/app/api/contact/route.ts`), a Next.js Route Handler that emails a contact
+submission via Resend with bot mitigation. There is no REST resource model, no
+database, and no versioned public API.
 
-- Use nouns, plural, kebab-case: `/orders`, `/line-items`, `/payment-methods`.
-- Nest resources only one level deep: `/orders/{id}/items` — avoid deeply nested routes.
-- Avoid verbs in URLs. Use HTTP methods to express actions.
-- Prefer explicit resource names over vague catch-all routes.
+These rules describe how that route behaves and how to write any new route
+handler consistently with it. Don't import REST/CRUD/DTO/repository patterns
+from a backend — match what's here.
 
-## HTTP methods
+## Route handler principles
 
-| Method | Semantics | Body | Response |
-| --- | --- | --- | --- |
-| GET | Fetch resource(s) | None | 200 + body |
-| POST | Create resource | Yes | 201 + body and/or Location header |
-| PUT | Full replace | Yes | 200 + body |
-| PATCH | Partial update | Yes | 200 + body |
-| DELETE | Remove | Usually none | 204 |
-
-Prefer PATCH over PUT for most updates. PUT requires the full resource and can create lost-update races if clients send stale representations.
+- Keep the handler thin and linear: parse the body, reject bots, validate
+  input, do the one side effect, return.
+- Validate untrusted input at the boundary. This project validates **by hand**
+  (type guards, length caps, a regex for email) rather than with a schema
+  library. Keep that style; if you add a validator, justify the dependency.
+- Treat all request data as untrusted, including headers (`CF-Connecting-IP`).
+- Fail loudly for genuinely bad input; never leak stack traces, the Resend
+  error, or secrets to the client. Log server-side failures with
+  `console.error` (no structured logger here).
+- Keep secrets in env vars (`RESEND_API_KEY`, `TURNSTILE_SECRET_KEY`), never in
+  URLs or responses.
 
 ## Request / response format
 
-- All request and response payloads are JSON.
-- Use `Content-Type: application/json` for JSON requests.
-- Field names are `camelCase` in JSON.
-- Dates and times are ISO 8601 strings, preferably UTC: `2026-04-25T14:30:00Z`.
-- Do not return internal persistence models directly.
-- Use explicit request and response DTO/schema types at the API boundary.
-- Avoid returning `undefined`; JSON cannot represent it. Omit conditionally absent fields or use `null` only when the schema explicitly allows it.
-
-## Validation
-
-- Validate inputs at the boundary before calling service/domain logic.
-- Use a schema validator such as Zod, Valibot, Yup, or the project-standard equivalent.
-- Keep validation schemas close to the route/controller layer unless they are reused across multiple boundaries.
-- Domain objects still enforce their own invariants. Boundary validation is not a replacement for domain correctness.
-
-Example shape:
+- JSON in, JSON out. Field names are `camelCase`.
+- The response shape is a small, consistent envelope — **not** an RFC-7807
+  problem document. Reuse it for any new route:
 
 ```ts
-const createOrderSchema = z.object({
-  customerId: z.string().min(1),
-  lineItems: z.array(z.object({
-    sku: z.string().min(1),
-    quantity: z.number().int().positive(),
-  })).min(1),
-});
+// success
+{ success: true, accepted: true }
+// accepted but intentionally dropped (see bot handling)
+{ success: true, accepted: false }
+// client error
+{ success: false, error: "Validation failed.", fields: ["email"] }
+// server error
+{ success: false }
 ```
 
-## Error responses
+## The contact endpoint contract
 
-Use a consistent JSON error envelope for all API errors.
+Request body fields: `firstName`, `lastName`, `email`, `message` (required);
+`phone`, `prefer` (optional); `company`, `t`, `turnstileToken` (anti-bot, see
+below).
 
-Recommended shape:
+Status codes and bodies:
 
-```json
-{
-  "type": "https://errors.example.com/not-found",
-  "title": "Resource Not Found",
-  "status": 404,
-  "detail": "Order 42 does not exist.",
-  "requestId": "req_123"
-}
-```
+| Situation | Status | Body |
+| --- | --- | --- |
+| Body isn't valid JSON | 400 | `{ success: false, error: "Invalid request body." }` |
+| Bot caught by honeypot or timing | 200 | `{ success: true, accepted: false }` |
+| Turnstile verification fails (when enabled) | 400 | `{ success: false, error: "Verification failed. Please try again." }` |
+| Field validation fails | 400 | `{ success: false, error: "Validation failed.", fields: [...] }` |
+| Email sent | 200 | `{ success: true, accepted: true }` |
+| Resend send throws | 500 | `{ success: false }` |
 
-For validation errors, include a field-level `errors` array:
+## Bot mitigation (deliberate behavior — preserve it)
 
-```json
-{
-  "type": "https://errors.example.com/validation-error",
-  "title": "Validation Error",
-  "status": 400,
-  "detail": "Request validation failed.",
-  "errors": [
-    { "field": "email", "message": "Invalid email address" }
-  ]
-}
-```
+The form is bot-heavy, so the route layers cheap defenses and favors human-only
+conversions. Three checks, in order:
 
-- Map typed/domain errors to HTTP status codes in one central error handler.
-- Do not hand-roll different error shapes per route.
-- Do not leak stack traces, raw provider errors, credentials, tokens, or internal implementation details.
+1. **Honeypot** — a hidden `company` field real users never fill. If present,
+   the submission is dropped.
+2. **Timing** — the client sends `t`, the render timestamp. A submission faster
+   than `MIN_FILL_MS` (2s) or older than `MAX_AGE_MS` (24h) is dropped.
+3. **Cloudflare Turnstile** — only enforced when `TURNSTILE_SECRET_KEY` is set.
 
-## HTTP status codes
+Honeypot and timing failures return **`200 { accepted: false }`**, not an error.
+This is intentional: a silent accept gives bots no error signal to adapt to, and
+the client suppresses the `generate_lead` analytics event when `accepted` is
+false. A Turnstile failure, by contrast, returns a loud `400` so a real user
+with a blocked challenge can retry. Keep this asymmetry.
 
-Standard mappings:
+## Idempotency and methods
 
-- 400: malformed request or validation failure
-- 401: unauthenticated
-- 403: authenticated but forbidden
-- 404: resource not found
-- 409: conflict, duplicate key, optimistic lock, invalid state transition
-- 422: semantically invalid request that is syntactically valid
-- 429: rate limited
-- 500: unexpected server error
-- 502: upstream service returned an invalid/error response
-- 503: service temporarily unavailable
-- 504: upstream timeout
+- The route only handles `POST`. Sending a contact email is fire-and-forget;
+  there is no idempotency key, which is acceptable at this scope.
+- If you add a route that mutates durable state or must be safely retried,
+  raise the idempotency design before building it.
 
-## Pagination
+## When adding a new route handler
 
-Use explicit pagination parameters.
-
-Offset pagination:
-
-```text
-?page=0&size=25
-```
-
-Cursor pagination:
-
-```text
-?cursor=abc123&limit=25
-```
-
-Prefer cursor pagination for large or frequently changing datasets.
-
-Response shape:
-
-```json
-{
-  "items": [],
-  "page": 0,
-  "size": 25,
-  "totalItems": 100,
-  "totalPages": 4
-}
-```
-
-For cursor pagination:
-
-```json
-{
-  "items": [],
-  "nextCursor": "abc123",
-  "hasMore": true
-}
-```
-
-- Cap `size` or `limit` by default.
-- Document endpoints with unusually high caps.
-
-## Filtering and sorting
-
-- Filter via query parameters: `?status=active&createdAfter=2026-01-01`.
-- Sort via `?sort=createdAt,desc`.
-- For multiple sorts, repeat the parameter: `?sort=status,asc&sort=createdAt,desc`.
-- Whitelist sortable and filterable fields. Never pass arbitrary field names directly into a database query.
-
-## Versioning
-
-- Prefer stable contracts over frequent version bumps.
-- For public APIs, version via URL path prefix: `/v1/orders`.
-- Do not break an existing API contract within a major version.
-- Document breaking changes before implementing them.
-
-## Security
-
-- Authenticate before authorization.
-- Authorize per resource, not just per route.
-- Do not trust client-provided user IDs, account IDs, roles, or permissions.
-- Treat all request data as untrusted, including headers and query params.
-- Avoid putting secrets, tokens, or sensitive data in URLs.
-
-## Idempotency
-
-- For externally-triggered create operations that may be retried, support an idempotency key.
-- Store and enforce idempotency by operation scope and caller identity.
-- Make webhook handlers idempotent by default.
-
-## Webhooks
-
-- Verify webhook signatures before parsing business payloads.
-- Store provider event IDs and ignore duplicate events.
-- Respond quickly; move expensive work to a queue/job when appropriate.
-- Log event IDs and provider names, not raw sensitive payloads.
-
-## What we do not do
-
-- No HATEOAS unless a specific client needs it.
-- No ad hoc response envelopes that differ per route.
-- No bulk create/update/delete unless explicitly designed for that endpoint.
-- No leaking ORM/database entities through API responses.
+- Put it at `src/app/api/<name>/route.ts`.
+- Reuse the `{ success, ... }` envelope and the validate-then-act structure.
+- Add tests for the validation and error branches (stub the side effect).
+- Don't introduce a database, ORM, or queue to satisfy a feature without first
+  escalating that architectural decision.

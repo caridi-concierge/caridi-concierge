@@ -42,7 +42,8 @@ lerna-debug.log*
 # keep local secrets out of git
 .env
 .env.*
-!.env.example         # safe template for others
+# safe template for others; negation must be on its own line (no inline comment)
+!.env.example
 
 ### Vercel
 .vercel/
