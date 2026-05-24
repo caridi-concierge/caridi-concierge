@@ -1,4 +1,4 @@
-import type { LocationContent } from './types';
+import type { LocationContent } from '../types';
 
 export const gowanusContent: LocationContent = {
   slug: 'gowanus',

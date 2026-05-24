@@ -30,8 +30,12 @@ src/
 
   content/                  # editorial content as data + MDX (no app logic)
     blog/*.mdx              # blog posts; each exports `metadata`
-    locations/              # per-location content + types + index registry
-    treatments/             # treatment catalog + per-treatment detail + index
+    locations/              # catalog + details/ + barrel (see entity convention)
+      locations.ts          #   facts catalog (identity, address, hours, CTAs)
+      details/<slug>.ts      #   per-location editorial content + registry
+    treatments/             # catalog + details/ + barrel (same convention)
+      treatments.tsx         #   facts catalog (cards, badges, pricing)
+      details/<slug>.ts      #   per-treatment editorial content + registry
     reviews/                # review data
     schemas/                # JSON-LD structured data (+ treatments/ FAQ schemas)
 
@@ -39,7 +43,7 @@ src/
     analytics.ts            # GTM dataLayer helper (tracking contract)
     metadata.ts             # createPageMetadata() — SEO metadata builder
     blogs/                  # blog file reads (fs), related-post + schema logic
-    constants/              # company, pricing, ctas, locations, staff
+    constants/              # company, pricing, ctas, staff
 
   model/                    # shared TypeScript types only (no runtime code)
 
@@ -56,6 +60,7 @@ src/
 | A section shared across route subtrees | `src/components/` |
 | A component reused across pages | `src/components/` |
 | Editorial copy / data for a page | `src/content/` |
+| A new location or treatment | `src/content/<entity>/` (catalog + `details/`) |
 | A blog post | `src/content/blog/<slug>.mdx` |
 | JSON-LD structured data | `src/content/schemas/` |
 | A shared constant (company info, CTAs, prices) | `src/lib/constants/` |
@@ -96,6 +101,35 @@ app (pages) → _sections → components
   filesystem reads (`lib/blogs/posts.ts`), `window`/dataLayer access
   (`lib/analytics.ts`), and `process.env` reads (`lib/constants/pricing.ts`).
 - **`model/`** is types only — no runtime code, no imports of components.
+
+## Content entity convention (locations, treatments)
+
+An "entity" is content that has both a **catalog** of summary records (used by
+cards, grids, nav) and **per-item detail content** for a dedicated
+`/<entity>/<slug>` page. Locations and treatments both follow this shape; keep
+any future one consistent with it:
+
+```text
+src/content/<entity>/
+  <entity>.ts            # the catalog: summary records (array), keyed by slug
+  details/
+    <slug>.ts            # long-form editorial content for the [slug] page
+    index.ts             # registry: get<Entity>Detail/Content(slug), getAll…()
+  types.ts               # catalog type + detail type
+  index.ts               # barrel: re-exports the catalog + the detail getters
+```
+
+- **`slug` is the join key** between the catalog and the detail content. Import
+  both from the entity barrel (`@/content/<entity>`), not from deep paths.
+- An entity may carry its own internal `id` (e.g. treatments use `id` for
+  in-page anchor `id=`/`href="#…"`); that's separate from `slug` and is part of
+  the tracking/DOM contract — don't repurpose or drop it casually.
+- **Guard the halves against drift**: a `*.test.ts` in the entity asserts the
+  catalog's slug set equals the details registry's slug set, so adding one half
+  without the other fails CI (`locations.test.ts`, `treatments.test.ts`).
+- Entity content lives under `content/`, not `lib/constants/`. `lib/constants/`
+  is for small shared constants (company, pricing, CTAs, staff), not catalogs
+  with detail pages.
 
 ## Conventions tied to the architecture
 

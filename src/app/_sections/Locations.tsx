@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Eyebrow from "@/components/Eyebrow";
 import IconArrow from "@/components/icons/IconArrow";
-import { LOCATIONS } from "@/lib/constants/locations";
+import { LOCATIONS } from "@/content/locations";
 
 // Editorial display order + per-location overrides for the homepage section.
 // `name` and `type` from LOCATIONS are normalized into a tighter editorial label.

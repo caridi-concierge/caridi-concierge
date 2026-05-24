@@ -1,4 +1,4 @@
-import type { Location } from "@/lib/constants/locations";
+import type { Location } from "@/content/locations";
 import { getLocationContent } from "@/content/locations";
 import LocationDetailHero from "@/app/locations/_sections/LocationDetailHero";
 import LocationOverview from "@/app/locations/_sections/LocationOverview";

@@ -1,4 +1,4 @@
-import { COMPANY } from "./company";
+import { COMPANY } from "@/lib/constants/company";
 
 export type Location = (typeof LOCATIONS)[number];
 

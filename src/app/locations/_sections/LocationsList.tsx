@@ -1,4 +1,4 @@
-import { LOCATIONS } from "@/lib/constants/locations";
+import { LOCATIONS } from "@/content/locations";
 import { LocationCard } from "@/components/LocationCard";
 
 // Editorial display order: studio, clinic, concierge — matches the home page.

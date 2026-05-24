@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LOCATIONS } from "@/lib/constants/locations";
+import { LOCATIONS } from "@/content/locations";
 import Eyebrow from "@/components/Eyebrow";
 import IconArrow from "@/components/icons/IconArrow";
 

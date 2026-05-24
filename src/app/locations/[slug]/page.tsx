@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import LocationDetailLayout from "@/app/locations/_sections/LocationDetailLayout";
 import { createPageMetadata } from "@/lib/metadata";
-import { LOCATIONS } from "@/lib/constants/locations";
+import { LOCATIONS } from "@/content/locations";
 import { getLocationContent } from "@/content/locations";
 import { SMSContactWidget } from "@/components/SMSContactWidget";
 import { notFound } from "next/navigation";

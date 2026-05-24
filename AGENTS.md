@@ -93,9 +93,12 @@ See `.ai/rules/architecture.md` for the full map. In short:
   route lives in `api/`.
 - `src/components/` — shared, reusable UI components, plus sections shared
   across more than one route (e.g. `FAQ`, `Results`).
-- `src/content/` — editorial content as data and MDX: blog posts, location
-  content, treatment details, reviews, and JSON-LD schemas.
-- `src/lib/` — non-UI logic: analytics, blog file reads, constants, metadata.
+- `src/content/` — editorial content as data and MDX: blog posts, reviews,
+  JSON-LD schemas, and the `locations`/`treatments` entities. Each entity is a
+  catalog plus a `details/` folder joined by `slug` — see the "content entity
+  convention" in `architecture.md`.
+- `src/lib/` — non-UI logic: analytics, blog file reads, metadata, and small
+  shared constants (`company`, `pricing`, `ctas`, `staff`).
 - `src/model/` — shared TypeScript types.
 
 Keep presentation in components/sections, content in `content/`, and shared
