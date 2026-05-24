@@ -97,6 +97,13 @@ export default function StaffBioSection({ staff }: { staff: Staff }) {
                 <p key={i}>{para}</p>
               ))}
             </div>
+
+            <Link
+              href="/treatments"
+              className="mt-8 inline-flex items-center gap-2 font-body text-[11px] font-medium uppercase tracking-[0.32em] text-brass transition-colors duration-200 hover:text-ink"
+            >
+              Explore treatments <IconArrow className="w-3 h-3" />
+            </Link>
           </div>
         </div>
       </div>

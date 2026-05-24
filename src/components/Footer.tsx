@@ -24,7 +24,7 @@ export default function Footer() {
               aria-label="Caridi Concierge — Home"
             >
               <Image
-                src="/images/logos/caridi_concierge_logo_contrast_fraunces.svg"
+                src="/images/logos/caridi_concierge_contrast_logo_cormorant.svg"
                 alt="Caridi Concierge"
                 width={226}
                 height={60}

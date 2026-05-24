@@ -59,7 +59,7 @@ export default async function BlogIndex() {
                   </p>
                 )}
                 <span className="mt-2 inline-flex items-center gap-2 font-body text-[11px] font-medium uppercase tracking-[0.32em] text-ink transition-colors duration-200 group-hover:text-brass">
-                  Read the note <IconArrow className="w-3 h-3" />
+                  Read the article <IconArrow className="w-3 h-3" />
                 </span>
               </div>
             </Link>

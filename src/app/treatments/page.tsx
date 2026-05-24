@@ -27,8 +27,12 @@ export default function TreatmentsPage() {
       <JsonLd schema={biostimulatoryFillerServiceSchema}/>
       <Navbar />
       <TreatmentsHero />
-      <TreatmentsIndex />
-      <TreatmentsDetail />
+      {/* Wrapper bounds the sticky nav so it releases after the rows
+          instead of lingering over Process/FAQ. */}
+      <div className="relative">
+        <TreatmentsIndex />
+        <TreatmentsDetail />
+      </div>
       <TreatmentsProcess />
       <TreatmentsFAQ />
       <CTASection variantKey="default" id="treatments-cta" />
