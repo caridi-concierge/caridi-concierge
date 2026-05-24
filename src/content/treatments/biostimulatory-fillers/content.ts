@@ -1,4 +1,4 @@
-import type { TreatmentDetailContent } from "@/model/treatments/TreatmentDetail";
+import type { TreatmentDetailContent } from "@/content/treatments/types";
 import { biostimulatoryFillersFAQSchema } from "@/content/schemas/treatments/biostimulatoryFillersFAQSchema";
 
 /**
@@ -9,7 +9,7 @@ import { biostimulatoryFillersFAQSchema } from "@/content/schemas/treatments/bio
  * - `faqs` pulled verbatim from `biostimulatoryFillersFAQSchema` so the FAQ rich-results stay in sync.
  * - `areas` flattened from the previous Face / Neck & Chest / Body grouping.
  */
-export const biostimulatoryFillersDetail: TreatmentDetailContent = {
+export const content: TreatmentDetailContent = {
   id: "biostimulatory-fillers",
   slug: "biostimulatory-fillers",
   category: "Skin",

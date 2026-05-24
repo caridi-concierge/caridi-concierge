@@ -1,4 +1,4 @@
-import type { TreatmentDetailContent } from "@/model/treatments/TreatmentDetail";
+import type { TreatmentDetailContent } from "@/content/treatments/types";
 import { chemicalPeelsFAQSchema } from "@/content/schemas/treatments/chemicalPeelsFAQSchema";
 import { PRICES, PACKAGES } from "@/lib/constants/pricing";
 
@@ -15,7 +15,7 @@ import { PRICES, PACKAGES } from "@/lib/constants/pricing";
  * - The VI Peel® product variants listed (Precision Plus, Purify, Body) are real VI
  *   Aesthetics offerings carried by the clinic.
  */
-export const chemicalPeelsDetail: TreatmentDetailContent = {
+export const content: TreatmentDetailContent = {
   id: "chemical-peels",
   slug: "chemical-peels",
   category: "Skin",

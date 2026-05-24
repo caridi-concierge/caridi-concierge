@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTA";
 import TreatmentDetailLayout from "@/app/treatments/_sections/TreatmentDetailLayout";
-import { chemicalPeelsDetail } from "@/content/treatments/details/chemical-peels";
+import { chemicalPeels } from "@/content/treatments";
 import { createPageMetadata } from "@/lib/metadata";
 import { chemicalPeelsFAQSchema } from "@/content/schemas/treatments/chemicalPeelsFAQSchema";
 import { JsonLd } from "@/components/JsonLD";
@@ -12,8 +12,8 @@ export const metadata = createPageMetadata({
   description:
     "Medical-grade chemical peels for discoloration, melasma, acne marks, and uneven texture. In-home across NYC — book a consultation with Dr. Caridi.",
   path: "/treatments/chemical-peels",
-  image: chemicalPeelsDetail.heroImage.src,
-  imageAlt: chemicalPeelsDetail.heroImage.alt,
+  image: chemicalPeels.content.heroImage.src,
+  imageAlt: chemicalPeels.content.heroImage.alt,
   keywords: [
     "Chemical Peels NYC",
     "VI Peel NYC",
@@ -33,7 +33,7 @@ export default function ChemicalPeelsPage() {
       <>
         <JsonLd schema={chemicalPeelsFAQSchema} />
         <Navbar />
-        <TreatmentDetailLayout content={chemicalPeelsDetail} />
+        <TreatmentDetailLayout content={chemicalPeels.content} />
         <CTASection variantKey="peels" id="chemical-peels-cta" />
         <Footer />
       </>

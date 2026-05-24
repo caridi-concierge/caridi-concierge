@@ -1,4 +1,4 @@
-import type { TreatmentDetailContent } from "@/model/treatments/TreatmentDetail";
+import type { TreatmentDetailContent } from "@/content/treatments/types";
 import { botoxFAQSchema } from "@/content/schemas/treatments/botoxFAQSchema";
 
 /**
@@ -9,7 +9,7 @@ import { botoxFAQSchema } from "@/content/schemas/treatments/botoxFAQSchema";
  * - `faqs` pulled verbatim from `botoxFAQSchema` so the FAQ rich-results stay in sync.
  * - `areas` flattened from the previous Upper / Lower / Jaw / Hyperhidrosis grouping.
  */
-export const wrinkleReductionDetail: TreatmentDetailContent = {
+export const content: TreatmentDetailContent = {
   id: "wrinkle-reduction",
   slug: "wrinkle-reduction",
   category: "Neuromodulators",

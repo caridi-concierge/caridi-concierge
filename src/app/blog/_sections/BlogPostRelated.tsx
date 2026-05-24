@@ -3,7 +3,7 @@ import Image from "next/image";
 import Eyebrow from "@/components/Eyebrow";
 import IconArrow from "@/components/icons/IconArrow";
 import type { BlogPostMeta } from "@/lib/blogs/posts";
-import type { TreatmentDetailContent } from "@/model/treatments/TreatmentDetail";
+import type { TreatmentDetailContent } from "@/content/treatments/types";
 
 type Props = {
   treatment?: TreatmentDetailContent;

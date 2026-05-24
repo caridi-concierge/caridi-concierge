@@ -1,8 +1,61 @@
+// Types for treatment data: the catalog record (TreatmentMetadata) and the
+// editorial detail content (TreatmentDetailContent) for /treatments/<slug>.
+
+/**
+ * Editorial categories used by the /treatments index filter.
+ * Keep in sync with `T_CATEGORIES` in the index page.
+ */
+export type TreatmentCategory =
+  | "Neuromodulators"
+  | "Filler"
+  | "Skin"
+  | "Consults";
+
+/** Catalog record for a treatment: card/grid summary + pricing + nav. */
+export interface TreatmentMetadata {
+  id: string;
+  slug: string;
+  title: string;
+  badge?: {
+    text: string;
+    variant: "popular" | "new" | "advanced" | "gentle" | "longLasting" | "gold";
+  };
+  hook: string;
+  description: string; // For simple card view
+  highlights: string[]; // For detailed ServiceCard view
+  products: string;
+  imgSrc: string;
+  imgAlt: string;
+  startingPrice: string;
+  frequency: string;
+  note?: string;
+  bookHref: string;
+  ctaHref: string;
+  ctaText: string;
+
+  // Editorial fields used by /treatments listing
+  category: TreatmentCategory;
+  /** Numeric "from" price (USD). Render as `From $${from.toLocaleString()}`. */
+  from: number;
+  /** Pricing unit suffix shown after the price (e.g. "/ unit", "/ syringe"). Empty string for flat-fee treatments. */
+  unit: string;
+  /** Visit duration (e.g. "30–45 min"). */
+  duration: string;
+  /** Featured treatment is promoted into the big hero row on the index page. Set on exactly one entry. */
+  featured?: boolean;
+}
+
+/** A treatment's two halves, bundled by its folder. */
+export interface TreatmentEntry {
+  facts: TreatmentMetadata;
+  content: TreatmentDetailContent;
+}
+
 /**
  * Content shape for an editorial treatment-detail page.
  *
- * Consumed by `TreatmentDetailLayout`. Each treatment has its own file
- * under `src/content/treatments/details/`.
+ * Consumed by `TreatmentDetailLayout`. Each treatment pairs this with its
+ * catalog facts in `src/content/treatments/<slug>/`.
  */
 
 export type TreatmentDetailSpec = {

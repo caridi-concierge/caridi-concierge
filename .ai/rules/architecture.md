@@ -30,13 +30,13 @@ src/
 
   content/                  # editorial content as data + MDX (no app logic)
     blog/*.mdx              # blog posts; each exports `metadata`
-    locations/              # entity: per-location folders + barrel
-      <slug>/facts.ts        #   summary facts (identity, address, hours, CTAs)
+    locations/              # entity: per-item folders (see entity convention)
+    treatments/             # entity: per-item folders
+      <slug>/facts.ts        #   summary facts (catalog record)
       <slug>/content.ts      #   editorial detail content for the [slug] page
-      index.ts               #   barrel: LOCATIONS catalog + getLocation(slug)
-    treatments/             # entity: catalog file + details/ folder
-      treatments.tsx         #   facts catalog (cards, badges, pricing)
-      details/<slug>.ts      #   per-treatment editorial content + registry
+      <slug>/index.ts        #   bundles { facts, content }
+      types.ts               #   the entity's catalog + detail types
+      index.ts               #   barrel: catalog + detail getters (runtime only)
     reviews/                # review data (single source)
     schemas/                # JSON-LD structured data (+ treatments/ FAQ schemas)
 
@@ -46,7 +46,7 @@ src/
     blogs/                  # blog file reads (fs), related-post + schema logic
     constants/              # company, pricing, ctas, staff
 
-  model/                    # shared TypeScript types only (no runtime code)
+  model/                    # shared types not tied to a content entity (e.g. staff)
 
   styles/global.css         # Tailwind v4 entry + global styles
   mdx-components.tsx        # MDX element → component mapping
@@ -61,12 +61,13 @@ src/
 | A section shared across route subtrees | `src/components/` |
 | A component reused across pages | `src/components/` |
 | Editorial copy / data for a page | `src/content/` |
-| A new location or treatment | `src/content/<entity>/` (catalog + `details/`) |
+| A new location or treatment | `src/content/<entity>/<slug>/` (facts + content) |
 | A blog post | `src/content/blog/<slug>.mdx` |
 | JSON-LD structured data | `src/content/schemas/` |
 | A shared constant (company info, CTAs, prices) | `src/lib/constants/` |
 | A shared helper (analytics, metadata, blog reads) | `src/lib/` |
-| A shared type | `src/model/` |
+| A type for a content entity | `src/content/<entity>/types.ts` |
+| A shared type not tied to an entity | `src/model/` |
 | The contact endpoint or a new route handler | `src/app/api/<name>/route.ts` |
 
 ## Layering and dependency rules
@@ -107,48 +108,38 @@ app (pages) → _sections → components
 
 An "entity" is content that has both **summary facts** (used by cards, grids,
 nav) and **per-item detail content** for a dedicated `/<entity>/<slug>` page.
-Locations and treatments are the two entities. Both share the same *contract*,
-even though their on-disk layout differs:
+Locations and treatments are the two entities. Both use the same layout:
+one folder per item, holding that item's two halves together.
 
-**The contract (always holds):**
+```text
+src/content/<entity>/
+  <slug>/
+    facts.ts             # summary record (catalog entry)
+    content.ts           # editorial detail content for the [slug] page
+    index.ts             # bundles { facts, content } as a named entry
+  types.ts               # the entity's facts type + detail-content type
+  index.ts               # barrel: facts catalog + detail getters (runtime only)
+```
+
+Rules:
 
 - **`slug` is the join key** between an item's facts and its detail content.
-- **One barrel per entity** (`@/content/<entity>`) is the public surface —
-  exposes the facts catalog plus the detail lookup. Import from the barrel, not
-  from deep paths.
+- **The barrel (`@/content/<entity>`) exports runtime only** — the facts
+  catalog, the per-item entries, and the detail lookups. **Import types from
+  the entity's `types` module** (`@/content/<entity>/types`), not the barrel.
+  Don't reach into a single item's files from outside the entity.
+- **No `import *` / `export *`.** Use explicit named imports/exports so the
+  public surface of each module is obvious.
 - An entity may carry its own internal `id` (treatments use `id` for in-page
-  anchor `id=`/`href="#…"`). That's separate from `slug` and is part of the
-  tracking/DOM contract — don't repurpose or drop it casually. (Locations also
-  keep an `id`, used only for editorial label maps.)
-- **A drift guard** (`*.test.ts` in the entity) asserts the facts/catalog slug
-  set equals the detail slug set, so adding one half without the other fails CI
+  anchor `id=`/`href="#…"`; locations use it for editorial label maps). That's
+  separate from `slug` and part of the tracking/DOM contract — don't repurpose
+  or drop it casually.
+- **A drift guard** (`*.test.ts` in the entity) asserts the facts slug set
+  equals the detail slug set, so adding one half without the other fails CI
   (`locations.test.ts`, `treatments.test.ts`).
 - Entity content lives under `content/`, never `lib/constants/`.
   `lib/constants/` is for small shared constants (company, pricing, CTAs,
   staff), not catalogs with detail pages.
-
-**Two layouts are in use — match the entity you're editing:**
-
-```text
-# Locations — per-location folders (facts + content kept together):
-src/content/locations/
-  <slug>/facts.ts        # summary facts for this location
-  <slug>/content.ts      # editorial detail content for this location
-  <slug>/index.ts        # re-exports { facts, content }
-  types.ts               # LocationFacts + LocationContent
-  index.ts               # barrel: LOCATIONS catalog + getLocation(slug)
-
-# Treatments — single catalog file + details/ folder:
-src/content/treatments/
-  treatments.tsx         # the catalog: summary records (array)
-  details/<slug>.ts      # editorial detail content
-  details/index.ts       # getTreatmentDetail(slug), getAllTreatmentDetails()
-```
-
-The folder-per-item layout keeps an item's two halves together and reads well
-as the entity grows; the catalog-file layout is lighter when the summary
-records are small. Either is fine — don't mix layouts within one entity, and
-prefer the existing one when extending an entity.
 
 ## Conventions tied to the architecture
 

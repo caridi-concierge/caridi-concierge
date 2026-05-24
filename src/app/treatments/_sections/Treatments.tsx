@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import PrimaryButton from "@/components/PrimaryButton";
-import { treatments } from "@/content/treatments/treatments";
+import { treatments } from "@/content/treatments";
 
 export default function TreatmentsSection() {
   return (

@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTA";
 import TreatmentDetailLayout from "@/app/treatments/_sections/TreatmentDetailLayout";
-import { dermalFillersDetail } from "@/content/treatments/details/dermal-fillers";
+import { dermalFillers } from "@/content/treatments";
 import { createPageMetadata } from "@/lib/metadata";
 import { dermalFillersFAQSchema } from "@/content/schemas/treatments/dermalFillersFAQSchema";
 import { JsonLd } from "@/components/JsonLD";
@@ -11,8 +11,8 @@ export const metadata = createPageMetadata({
     title: "Dermal Fillers | Lip, Cheek & Jawline Enhancement in NYC",
     description: "RHA and Juvéderm fillers to restore volume, soften lines, and define the lip, cheek, and jawline. In-home across NYC — book a consultation with Dr. Caridi.",
     path: "/treatments/dermal-fillers",
-    image: dermalFillersDetail.heroImage.src,
-    imageAlt: dermalFillersDetail.heroImage.alt,
+    image: dermalFillers.content.heroImage.src,
+    imageAlt: dermalFillers.content.heroImage.alt,
     noIndex: false
 });
 
@@ -21,7 +21,7 @@ export default function DermalFillersPage() {
       <>
         <JsonLd schema={dermalFillersFAQSchema} />
         <Navbar />
-        <TreatmentDetailLayout content={dermalFillersDetail} />
+        <TreatmentDetailLayout content={dermalFillers.content} />
         <CTASection variantKey="fillers" id="dermal-fillers-cta" />
         <Footer />
       </>

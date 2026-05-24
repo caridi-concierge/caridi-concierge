@@ -1,6 +1,6 @@
-import type { TreatmentDetailContent } from "@/model/treatments/TreatmentDetail";
+import type { TreatmentDetailContent } from "@/content/treatments/types";
 
-export const dermalFillersDetail: TreatmentDetailContent = {
+export const content: TreatmentDetailContent = {
   id: "dermal-fillers",
   slug: "dermal-fillers",
   category: "Filler",

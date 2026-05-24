@@ -4,7 +4,7 @@ import Link from "next/link";
 import Eyebrow from "@/components/Eyebrow";
 import IconArrow from "@/components/icons/IconArrow";
 import { Accordion, AccordionItem } from "@/components/Accordion";
-import type { TreatmentDetailContent } from "@/model/treatments/TreatmentDetail";
+import type { TreatmentDetailContent } from "@/content/treatments/types";
 
 /* ─────────────────────────  Hero (split)  ───────────────────────── */
 

@@ -1,4 +1,4 @@
-import type { TreatmentDetailContent } from "@/model/treatments/TreatmentDetail";
+import type { TreatmentDetailContent } from "@/content/treatments/types";
 import { consultFAQSchema } from "@/content/schemas/treatments/consultFAQSchema";
 import { PRICES } from "@/lib/constants/pricing";
 
@@ -16,7 +16,7 @@ import { PRICES } from "@/lib/constants/pricing";
  *   we can either extend the layout with a new "covers" section type or add the topics
  *   back as a structured list inside the overview.
  */
-export const consultDetail: TreatmentDetailContent = {
+export const content: TreatmentDetailContent = {
   id: "consult",
   slug: "consult",
   category: "Consult",

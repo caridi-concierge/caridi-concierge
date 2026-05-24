@@ -18,6 +18,12 @@ export interface LocationHours {
   value: string;
 }
 
+/** A location's two halves, bundled by its folder. */
+export interface LocationEntry {
+  facts: LocationFacts;
+  content: LocationContent;
+}
+
 /** Summary record for a location: identity, address, hours, CTAs, hero. */
 export interface LocationFacts {
   id: string;

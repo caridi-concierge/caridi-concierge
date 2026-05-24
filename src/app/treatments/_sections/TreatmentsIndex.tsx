@@ -1,5 +1,5 @@
 import Eyebrow from "@/components/Eyebrow";
-import { treatments } from "@/content/treatments/treatments";
+import { treatments } from "@/content/treatments";
 
 /**
  * Pinned jump-nav for the treatments sequence. Sticks to the top of the

@@ -12,11 +12,11 @@
  * content halves are kept in sync by `locations.test.ts`.
  */
 import type { LocationContent, LocationFacts } from "./types";
-import * as gowanus from "./gowanus";
-import * as inHome from "./in-home";
-import * as redHook from "./red-hook";
+import { gowanus } from "./gowanus";
+import { inHome } from "./in-home";
+import { redHook } from "./red-hook";
 
-const ENTRIES = [gowanus, inHome, redHook] as const;
+const ENTRIES = [gowanus, inHome, redHook];
 
 /** Facts catalog, in editorial order. */
 export const LOCATIONS: LocationFacts[] = ENTRIES.map((e) => e.facts);
@@ -39,5 +39,3 @@ export const locationContent = CONTENT;
 export function getLocationContent(slug: string): LocationContent | null {
   return CONTENT[slug] ?? null;
 }
-
-export * from "./types";

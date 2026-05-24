@@ -2,7 +2,7 @@ import Link from "next/link";
 import type {
   TreatmentDetailContent,
   TreatmentDetailPricingRow,
-} from "@/model/treatments/TreatmentDetail";
+} from "@/content/treatments/types";
 import IconArrow from "@/components/icons/IconArrow";
 
 type Props = {

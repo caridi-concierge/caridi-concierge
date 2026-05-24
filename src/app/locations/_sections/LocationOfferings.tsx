@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { LocationContent } from "@/content/locations/types";
 import LocationServiceCard from "@/components/LocationServiceCard";
 import LocationTreatmentCard from "@/components/LocationTreatmentCard";
-import { getTreatmentDetail } from "@/content/treatments/details";
+import { getTreatmentDetail } from "@/content/treatments";
 import Eyebrow from "@/components/Eyebrow";
 import IconArrow from "@/components/icons/IconArrow";
 

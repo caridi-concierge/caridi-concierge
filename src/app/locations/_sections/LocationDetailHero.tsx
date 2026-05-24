@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { LocationFacts } from "@/content/locations";
+import type { LocationFacts } from "@/content/locations/types";
 import type { LocationContent } from "@/content/locations/types";
 import Eyebrow from "@/components/Eyebrow";
 import IconArrow from "@/components/icons/IconArrow";

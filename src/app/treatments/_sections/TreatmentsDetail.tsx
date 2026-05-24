@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Eyebrow from "@/components/Eyebrow";
 import IconArrow from "@/components/icons/IconArrow";
-import { treatments } from "@/content/treatments/treatments";
-import type { TreatmentMetadata } from "@/model/treatments/Treatment";
+import { treatments } from "@/content/treatments";
+import type { TreatmentMetadata } from "@/content/treatments/types";
 
 function ordinalOf(t: TreatmentMetadata) {
   return treatments.findIndex((x) => x.id === t.id) + 1;

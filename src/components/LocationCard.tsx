@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Eyebrow from "@/components/Eyebrow";
 import IconArrow from "@/components/icons/IconArrow";
-import { LocationFacts } from "@/content/locations";
+import { LocationFacts } from "@/content/locations/types";
 
 const TYPE_LABEL: Record<string, string> = {
   studio: "Private Studio",

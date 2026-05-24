@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { treatments } from "@/content/treatments/treatments";
+import { treatments } from "@/content/treatments";
 import TreatmentCard from "@/components/TreatmentCard";
 import Eyebrow from "@/components/Eyebrow";
 import IconArrow from "@/components/icons/IconArrow";

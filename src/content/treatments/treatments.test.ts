@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { treatments } from "./treatments";
-import { getAllTreatmentDetails } from "./details";
+import { treatments } from "./index";
+import { getAllTreatmentDetails } from "./index";
 
 /**
  * Treatments follow the same catalog + per-slug detail convention as locations.

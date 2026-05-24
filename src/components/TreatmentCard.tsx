@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { TreatmentMetadata } from "@/model/treatments/Treatment";
+import type { TreatmentMetadata } from "@/content/treatments/types";
 import Eyebrow from "@/components/Eyebrow";
 import IconArrow from "@/components/icons/IconArrow";
 
