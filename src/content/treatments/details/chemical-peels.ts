@@ -51,7 +51,7 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
 
   pullquote: {
     body:
-      "A peel earns its place in a plan. We don't chase the deepest one, we choose the one that respects your skin.",
+      "A chemical peel is not about stripping the skin. It is about guiding renewal with clarity, control, and intention.",
     attr: "Cristina Caridi, MD",
   },
 
