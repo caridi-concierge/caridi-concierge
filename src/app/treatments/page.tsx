@@ -14,6 +14,8 @@ export const metadata = createPageMetadata({
     title: "Botox, Fillers & Chemical Peels in NYC | Caridi Concierge",
     description: "In-home Botox, fillers, peels, and collagen-building injectables across NYC — personally administered by Dr. Caridi.",
     path: "/treatments",
+    image: "/images/treatments/botox_crowsfeet_tx.webp",
+    imageAlt: "In-home aesthetic treatments by Caridi Concierge — Botox, fillers, and chemical peels",
     keywords: ["Caridi Concierge", "Aesthetic Treatments", "Botox", "Dermal Fillers", "Biostimulatory Fillers", "In-Home Treatments", "Brooklyn", "New York City"],
     noIndex: false
 });

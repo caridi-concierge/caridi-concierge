@@ -5,13 +5,12 @@ import { PRICES } from "@/lib/constants/pricing";
 /**
  * Consultation detail-page content.
  *
- * Source notes — review before publishing:
+ * Source notes:
  * - `overview` paragraph preserved verbatim from the previous ConsultIntro.
  * - `faqs` pulled verbatim from `consultFAQSchema` (7 Q&As) so the FAQ rich-results stay in sync.
  * - `bestFor`, `products`, `areas`, `downtime`, `beforeAfter` are intentionally
  *   omitted — they don't apply to a consultation. The layout hides those sections
  *   and renumbers the remaining ones (01–05) on this page.
- * - `pullquote`, `pricing`, `process` are editorial drafts and need the practice's review.
  * - The "What we can cover in a consultation" content from the previous ConsultAreas page
  *   is NOT carried into this new layout. If you want a section listing discussion topics,
  *   we can either extend the layout with a new "covers" section type or add the topics
@@ -49,7 +48,6 @@ export const consultDetail: TreatmentDetailContent = {
     "A consultation with Caridi Concierge is a physician-led conversation focused on understanding your goals, anatomy, and long-term preferences before any treatment decisions are made. Dr. Cristina Caridi takes the time to evaluate skin quality, facial balance, and lifestyle factors to create a personalized, medically appropriate plan. Consultations are designed to be thorough yet comfortable, giving you the clarity and confidence to move forward thoughtfully.",
   ],
 
-  // DRAFT — practice should review/replace.
   pullquote: {
     body:
       "The first conversation should feel like a clinical assessment, not a sales pitch.",
@@ -69,7 +67,6 @@ export const consultDetail: TreatmentDetailContent = {
     },
   ],
 
-  // DRAFT — process steps for the consult experience.
   process: [
     {
       n: "01",

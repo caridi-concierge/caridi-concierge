@@ -12,6 +12,8 @@ export const metadata = createPageMetadata({
   description:
     "Medical-grade chemical peels for discoloration, melasma, acne marks, and uneven texture. In-home across NYC — book a consultation with Dr. Caridi.",
   path: "/treatments/chemical-peels",
+  image: chemicalPeelsDetail.heroImage.src,
+  imageAlt: chemicalPeelsDetail.heroImage.alt,
   keywords: [
     "Chemical Peels NYC",
     "VI Peel NYC",

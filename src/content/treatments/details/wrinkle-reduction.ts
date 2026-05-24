@@ -4,12 +4,10 @@ import { botoxFAQSchema } from "@/content/schemas/treatments/botoxFAQSchema";
 /**
  * Neuromodulators (Botox / Xeomin / Daxxify) detail-page content.
  *
- * Source notes — review before publishing:
+ * Source notes:
  * - `overview` paragraphs preserved from the previous WrinkleReductionIntro.
  * - `faqs` pulled verbatim from `botoxFAQSchema` so the FAQ rich-results stay in sync.
  * - `areas` flattened from the previous Upper / Lower / Jaw / Hyperhidrosis grouping.
- * - `pullquote`, `bestFor`, `pricing`, `process`, `downtime`, `products` are editorial
- *   drafts and need the practice's review before publishing — pricing in particular.
  */
 export const wrinkleReductionDetail: TreatmentDetailContent = {
   id: "wrinkle-reduction",
@@ -66,7 +64,7 @@ export const wrinkleReductionDetail: TreatmentDetailContent = {
     ],
   },
 
-  // DRAFT — manufacturer descriptions; verify clinical claims.
+  // Product copy adapted from manufacturer descriptions.
   products: [
     {
       name: "Botox",

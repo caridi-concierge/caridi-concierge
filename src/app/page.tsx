@@ -17,6 +17,8 @@ export const metadata = createPageMetadata({
     title: "Caridi Concierge | Luxury Aesthetic Treatments in NYC",
     description: "Caridi Concierge offers premium, in-home aesthetic treatments in NYC. From botox to fillers, experience luxury skincare at your convenience. Book today!",
     path: "/",
+    image: "/images/headshots/cc_headshot_white_hq_crop_edit.webp",
+    imageAlt: "Dr. Cristina Caridi, founder of Caridi Concierge",
     keywords: ["Caridi Concierge", "Botox NYC", "Fillers NYC", "In-Home Treatments", "Aesthetic Medicine", "Brooklyn Aesthetics", "New York City Aesthetics"],
     noIndex: false
 });

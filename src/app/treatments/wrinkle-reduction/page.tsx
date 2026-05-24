@@ -11,6 +11,8 @@ export const metadata = createPageMetadata({
     title: "Wrinkle Reduction | Botox, Daxxify & Xeomin in NYC",
     description: "Botox, Daxxify, and Xeomin to soften fine lines and wrinkles for a refreshed, natural look. In-home across NYC — book a consultation with Dr. Caridi.",
     path: "/treatments/wrinkle-reduction",
+    image: wrinkleReductionDetail.heroImage.src,
+    imageAlt: wrinkleReductionDetail.heroImage.alt,
     noIndex: false
 });
 

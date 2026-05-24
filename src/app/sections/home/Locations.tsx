@@ -41,7 +41,7 @@ export default function LocationsSection() {
             </h2>
             <p className="mt-7 text-[15px] leading-[1.7] text-ivory/75 max-w-[380px]">
               Two private Brooklyn locations, plus concierge visits at your
-              home, hotel, or office—anywhere in NYC.
+              home, hotel, or office. Anywhere in NYC.
             </p>
             <Link
               href="/locations"

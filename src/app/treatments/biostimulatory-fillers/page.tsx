@@ -11,6 +11,8 @@ export const metadata = createPageMetadata({
     title: "Biostimulatory Fillers (Radiesse) in NYC | Build Collagen",
     description: "Radiesse biostimulatory fillers rebuild collagen for natural volume and smoother skin. In-home across NYC — book a consultation with Dr. Caridi.",
     path: "/treatments/biostimulatory-fillers",
+    image: biostimulatoryFillersDetail.heroImage.src,
+    imageAlt: biostimulatoryFillersDetail.heroImage.alt,
     keywords: ["Caridi Concierge", "Aesthetic Treatments", "Biostimulatory Fillers", "Radiesse", "Collagen-building", "In-Home Treatments", "Brooklyn", "New York City"],
     noIndex: false
 });

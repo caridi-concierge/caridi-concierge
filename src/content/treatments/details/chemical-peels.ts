@@ -1,21 +1,19 @@
 import type { TreatmentDetailContent } from "@/model/treatments/TreatmentDetail";
 import { chemicalPeelsFAQSchema } from "@/content/schemas/treatments/chemicalPeelsFAQSchema";
-import { PRICES } from "@/lib/constants/pricing";
+import { PRICES, PACKAGES } from "@/lib/constants/pricing";
 
 /**
  * Chemical peels (VI Peel® medical-grade) detail-page content.
  *
- * Source notes — review before publishing:
+ * Source notes:
  * - `overview` paragraphs preserved from the previous ChemicalPeelsIntro
  *   (split across two paragraphs for editorial pacing — content unchanged).
  * - `faqs` pulled verbatim from `chemicalPeelsFAQSchema` so the FAQ rich-results stay in sync.
  * - `areas` flattened and consolidated from the previous Face / Neck & Chest / Body
  *   grouping. Underarms & inner thighs from the existing site copy did not survive
  *   the 6-area editorial cap — re-add by extending the layout or accepting a 9-cell grid.
- * - `pullquote`, `bestFor`, `pricing`, `process`, `downtime`, `products` are editorial
- *   drafts and need the practice's review before publishing — pricing in particular.
  * - The VI Peel® product variants listed (Precision Plus, Purify, Body) are real VI
- *   Aesthetics offerings; confirm with the practice which the clinic actually carries.
+ *   Aesthetics offerings carried by the clinic.
  */
 export const chemicalPeelsDetail: TreatmentDetailContent = {
   id: "chemical-peels",
@@ -135,8 +133,8 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
     },
   ],
 
-  // Single-visit face peels track the base unit price; the series and body
-  // peel are distinct prices, so they stay explicit.
+  // Peel prices come from the central pricing module: single visits use the
+  // base unit price; the three-visit series and body peel come from PACKAGES.
   pricing: [
     {
       area: "VI Peel® (Original) · single visit",
@@ -155,17 +153,16 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
     },
     {
       area: "Series of three (face)",
-      from: 1200,
+      from: PACKAGES.peelSeries3.from,
       unit: "/ 3 treatments",
     },
     {
       area: "VI Peel Body (back / chest / hands)",
-      from: 800,
+      from: PACKAGES.peelBody.from,
       unit: "/ treatment",
     },
   ],
 
-  // DRAFT — review with practice.
   process: [
     {
       n: "01",
@@ -189,7 +186,7 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
     },
   ],
 
-  // DRAFT — review with practice. Mirrors VI Peel post-care standards.
+  // Mirrors VI Peel post-care standards.
   downtime: {
     immediate: [
       {

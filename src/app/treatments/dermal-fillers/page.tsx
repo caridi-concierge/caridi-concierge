@@ -11,6 +11,8 @@ export const metadata = createPageMetadata({
     title: "Dermal Fillers | Lip, Cheek & Jawline Enhancement in NYC",
     description: "RHA and Juvéderm fillers to restore volume, soften lines, and define the lip, cheek, and jawline. In-home across NYC — book a consultation with Dr. Caridi.",
     path: "/treatments/dermal-fillers",
+    image: dermalFillersDetail.heroImage.src,
+    imageAlt: dermalFillersDetail.heroImage.alt,
     noIndex: false
 });
 

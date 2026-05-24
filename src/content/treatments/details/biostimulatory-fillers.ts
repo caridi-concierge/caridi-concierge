@@ -2,14 +2,12 @@ import type { TreatmentDetailContent } from "@/model/treatments/TreatmentDetail"
 import { biostimulatoryFillersFAQSchema } from "@/content/schemas/treatments/biostimulatoryFillersFAQSchema";
 
 /**
- * Biostimulatory fillers (Sculptra · Radiesse) detail-page content.
+ * Biostimulatory fillers (Radiesse) detail-page content.
  *
- * Source notes — review before publishing:
+ * Source notes:
  * - `overview` paragraphs preserved from the previous BiostimulatoryFillersIntro.
  * - `faqs` pulled verbatim from `biostimulatoryFillersFAQSchema` so the FAQ rich-results stay in sync.
  * - `areas` flattened from the previous Face / Neck & Chest / Body grouping.
- * - `pullquote`, `bestFor`, `pricing`, `process`, `downtime`, `products` are editorial
- *   drafts and need the practice's review before publishing — pricing in particular.
  */
 export const biostimulatoryFillersDetail: TreatmentDetailContent = {
   id: "biostimulatory-fillers",
