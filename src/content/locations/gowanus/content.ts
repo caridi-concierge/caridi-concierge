@@ -1,6 +1,6 @@
 import type { LocationContent } from '../types';
 
-export const gowanusContent: LocationContent = {
+export const content: LocationContent = {
   slug: 'gowanus',
   metadata: {
     title: 'Gowanus Botox and Fillers | Caridi Concierge',

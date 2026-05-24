@@ -3,8 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import LocationDetailLayout from "@/app/locations/_sections/LocationDetailLayout";
 import { createPageMetadata } from "@/lib/metadata";
-import { LOCATIONS } from "@/content/locations";
-import { getLocationContent } from "@/content/locations";
+import { LOCATIONS, getLocation } from "@/content/locations";
 import { SMSContactWidget } from "@/components/SMSContactWidget";
 import { notFound } from "next/navigation";
 
@@ -14,43 +13,40 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const loc = LOCATIONS.find((l) => l.slug === slug);
-  if (!loc) return {};
+  const location = getLocation(slug);
+  if (!location) return {};
+  const { facts, content } = location;
 
-  // Try to get custom metadata from content files
-  const content = getLocationContent(slug);
+  // Prefer the per-location editorial metadata when present.
   if (content?.metadata) {
     return createPageMetadata({
       title: content.metadata.title,
       description: content.metadata.description,
-      path: `/locations/${loc.slug}`,
+      path: `/locations/${facts.slug}`,
       keywords: content.metadata.keywords,
       noIndex: false,
     });
   }
 
-  // Fallback to basic metadata
-  const title = `${loc.name} | Caridi Concierge`;
-  const description = loc.description;
-
+  // Fallback to basic metadata derived from the facts.
   return createPageMetadata({
-    title,
-    description,
-    path: `/locations/${loc.slug}`,
-    keywords: ["Caridi Concierge", "Botox", "Dermal Fillers", "Brooklyn", loc.name],
+    title: `${facts.name} | Caridi Concierge`,
+    description: facts.description,
+    path: `/locations/${facts.slug}`,
+    keywords: ["Caridi Concierge", "Botox", "Dermal Fillers", "Brooklyn", facts.name],
     noIndex: false,
   });
 }
 
 export default async function LocationPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const loc = LOCATIONS.find((l) => l.slug === slug);
-  if (!loc) notFound();
+  const location = getLocation(slug);
+  if (!location) notFound();
 
   return (
     <>
       <Navbar />
-      <LocationDetailLayout loc={loc} />
+      <LocationDetailLayout loc={location.facts} />
       <Footer />
       <SMSContactWidget />
     </>

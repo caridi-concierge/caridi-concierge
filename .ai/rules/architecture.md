@@ -30,13 +30,14 @@ src/
 
   content/                  # editorial content as data + MDX (no app logic)
     blog/*.mdx              # blog posts; each exports `metadata`
-    locations/              # catalog + details/ + barrel (see entity convention)
-      locations.ts          #   facts catalog (identity, address, hours, CTAs)
-      details/<slug>.ts      #   per-location editorial content + registry
-    treatments/             # catalog + details/ + barrel (same convention)
+    locations/              # entity: per-location folders + barrel
+      <slug>/facts.ts        #   summary facts (identity, address, hours, CTAs)
+      <slug>/content.ts      #   editorial detail content for the [slug] page
+      index.ts               #   barrel: LOCATIONS catalog + getLocation(slug)
+    treatments/             # entity: catalog file + details/ folder
       treatments.tsx         #   facts catalog (cards, badges, pricing)
       details/<slug>.ts      #   per-treatment editorial content + registry
-    reviews/                # review data
+    reviews/                # review data (single source)
     schemas/                # JSON-LD structured data (+ treatments/ FAQ schemas)
 
   lib/                      # non-UI logic and shared constants
@@ -104,32 +105,50 @@ app (pages) → _sections → components
 
 ## Content entity convention (locations, treatments)
 
-An "entity" is content that has both a **catalog** of summary records (used by
-cards, grids, nav) and **per-item detail content** for a dedicated
-`/<entity>/<slug>` page. Locations and treatments both follow this shape; keep
-any future one consistent with it:
+An "entity" is content that has both **summary facts** (used by cards, grids,
+nav) and **per-item detail content** for a dedicated `/<entity>/<slug>` page.
+Locations and treatments are the two entities. Both share the same *contract*,
+even though their on-disk layout differs:
+
+**The contract (always holds):**
+
+- **`slug` is the join key** between an item's facts and its detail content.
+- **One barrel per entity** (`@/content/<entity>`) is the public surface —
+  exposes the facts catalog plus the detail lookup. Import from the barrel, not
+  from deep paths.
+- An entity may carry its own internal `id` (treatments use `id` for in-page
+  anchor `id=`/`href="#…"`). That's separate from `slug` and is part of the
+  tracking/DOM contract — don't repurpose or drop it casually. (Locations also
+  keep an `id`, used only for editorial label maps.)
+- **A drift guard** (`*.test.ts` in the entity) asserts the facts/catalog slug
+  set equals the detail slug set, so adding one half without the other fails CI
+  (`locations.test.ts`, `treatments.test.ts`).
+- Entity content lives under `content/`, never `lib/constants/`.
+  `lib/constants/` is for small shared constants (company, pricing, CTAs,
+  staff), not catalogs with detail pages.
+
+**Two layouts are in use — match the entity you're editing:**
 
 ```text
-src/content/<entity>/
-  <entity>.ts            # the catalog: summary records (array), keyed by slug
-  details/
-    <slug>.ts            # long-form editorial content for the [slug] page
-    index.ts             # registry: get<Entity>Detail/Content(slug), getAll…()
-  types.ts               # catalog type + detail type
-  index.ts               # barrel: re-exports the catalog + the detail getters
+# Locations — per-location folders (facts + content kept together):
+src/content/locations/
+  <slug>/facts.ts        # summary facts for this location
+  <slug>/content.ts      # editorial detail content for this location
+  <slug>/index.ts        # re-exports { facts, content }
+  types.ts               # LocationFacts + LocationContent
+  index.ts               # barrel: LOCATIONS catalog + getLocation(slug)
+
+# Treatments — single catalog file + details/ folder:
+src/content/treatments/
+  treatments.tsx         # the catalog: summary records (array)
+  details/<slug>.ts      # editorial detail content
+  details/index.ts       # getTreatmentDetail(slug), getAllTreatmentDetails()
 ```
 
-- **`slug` is the join key** between the catalog and the detail content. Import
-  both from the entity barrel (`@/content/<entity>`), not from deep paths.
-- An entity may carry its own internal `id` (e.g. treatments use `id` for
-  in-page anchor `id=`/`href="#…"`); that's separate from `slug` and is part of
-  the tracking/DOM contract — don't repurpose or drop it casually.
-- **Guard the halves against drift**: a `*.test.ts` in the entity asserts the
-  catalog's slug set equals the details registry's slug set, so adding one half
-  without the other fails CI (`locations.test.ts`, `treatments.test.ts`).
-- Entity content lives under `content/`, not `lib/constants/`. `lib/constants/`
-  is for small shared constants (company, pricing, CTAs, staff), not catalogs
-  with detail pages.
+The folder-per-item layout keeps an item's two halves together and reads well
+as the entity grows; the catalog-file layout is lighter when the summary
+records are small. Either is fine — don't mix layouts within one entity, and
+prefer the existing one when extending an entity.
 
 ## Conventions tied to the architecture
 

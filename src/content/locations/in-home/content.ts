@@ -1,6 +1,6 @@
 import type { LocationContent } from "../types";
 
-export const inHomeContent: LocationContent = {
+export const content: LocationContent = {
   slug: "in-home",
   metadata: {
     title: "In-home Botox and Fillers NYC | Caridi Concierge",

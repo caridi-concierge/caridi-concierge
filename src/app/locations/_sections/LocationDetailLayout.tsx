@@ -1,4 +1,4 @@
-import type { Location } from "@/content/locations";
+import type { LocationFacts } from "@/content/locations";
 import { getLocationContent } from "@/content/locations";
 import LocationDetailHero from "@/app/locations/_sections/LocationDetailHero";
 import LocationOverview from "@/app/locations/_sections/LocationOverview";
@@ -12,7 +12,7 @@ import SisterLocationsSection from "@/app/locations/_sections/SisterLocations";
 import ResultsCarouselSection from "@/components/Results";
 import CTASection from "@/components/CTA";
 
-export default function LocationDetailLayout({ loc }: { loc: Location }) {
+export default function LocationDetailLayout({ loc }: { loc: LocationFacts }) {
   const content = getLocationContent(loc.slug);
 
   if (!content) {

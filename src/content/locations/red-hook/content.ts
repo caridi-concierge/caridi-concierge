@@ -1,6 +1,6 @@
 import type { LocationContent } from '../types';
 
-export const redHookStudioContent: LocationContent = {
+export const content: LocationContent = {
   slug: 'red-hook',
   metadata: {
     title: "Red Hook Private Studio | Caridi Concierge",
