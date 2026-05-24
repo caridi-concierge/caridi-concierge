@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PrivacyPolicy from "@/app/sections/privacy-policy/PrivacyPolicy";
+import PrivacyPolicy from "@/app/privacy-policy/_sections/PrivacyPolicy";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({

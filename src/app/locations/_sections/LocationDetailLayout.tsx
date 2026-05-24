@@ -1,15 +1,15 @@
 import type { Location } from "@/lib/constants/locations";
 import { getLocationContent } from "@/content/locations";
-import LocationDetailHero from "@/app/sections/locations/LocationDetailHero";
-import LocationOverview from "@/app/sections/locations/LocationOverview";
-import LocationCoverage from "@/app/sections/locations/LocationCoverage";
-import LocationSpace from "@/app/sections/locations/LocationSpace";
-import LocationProcess from "@/app/sections/locations/LocationProcess";
-import LocationOfferings from "@/app/sections/locations/LocationOfferings";
-import LocationDoctorsNoteSection from "@/app/sections/locations/LocationDoctorsNote";
-import LocationFAQ from "@/app/sections/locations/LocationFAQ";
-import SisterLocationsSection from "@/app/sections/locations/SisterLocations";
-import ResultsCarouselSection from "@/app/sections/home/Results";
+import LocationDetailHero from "@/app/locations/_sections/LocationDetailHero";
+import LocationOverview from "@/app/locations/_sections/LocationOverview";
+import LocationCoverage from "@/app/locations/_sections/LocationCoverage";
+import LocationSpace from "@/app/locations/_sections/LocationSpace";
+import LocationProcess from "@/app/locations/_sections/LocationProcess";
+import LocationOfferings from "@/app/locations/_sections/LocationOfferings";
+import LocationDoctorsNoteSection from "@/app/locations/_sections/LocationDoctorsNote";
+import LocationFAQ from "@/app/locations/_sections/LocationFAQ";
+import SisterLocationsSection from "@/app/locations/_sections/SisterLocations";
+import ResultsCarouselSection from "@/components/Results";
 import CTASection from "@/components/CTA";
 
 export default function LocationDetailLayout({ loc }: { loc: Location }) {

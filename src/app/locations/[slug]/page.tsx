@@ -1,7 +1,7 @@
 // app/locations/[slug]/page.tsx
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import LocationDetailLayout from "@/app/sections/locations/LocationDetailLayout";
+import LocationDetailLayout from "@/app/locations/_sections/LocationDetailLayout";
 import { createPageMetadata } from "@/lib/metadata";
 import { LOCATIONS } from "@/lib/constants/locations";
 import { getLocationContent } from "@/content/locations";

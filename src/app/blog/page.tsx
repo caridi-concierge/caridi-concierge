@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import BlogHero from "@/app/sections/blog/BlogHero";
-import BlogIndex from "@/app/sections/blog/BlogIndex";
+import BlogHero from "@/app/blog/_sections/BlogHero";
+import BlogIndex from "@/app/blog/_sections/BlogIndex";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({

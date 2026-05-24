@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTA";
-import TreatmentDetailLayout from "@/app/sections/treatments/TreatmentDetailLayout";
+import TreatmentDetailLayout from "@/app/treatments/_sections/TreatmentDetailLayout";
 import { consultDetail } from "@/content/treatments/details/consult";
 import { createPageMetadata } from "@/lib/metadata";
 import { consultFAQSchema } from "@/content/schemas/treatments/consultFAQSchema";

@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import ContactLayout from "@/app/sections/contact/ContactLayout";
+import ContactLayout from "@/app/contact/_sections/ContactLayout";
 import Footer from "@/components/Footer";
 import { SMSContactWidget } from "@/components/SMSContactWidget";
 import { createPageMetadata } from "@/lib/metadata";

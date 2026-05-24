@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
-import BlogPostHeroSection from "@/app/sections/blog/BlogPostHero";
-import BlogPostBodySection from "@/app/sections/blog/BlogPostBody";
-import BlogPostRelated from "@/app/sections/blog/BlogPostRelated";
+import BlogPostHeroSection from "@/app/blog/_sections/BlogPostHero";
+import BlogPostBodySection from "@/app/blog/_sections/BlogPostBody";
+import BlogPostRelated from "@/app/blog/_sections/BlogPostRelated";
 import { getAllPosts, getPostBySlug } from "@/lib/blogs/posts";
 import { resolveRelatedPosts, resolveRelatedTreatment } from "@/lib/blogs/related";
 import Navbar from "@/components/Navbar";

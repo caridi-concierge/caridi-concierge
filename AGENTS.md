@@ -88,9 +88,11 @@ prices in individual files or reintroduce inline price literals.
 
 See `.ai/rules/architecture.md` for the full map. In short:
 
-- `src/app/` — routes (App Router pages), `sections/` (page-specific composed
-  sections), `api/` (the contact route), and small route-local helpers.
-- `src/components/` — shared, reusable UI components.
+- `src/app/` — routes (App Router pages). Each route colocates its composed
+  sections in a private `_sections/` folder next to `page.tsx`; the contact
+  route lives in `api/`.
+- `src/components/` — shared, reusable UI components, plus sections shared
+  across more than one route (e.g. `FAQ`, `Results`).
 - `src/content/` — editorial content as data and MDX: blog posts, location
   content, treatment details, reviews, and JSON-LD schemas.
 - `src/lib/` — non-UI logic: analytics, blog file reads, constants, metadata.

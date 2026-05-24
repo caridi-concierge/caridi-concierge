@@ -1,6 +1,6 @@
 // app/locations/page.tsx
 import Navbar from "@/components/Navbar";
-import LocationsLayoutSection from "@/app/sections/locations/LocationsLayout";
+import LocationsLayoutSection from "@/app/locations/_sections/LocationsLayout";
 import Footer from "@/components/Footer";
 import { SMSContactWidget } from "@/components/SMSContactWidget";
 import { createPageMetadata } from "@/lib/metadata";

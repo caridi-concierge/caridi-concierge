@@ -14,18 +14,19 @@ src/
   app/                      # App Router: one folder per route
     layout.tsx              # root layout, fonts, global JSON-LD, GTM
     page.tsx                # home
-    <route>/page.tsx        # static routes (about, contact, book, ...)
-    <route>/[slug]/page.tsx # dynamic routes (blog, locations, staff)
-    treatments/<t>/page.tsx # one page per treatment
+    _sections/              # home page's sections (Hero, Philosophy, ...)
     api/contact/route.ts    # the only server endpoint (see api-design.md)
     robots.ts, sitemap.ts   # generated SEO files
     not-found.tsx, 401/     # error / status pages
-    sections/               # page-specific composed sections, grouped by page
-      home/ about/ blog/ contact/ locations/ treatments/ staff/ ...
+    <route>/
+      page.tsx              # the route's page
+      [slug]/page.tsx       # nested dynamic route, where applicable
+      _sections/            # this route subtree's composed sections
     utils/                  # small route-local helpers
 
   components/               # shared, reusable, presentational UI
     icons/                  # icon components
+    # ...also home of sections shared across route subtrees (e.g. FAQ, Results)
 
   content/                  # editorial content as data + MDX (no app logic)
     blog/*.mdx              # blog posts; each exports `metadata`
@@ -51,7 +52,8 @@ src/
 | Code | Location |
 | --- | --- |
 | A new page/route | `src/app/<route>/page.tsx` |
-| A section used by one page | `src/app/sections/<page>/` |
+| A section used by one route subtree | `src/app/<route>/_sections/` (colocated) |
+| A section shared across route subtrees | `src/components/` |
 | A component reused across pages | `src/components/` |
 | Editorial copy / data for a page | `src/content/` |
 | A blog post | `src/content/blog/<slug>.mdx` |
@@ -67,17 +69,26 @@ Dependencies flow from presentation toward content/constants — never the
 reverse:
 
 ```text
-app (pages) → sections → components
+app (pages) → _sections → components
      │            │
      └────────────┴──────→ content (data/MDX), lib (helpers/constants), model (types)
 ```
 
 - **Pages (`app/.../page.tsx`)** stay thin: assemble sections, set metadata via
   `createPageMetadata`, render JSON-LD. No data-massaging or business logic.
-- **Sections** compose components and pull in content. They are page-specific;
-  if a section becomes reused across pages, promote it to `components/`.
+- **Sections live next to the route that uses them**, in a colocated
+  `_sections/` folder. The `_` prefix makes it a Next.js *private folder*,
+  excluded from routing — only `page`/`route`/`layout` etc. become routes.
+  Sections compose components and pull in content. A section folder belongs to
+  a route subtree: detail routes (`[slug]`, per-treatment pages) nest under
+  their index segment, so the parent's `_sections/` is shared by the whole
+  subtree (e.g. `app/treatments/_sections/TreatmentDetailLayout` serves all the
+  treatment detail pages).
+- **When a section is used by more than one route subtree, it's no longer a
+  section — promote it to `components/`** (e.g. `FAQ`, `Results`). Don't reach
+  across into another route's `_sections/`.
 - **Components** are presentational and reusable. Prefer receiving data via
-  props. They should not import page-specific content.
+  props. They should not import a specific route's content or sections.
 - **`content/`** is pure typed data and MDX. No React logic beyond MDX, no
   side effects. Each content area exposes an `index.ts` registry with a typed
   lookup (e.g. `getLocationContent(slug)`, `getTreatmentDetail(slug)`).
@@ -100,9 +111,12 @@ app (pages) → sections → components
 
 ## Practical rules
 
-- If a component starts importing page-specific content, the boundary is wrong —
-  pass data via props or move it to `sections/`.
-- If two sections need the same markup, extract a shared component.
+- If a component starts importing a specific route's content, the boundary is
+  wrong — pass data via props or move it into that route's `_sections/`.
+- If two route subtrees need the same section, promote it to `components/`
+  rather than importing across `_sections/` folders.
+- A new page's sections start in its own `_sections/`; only graduate them to
+  `components/` once a second route actually needs them.
 - Don't add a database, repository, queue, or service layer to render content.
   If a feature genuinely needs persistence or background work, escalate the
   design decision before building it.

@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 import { staff } from "@/lib/constants/staff";
-import OtherStaffSection from "@/app/sections/staff/OtherStaff";
-import DoctorBioSection from "@/app/sections/staff/Bio";
-import StaffCredentialsSection from "@/app/sections/staff/StaffCredentials";
+import OtherStaffSection from "@/app/staff/_sections/OtherStaff";
+import DoctorBioSection from "@/app/staff/_sections/Bio";
+import StaffCredentialsSection from "@/app/staff/_sections/StaffCredentials";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTA";

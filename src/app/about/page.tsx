@@ -1,11 +1,11 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AboutHero from "@/app/sections/about/AboutHero";
-import AboutModesSection from "@/app/sections/about/AboutModes";
-import AboutMissionSection from "@/app/sections/about/About";
-import AboutLinksSection from "@/app/sections/about/AboutLinks";
-import FAQSection from "@/app/sections/home/FAQ";
+import AboutHero from "@/app/about/_sections/AboutHero";
+import AboutModesSection from "@/app/about/_sections/AboutModes";
+import AboutMissionSection from "@/app/about/_sections/About";
+import AboutLinksSection from "@/app/about/_sections/AboutLinks";
+import FAQSection from "@/components/FAQ";
 import CTASection from "@/components/CTA";
 import { createPageMetadata } from "@/lib/metadata";
 

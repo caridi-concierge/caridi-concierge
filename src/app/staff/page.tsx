@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AllStaffSection from "@/app/sections/staff/AllStaff";
+import AllStaffSection from "@/app/staff/_sections/AllStaff";
 import CTASection from "@/components/CTA";
 import { createPageMetadata } from "@/lib/metadata";
 

@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTA";
-import TreatmentDetailLayout from "@/app/sections/treatments/TreatmentDetailLayout";
+import TreatmentDetailLayout from "@/app/treatments/_sections/TreatmentDetailLayout";
 import { wrinkleReductionDetail } from "@/content/treatments/details/wrinkle-reduction";
 import { createPageMetadata } from "@/lib/metadata";
 import { botoxFAQSchema } from "@/content/schemas/treatments/botoxFAQSchema";

@@ -1,9 +1,9 @@
 import Navbar from "@/components/Navbar";
-import TreatmentsHero from "@/app/sections/treatments/TreatmentsHero";
-import TreatmentsIndex from "@/app/sections/treatments/TreatmentsIndex";
-import TreatmentsDetail from "@/app/sections/treatments/TreatmentsDetail";
-import TreatmentsProcess from "@/app/sections/treatments/TreatmentsProcess";
-import TreatmentsFAQ from "@/app/sections/treatments/TreatmentsFAQ";
+import TreatmentsHero from "@/app/treatments/_sections/TreatmentsHero";
+import TreatmentsIndex from "@/app/treatments/_sections/TreatmentsIndex";
+import TreatmentsDetail from "@/app/treatments/_sections/TreatmentsDetail";
+import TreatmentsProcess from "@/app/treatments/_sections/TreatmentsProcess";
+import TreatmentsFAQ from "@/app/treatments/_sections/TreatmentsFAQ";
 import CTASection from "@/components/CTA";
 import Footer from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLD";

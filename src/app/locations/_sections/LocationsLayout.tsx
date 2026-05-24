@@ -1,7 +1,7 @@
-import { LocationMapSection } from "@/app/sections/locations/LocationsMap";
-import { LocationsHeroSection } from "@/app/sections/locations/LocationsHero";
-import { LocationsListSection } from "@/app/sections/locations/LocationsList";
-import { ServiceAreaInset } from "@/app/sections/locations/ServiceAreaInset";
+import { LocationMapSection } from "@/app/locations/_sections/LocationsMap";
+import { LocationsHeroSection } from "@/app/locations/_sections/LocationsHero";
+import { LocationsListSection } from "@/app/locations/_sections/LocationsList";
+import { ServiceAreaInset } from "@/app/locations/_sections/ServiceAreaInset";
 
 export default function LocationsLayoutSection() {
   return (

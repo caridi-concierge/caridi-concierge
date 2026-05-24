@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTA";
-import TreatmentDetailLayout from "@/app/sections/treatments/TreatmentDetailLayout";
+import TreatmentDetailLayout from "@/app/treatments/_sections/TreatmentDetailLayout";
 import { chemicalPeelsDetail } from "@/content/treatments/details/chemical-peels";
 import { createPageMetadata } from "@/lib/metadata";
 import { chemicalPeelsFAQSchema } from "@/content/schemas/treatments/chemicalPeelsFAQSchema";
