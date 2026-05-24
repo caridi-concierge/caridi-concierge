@@ -1,5 +1,5 @@
 import type { TreatmentDetailContent } from "@/model/treatments/TreatmentDetail";
-import { consultFAQSchema } from "@/content/schemas/treatments/consultFAQShema";
+import { consultFAQSchema } from "@/content/schemas/treatments/consultFAQSchema";
 import { PRICES } from "@/lib/constants/pricing";
 
 /**

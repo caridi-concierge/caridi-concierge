@@ -4,7 +4,7 @@ import CTASection from "@/components/CTA";
 import TreatmentDetailLayout from "@/app/sections/treatments/TreatmentDetailLayout";
 import { dermalFillersDetail } from "@/content/treatments/details/dermal-fillers";
 import { createPageMetadata } from "@/lib/metadata";
-import { dermalFillersFAQSchema } from "@/content/schemas/treatments/dermalFillersFAQShema";
+import { dermalFillersFAQSchema } from "@/content/schemas/treatments/dermalFillersFAQSchema";
 import { JsonLd } from "@/components/JsonLD";
 
 export const metadata = createPageMetadata({

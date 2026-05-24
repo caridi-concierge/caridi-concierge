@@ -4,7 +4,7 @@ import CTASection from "@/components/CTA";
 import TreatmentDetailLayout from "@/app/sections/treatments/TreatmentDetailLayout";
 import { consultDetail } from "@/content/treatments/details/consult";
 import { createPageMetadata } from "@/lib/metadata";
-import { consultFAQSchema } from "@/content/schemas/treatments/consultFAQShema";
+import { consultFAQSchema } from "@/content/schemas/treatments/consultFAQSchema";
 import { JsonLd } from "@/components/JsonLD";
 
 export const metadata = createPageMetadata({
