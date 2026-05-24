@@ -10,7 +10,7 @@ import { JsonLd } from "@/components/JsonLD";
 export const metadata = createPageMetadata({
   title: "Chemical Peels NYC | Brighten Skin, Fade Pigmentation",
   description:
-    "Medical-grade chemical peels in NYC to treat discoloration, melasma, acne marks, and uneven texture. Physician-led, in-home care.",
+    "Medical-grade chemical peels for discoloration, melasma, acne marks, and uneven texture. In-home across NYC — book a consultation with Dr. Caridi.",
   path: "/treatments/chemical-peels",
   keywords: [
     "Chemical Peels NYC",

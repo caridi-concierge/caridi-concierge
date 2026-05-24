@@ -30,13 +30,13 @@ export default function BlogHero() {
             Blog
           </Eyebrow>
           <h1 className="font-display font-light text-[44px] sm:text-[56px] lg:text-[64px] leading-[1.0] tracking-[-0.015em] text-ink">
-            Notes from the{" "}
+            Treatment{" "}
             <em className="not-italic italic font-light text-brass">
-              practice.
+              notes &amp; aftercare.
             </em>
           </h1>
           <p className="mt-8 max-w-[600px] text-[16px] sm:text-[17px] leading-[1.7] font-light text-ink/70">
-            Treatment guides, aftercare notes, press, and writing from the practice. Mostly Dr. Caridi, occasionally guest contributors, never sponsored
+            Guides from Dr. Caridi: what to expect, before and after.
           </p>
         </div>
       </div>

@@ -1,10 +1,11 @@
 import { TreatmentMetadata } from "@/model/treatments/Treatment";
+import { PRICES } from "@/lib/constants/pricing";
 
-const priceConsult = Number(process.env.PRICE_CONSULT ?? 150);
-const priceBotox = Number(process.env.PRICE_BOTOX ?? 12);
-const priceFillers = Number(process.env.PRICE_FILLERS ?? 600);
-const priceBiostim = Number(process.env.PRICE_BIOSTIM ?? 850);
-const priceChemicalPeels = Number(process.env.PRICE_CHEMICAL_PEELS ?? 400);
+const priceConsult = PRICES.consult;
+const priceBotox = PRICES.botox;
+const priceFillers = PRICES.dermalFiller;
+const priceBiostim = PRICES.biostimulatoryFiller;
+const priceChemicalPeels = PRICES.chemicalPeel;
 
 export const treatments: TreatmentMetadata[] = [
   {

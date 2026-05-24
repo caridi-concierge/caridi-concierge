@@ -1,4 +1,5 @@
 import { COMPANY } from "@/lib/constants/company";
+import { areaServed } from "./areaServed";
 
 export const businessSchema = {
   "@context": "https://schema.org",
@@ -21,22 +22,7 @@ export const businessSchema = {
     "postalCode": COMPANY.address.postalCode,
     "addressCountry": COMPANY.address.country
   },
-  "areaServed": [
-    {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": 40.6752831,
-        "longitude": -74.0130946
-      },
-      "geoRadius": 12875
-    },
-    { "@type": "Place", "name": "Brooklyn, NY" },
-    { "@type": "Place", "name": "Manhattan, NY" },
-    { "@type": "Place", "name": "Queens, NY" },
-    { "@type": "Place", "name": "Staten Island, NY" },
-    { "@type": "Place", "name": "Long Island, NY" }
-  ],
+  "areaServed": areaServed,
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",

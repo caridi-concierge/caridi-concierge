@@ -1,5 +1,6 @@
 import type { TreatmentDetailContent } from "@/model/treatments/TreatmentDetail";
 import { consultFAQSchema } from "@/content/schemas/treatments/consultFAQShema";
+import { PRICES } from "@/lib/constants/pricing";
 
 /**
  * Consultation detail-page content.
@@ -39,7 +40,7 @@ export const consultDetail: TreatmentDetailContent = {
     { l: "Visit", v: "30 min" },
     { l: "Format", v: "In-home or studio" },
     { l: "Privacy", v: "Discreet · no signage" },
-    { l: "Fee", v: "$150 · credited to first visit" },
+    { l: "Fee", v: `$${PRICES.consult} · credited to first visit` },
     { l: "Outcome", v: "Personalized plan" },
     { l: "Performed by", v: "Cristina Caridi, MD" },
   ],
@@ -55,16 +56,15 @@ export const consultDetail: TreatmentDetailContent = {
     attr: "Dr. Cristina Caridi, MD",
   },
 
-  // DRAFT — pricing reflects existing data ($150 credited).
   pricing: [
     {
       area: "Aesthetic consultation",
-      from: 150,
+      from: PRICES.consult,
       unit: "/ visit · credited toward first treatment",
     },
     {
       area: "Virtual planning consultation",
-      from: 150,
+      from: PRICES.consult,
       unit: "/ visit · select concerns only",
     },
   ],

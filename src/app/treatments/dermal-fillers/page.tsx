@@ -9,9 +9,8 @@ import { JsonLd } from "@/components/JsonLD";
 
 export const metadata = createPageMetadata({
     title: "Dermal Fillers | Lip, Cheek & Jawline Enhancement in NYC",
-    description: "Enhance your natural beauty with RHA and Juvederm dermal fillers. Restore volume, smooth wrinkles & define your features. Book expert care today!",
+    description: "RHA and Juvéderm fillers to restore volume, soften lines, and define the lip, cheek, and jawline. In-home across NYC — book a consultation with Dr. Caridi.",
     path: "/treatments/dermal-fillers",
-    keywords: ["Caridi Concierge", "Aesthetic Treatments", "Dermal Fillers", "RHA", "Juvederm", "In-Home Treatments", "Brooklyn", "New York City"],
     noIndex: false
 });
 

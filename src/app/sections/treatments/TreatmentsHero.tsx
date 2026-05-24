@@ -21,8 +21,8 @@ export default function TreatmentsHero() {
             <em className="not-italic italic font-light text-brass">refined.</em>
           </h1>
           <p className="mt-8 max-w-[520px] text-base leading-[1.7] font-light text-ink/70">
-            Five services, one physician. Each treatment is calibrated to your
-            face, your downtime, your calendar—not a menu of upsells.
+            Five services, one physician. Each treatment is tailored to your
+            face, your downtime, your calendar.
           </p>
           <div className="mt-12 flex flex-wrap items-center gap-4">
             <Link

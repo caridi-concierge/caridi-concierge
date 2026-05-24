@@ -5,8 +5,8 @@ import BlogIndex from "@/app/sections/blog/BlogIndex";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-    title: "Aesthetic Insights | Caridi Concierge Blog",
-    description: "Stay informed with expert tips on wrinkle reduction and fillers. The Caridi Concierge blog keeps you up to date on the latest in aesthetics.",
+    title: "Botox, Fillers & Aftercare Guides | Caridi Concierge",
+    description: "Treatment guides and aftercare notes from Dr. Caridi's NYC practice — Botox, fillers, and chemical peels, explained.",
     path: "/blog",
     keywords: ["Caridi Concierge", "Aesthetic Insights", "Aesthetic Treatments", "Guides","Dermal Fillers", "Botox", "Brooklyn", "New York City"],
     noIndex: false

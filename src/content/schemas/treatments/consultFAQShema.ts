@@ -1,5 +1,6 @@
+import { PRICES } from "@/lib/constants/pricing";
 
-const priceConsult = process.env.PRICE_CONSULT ?? 150;
+const priceConsult = PRICES.consult;
 
 export const consultFAQSchema = {
   "@context": "https://schema.org",

@@ -1,5 +1,6 @@
 import type { TreatmentDetailContent } from "@/model/treatments/TreatmentDetail";
 import { chemicalPeelsFAQSchema } from "@/content/schemas/treatments/chemicalPeelsFAQSchema";
+import { PRICES } from "@/lib/constants/pricing";
 
 /**
  * Chemical peels (VI Peel® medical-grade) detail-page content.
@@ -47,7 +48,7 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
 
   overview: [
     "Physician-led chemical peels using medical-grade formulations to improve skin tone, texture, and clarity without compromising skin health.",
-    "Dr. Caridi customizes each peel to target concerns such as discoloration, melasma, acne, and fine lines while respecting your skin's integrity and comfort level—resulting in brighter, smoother skin with controlled, predictable results.",
+    "Dr. Caridi customizes each peel to target concerns such as discoloration, melasma, acne, and fine lines while respecting your skin's integrity and comfort level, resulting in brighter, smoother skin with controlled, predictable results.",
   ],
 
   pullquote: {
@@ -134,32 +135,32 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
     },
   ],
 
-  // DRAFT — pricing is best-guess concierge-tier ranges anchored to env-var $400.
-  // The practice must validate these numbers before publishing.
+  // Single-visit face peels track the base unit price; the series and body
+  // peel are distinct prices, so they stay explicit.
   pricing: [
     {
       area: "VI Peel® (Original) · single visit",
-      from: 350,
+      from: PRICES.chemicalPeel,
       unit: "/ treatment",
     },
     {
       area: "VI Peel Precision Plus (pigmentation)",
-      from: 450,
+      from: PRICES.chemicalPeel,
       unit: "/ treatment",
     },
     {
       area: "VI Peel Purify (acne)",
-      from: 350,
+      from: PRICES.chemicalPeel,
       unit: "/ treatment",
     },
     {
       area: "Series of three (face)",
-      from: 1000,
+      from: 1200,
       unit: "/ 3 treatments",
     },
     {
       area: "VI Peel Body (back / chest / hands)",
-      from: 600,
+      from: 800,
       unit: "/ treatment",
     },
   ],
@@ -179,7 +180,7 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
     {
       n: "03",
       t: "Application",
-      c: "Layers are applied by Dr. Caridi personally. Warmth and brief tingling are normal; the room stays calm.",
+      c: "The peel is applied in layers by Dr. Caridi. Warmth and brief tingling are normal.",
     },
     {
       n: "04",
@@ -193,7 +194,7 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
     immediate: [
       {
         t: "Warmth & tingling",
-        c: "During application — fades within minutes.",
+        c: "During application, fades within minutes.",
       },
       {
         t: "Tightness",
@@ -201,20 +202,20 @@ export const chemicalPeelsDetail: TreatmentDetailContent = {
       },
       {
         t: "Mild redness",
-        c: "Similar to a light sunburn for the first day.",
+        c: "Similar to a light sunburn for up to 48 hours.",
       },
     ],
     aftercare: [
       "Leave the peel solution on as directed (typically 4 hours minimum for VI Peel®).",
       "Do not wash the face for the prescribed leave-on window.",
-      "Days 2–3: skin will begin to peel. Use only a gentle cleanser and the provided moisturizer — no picking.",
+      "Days 2–3: skin will begin to peel. Use only a gentle cleanser and the provided moisturizer. No picking.",
       "Daily broad-spectrum SPF 30+ is non-negotiable for the next two weeks.",
       "Skip retinol, exfoliants, scrubs, waxing, and laser in the treated area for two weeks.",
       "Avoid strenuous sweating, saunas, hot yoga, and direct sun for one week.",
       "Text the practice with any concerns. Dr. Caridi answers personally.",
     ],
     workReady:
-      "Camera-on meetings within 24–48 hours are usually fine. Plan visible events 7–10 days out, the peeling phase is short but noticeable.",
+      "Camera-on meetings within 3-5 days are usually fine. Plan visible events 1-2 weeks out, the peeling phase is short but noticeable.",
   },
 
   beforeAfter: [],

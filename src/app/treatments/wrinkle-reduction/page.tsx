@@ -8,10 +8,9 @@ import { botoxFAQSchema } from "@/content/schemas/treatments/botoxFAQSchema";
 import { JsonLd } from "@/components/JsonLD";
 
 export const metadata = createPageMetadata({
-    title: "Wrinkle Reduction | Botox, Daxxify & Xeomin Treatments in NYC",
-    description: "Smooth fine lines & wrinkles with botox at Caridi Concierge. Expert in-home neuromodulator treatments for a refreshed, natural look. Book now!",
+    title: "Wrinkle Reduction | Botox, Daxxify & Xeomin in NYC",
+    description: "Botox, Daxxify, and Xeomin to soften fine lines and wrinkles for a refreshed, natural look. In-home across NYC — book a consultation with Dr. Caridi.",
     path: "/treatments/wrinkle-reduction",
-    keywords: ["Caridi Concierge", "Aesthetic Treatments", "Botox", "Daxxify", "Xeomin", "In-Home Treatments", "Brooklyn", "New York City"],
     noIndex: false
 });
 

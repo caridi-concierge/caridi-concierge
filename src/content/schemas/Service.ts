@@ -1,9 +1,12 @@
 import { COMPANY } from '@/lib/constants/company';
+import { areaServed } from './areaServed';
+import { PRICES } from '@/lib/constants/pricing';
 
-const priceConsult = process.env.CONSULT_PRICE ?? 150;
-const priceBotox = process.env.PRICE_BOTOX ?? 12;
-const priceFillers = process.env.PRICE_FILLERS ?? 600;
-const priceBiostim = process.env.PRICE_BIOSTIM ?? 850;
+const priceConsult = PRICES.consult;
+const priceBotox = PRICES.botox;
+const priceFillers = PRICES.dermalFiller;
+const priceBiostim = PRICES.biostimulatoryFiller;
+const priceChemicalPeels = PRICES.chemicalPeel;
 
 export const botoxServiceSchema = {
     "@context": "https://schema.org",
@@ -16,15 +19,7 @@ export const botoxServiceSchema = {
       "name": COMPANY.name,
       "url": COMPANY.url,
     },
-    "areaServed": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": 40.6752831,
-        "longitude": -74.0130946
-      },
-      "geoRadius": 12875
-    },
+    "areaServed": areaServed,
     "offers": {
       "@type": "Offer",
       "url": `${COMPANY.url}/treatments/wrinkle-reduction`,
@@ -65,15 +60,7 @@ export const dermalFillerServiceSchema = {
       "name": COMPANY.name,
       "url": COMPANY.url
     },
-    "areaServed": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": 40.6752831,
-        "longitude": -74.0130946
-      },
-      "geoRadius": 12875
-    },
+    "areaServed": areaServed,
     "offers": {
       "@type": "Offer",
       "url": "https://caridiconcierge.com/treatments/dermal-fillers",
@@ -108,21 +95,13 @@ export const biostimulatoryFillerServiceSchema = {
     "@type": "Service",
     "serviceType": "Biostimulatory Filler Treatment",
     "name": "Biostimulatory Filler Treatment",
-    "description": "In-home biostimulatory filler treatments using products like Radiesse or Sculptra to build collagen in the skin and restore volume. Treatments are tailored and priced by unit.",
+    "description": "In-home biostimulatory filler treatments using Radiesse to build collagen in the skin and restore volume. Treatments are tailored and priced by unit.",
     "provider": {
       "@type": "LocalBusiness",
       "name": COMPANY.name,
       "url": COMPANY.url
     },
-    "areaServed": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": 40.6752831,
-        "longitude": -74.0130946
-      },
-      "geoRadius": 12875
-    },
+    "areaServed": areaServed,
     "offers": {
       "@type": "Offer",
       "url": "https://caridiconcierge.com/treatments/biostimulatory-fillers",
@@ -163,15 +142,7 @@ export const biostimulatoryFillerServiceSchema = {
       "name": COMPANY.name,
       "url": COMPANY.url,
     },
-    "areaServed": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": 40.6752831,
-        "longitude": -74.0130946
-      },
-      "geoRadius": 12875
-    },
+    "areaServed": areaServed,
     "offers": {
       "@type": "Offer",
       "url": `${COMPANY.url}/treatments/consult`,
@@ -193,6 +164,47 @@ export const biostimulatoryFillerServiceSchema = {
         "@type": "ScheduleAction",
         "target": COMPANY.bookingUrl,
         "name": "Book a Consultation",
+        "provider": {
+          "@type": "Organization",
+          "name": COMPANY.name
+        }
+      }
+    }
+  }
+
+  export const chemicalPeelsServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Chemical Peel",
+    "name": "Chemical Peel",
+    "description": "In-home medical-grade chemical peels, such as the VI Peel, to treat discoloration, melasma, acne marks, and uneven texture. Treatments are tailored and priced per treatment.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": COMPANY.name,
+      "url": COMPANY.url,
+    },
+    "areaServed": areaServed,
+    "offers": {
+      "@type": "Offer",
+      "url": `${COMPANY.url}/treatments/chemical-peels`,
+      "priceCurrency": "USD",
+      "price": `${priceChemicalPeels}`,
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": `${priceChemicalPeels}`,
+        "priceCurrency": "USD",
+        "unitText": "treatment",
+        "priceType": "FromPrice"
+      },
+      "eligibleRegion": {
+        "@type": "State",
+        "name": "New York"
+      },
+      "availability": "https://schema.org/InStock",
+      "potentialAction": {
+        "@type": "ScheduleAction",
+        "target": COMPANY.bookingUrl,
+        "name": "Book an appointment",
         "provider": {
           "@type": "Organization",
           "name": COMPANY.name
