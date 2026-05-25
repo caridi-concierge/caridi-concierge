@@ -9,15 +9,15 @@ export const metadata = {
 
 export default function UnauthorizedPage() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-merino text-outer-space px-6 text-center">
+    <main className="flex flex-col items-center justify-center min-h-screen bg-ivory-2 text-ink px-6 text-center">
       <Image
-        src="/images/caridi_concierge_flat_logo.svg"
+        src="/images/logos/caridi_concierge_flat_logo.svg"
         alt="Caridi Concierge logo"
         width={200}
         height={60}
         className="mb-6"
       />
-      <h1 className="font-fraunces text-3xl md:text-4xl mb-4">
+      <h1 className="font-display text-3xl md:text-4xl mb-4">
         Unauthorized
       </h1>
       <p className="text-sm md:text-base mb-8 max-w-md">

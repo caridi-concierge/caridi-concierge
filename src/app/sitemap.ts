@@ -12,7 +12,6 @@ const staticPages = [
   "about",
   "contact",
   "privacy-policy",
-  "products",
   "locations",
   "locations/gowanus",
   "locations/in-home",

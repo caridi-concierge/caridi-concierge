@@ -17,14 +17,115 @@ export const inHomeContent: LocationContent = {
       "private Botox NYC"
     ],
   },
+  hero: {
+    eyebrow: "In-home concierge",
+    title: "Care,",
+    italicTail: "at your door.",
+  },
+  spec: [
+    { label: "Service area", value: "5 boroughs · Manhattan & Brooklyn primary" },
+    { label: "Lead time", value: "Within 48 hours, typical" },
+    { label: "Visit length", value: "45 to 90 minutes" },
+    { label: "Hours", value: "Tuesday through Sunday" },
+  ],
   studioExperience: {
     title: "Physician-led care, in the comfort of your home",
     description:
       "In-home appointments are ideal if you value privacy, convenience, and a calm setting. I bring the same medical standards I use in a clinical space, including careful assessment, sterile supplies, and conservative technique, so your experience feels personal, safe, and unhurried.",
   },
+  overview: [
+    "There is a more elevated version of an aesthetics visit. One that begins at your front door, with no waiting room, no signage, and no rotation of practitioners. That's what I built Caridi Concierge for.",
+    "I bring sterile setup, pharmacy-grade products, and unhurried attention to your space. The clinical standard is identical to a studio visit; the experience is calmer because nothing about it is rushed.",
+    "Concierge appointments are available across all five boroughs of New York City. Manhattan and Brooklyn are routine; Queens, the Bronx, and Staten Island are accepted on request. Outside the map, just ask.",
+  ],
+  whatWeBring: [
+    {
+      label: "Sterile setup",
+      description:
+        "Single-use materials, dedicated tray, hospital-grade cleaning between every visit.",
+    },
+    {
+      label: "Pharmacy-grade products",
+      description:
+        "The same Botox, Daxxify, Xeomin, dermal fillers, and biostimulators I use in the clinic.",
+    },
+    {
+      label: "Topical anesthetic",
+      description:
+        "Numbing cream is applied where appropriate, with time to take effect before treatment.",
+    },
+    {
+      label: "A clean field",
+      description:
+        "A chair, lighting, and a sterile working area set up in about fifteen minutes.",
+    },
+    {
+      label: "Aftercare",
+      description:
+        "Written instructions before I leave and a follow-up message at forty-eight hours.",
+    },
+    {
+      label: "Discretion",
+      description:
+        "No branded arrival, no signage, no record of the visit anywhere visible to your building.",
+    },
+  ],
+  coverage: [
+    {
+      tier: "Primary",
+      areas:
+        "Manhattan and Brooklyn, Upper East, Upper West, West Village, Tribeca, SoHo, LES, Park Slope, Cobble Hill, Carroll Gardens, Red Hook, DUMBO.",
+    },
+    {
+      tier: "Extended",
+      areas:
+        "Queens · the Bronx · Staten Island, accepted on request, scheduled around routes.",
+    },
+    {
+      tier: "On request",
+      areas:
+        "Outside the five boroughs. Hotels and residences nearby, by arrangement.",
+    },
+  ],
+  process: [
+    {
+      meta: "Before the visit",
+      title: "Schedule and intake.",
+      description:
+        "Book online or by text. I'll send a brief health questionnaire and prep instructions ahead of the appointment.",
+    },
+    {
+      meta: "On arrival",
+      title: "Setup and consult.",
+      description:
+        "Sterile field, lighting, and a clean working area take about fifteen minutes. We finalize the plan together.",
+    },
+    {
+      meta: "The visit",
+      title: "Treatment, performed personally.",
+      description:
+        "Forty-five to ninety minutes, depending on the plan. Calm, conservative, careful.",
+    },
+    {
+      meta: "After",
+      title: "Two-week check-in.",
+      description:
+        "A message at forty-eight hours, and again at two weeks, to confirm everything has settled as expected.",
+    },
+  ],
+  doctorsNote: {
+    body: "In-home visits allow me to bring the same medical standards into a setting that feels more private, relaxed, and convenient.",
+    attr: "Cristina Caridi, MD",
+  },
   offerings: {
     title: "In-home Treatments",
     subtitle: "A discreet, physician-led visit with a focus on natural-looking outcomes",
+    treatments: [
+      "consult",
+      "wrinkle-reduction",
+      "dermal-fillers",
+      "biostimulatory-fillers",
+    ],
     services: [
   {
     title: "Wrinkle Reduction",
@@ -88,7 +189,7 @@ export const inHomeContent: LocationContent = {
     {
       question: "What areas do you serve for in-home visits?",
       answer:
-        "In-home appointments are available across Brooklyn, Manhattan, and parts of Greater NYC. If you’re unsure about coverage, text us and we’ll confirm availability.",
+        "In-home appointments are available across all five boroughs of New York City, with Manhattan and Brooklyn as our primary service area. Queens, the Bronx, and Staten Island are accepted on request. If you're outside the map, text the practice and we'll confirm availability.",
     },
     {
       question: "What do I need to prepare for an in-home visit?",
@@ -99,6 +200,11 @@ export const inHomeContent: LocationContent = {
       question: "How do you maintain safety and sterility in my home?",
       answer:
         "I use sterile, single-use supplies and follow strict medical protocols, including proper disposal of materials, the same way I would in a clinical setting.",
+    },
+    {
+      question: "How do I reach you after hours?",
+      answer:
+        "During clinic hours, we answer directly. After hours, an assistant takes your message and the practice follows up the next business day. For a true medical emergency, please call 911 or go to the nearest emergency room.",
     },
     {
       question: "Can I book evening or weekend appointments?",

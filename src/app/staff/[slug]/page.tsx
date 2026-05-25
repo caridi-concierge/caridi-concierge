@@ -2,8 +2,10 @@ import { notFound } from "next/navigation";
 import { staff } from "@/lib/constants/staff";
 import OtherStaffSection from "@/app/sections/staff/OtherStaff";
 import DoctorBioSection from "@/app/sections/staff/Bio";
+import StaffCredentialsSection from "@/app/sections/staff/StaffCredentials";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CTASection from "@/components/CTA";
 import { JsonLd } from "@/components/JsonLD";
 import { physicianSchema } from "@/content/schemas";
 import { createPageMetadata } from "@/lib/metadata";
@@ -50,7 +52,9 @@ export default async function DoctorPage({
       <JsonLd schema={physicianSchema}/>
       <Navbar />
       <DoctorBioSection staff={staffMember} />
+      <StaffCredentialsSection staff={staffMember} />
       <OtherStaffSection currentSlug={staffMember.slug} />
+      <CTASection variantKey="default" />
       <Footer />
     </>
   );

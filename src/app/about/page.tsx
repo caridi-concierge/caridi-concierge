@@ -1,18 +1,20 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AboutHero from "@/app/sections/about/AboutHero";
+import AboutModesSection from "@/app/sections/about/AboutModes";
 import AboutMissionSection from "@/app/sections/about/About";
-import AboutDoctorSection from "@/app/sections/about/AboutDoctor";
+import AboutLinksSection from "@/app/sections/about/AboutLinks";
 import FAQSection from "@/app/sections/home/FAQ";
 import CTASection from "@/components/CTA";
-import { JsonLd } from "@/components/JsonLD";
-import { physicianSchema } from "@/content/schemas";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
     title: "About Caridi Concierge | NYC’s Premier Mobile Aesthetic Clinic",
     description: "Discover Caridi Concierge, NYC’s premier aesthetic clinic specializing in botox & fillers. Bringing expert treatments directly to you. Learn more!",
     path: "/about",
+    image: "/images/headshots/cc_headshot_white_hq_crop_edit.webp",
+    imageAlt: "Dr. Cristina Caridi, founder of Caridi Concierge",
     keywords: ["Caridi Concierge", "About Us", "Aesthetic Medicine", "Botox", "Dermal Fillers", "In-Home Treatments", "Brooklyn", "New York City"],
     noIndex: false
 });
@@ -21,10 +23,11 @@ export const metadata = createPageMetadata({
 export default function AboutPage() {
     return (
         <>
-        <JsonLd schema={physicianSchema}/>
         <Navbar />
+        <AboutHero />
+        <AboutModesSection />
         <AboutMissionSection />
-        <AboutDoctorSection />
+        <AboutLinksSection />
         <FAQSection />
         <CTASection variantKey='contact' />
         <Footer />

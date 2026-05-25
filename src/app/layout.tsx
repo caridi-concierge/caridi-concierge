@@ -1,18 +1,24 @@
 import type { Metadata } from "next";
-import { Fraunces } from "next/font/google";
-import localFont from "next/font/local";
+import { Cormorant, Inter } from "next/font/google";
 import "../styles/global.css";
 import { businessSchema, websiteSchema, organizationSchema } from "@/content/schemas";
 import { JsonLd } from "@/components/JsonLD";
 import { GoogleTagManager } from "@next/third-parties/google";
 // import PromoBanner from "@/components/PromoBanner";
 
-const fraunces = Fraunces({
-  variable: "--f-fraunces",
+const cormorant = Cormorant({
+  variable: "--f-cormorant",
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500"],
   style: ["normal", "italic"],
+});
+
+const inter = Inter({
+  variable: "--f-inter",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -22,23 +28,11 @@ export const metadata: Metadata = {
     canonical: "https://www.caridiconcierge.com",
   },
   icons: {
-    icon: "/images/favicon.png",
-    shortcut: "/images/cc_contrast_favicon.png",
-    apple: "/images/cc_contrast_webclip.png",
+    icon: "/images/logos/favicon.png",
+    shortcut: "/images/logos/cc_contrast_favicon.png",
+    apple: "/images/logos/cc_contrast_webclip.png",
   },
 };
-
-const satoshi = localFont({
-  src: [
-    {
-      path: "../../public/fonts/Satoshi-Variable.woff2",
-      weight: "100 900",
-      style: "normal",
-    },
-  ],
-  variable: "--f-satoshi",
-  display: "swap",
-});
 
 export default function RootLayout({
   children,
@@ -46,8 +40,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${satoshi.variable} ${fraunces.variable}`}>
-      <body className="min-h-screen bg-merino">
+    <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
+      <body className="min-h-screen bg-ivory">
         <JsonLd schema={businessSchema} id="layout-business"/>
         <JsonLd schema={websiteSchema} id="layout-website"/>
         <JsonLd schema={organizationSchema} id="layout-organization"/>

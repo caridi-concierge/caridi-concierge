@@ -76,7 +76,7 @@ export default function CarouselBanner({
             {(currentSlide.title || currentSlide.subtitle || currentSlide.content || currentSlide.cta) && (
               <div className="hidden md:block absolute inset-0 pointer-events-none z-10" aria-hidden="true">
                 <div className="flex items-center h-full px-12">
-                  <div className="p-8 text-white font-fraunces max-w-2xl pointer-events-auto">
+                  <div className="p-8 text-white font-display max-w-2xl pointer-events-auto">
                     {currentSlide.title && (
                       <h2 className="text-4xl font-bold mb-2 drop-shadow-lg">
                         {currentSlide.title}
@@ -152,7 +152,7 @@ export default function CarouselBanner({
         {(currentSlide.title || currentSlide.subtitle || currentSlide.content || currentSlide.cta) && (
           <div className="md:hidden mt-6 text-outer-space">
             {currentSlide.title && (
-              <h2 className="font-fraunces text-2xl font-bold mb-2">
+              <h2 className="font-display text-2xl font-bold mb-2">
                 {currentSlide.title}
               </h2>
             )}

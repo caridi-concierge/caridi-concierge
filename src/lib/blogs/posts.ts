@@ -14,6 +14,10 @@ export type BlogPostMeta = {
   tags?: string[];
   category?: string;
   authorPage?: string;
+  /** Ordered list of explicit related-post slugs. Resolver tops up if fewer than n. */
+  related?: string[];
+  /** Treatment slug from `src/content/treatments/details/`. Falls back to category map. */
+  relatedTreatment?: string;
 };
 
 // Get all posts (metadata only)

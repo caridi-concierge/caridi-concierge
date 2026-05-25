@@ -102,7 +102,7 @@ export function ImageCarousel({
         {showHeader && (
           <div className="flex items-center justify-between gap-3">
             {headerText !== null ? (
-              <p className="font-satoshi text-sm font-bold text-outer-space/80">{headerText}</p>
+              <p className="font-body text-sm font-bold text-outer-space/80">{headerText}</p>
             ) : (
               <span aria-hidden="true" />
             )}

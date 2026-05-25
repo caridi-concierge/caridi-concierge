@@ -1,105 +1,98 @@
-"use client";
-
-import { Accordion, AccordionItem } from "@/components/Accordion";
-import { COMPANY } from "@/lib/constants/company";
-import Container from "@/components/Container";
 import Link from "next/link";
+import { Accordion, AccordionItem } from "@/components/Accordion";
+import Eyebrow from "@/components/Eyebrow";
+import { COMPANY } from "@/lib/constants/company";
 
 export default function FAQSection() {
   return (
-    <section className="bg-merino py-20">
-      <Container className="container mx-auto grid grid-cols-1 gap-12 items-start">
-        {/* Left heading */}
-        <div>
-          <h2 className="font-fraunces text-3xl md:text-4xl text-outer-space">
-            Frequently asked questions
-          </h2>
+    <section className="bg-ivory text-ink">
+      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-20 py-20 lg:py-[120px]">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-14 lg:gap-20 items-start">
+          {/* Left: heading */}
+          <div>
+            <Eyebrow withDash className="text-brass mb-4">
+              Considerations
+            </Eyebrow>
+            <h2 className="font-display font-light text-[40px] sm:text-5xl lg:text-[52px] leading-[1.05]">
+              Frequently{" "}
+              <em className="not-italic italic font-light">asked.</em>
+            </h2>
+            <p className="mt-6 font-body text-sm leading-[1.7] text-ink/70 max-w-[320px]">
+              For anything not covered here, the practice replies personally—
+              usually within the day.
+            </p>
+          </div>
+
+          {/* Right: accordion */}
+          <div>
+            <Accordion>
+              <AccordionItem title="How do I schedule an appointment?">
+                <p>
+                  Book online, or call/text the practice directly through{" "}
+                  <Link href="/book?source=home_faq" className="text-brass underline underline-offset-2">
+                    our booking page
+                  </Link>
+                  . New clients begin with a 60-minute consultation in your
+                  home or our studio. Same-day visits are available on a
+                  limited basis.
+                </p>
+                <p className="mt-3">
+                  Call/text:{" "}
+                  <a href={COMPANY.phoneHref} className="text-brass underline underline-offset-2">
+                    {COMPANY.phone}
+                  </a>
+                  <br />
+                  Email:{" "}
+                  <a href={COMPANY.emailHref} className="text-brass underline underline-offset-2">
+                    {COMPANY.email}
+                  </a>
+                </p>
+              </AccordionItem>
+
+              <AccordionItem title="What treatments do you offer?">
+                <p>
+                  Neuromodulators (Botox, Xeomin, Daxxify), dermal fillers
+                  (RHA, Juvederm), biostimulators (Radiesse),
+                  medical-grade peels, and aesthetic consultations. Treatments
+                  are tailored to face, lips, neck, and jawline.
+                </p>
+              </AccordionItem>
+
+              <AccordionItem title="Are in-home treatments safe?">
+                <p>
+                  Yes. All treatments are performed personally by Dr. Caridi
+                  using sterile technique and medical-grade supplies—the same
+                  standard you&apos;d expect in a medical office, with the
+                  privacy of your own setting.
+                </p>
+              </AccordionItem>
+
+              <AccordionItem title="Where are your NYC service areas?">
+                <p>
+                  Concierge service throughout Brooklyn, Manhattan, and Queens,
+                  with a private studio in Gowanus. Select appointments available 
+                  in Staten Island, the Bronx, and Long Island.
+                </p>
+                <p className="mt-3">
+                  See{" "}
+                  <Link href="/locations" className="text-brass underline underline-offset-2">
+                    our locations page
+                  </Link>{" "}
+                  for more information.
+                </p>
+              </AccordionItem>
+
+              <AccordionItem title="How is privacy handled?">
+                <p>
+                  Discretion is the practice. No signage, no shared waiting
+                  rooms, no record of your visit beyond your medical chart.
+                  Communication is direct, by your preferred channel.
+                </p>
+              </AccordionItem>
+            </Accordion>
+          </div>
         </div>
-
-        {/* Right accordion */}
-        <div>
-          <Accordion className="py-5">
-            <AccordionItem title="How do I schedule an appointment?">
-              <p>
-                You can schedule an appointment by calling or booking online
-                through the website. Visit our{" "}
-                <a href="/book" className="text-carnation font-medium underline">
-                  our booking page
-                </a>{" "}
-                to schedule your tailored experience today!
-                <br />
-                <br />
-                Call/text: <a href={COMPANY.phoneHref} className="text-carnation font-medium underline">{COMPANY.phone}</a>
-                <br />
-                Email: <a href={COMPANY.emailHref} className="text-carnation font-medium underline">{COMPANY.email}</a>
-                <br />
-                I am available for in-home treatments in Brooklyn, Manhattan, Queens, Staten Island, The Bronx, and Long Island.
-              </p>
-            </AccordionItem>
-
-            <AccordionItem title="What kind of services do you offer?">
-              <p>
-                I offer restorative treatments that enhance your natural
-                features. This includes wrinkle reduction, lip flips, gummy
-                smile correction, and crow’s feet using neuromodulators like
-                Botox, Xeomin, and Daxxify. For volume and contour, I use dermal
-                and biostimulatory fillers, such as RHA, Radiesse, and Juvederm.
-                Treatments can be tailored to the lips, face, neck, and even the
-                butt.
-              </p>
-            </AccordionItem>
-
-            <AccordionItem title="Do you have same-day appointments available?">
-              <p>
-                Sometimes, yes. I offer same-day appointments on a limited
-                basis. Please{" "}
-                <a
-                  href={COMPANY.phoneHref}
-                  className="text-carnation font-medium underline"
-                >
-                  call
-                </a>{" "}
-                to ask about availability.
-              </p>
-            </AccordionItem>
-
-            <AccordionItem title="Are treatments safe to do at home?">
-              <p>
-                Yes. Your safety is my top priority. I perform all treatments
-                myself, using sterile technique and medical-grade supplies. You
-                can expect the same standards you would find in a medical
-                office, along with the added comfort and privacy of your own
-                space.
-              </p>
-            </AccordionItem>
-
-            <AccordionItem title="Where are your NYC locations?">
-              <div>
-                For <strong>concierge service</strong>, wherever you are! I can, however, offer a more flexible schedule
-                in the following areas:
-                <br />
-                <br />
-                <strong>West Brooklyn</strong> | Red Hook, Columbia Waterfront,
-                Carroll Gardens, Boerum Hill, Cobble Hill, Dumbo, Gowanus, Park
-                Slope, South Slope, etc.
-                <br />
-                <strong>Central Brooklyn</strong> | Downtown Brooklyn, Clinton
-                Hill, Fort Greene, Prospect Heights, etc.
-                <br />
-                <strong>Lower Manhattan</strong> | Lower East Side, SoHo,
-                Tribeca, Financial District (FiDi), West Village, etc.
-
-                <br />
-                <br />
-                For <strong>in-office service</strong>, visit our clinic in <u>Gowanus</u> starting January 2026!
-                <br />
-                <br />
-                See <Link href="/locations" className="text-carnation font-medium underline">our locations page</Link> for more information.
-              </div>
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </Container>
+      </div>
     </section>
   );
 }

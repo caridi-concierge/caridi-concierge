@@ -6,7 +6,7 @@ export const physicianSchema = {
     "name": "Cristina Caridi, MD",
     "jobTitle": "Founder and Aesthetic Medicine Physician",
     "gender": "Female",
-    "image": `${COMPANY.url}/images/cc_headshot_white_hq_crop_edit.webp`,
+    "image": `${COMPANY.url}/images/headshots/cc_headshot_white_hq_crop_edit.webp`,
     "description": "Dr. Cristina Caridi is a board-certified pediatrician and founder of Caridi Concierge, offering in-home aesthetic services such as Botox, dermal fillers, and biostimulatory fillers to clients across Brooklyn and NYC.",
     "url": `${COMPANY.url}/staff/cristina-caridi`,
     "medicalLicense": "NY License 311227",

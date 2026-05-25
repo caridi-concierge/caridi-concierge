@@ -22,12 +22,14 @@ export const LOCATIONS = [
         
         description:
           "A quiet, clinical space in the heart of Gowanus. Available on select days. A private setting for injectable treatments.",
-        
+
+        statusLine: "Open Wednesdays",
+
         ctaSecondaryLabel: "Get Directions",
         ctaSecondaryHref: "https://maps.google.com/?q=south+slope+oral+surgery+brooklyn+4th+ave",
         
         ctaPrimaryLabel: "Book in Gowanus",
-        ctaPrimaryHref: "/book",
+        ctaPrimaryHref: "/book?source=location_gowanus",
         
         ctaTertiaryLabel: "Book on Zocdoc",
         ctaTertiaryHref: "https://www.zocdoc.com/practice/caridi-concierge-medicine-146934?lock=true&isNewPatient=false&referrerType=widget",
@@ -68,9 +70,11 @@ export const LOCATIONS = [
         
         description:
           "Physician-led Botox and filler treatments delivered to your home. A convenient, discreet option for receiving care without leaving your space.",
-        
+
+        statusLine: "Tuesday through Sunday",
+
         ctaPrimaryLabel: "Book In-Home Visit",
-        ctaPrimaryHref: "/book",
+        ctaPrimaryHref: "/book?source=location_in-home",
         
         ctaSecondaryLabel: "Text Us",
         ctaSecondaryHref: COMPANY.smsHref,
@@ -116,8 +120,10 @@ export const LOCATIONS = [
         },
         
         description:
-          "A private studio in Red Hook. Invite Only.",
-        
+          "A quieter setting for unhurried visits, scheduled in advance with established clients of the practice.",
+
+        statusLine: "By invitation",
+
         ctaPrimaryLabel: "",
         ctaPrimaryHref: "",
         

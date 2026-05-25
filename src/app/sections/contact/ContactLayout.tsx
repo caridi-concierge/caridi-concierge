@@ -1,20 +1,13 @@
-import ContactInfoCard from "@/app/sections/contact/ContactInfo";
+import ContactHero from "@/app/sections/contact/ContactHero";
 import ContactFormCard from "@/app/sections/contact/ContactForm";
-import Container from "@/components/Container";
+import ContactHoursPlaces from "@/app/sections/contact/ContactHoursPlaces";
 
 export default function ContactLayout() {
   return (
-    <section className="py-16 bg-champagne">
-      <Container className="container mx-auto px-4">
-        <h1 className="font-fraunces text-3xl md:text-4xl text-midnight mb-12 text-center">
-          Your Direct Line to Caridi Concierge
-        </h1>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          <ContactFormCard />
-          <ContactInfoCard />
-        </div>
-      </Container>
-    </section>
+    <main className="bg-ivory text-ink">
+      <ContactHero />
+      <ContactFormCard />
+      <ContactHoursPlaces />
+    </main>
   );
 }

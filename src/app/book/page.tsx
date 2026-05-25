@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { COMPANY } from "@/lib/constants/company";
 import PrimaryButton from "@/components/PrimaryButton";
+import { pushEvent } from "@/lib/analytics";
 
 export default function BookingRedirectPage() {
   const hasRedirected = useRef(false);
@@ -11,6 +12,14 @@ export default function BookingRedirectPage() {
   useEffect(() => {
     if (!hasRedirected.current) {
       hasRedirected.current = true;
+      // Fire before the external redirect. This single event captures every
+      // booking intent regardless of which CTA funneled here. `source` reads
+      // an optional ?source= param (CTAs can set it later) else the referrer.
+      const source =
+        new URLSearchParams(window.location.search).get("source") ||
+        document.referrer ||
+        "direct";
+      pushEvent("begin_booking", { booking_provider: "jane", source });
       window.location.replace(COMPANY.bookingUrl);
     }
   }, []);

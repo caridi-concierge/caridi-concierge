@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { COMPANY } from '@/lib/constants/company';
 import { ChevronDown } from "lucide-react";
+import { pushEvent } from "@/lib/analytics";
 
 
 const SERVICE_SMS_LABELS: Record<string, string> = {
@@ -31,15 +32,6 @@ function buildSmsUrl(baseHref: string, body: string) {
   return `${baseHref}${joinChar}body=${encodeURIComponent(body)}`;
 }
 
-const trackEvent = (eventName: string, params?: Record<string, unknown>) => {
-  if (typeof window !== 'undefined' && window.dataLayer) {
-    window.dataLayer.push({
-      event: eventName,
-      ...params
-    });
-  }
-};
-
 export function SMSContactWidget() {
   const [isVisible, setIsVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -58,14 +50,14 @@ export function SMSContactWidget() {
 
   const handleOpen = () => {
     setIsOpen(true);
-    trackEvent('widget_opened', {
+    pushEvent('widget_opened', {
       widget_type: 'sms_contact'
     });
   };
 
   const handleClose = () => {
     setIsOpen(false);
-    trackEvent('widget_closed', {
+    pushEvent('widget_closed', {
       widget_type: 'sms_contact'
     });
   };
@@ -73,7 +65,7 @@ export function SMSContactWidget() {
   const handleDismiss = () => {
     setIsVisible(false);
     setIsOpen(false);
-    trackEvent('widget_dismissed', {
+    pushEvent('widget_dismissed', {
       widget_type: 'sms_contact'
     });
   };
@@ -83,7 +75,7 @@ export function SMSContactWidget() {
 
     const message = buildPrefilledMessage(name.trim(), service);
 
-    trackEvent("widget_sms_initiated", {
+    pushEvent("widget_sms_initiated", {
       widget_type: "sms_contact",
       service_selected: service || "none",
       has_name: !!name.trim(),

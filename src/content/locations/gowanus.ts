@@ -14,14 +14,90 @@ export const gowanusContent: LocationContent = {
       "Wrinkle reduction Brooklyn",
     ]
   },
+  hero: {
+    eyebrow: "Gowanus clinic",
+    title: "The clinic,",
+    italicTail: "in Gowanus.",
+  },
+  spec: [
+    { label: "Address", value: "472 4th Ave, Brooklyn" },
+    { label: "Hours", value: "Wednesdays · 9 to 7" },
+    { label: "Visit length", value: "45 to 90 minutes" },
+    { label: "Transit", value: "R at Union St · street parking" },
+  ],
   studioExperience: {
     title: "A private clinical setting in Gowanus",
     description:
       "The Gowanus location offers a quiet, clinical environment for patients who prefer an in-office appointment. I use this setting for treatments that benefit from a controlled space and unhurried consultation. Every visit is physician-led, conservative in approach, and focused on results that look natural and intentional."
   },
+  overview: [
+    "Some visits are easier when the setting is clinical. The Gowanus space is a small, private clinic. Controlled, quiet, and reserved for one client at a time.",
+    "I see patients here on Wednesdays. The schedule is intentionally narrow so that every visit has space to breathe, time for an unhurried consult, time for the treatment itself, time to answer whatever comes up after.",
+    "If you'd rather receive the same care at home, in-home concierge visits run the rest of the week. Either route gets you to me, personally.",
+  ],
+  space: [
+    {
+      label: "Setting",
+      value:
+        "A single, private clinical space. Controlled, quiet, and dedicated to one appointment at a time.",
+    },
+    {
+      label: "Privacy",
+      value:
+        "No waiting room, no shared appointments, no overlap with other patients.",
+    },
+    {
+      label: "Equipment",
+      value:
+        "Sterile workstation and pharmacy-grade products kept on site for every visit.",
+    },
+    {
+      label: "Access",
+      value:
+        "Ground-floor entry at 472 4th Avenue. Street parking nearby; the R at Union St is a four-minute walk.",
+    },
+  ],
+  process: [
+    {
+      meta: "Before the visit",
+      title: "Schedule and intake.",
+      description:
+        "Book online or by text. I'll send a brief health questionnaire and any pre-visit guidance ahead of the appointment.",
+    },
+    {
+      meta: "Arrival",
+      title: "472 4th Avenue, Brooklyn.",
+      description:
+        "Street parking on 4th Avenue or surrounding streets, or the R train at Union Street. Walk in, there's no waiting room because there's no other appointment.",
+    },
+    {
+      meta: "The visit",
+      title: "Consult and treatment.",
+      description:
+        "Forty-five to ninety minutes for consult, treatment, and post-care discussion. We move only as fast as the work calls for.",
+    },
+    {
+      meta: "After",
+      title: "Aftercare and follow-up.",
+      description:
+        "Written aftercare before you leave, a message at forty-eight hours, and a two-week check-in.",
+    },
+  ],
+  doctorsNote: {
+    body:
+      "The Gowanus location is a more traditional medical setting. Its a great option for clents that arent interested in in-home treatments.",
+    attr: "Cristina Caridi, MD",
+  },
   offerings: {
-    title: 'Our Treatments',
+    title: 'Treatments at Gowanus',
     subtitle: 'Physician-led injectables, tailored to your anatomy and goals',
+    treatments: [
+      "consult",
+      "wrinkle-reduction",
+      "dermal-fillers",
+      "biostimulatory-fillers",
+      "chemical-peels",
+    ],
     services: [
       {
         title: "Wrinkle Reduction",
@@ -90,7 +166,7 @@ export const gowanusContent: LocationContent = {
     {
       question: "What treatments do you offer at the Gowanus location?",
       answer:
-        "The Gowanus location offers physician-led wrinkle reduction with Botox, dermal fillers, and biostimulatory fillers. Treatments are planned conservatively and tailored to your anatomy and goals."
+        "The Gowanus location offers physician-led wrinkle reduction with Botox, dermal fillers, biostimulatory fillers, chemical peels, and consultations. Treatments are planned conservatively and tailored to your anatomy and goals."
     },
     {
       question: 'Is parking available at the Gowanus location?',

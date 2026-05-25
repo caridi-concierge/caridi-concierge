@@ -1,10 +1,11 @@
 import { TreatmentMetadata } from "@/model/treatments/Treatment";
+import { PRICES } from "@/lib/constants/pricing";
 
-const priceConsult = process.env.PRICE_CONSULT ?? 150;
-const priceBotox = process.env.PRICE_BOTOX ?? 12;
-const priceFillers = process.env.PRICE_FILLERS ?? 600;
-const priceBiostim = process.env.PRICE_BIOSTIM ?? 850;
-const priceChemicalPeels = process.env.PRICE_CHEMICAL_PEELS ?? 400;
+const priceConsult = PRICES.consult;
+const priceBotox = PRICES.botox;
+const priceFillers = PRICES.dermalFiller;
+const priceBiostim = PRICES.biostimulatoryFiller;
+const priceChemicalPeels = PRICES.chemicalPeel;
 
 export const treatments: TreatmentMetadata[] = [
   {
@@ -22,16 +23,20 @@ export const treatments: TreatmentMetadata[] = [
     ],
     products: "Consultation only",
     imgSrc:
-      "/images/consult_tx.webp",
+      "/images/treatments/consult_2.webp",
     imgAlt:
       "Decorative image for the Consultation treatment page. Botox and fillers consultation",
     startingPrice: `$${priceConsult}`,
     note: "Decide you want services? We waive the fee.",
     frequency: "Schedule as needed for personalized guidance",
-    bookHref: "/book",
+    bookHref: "/book?source=card_consult",
     ctaHref: "/treatments/consult",
     ctaText: "Learn More",
     ctaVariant: "alt",
+    category: "Consults",
+    from: priceConsult,
+    unit: "· credited to first visit",
+    duration: "60 min",
   },
   {
     id: "botox",
@@ -53,16 +58,21 @@ export const treatments: TreatmentMetadata[] = [
     ],
     products: "Botox, Xeomin, Daxxify",
     imgSrc:
-      "/images/botox_tx.webp",
+      "/images/treatments/botox_crowsfeet_tx.webp",
     imgAlt:
       "Decorative image for the Wrinkle Reduction treatment page. Botox, Xeomin, Daxxify. Botox can be used to smooth wrinkles and soften fine lines, crows feet, 11s, and lip flips",
     startingPrice: `$${priceBotox}/unit`,
     note: "Typical treatment: 20-60 units",
     frequency: "This treatment should be repeated every 2-4 months.",
-    bookHref: "/book",
+    bookHref: "/book?source=card_wrinkle-reduction",
     ctaHref: "/treatments/wrinkle-reduction",
     ctaText: "Learn More",
     ctaVariant: "alt",
+    category: "Neuromodulators",
+    from: priceBotox,
+    unit: "/ unit",
+    duration: "30–45 min",
+    featured: true,
   },
   {
     id: "fillers",
@@ -81,16 +91,20 @@ export const treatments: TreatmentMetadata[] = [
     ],
     products: "Juvederm, RHA Collection",
     imgSrc:
-      "/images/lips_tx.webp",
+      "/images/treatments/filler_lip_tx.webp",
     imgAlt:
       "Decorative image for the Dermal Fillers page. RHA Collection, Juvederm. Juvederm can be used to restore lost volume to areas like the face, lips, neck, butt and arms.",
     startingPrice: `$${priceFillers}/syringe`,
     note: "Most areas require 1-2 syringes",
     frequency: "This treatment should be repeated every 4-6 months.",
-    bookHref: "/book",
+    bookHref: "/book?source=card_dermal-fillers",
     ctaHref: "/treatments/dermal-fillers",
     ctaText: "Learn More",
     ctaVariant: "alt",
+    category: "Filler",
+    from: priceFillers,
+    unit: "/ syringe",
+    duration: "45–60 min",
   },
   {
     id: "biostim",
@@ -102,7 +116,7 @@ export const treatments: TreatmentMetadata[] = [
     },
     hook: "Build collagen for lasting rejuvenation.",
     description:
-      "Biostimulatory fillers encourage your body to produce its own collagen, gradually restoring volume and improving skin texture from within. Common options include Radiesse and Sculptra.",
+      "Biostimulatory fillers encourage your body to produce its own collagen, gradually restoring volume and improving skin texture from within. A popular option is Radiesse.",
     highlights: [
       "Stimulate natural collagen production for long-term results",
       "Restore volume to cheeks, temples, and jawline",
@@ -110,18 +124,22 @@ export const treatments: TreatmentMetadata[] = [
       "Ideal for deeper volume loss and facial structure",
       "Results last 2+ years with gradual improvement",
     ],
-    products: "Radiesse, Sculptra",
+    products: "Radiesse",
     imgSrc:
-      "/images/biostim2_tx.webp",
+      "/images/treatments/filler_chin_tx.webp",
     imgAlt:
-      "Decorative icon for biostimulatory fillers treatments page. Radiesse, Sculptra. Radiesse can be used to build collagen for long-term results, restore lost volume to areas like the face, lips, neck, butt and arms.",
+      "Patient receiving biostimulatory filler treatment in their chin. Radiesse is injected to build collagen for long-term results.",
     startingPrice: `$${priceBiostim}/syringe`,
     note: "Treatment series recommended",
     frequency: "A series of 3 treatments, spaced 6 weeks apart. Followed by yearly maintenance.",
-    bookHref: "/book",
+    bookHref: "/book?source=card_biostimulatory-fillers",
     ctaHref: "/treatments/biostimulatory-fillers",
     ctaText: "Learn More",
     ctaVariant: "alt",
+    category: "Skin",
+    from: priceBiostim,
+    unit: "/ syringe",
+    duration: "45 min",
   },
   {
     id: "chemical-peels",
@@ -139,15 +157,19 @@ export const treatments: TreatmentMetadata[] = [
     ],
     products: "VI Peel®",
     imgSrc:
-      "/images/peel_tx.webp",
+      "/images/treatments/facial_chemical_peel_1500px.webp",
     imgAlt:
       "Chemical peel treatment illustration for the Caridi Concierge chemical peels page. VI Peel®. VI Peel® can be used to improve uneven tone, surface texture, acne, and pigmentation with minimal downtime.",
     startingPrice: `$${priceChemicalPeels}/treatment`,
     note: "Treatment series recommended",
     frequency: "This treatment should be repeated every 2-4 months.",
-    bookHref: "/book",
+    bookHref: "/book?source=card_chemical-peels",
     ctaHref: "/treatments/chemical-peels",
     ctaText: "Learn More",
     ctaVariant: "alt",
+    category: "Skin",
+    from: priceChemicalPeels,
+    unit: "",
+    duration: "30 min",
   }
 ];

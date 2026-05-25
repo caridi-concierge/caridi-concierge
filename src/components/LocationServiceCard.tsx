@@ -1,6 +1,5 @@
-// components/LocationServiceCard.tsx
 import Link from "next/link";
-import PrimaryButton from "@/components/PrimaryButton";
+import IconArrow from "@/components/icons/IconArrow";
 
 type BadgeVariant = "new" | "private" | "popular";
 
@@ -23,53 +22,46 @@ export default function LocationServiceCard({
   ctaText = "Learn more",
   badge,
 }: LocationServiceCardProps) {
-  const badgeStyles: Record<BadgeVariant, string> = {
-    popular: "bg-dimgray text-white",
-    new: "bg-emerald-600 text-white",
-    private: "bg-outer-space text-alabaster",
-  };
-
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300 relative h-full flex flex-col">
+    <article className="relative flex h-full flex-col gap-5 p-7 sm:p-9">
       {badge && (
-        <span
-          className={`absolute top-5 right-5 px-3 py-1 rounded-full text-xs font-semibold ${
-            badgeStyles[badge.variant ?? "popular"]
-          }`}
-        >
-          {badge.text}
+        <span className="absolute top-7 right-7 font-body text-[9px] font-medium tracking-[0.32em] uppercase text-brass">
+          — {badge.text}
         </span>
       )}
 
-      <div className="mb-5 pr-20">
-        <h3 className="font-fraunces text-2xl text-outer-space">{title}</h3>
-        {subtitle ? (
-          <p className="text-outer-space/70 mt-1">{subtitle}</p>
-        ) : null}
+      <div>
+        <h3 className="font-display font-normal text-[26px] sm:text-[30px] leading-[1.1] text-ink">
+          {title}
+        </h3>
+        {subtitle && (
+          <p className="mt-2 font-body text-[13px] leading-[1.55] text-ink/55">
+            {subtitle}
+          </p>
+        )}
       </div>
 
-      <p className="text-outer-space/80 leading-relaxed mb-6">{whyHere}</p>
+      <p className="font-body text-[14px] leading-[1.7] text-ink/70">
+        {whyHere}
+      </p>
 
-      <ul className="space-y-2 mb-8 text-[15px] text-outer-space flex-grow">
+      <ul className="flex-1 space-y-2.5 font-body text-[14px] leading-[1.6] text-ink/70">
         {bullets.map((b) => (
-          <li key={b} className="flex items-start gap-2">
-            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-outer-space/50 flex-shrink-0" />
+          <li key={b} className="flex gap-2.5">
+            <span aria-hidden="true" className="text-brass">·</span>
             <span>{b}</span>
           </li>
         ))}
       </ul>
 
-      <div className="mt-auto flex flex-col items-center justify-center">
-        <PrimaryButton
-          ariaLabel={`Learn more about ${title}`}
-          id={`learn-more-${title.toLowerCase().replace(/\s+/g, "-")}`}
-          href={ctaHref} 
-          variant="alt" 
-          className="text-sm px-6 py-1.5"
-        >
-          {ctaText}
-        </PrimaryButton>
-      </div>
-    </div>
+      <Link
+        href={ctaHref}
+        className="mt-2 inline-flex items-center gap-2 font-body text-[11px] font-medium uppercase tracking-[0.32em] text-ink transition-colors duration-200 hover:text-brass"
+        aria-label={`Learn more about ${title}`}
+        id={`learn-more-${title.toLowerCase().replace(/\s+/g, "-")}`}
+      >
+        {ctaText} <IconArrow className="w-3 h-3" />
+      </Link>
+    </article>
   );
 }
