@@ -1,7 +1,7 @@
 
 # Caridi Concierge
 
-![Logo](public/images/caridi_concierge_logo_contrast_fraunces.svg)
+![Logo](public/images/logos/caridi_concierge_contrast_logo_cormorant.svg)
 
 Caridi Concierge is a medical aesthetic practice specializing in non-surgical aesthetic treatments to improve the appearance of wrinkles, restore volume loss, and improve confidence.
 

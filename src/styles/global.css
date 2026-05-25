@@ -37,9 +37,6 @@
     --font-sans: var(--f-inter), system-ui, sans-serif;
     --font-display: var(--f-cormorant), 'Cormorant Garamond', ui-serif, Georgia, serif;
     --font-body: var(--f-inter), -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-    /* Compat aliases — existing font-fraunces / font-satoshi classes keep working */
-    --font-fraunces: var(--f-cormorant), 'Cormorant Garamond', ui-serif, Georgia, serif;
-    --font-satoshi: var(--f-inter), -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 
     /* Editorial tracking */
     --tracking-eyebrow: 0.32em;

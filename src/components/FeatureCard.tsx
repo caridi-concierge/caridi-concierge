@@ -16,7 +16,7 @@ export default function FeatureCard({ title, subtitle }: FeatureCardProps) {
           height={20}
           className="text-outer-space"
         />
-        <p className="font-fraunces font-semibold text-lg">{title}</p>
+        <p className="font-display font-semibold text-lg">{title}</p>
       </div>
       <p className="text-outer-space/80 text-sm">{subtitle}</p>
     </div>

@@ -50,7 +50,7 @@ export default function CountdownTimer({
       ].map((item) => (
         <div key={item.label} className="text-center">
           <div className="bg-white text-outer-space rounded-lg px-4 py-3 md:px-6 md:py-4 min-w-[70px] md:min-w-[90px]">
-            <span className="text-3xl md:text-4xl font-bold font-fraunces">
+            <span className="text-3xl md:text-4xl font-bold font-display">
               {String(item.value).padStart(2, "0")}
             </span>
           </div>

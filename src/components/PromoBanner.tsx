@@ -26,7 +26,7 @@ export default function PromoBanner({
 
   return (
     <div className={`${bgColor} ${textColor} py-2 px-4 relative`}>
-      <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 text-sm font-fraunces md:text-base">
+      <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 text-sm font-display md:text-base">
         <span className="text-center">
           {text}{" "}
           <Link
