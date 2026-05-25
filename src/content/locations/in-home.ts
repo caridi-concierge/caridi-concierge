@@ -34,7 +34,7 @@ export const inHomeContent: LocationContent = {
       "In-home appointments are ideal if you value privacy, convenience, and a calm setting. I bring the same medical standards I use in a clinical space, including careful assessment, sterile supplies, and conservative technique, so your experience feels personal, safe, and unhurried.",
   },
   overview: [
-    "There is a quieter version of an aesthetics visit — one that begins at your front door, with no waiting room, no signage, and no rotation of practitioners. That's what I built Caridi Concierge for.",
+    "There is a more elevated version of an aesthetics visit. One that begins at your front door, with no waiting room, no signage, and no rotation of practitioners. That's what I built Caridi Concierge for.",
     "I bring sterile setup, pharmacy-grade products, and unhurried attention to your space. The clinical standard is identical to a studio visit; the experience is calmer because nothing about it is rushed.",
     "Concierge appointments are available across all five boroughs of New York City. Manhattan and Brooklyn are routine; Queens, the Bronx, and Staten Island are accepted on request. Outside the map, just ask.",
   ],

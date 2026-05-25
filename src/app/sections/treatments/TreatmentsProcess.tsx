@@ -26,7 +26,7 @@ export default function TreatmentsProcess() {
           What a visit looks like
         </Eyebrow>
         <h2 className="font-display font-light text-[40px] sm:text-5xl lg:text-[56px] leading-[1.05] max-w-[760px] mb-14 lg:mb-[60px]">
-          Three quiet steps.{" "}
+          Three simple steps.{" "}
           <em className="not-italic italic font-light text-brass">
             No surprises.
           </em>
