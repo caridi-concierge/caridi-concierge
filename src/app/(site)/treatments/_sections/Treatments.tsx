@@ -6,7 +6,7 @@ import { treatments } from "@/content/treatments";
 export default function TreatmentsSection() {
   return (
     <section className="py-16 bg-merino">
-      <h1 className="font-fraunces text-3xl md:text-4xl text-center text-outer-space mb-12">
+      <h1 className="font-display text-3xl md:text-4xl text-center text-outer-space mb-12">
         Signature Aesthetic Treatments
       </h1>
       <div className="w-full bg-merino py-12">
@@ -31,7 +31,7 @@ export default function TreatmentsSection() {
                 </Link>
                 {/* Card content */}
                 <div className="flex flex-col flex-1 p-6 text-center w-full">
-                  <h2 className="font-fraunces text-xl text-charcoal mb-3">
+                  <h2 className="font-display text-xl text-charcoal mb-3">
                     {treatment.title}
                   </h2>
                   <p className="text-sm text-gray-700 mb-6">
@@ -43,10 +43,10 @@ export default function TreatmentsSection() {
                   
                   {/* Pricing Section */}
                   <div className="mb-6 py-3 px-4 bg-peach-puff/30 rounded-lg">
-                    <p className="font-satoshi text-xs text-gray-600 mb-1">
+                    <p className="font-body text-xs text-gray-600 mb-1">
                       Starting at
                     </p>
-                    <p className="font-fraunces text-2xl text-outer-space font-semibold">
+                    <p className="font-display text-2xl text-outer-space font-semibold">
                       {treatment.startingPrice}
                     </p>
                     {treatment.note && (

@@ -38,7 +38,7 @@ export default function AboutHero() {
               </em>
             </h1>
             <p className="mt-8 max-w-[560px] text-[17px] leading-[1.7] font-light text-ink/70">
-              I&apos;m Dr. Cristina Caridi. Caridi Concierge is my practice — a
+              I&apos;m Dr. Cristina Caridi. Caridi Concierge is my practice. It&apos;s a
               small, by-appointment aesthetic medicine clinic serving private
               clients across New York City. Every consultation, plan, and
               treatment is performed personally.

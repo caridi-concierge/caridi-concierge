@@ -18,7 +18,7 @@ export const faqSchema = {
         name: "What aesthetic services do you offer?",
         acceptedAnswer: {
             "@type": "Answer",
-            text: "We offer wrinkle relaxing botox treatments (Botox, Daxxify, Xeomin), dermal filler treatments (RHA, Jeuveau), and collagen-building biostimulatory fillers (Radiesse, Sculptra). All treatments are administered safely and privately in the comfort of your own space.",
+            text: "We offer wrinkle relaxing botox treatments (Botox, Daxxify, Xeomin), dermal filler treatments (RHA, Jeuveau), and collagen-building biostimulatory fillers (Radiesse). All treatments are administered safely and privately in the comfort of your own space.",
         },
         },
         {

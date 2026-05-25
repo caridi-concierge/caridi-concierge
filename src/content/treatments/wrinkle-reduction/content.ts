@@ -16,7 +16,7 @@ export const content: TreatmentDetailContent = {
   number: "01",
 
   title: "Neuromodulators",
-  italic: "without the freeze.",
+  italic: "tailored to you.",
   eyebrow: "Botox · Xeomin · Daxxify",
   subtitle: "Botox · Xeomin · Daxxify",
 
@@ -44,8 +44,8 @@ export const content: TreatmentDetailContent = {
 
   pullquote: {
     body:
-      "We treat muscles, not expressions. The face still tells your story, just with less effort.",
-    attr: "Dr Cardi",
+      "Botox should never erase expression. It should soften what feels overactive while preserving what makes your face feel like you.",
+    attr: "Dr Caridi",
   },
 
   bestFor: {
@@ -84,7 +84,7 @@ export const content: TreatmentDetailContent = {
       name: "Daxxify",
       by: "Revance",
       note:
-        "Longer-lasting in many clients, up to six to nine months. Newer to market; we use it where the duration trade-off makes sense.",
+        "Peptide-powered for improved skin quality. Longer-lasting in many clients, up to six to nine months. Newer to market; we use it where the duration trade-off makes sense.",
       use: "All areas",
     },
     {
@@ -238,7 +238,7 @@ export const content: TreatmentDetailContent = {
       id: "biostim",
       slug: "biostimulatory-fillers",
       title: "Biostimulators",
-      subtitle: "Sculptra · Radiesse",
+      subtitle: "Radiesse",
       copy: "The long game on skin quality. Stages well alongside Botox over a six- to twelve-month plan.",
       img: { src: "/images/treatments/filler_chin_tx.webp", alt: "Biostimulator treatment" },
     },

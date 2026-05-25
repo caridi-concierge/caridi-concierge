@@ -29,10 +29,10 @@ export const content: LocationContent = {
   studioExperience: {
     title: "A private studio setting in Red Hook",
     description:
-        "The Red Hook studio is a private setting designed for patients who prefer a quieter, more discreet appointment. I use it for unhurried visits focused on careful planning and natural-looking results. Appointments are scheduled in advance, and the address is shared after confirmation."
+        "The Red Hook studio is a private setting designed for established patients who want an alternative to in-home service. It offers a more discreet appointment experience. I use it for unhurried visits focused on careful planning and natural-looking results. Appointments are scheduled in advance, and the address is shared after confirmation."
     },
   overview: [
-    "The Red Hook studio is reserved for established clients of the practice — patients I see often, on longer arcs, where consistency matters more than convenience.",
+    "The Red Hook studio is reserved for established clients of the practice. For patients I see often, on longer arcs, where consistency matters more than convenience.",
     "It's a small, quiet room. No signage on the door, no shared waiting, no public schedule. The address is shared once an appointment is confirmed.",
     "If you're not yet a client, the Gowanus clinic and in-home concierge are how to begin. Red Hook follows from there, by invitation.",
   ],
@@ -40,7 +40,7 @@ export const content: LocationContent = {
     {
       label: "Setting",
       value:
-        "A small, private room in Red Hook — quiet, residential, and intentionally undermarked.",
+        "A small, private room in Red Hook. Quiet, residential, and intentionally undermarked.",
     },
     {
       label: "Privacy",
@@ -55,7 +55,7 @@ export const content: LocationContent = {
     {
       label: "Continuity",
       value:
-        "The same room, every visit, for the duration of your care — so the work compounds rather than restarts.",
+        "The same room, every visit, for the duration of your care, so the work compounds rather than restarts.",
     },
   ],
   process: [

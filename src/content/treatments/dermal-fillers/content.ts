@@ -36,7 +36,7 @@ export const content: TreatmentDetailContent = {
 
   pullquote: {
     body:
-      "Filler is great for refined volume restoration",
+      "The art of filler is knowing where support matters, and where restraint matters more.",
     attr: "Dr. Caridi",
   },
 
@@ -223,7 +223,7 @@ export const content: TreatmentDetailContent = {
       id: "biostim",
       slug: "biostimulatory-fillers",
       title: "Biostimulators",
-      subtitle: "Sculptra · Radiesse",
+      subtitle: "Radiesse",
       copy: "For the long game on skin quality. Stages well with filler over a 6–12 month plan.",
       img: { src: "/images/treatments/filler_chin_tx.webp", alt: "Biostimulator treatment" },
     },

@@ -16,7 +16,7 @@ export const content: TreatmentDetailContent = {
   number: "04",
 
   title: "Biostimulatory Fillers",
-  italic: "the long game.",
+  italic: "built over time.",
   eyebrow: "Radiesse",
   subtitle: "Radiesse",
 
@@ -148,11 +148,11 @@ export const content: TreatmentDetailContent = {
     immediate: [
       {
         t: "Mild swelling",
-        c: "Localized for 24–48 hours. Slightly more pronounced with Sculptra than Radiesse.",
+        c: "Localized for 24–48 hours. Radiesse tends to be mild.",
       },
       {
         t: "Bruising",
-        c: "Possible — most visible days 2–4. Arnica and cold compress may help.",
+        c: "Possible. Usually mild and most visible days 2–4. Arnica and cold compress may help.",
       },
       {
         t: "Tenderness",

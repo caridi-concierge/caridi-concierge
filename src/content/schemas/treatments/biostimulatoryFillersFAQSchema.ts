@@ -17,7 +17,7 @@ export const biostimulatoryFillersFAQSchema = {
         name: "How do biostimulatory fillers work?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Unlike hyaluronic acid fillers, biostimulatory fillers such as Radiesse and Sculptra use calcium hydroxylapatite or poly-L-lactic acid microspheres to trigger collagen formation. Over time, this new collagen builds a natural support structure beneath the skin."
+          text: "Unlike hyaluronic acid fillers, biostimulatory fillers such as Radiesse use calcium hydroxylapatite or poly-L-lactic acid microspheres to trigger collagen formation. Over time, this new collagen builds a natural support structure beneath the skin."
         }
       },
       {

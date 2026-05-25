@@ -23,7 +23,7 @@ export const content: TreatmentDetailContent = {
   number: "00",
 
   title: "Aesthetic Consultations",
-  italic: "to begin with.",
+  italic: "where we begin.",
   eyebrow: "30 min · Private",
   subtitle: "30 min · Private",
 
@@ -119,7 +119,7 @@ export const content: TreatmentDetailContent = {
       id: "biostim",
       slug: "biostimulatory-fillers",
       title: "Biostimulators",
-      subtitle: "Sculptra · Radiesse",
+      subtitle: "Radiesse",
       copy: "Long-game collagen support. Built into a thoughtful plan over six to twelve months.",
       img: { src: "/images/treatments/filler_chin_tx.webp", alt: "Biostimulator treatment" },
     },

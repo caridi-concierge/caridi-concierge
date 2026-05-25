@@ -31,15 +31,15 @@ export const content: LocationContent = {
       "The Gowanus location offers a quiet, clinical environment for patients who prefer an in-office appointment. I use this setting for treatments that benefit from a controlled space and unhurried consultation. Every visit is physician-led, conservative in approach, and focused on results that look natural and intentional."
   },
   overview: [
-    "Some visits are easier when the setting is clinical. The Gowanus space is a small, private clinic — controlled, quiet, and reserved for one client at a time.",
-    "I see patients here on Wednesdays. The schedule is intentionally narrow so that every visit has space to breathe — time for an unhurried consult, time for the treatment itself, time to answer whatever comes up after.",
+    "Some visits are easier when the setting is clinical. The Gowanus space is a small, private clinic. Controlled, quiet, and reserved for one client at a time.",
+    "I see patients here on Wednesdays. The schedule is intentionally narrow so that every visit has space to breathe, time for an unhurried consult, time for the treatment itself, time to answer whatever comes up after.",
     "If you'd rather receive the same care at home, in-home concierge visits run the rest of the week. Either route gets you to me, personally.",
   ],
   space: [
     {
       label: "Setting",
       value:
-        "A single, private clinical space — controlled, quiet, and dedicated to one appointment at a time.",
+        "A single, private clinical space. Controlled, quiet, and dedicated to one appointment at a time.",
     },
     {
       label: "Privacy",
@@ -68,7 +68,7 @@ export const content: LocationContent = {
       meta: "Arrival",
       title: "472 4th Avenue, Brooklyn.",
       description:
-        "Street parking on 4th Avenue or surrounding streets, or the R train at Union Street. Walk in — there's no waiting room because there's no other appointment.",
+        "Street parking on 4th Avenue or surrounding streets, or the R train at Union Street. Walk in, there's no waiting room because there's no other appointment.",
     },
     {
       meta: "The visit",
