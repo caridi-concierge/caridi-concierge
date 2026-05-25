@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Eyebrow from "@/components/Eyebrow";
 import IconArrow from "@/components/icons/IconArrow";
-import { Location } from "@/lib/constants/locations";
+import { LocationFacts } from "@/content/locations/types";
 
 const TYPE_LABEL: Record<string, string> = {
   studio: "Private Studio",
@@ -13,7 +13,7 @@ const TITLE_OVERRIDE: Record<string, string> = {
   concierge: "Your home",
 };
 
-export function LocationCard({ loc, ordinal }: { loc: Location; ordinal: number }) {
+export function LocationCard({ loc, ordinal }: { loc: LocationFacts; ordinal: number }) {
   const { address } = loc;
   const primaryAddress =
     address.complete ||

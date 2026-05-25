@@ -1,187 +1,174 @@
 # Architecture Rules
 
+This is a **Next.js 15 App Router content/marketing site** (React 19,
+TypeScript, Tailwind v4). It has no database, services layer, or domain layer.
+Most code either renders content or models content as typed data.
+
+Use the existing structure. When adding code, put it where its kind already
+lives rather than inventing a new top-level area.
+
 ## Project structure
 
-Use the repo's existing structure if it already exists. When creating new code, keep boundaries explicit and avoid mixing HTTP, business logic, and infrastructure details.
-
-Recommended structure for a Node.js/TypeScript application:
-
 ```text
 src/
-  app/ or server/                 # app bootstrap, framework wiring, runtime entry points
-  domain/                         # pure business rules, entities, value objects, domain errors
-    <feature>/
-      <Feature>.ts
-      <FeatureRepository.ts       # interface/port, not implementation
-      events/
-        <FeatureCreated.ts>
-    shared/                       # cross-feature value objects and pure helpers
-  application/                    # use cases and orchestration
-    <feature>/
-      <FeatureService.ts>
-      <UseCase>.ts
-  infrastructure/                 # technical details and adapters
-    db/                           # database clients, migrations, ORM/query implementations
-    clients/                      # outbound HTTP/provider SDK clients
-    queues/                       # queue producers/consumers
-    config/                       # environment/config loading
-    logging/                      # logger setup
-  interfaces/                     # inbound boundaries
-    http/                         # routes/controllers/API handlers
-      <feature>/
-        routes.ts
-        schema.ts
-        mapper.ts
-        types.ts
-    jobs/                         # scheduled/background job entry points
-    webhooks/                     # webhook handlers
+  app/                      # App Router
+    layout.tsx              # root layout: <html>/<body>, fonts, global JSON-LD, GTM
+    (site)/                 # route group: the public marketing site (no URL segment)
+      layout.tsx            #   shared chrome — renders <Navbar/> + page + <Footer/>
+      page.tsx              #   home
+      _sections/            #   home page's sections (Hero, Philosophy, ...)
+      <route>/
+        page.tsx            #   the route's page
+        [slug]/page.tsx     #   nested dynamic route, where applicable
+        _sections/          #   this route subtree's composed sections
+    api/contact/route.ts    # the only server endpoint (see api-design.md)
+    robots.ts, sitemap.ts   # generated SEO files
+    not-found.tsx, 401/     # error / status pages — outside (site), so no chrome
+    book/                   # external-booking redirect — outside (site), so no chrome
+    utils/                  # small route-local helpers
+
+  components/               # shared, reusable, presentational UI
+    icons/                  # icon components
+    # ...also home of sections shared across route subtrees (e.g. FAQ, Results)
+
+  content/                  # editorial content as data + MDX (no app logic)
+    blog/*.mdx              # blog posts; each exports `metadata`
+    locations/              # entity: per-item folders (see entity convention)
+    treatments/             # entity: per-item folders
+      <slug>/facts.ts        #   summary facts (catalog record)
+      <slug>/content.ts      #   editorial detail content for the [slug] page
+      <slug>/index.ts        #   bundles { facts, content }
+      types.ts               #   the entity's catalog + detail types
+      index.ts               #   barrel: catalog + detail getters (runtime only)
+    reviews/                # review data (single source)
+    schemas/                # JSON-LD structured data (+ treatments/ FAQ schemas)
+
+  lib/                      # non-UI logic and shared constants
+    analytics.ts            # GTM dataLayer helper (tracking contract)
+    metadata.ts             # createPageMetadata() — SEO metadata builder
+    blogs/                  # blog file reads (fs), related-post + schema logic
+    constants/              # company, pricing, ctas, staff
+
+  model/                    # shared types not tied to a content entity (e.g. staff)
+
+  styles/global.css         # Tailwind v4 entry + global styles
+  mdx-components.tsx        # MDX element → component mapping
 ```
-
-For Next.js App Router projects, framework files live under `app/`, but business logic should still live outside route files:
-
-```text
-app/
-  api/<resource>/route.ts         # thin HTTP boundary only
-src/
-  domain/
-  application/
-  infrastructure/
-  interfaces/
-```
-
-## Dependency rules
-
-Dependencies flow inward:
-
-```text
-interfaces  →  application  →  domain  ←  infrastructure
-```
-
-- `domain` is pure TypeScript. No framework, database, HTTP, logging, or environment imports.
-- `application` imports domain types and ports. It orchestrates use cases and transactions/workflows.
-- `infrastructure` implements ports defined by domain or application. It may import domain types but should not own business rules.
-- `interfaces` handles inbound adapters: HTTP routes, controllers, webhooks, jobs, CLI commands. It validates inputs, maps DTOs, and calls application services.
-- Avoid cycles. If two modules need the same logic, extract pure logic into domain/shared or a feature-local helper.
-
-## Route and controller rules
-
-Route handlers should be thin:
-
-1. parse request
-2. validate input
-3. call an application service/use case
-4. map result to response
-
-Do not put business logic, provider calls, database queries, or large mapping blocks directly in route handlers.
-
-## Domain rules
-
-- Domain code owns invariants and business decisions.
-- Domain code should be deterministic and easy to unit test.
-- Prefer explicit types and value objects for important concepts.
-- Use discriminated unions for closed result/state variants.
-- Domain objects should not know how they are persisted or exposed over HTTP.
-
-Example:
-
-```ts
-type PaymentStatus =
-  | { kind: 'pending' }
-  | { kind: 'paid'; paidAt: Date }
-  | { kind: 'failed'; reason: string };
-```
-
-## Application rules
-
-- Application services/use cases orchestrate workflows.
-- They may coordinate repositories, external clients, queues, and domain objects.
-- They should depend on interfaces/ports, not concrete SDK clients where practical.
-- They should be the natural place for transaction boundaries when using a database.
-
-## Infrastructure rules
-
-Infrastructure contains side effects:
-
-- database reads/writes
-- ORM/query builder implementation
-- HTTP clients and provider SDKs
-- queues and messaging
-- file system access
-- environment/config loading
-- logging implementation
-
-Keep provider-specific types from leaking into domain or application layers. Map them at the boundary.
-
-## Interfaces rules
-
-Interfaces contain inbound adapters:
-
-- HTTP routes/controllers
-- webhook handlers
-- scheduled/background job entry points
-- CLI commands
-
-They own request/response schemas and mapping to application inputs/outputs.
-
-## Cross-feature rules
-
-- Features may share value objects from `domain/shared`.
-- Avoid direct dependencies between feature internals.
-- Cross-feature workflows belong in application services/use cases.
-- If two features start importing heavily from each other, the boundary is probably wrong.
-
-## When to create a new feature package
-
-Create `domain/<feature>/` when the feature has at least two of these:
-
-- its own lifecycle or state model
-- its own use cases
-- its own API/webhook/job surface
-- its own persistence concerns
-- its own domain vocabulary
-
-Do not create a new feature package for a single helper, DTO, or constant.
 
 ## What goes where
 
 | Code | Location |
 | --- | --- |
-| App/bootstrap code | `src/app/`, `src/server/`, or framework root |
-| API route/controller | `interfaces/http/<feature>/` or thin framework route file |
-| Request/response schema | `interfaces/http/<feature>/schema.ts` |
-| DTO/API mapper | `interfaces/http/<feature>/mapper.ts` |
-| Use case/service orchestration | `application/<feature>/` |
-| Entity/value object/domain error | `domain/<feature>/` |
-| Repository/client interface | `domain/<feature>/` or `application/<feature>/ports/` |
-| Repository implementation | `infrastructure/db/` |
-| Outbound provider client | `infrastructure/clients/` |
-| Queue producer/consumer | `infrastructure/queues/` or `interfaces/jobs/` for entry points |
-| Config/env parsing | `infrastructure/config/` |
-| Logger setup | `infrastructure/logging/` |
+| A new page/route | `src/app/(site)/<route>/page.tsx` (public site) |
+| A section used by one route subtree | `src/app/(site)/<route>/_sections/` (colocated) |
+| A section shared across route subtrees | `src/components/` |
+| A component reused across pages | `src/components/` |
+| Editorial copy / data for a page | `src/content/` |
+| A new location or treatment | `src/content/<entity>/<slug>/` (facts + content) |
+| A blog post | `src/content/blog/<slug>.mdx` |
+| JSON-LD structured data | `src/content/schemas/` |
+| A shared constant (company info, CTAs, prices) | `src/lib/constants/` |
+| A shared helper (analytics, metadata, blog reads) | `src/lib/` |
+| A type for a content entity | `src/content/<entity>/types.ts` |
+| A shared type not tied to an entity | `src/model/` |
+| The contact endpoint or a new route handler | `src/app/api/<name>/route.ts` |
 
-## Data and model boundaries
+## Layering and dependency rules
 
-Domain objects do not leak through API responses and provider SDK types do not leak into domain/application.
+Dependencies flow from presentation toward content/constants — never the
+reverse:
 
-- No ORM/database entity returned directly from an API route.
-- No raw provider response passed through as a domain object.
-- Mappers convert between API DTOs, provider DTOs, persistence rows, and domain types.
-- Mapping logic belongs in mapper/adapter files, not scattered across services and routes.
+```text
+app (pages) → _sections → components
+     │            │
+     └────────────┴──────→ content (data/MDX), lib (helpers/constants), model (types)
+```
 
-## Configuration
+- **Pages (`app/.../page.tsx`)** stay thin: assemble sections, set metadata via
+  `createPageMetadata`, render JSON-LD. No data-massaging or business logic.
+- **Site chrome lives in `app/(site)/layout.tsx`**, which wraps every page in
+  the `(site)` group with the shared `<Navbar/>` and `<Footer/>`. Pages don't
+  import these themselves. Routes that must render bare (the `book` redirect,
+  `401`, `not-found`) sit outside `(site)`, so they don't inherit the chrome —
+  add a new marketing page under `(site)/` to get the navbar/footer for free.
+- **Sections live next to the route that uses them**, in a colocated
+  `_sections/` folder. The `_` prefix makes it a Next.js *private folder*,
+  excluded from routing — only `page`/`route`/`layout` etc. become routes.
+  Sections compose components and pull in content. A section folder belongs to
+  a route subtree: detail routes (`[slug]`, per-treatment pages) nest under
+  their index segment, so the parent's `_sections/` is shared by the whole
+  subtree (e.g. `app/(site)/treatments/_sections/TreatmentDetailLayout` serves
+  all the treatment detail pages).
+- **When a section is used by more than one route subtree, it's no longer a
+  section — promote it to `components/`** (e.g. `FAQ`, `Results`). Don't reach
+  across into another route's `_sections/`.
+- **Components** are presentational and reusable. Prefer receiving data via
+  props. They should not import a specific route's content or sections.
+- **`content/`** is pure typed data and MDX. No React logic beyond MDX, no
+  side effects. Each content area exposes an `index.ts` registry with a typed
+  lookup (e.g. `getLocationContent(slug)`, `getTreatmentDetail(slug)`).
+- **`lib/`** holds shared helpers and constants. Isolate side effects here:
+  filesystem reads (`lib/blogs/posts.ts`), `window`/dataLayer access
+  (`lib/analytics.ts`), and `process.env` reads (`lib/constants/pricing.ts`).
+- **`model/`** is types only — no runtime code, no imports of components.
 
-- Read environment variables in one config module.
-- Validate required env vars at startup.
-- Do not access `process.env` throughout the codebase.
-- Do not hardcode secrets, URLs, credentials, or environment-specific behavior.
+## Content entity convention (locations, treatments)
 
-## Background jobs and queues
+An "entity" is content that has both **summary facts** (used by cards, grids,
+nav) and **per-item detail content** for a dedicated `/<entity>/<slug>` page.
+Locations and treatments are the two entities. Both use the same layout:
+one folder per item, holding that item's two halves together.
 
-- Jobs should be idempotent where possible.
-- Persist enough state to safely retry.
-- Log job IDs, entity IDs, and provider event IDs.
-- Avoid long-running work in HTTP request handlers; enqueue work when it can outlive the request.
+```text
+src/content/<entity>/
+  <slug>/
+    facts.ts             # summary record (catalog entry)
+    content.ts           # editorial detail content for the [slug] page
+    index.ts             # bundles { facts, content } as a named entry
+  types.ts               # the entity's facts type + detail-content type
+  index.ts               # barrel: facts catalog + detail getters (runtime only)
+```
 
-## Practical rule
+Rules:
 
-If a file imports a web framework, database client, provider SDK, and business rules at the same time, it is doing too much. Split it before adding more behavior.
+- **`slug` is the join key** between an item's facts and its detail content.
+- **The barrel (`@/content/<entity>`) exports runtime only** — the facts
+  catalog, the per-item entries, and the detail lookups. **Import types from
+  the entity's `types` module** (`@/content/<entity>/types`), not the barrel.
+  Don't reach into a single item's files from outside the entity.
+- **No `import *` / `export *`.** Use explicit named imports/exports so the
+  public surface of each module is obvious.
+- An entity may carry its own internal `id` (treatments use `id` for in-page
+  anchor `id=`/`href="#…"`; locations use it for editorial label maps). That's
+  separate from `slug` and part of the tracking/DOM contract — don't repurpose
+  or drop it casually.
+- **A drift guard** (`*.test.ts` in the entity) asserts the facts slug set
+  equals the detail slug set, so adding one half without the other fails CI
+  (`locations.test.ts`, `treatments.test.ts`).
+- Entity content lives under `content/`, never `lib/constants/`.
+  `lib/constants/` is for small shared constants (company, pricing, CTAs,
+  staff), not catalogs with detail pages.
+
+## Conventions tied to the architecture
+
+- **Single source of truth for prices**: `src/lib/constants/pricing.ts`. Every
+  price-displaying surface (treatment catalog, JSON-LD `Service` schemas, FAQ
+  copy) imports `PRICES`. Do not re-read `process.env` or inline literals.
+- **Analytics tracking contract**: event names in `lib/analytics.ts` and
+  element `id` attributes are consumed by GTM. Treat them as a contract;
+  renaming/removing can silently break conversion tracking.
+- **SEO is load-bearing**: keep canonical URLs (`createPageMetadata`),
+  `next.config.ts` redirects, `sitemap.ts`, and `robots.ts` consistent when
+  moving or renaming pages.
+
+## Practical rules
+
+- If a component starts importing a specific route's content, the boundary is
+  wrong — pass data via props or move it into that route's `_sections/`.
+- If two route subtrees need the same section, promote it to `components/`
+  rather than importing across `_sections/` folders.
+- A new page's sections start in its own `_sections/`; only graduate them to
+  `components/` once a second route actually needs them.
+- Don't add a database, repository, queue, or service layer to render content.
+  If a feature genuinely needs persistence or background work, escalate the
+  design decision before building it.

@@ -7,7 +7,7 @@ type EyebrowProps = {
    * Editorial wayfinding mark: a leading "—" before the label.
    */
   withDash?: boolean;
-  as?: "div" | "span" | "p";
+  as?: "div" | "span" | "p" | "h2" | "h3";
 };
 
 /**

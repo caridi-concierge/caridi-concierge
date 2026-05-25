@@ -1,5 +1,53 @@
-// Content types for location detail pages
+// Types for location data: the facts catalog record (LocationFacts) and the
+// editorial detail content (LocationContent) rendered on /locations/[slug].
 import type { LocationServiceCardProps } from "@/components/LocationServiceCard";
+
+export interface LocationAddress {
+  complete: string;
+  streetAddress1: string;
+  streetAddress2: string;
+  neighborhood: string;
+  locality: string;
+  region: string;
+  postalCode: string;
+  country: string;
+}
+
+export interface LocationHours {
+  label: string;
+  value: string;
+}
+
+/** A location's two halves, bundled by its folder. */
+export interface LocationEntry {
+  facts: LocationFacts;
+  content: LocationContent;
+}
+
+/** Summary record for a location: identity, address, hours, CTAs, hero. */
+export interface LocationFacts {
+  id: string;
+  name: string;
+  type: string;
+  visibility: "public" | "invite_only";
+  address: LocationAddress;
+  description: string;
+  statusLine: string;
+  ctaPrimaryLabel: string;
+  ctaPrimaryHref: string;
+  ctaSecondaryLabel: string;
+  ctaSecondaryHref: string;
+  ctaTertiaryLabel?: string;
+  ctaTertiaryHref?: string;
+  badge?: string;
+  slug: string;
+  heroImage: { src: string; alt: string };
+  phoneDisplay: string;
+  phoneHref: string;
+  email: string;
+  emailHref: string;
+  hours: LocationHours[];
+}
 
 export interface SpecRailItem {
   label: string;

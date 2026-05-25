@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { COMPANY } from "@/lib/constants/company";
-import { LOCATIONS } from "@/lib/constants/locations";
+import { LOCATIONS } from "@/content/locations";
 import Eyebrow from "@/components/Eyebrow";
 import { pushEvent } from "@/lib/analytics";
 

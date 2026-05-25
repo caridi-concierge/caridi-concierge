@@ -1,0 +1,20 @@
+import ContactLayout from "@/app/(site)/contact/_sections/ContactLayout";
+import { SMSContactWidget } from "@/components/SMSContactWidget";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata = createPageMetadata({
+    title: "Contact Caridi Concierge | Book an Aesthetic Treatment or Consultation",
+    description: "Book your personalized aesthetic consultation with Caridi Concierge. Contact us today to schedule botox, fillers, or collagen builders in NYC.",
+    path: "/contact",
+    keywords: ["Caridi Concierge", "Contact Us", "Booking", "Aesthetic Treatments", "Consultation", "In-Home Treatments", "Brooklyn", "New York City"],
+    noIndex: false
+});
+
+export default function ContactPage() {
+    return (
+        <>
+        <ContactLayout />
+        <SMSContactWidget />
+        </>
+    );
+}

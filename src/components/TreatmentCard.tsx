@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { TreatmentMetadata } from "@/model/treatments/Treatment";
+import type { TreatmentMetadata } from "@/content/treatments/types";
 import Eyebrow from "@/components/Eyebrow";
 import IconArrow from "@/components/icons/IconArrow";
 
@@ -11,7 +11,7 @@ export type TreatmentCardProps = TreatmentMetadata & {
 /**
  * Editorial treatment card — image, brass eyebrow ("0N · subtitle"),
  * Cormorant title, copy, "Learn more →".
- * Used in the home Treatments grid (`@/app/sections/home/Treatments.tsx`).
+ * Used in the home Treatments grid (`@/app/(site)/_sections/Treatments.tsx`).
  */
 export default function TreatmentCard({
   title,

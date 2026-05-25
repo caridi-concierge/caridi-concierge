@@ -1,6 +1,6 @@
 import { getAllPosts, type BlogPostMeta } from "./posts";
-import { getTreatmentDetail } from "@/content/treatments/details";
-import type { TreatmentDetailContent } from "@/model/treatments/TreatmentDetail";
+import { getTreatmentDetail } from "@/content/treatments";
+import type { TreatmentDetailContent } from "@/content/treatments/types";
 
 const CATEGORY_TO_TREATMENT: Record<string, string> = {
   Botox: "wrinkle-reduction",
