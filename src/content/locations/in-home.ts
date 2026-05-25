@@ -114,7 +114,7 @@ export const inHomeContent: LocationContent = {
     },
   ],
   doctorsNote: {
-    body: "Some of my favorite visits happen at someone's kitchen counter. The lighting is right, the setting is calm, the conversation goes long. If that sounds like what you'd want, write to me and we'll plan something quiet.",
+    body: "In-home visits allow me to bring the same medical standards into a setting that feels more private, relaxed, and convenient.",
     attr: "Cristina Caridi, MD",
   },
   offerings: {
