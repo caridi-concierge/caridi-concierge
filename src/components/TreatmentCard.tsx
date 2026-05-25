@@ -11,7 +11,7 @@ export type TreatmentCardProps = TreatmentMetadata & {
 /**
  * Editorial treatment card — image, brass eyebrow ("0N · subtitle"),
  * Cormorant title, copy, "Learn more →".
- * Used in the home Treatments grid (`@/app/_sections/Treatments.tsx`).
+ * Used in the home Treatments grid (`@/app/(site)/_sections/Treatments.tsx`).
  */
 export default function TreatmentCard({
   title,

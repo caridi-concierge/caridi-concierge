@@ -11,17 +11,20 @@ lives rather than inventing a new top-level area.
 
 ```text
 src/
-  app/                      # App Router: one folder per route
-    layout.tsx              # root layout, fonts, global JSON-LD, GTM
-    page.tsx                # home
-    _sections/              # home page's sections (Hero, Philosophy, ...)
+  app/                      # App Router
+    layout.tsx              # root layout: <html>/<body>, fonts, global JSON-LD, GTM
+    (site)/                 # route group: the public marketing site (no URL segment)
+      layout.tsx            #   shared chrome — renders <Navbar/> + page + <Footer/>
+      page.tsx              #   home
+      _sections/            #   home page's sections (Hero, Philosophy, ...)
+      <route>/
+        page.tsx            #   the route's page
+        [slug]/page.tsx     #   nested dynamic route, where applicable
+        _sections/          #   this route subtree's composed sections
     api/contact/route.ts    # the only server endpoint (see api-design.md)
     robots.ts, sitemap.ts   # generated SEO files
-    not-found.tsx, 401/     # error / status pages
-    <route>/
-      page.tsx              # the route's page
-      [slug]/page.tsx       # nested dynamic route, where applicable
-      _sections/            # this route subtree's composed sections
+    not-found.tsx, 401/     # error / status pages — outside (site), so no chrome
+    book/                   # external-booking redirect — outside (site), so no chrome
     utils/                  # small route-local helpers
 
   components/               # shared, reusable, presentational UI
@@ -56,8 +59,8 @@ src/
 
 | Code | Location |
 | --- | --- |
-| A new page/route | `src/app/<route>/page.tsx` |
-| A section used by one route subtree | `src/app/<route>/_sections/` (colocated) |
+| A new page/route | `src/app/(site)/<route>/page.tsx` (public site) |
+| A section used by one route subtree | `src/app/(site)/<route>/_sections/` (colocated) |
 | A section shared across route subtrees | `src/components/` |
 | A component reused across pages | `src/components/` |
 | Editorial copy / data for a page | `src/content/` |
@@ -83,14 +86,19 @@ app (pages) → _sections → components
 
 - **Pages (`app/.../page.tsx`)** stay thin: assemble sections, set metadata via
   `createPageMetadata`, render JSON-LD. No data-massaging or business logic.
+- **Site chrome lives in `app/(site)/layout.tsx`**, which wraps every page in
+  the `(site)` group with the shared `<Navbar/>` and `<Footer/>`. Pages don't
+  import these themselves. Routes that must render bare (the `book` redirect,
+  `401`, `not-found`) sit outside `(site)`, so they don't inherit the chrome —
+  add a new marketing page under `(site)/` to get the navbar/footer for free.
 - **Sections live next to the route that uses them**, in a colocated
   `_sections/` folder. The `_` prefix makes it a Next.js *private folder*,
   excluded from routing — only `page`/`route`/`layout` etc. become routes.
   Sections compose components and pull in content. A section folder belongs to
   a route subtree: detail routes (`[slug]`, per-treatment pages) nest under
   their index segment, so the parent's `_sections/` is shared by the whole
-  subtree (e.g. `app/treatments/_sections/TreatmentDetailLayout` serves all the
-  treatment detail pages).
+  subtree (e.g. `app/(site)/treatments/_sections/TreatmentDetailLayout` serves
+  all the treatment detail pages).
 - **When a section is used by more than one route subtree, it's no longer a
   section — promote it to `components/`** (e.g. `FAQ`, `Results`). Don't reach
   across into another route's `_sections/`.
