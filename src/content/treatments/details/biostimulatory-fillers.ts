@@ -16,7 +16,7 @@ export const biostimulatoryFillersDetail: TreatmentDetailContent = {
   number: "04",
 
   title: "Biostimulatory Fillers",
-  italic: "the long game.",
+  italic: "built over time.",
   eyebrow: "Radiesse",
   subtitle: "Radiesse",
 

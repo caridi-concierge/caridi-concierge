@@ -16,7 +16,7 @@ export const wrinkleReductionDetail: TreatmentDetailContent = {
   number: "01",
 
   title: "Neuromodulators",
-  italic: "without the freeze.",
+  italic: "tailored to you.",
   eyebrow: "Botox · Xeomin · Daxxify",
   subtitle: "Botox · Xeomin · Daxxify",
 

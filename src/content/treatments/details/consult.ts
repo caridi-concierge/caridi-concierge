@@ -23,7 +23,7 @@ export const consultDetail: TreatmentDetailContent = {
   number: "00",
 
   title: "Aesthetic Consultations",
-  italic: "to begin with.",
+  italic: "where we begin.",
   eyebrow: "30 min · Private",
   subtitle: "30 min · Private",
 
