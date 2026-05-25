@@ -119,7 +119,7 @@ export const consultDetail: TreatmentDetailContent = {
       id: "biostim",
       slug: "biostimulatory-fillers",
       title: "Biostimulators",
-      subtitle: "Sculptra · Radiesse",
+      subtitle: "Radiesse",
       copy: "Long-game collagen support. Built into a thoughtful plan over six to twelve months.",
       img: { src: "/images/treatments/filler_chin_tx.webp", alt: "Biostimulator treatment" },
     },

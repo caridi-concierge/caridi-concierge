@@ -52,7 +52,7 @@ export default function FAQSection() {
               <AccordionItem title="What treatments do you offer?">
                 <p>
                   Neuromodulators (Botox, Xeomin, Daxxify), dermal fillers
-                  (RHA, Juvederm, Radiesse), biostimulators (Sculptra),
+                  (RHA, Juvederm), biostimulators (Radiesse),
                   medical-grade peels, and aesthetic consultations. Treatments
                   are tailored to face, lips, neck, and jawline.
                 </p>

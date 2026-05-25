@@ -90,11 +90,6 @@ export default function Footer() {
             <Eyebrow className="text-brass-soft text-[10px] mb-4">Contact</Eyebrow>
             <ul className="space-y-2.5 font-body text-[13px]">
               <li>
-                <Link href="/contact" className={linkBase}>
-                  Contact Page
-                </Link>
-              </li>
-              <li>
                 <a
                   href={COMPANY.emailHref}
                   id="footer-email-cta"

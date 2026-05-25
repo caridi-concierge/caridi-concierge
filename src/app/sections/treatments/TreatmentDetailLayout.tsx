@@ -371,9 +371,9 @@ function ProcessTimeline({ content, n }: NumberedProps) {
         </Eyebrow>
         <h2 className="font-display font-light text-[40px] sm:text-5xl lg:text-[56px] leading-[1.05] mb-14 max-w-[880px]">
           {phases.length === 4 ? (
-            <>Four quiet steps. <em className="not-italic italic font-light text-brass">One visit.</em></>
+            <>Four simple steps. <em className="not-italic italic font-light text-brass">One thoughtful visit.</em></>
           ) : (
-            <>Quiet steps. <em className="not-italic italic font-light text-brass">No surprises.</em></>
+            <>Simple steps. <em className="not-italic italic font-light text-brass">No surprises.</em></>
           )}
         </h2>
         <div
@@ -555,9 +555,9 @@ function BeforeAfter({ content, n }: NumberedProps) {
               {n} · Before & after
             </Eyebrow>
             <h2 className="font-display font-light text-[40px] sm:text-5xl lg:text-[56px] leading-[1.05]">
-              Quiet results,{" "}
+              Results that still look like{" "}
               <em className="not-italic italic font-light text-brass">
-                documented honestly.
+                you.
               </em>
             </h2>
           </div>

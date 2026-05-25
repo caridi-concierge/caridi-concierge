@@ -238,7 +238,7 @@ export const wrinkleReductionDetail: TreatmentDetailContent = {
       id: "biostim",
       slug: "biostimulatory-fillers",
       title: "Biostimulators",
-      subtitle: "Sculptra · Radiesse",
+      subtitle: "Radiesse",
       copy: "The long game on skin quality. Stages well alongside Botox over a six- to twelve-month plan.",
       img: { src: "/images/treatments/filler_chin_tx.webp", alt: "Biostimulator treatment" },
     },
