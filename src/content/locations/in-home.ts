@@ -74,17 +74,17 @@ export const inHomeContent: LocationContent = {
     {
       tier: "Primary",
       areas:
-        "Manhattan and Brooklyn — Upper East, Upper West, West Village, Tribeca, SoHo, LES, Park Slope, Cobble Hill, Carroll Gardens, Red Hook, DUMBO.",
+        "Manhattan and Brooklyn, Upper East, Upper West, West Village, Tribeca, SoHo, LES, Park Slope, Cobble Hill, Carroll Gardens, Red Hook, DUMBO.",
     },
     {
       tier: "Extended",
       areas:
-        "Queens · the Bronx · Staten Island — accepted on request, scheduled around routes.",
+        "Queens · the Bronx · Staten Island, accepted on request, scheduled around routes.",
     },
     {
       tier: "On request",
       areas:
-        "Outside the five boroughs — hotels and residences nearby, by arrangement.",
+        "Outside the five boroughs. Hotels and residences nearby, by arrangement.",
     },
   ],
   process: [
