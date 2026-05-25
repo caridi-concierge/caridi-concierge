@@ -7,7 +7,7 @@ export const facts: TreatmentMetadata = {
   title: "Consult",
   hook: "Discover your perfect treatment plan.",
   description:
-    "Get personalized guidance for your aesthetic goals. Our expert will assess your needs and create a customized treatment plan tailored to your unique features and desired results.",
+    "Get personalized guidance for your aesthetic goals. Dr Caridi will assess your needs and create a customized treatment plan tailored to your unique features and desired results.",
   highlights: [
     "Personalized consultation with Dr. Caridi",
     "Custom treatment plan based on your goals and anatomy",

@@ -22,15 +22,16 @@ export default function PhilosophySection() {
   return (
     <section className="bg-ivory text-ink">
       <div className="mx-auto max-w-[1080px] px-6 sm:px-10 lg:px-20 py-20 lg:py-[120px] text-center">
-        <Eyebrow className="text-brass mb-7">The Caridi philosophy</Eyebrow>
+        <Eyebrow as="h2" className="text-brass mb-7">
+          The Caridi Concierge philosophy
+        </Eyebrow>
 
-        <h2 className="font-display font-light text-[34px] sm:text-[42px] lg:text-[52px] leading-[1.18] text-balance max-w-[900px] mx-auto">
-          Restraint is the result. Every treatment is calibrated to look like
-          nothing happened—
+        <p className="font-display font-light text-[34px] sm:text-[42px] lg:text-[52px] leading-[1.18] text-balance max-w-[900px] mx-auto">
+          We believe the art of aesthetics is knowing what to leave alone—
           <em className="not-italic italic font-light text-brass">
-            except you, refined.
+            not how much to add.
           </em>
-        </h2>
+        </p>
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 max-w-[980px] mx-auto text-left">
           {principles.map((p) => (
