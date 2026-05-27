@@ -17,7 +17,7 @@ export const COMPANY = {
       country: "US"
     },
     logo: "/images/logos/caridi_concierge_flat_logo.svg",
-    logoWebclip: "/images/logos/cc_contrast_webclip.png",
+    logoWebclip: "/images/logos/webclip.svg",
     social: {
       instagram: "https://www.instagram.com/caridiconciergemd/",
       facebook: "https://www.facebook.com/profile.php?id=61572501036242",
