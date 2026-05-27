@@ -74,7 +74,7 @@ export default function ReviewsSection() {
 
         <Script
           src="https://elfsightcdn.com/platform.js"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
           id="elfsight-platform"
         />
       </div>

@@ -50,7 +50,10 @@
     text-rendering: optimizeLegibility;
   }
 
-  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7:not(:empty) + #reviews-fallback {
+  /* Hide the static fallback only once a real review card has rendered —
+     not merely when Elfsight injects its (initially empty) shell — so the
+     fallback covers the load window instead of leaving a blank gap. */
+  .elfsight-app-3fe1624d-4cd9-42cf-8aff-8bf26ffcd1c7:has(.es-review-background-container) + #reviews-fallback {
     display: none;
   }
 
