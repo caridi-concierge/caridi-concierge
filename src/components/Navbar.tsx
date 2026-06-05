@@ -50,7 +50,7 @@ export default function Navbar({
         </div>
 
         {/* Right actions */}
-        <div className="flex items-center justify-end gap-4 lg:gap-6 min-w-0">
+        <div className="flex items-center justify-end gap-3 lg:gap-6 min-w-0">
           {/* Desktop only */}
           <div className="hidden lg:flex items-center gap-6">
             <a
@@ -71,6 +71,18 @@ export default function Navbar({
               Book a visit <IconArrow className="w-3 h-3" />
             </Link>
           </div>
+
+          {/* Mobile phone (left of hamburger) */}
+          <a
+            href={COMPANY.phoneHref}
+            id="nav-mobile-phone-bar-cta"
+            onClick={() => pushEvent("phone_click", { location: "navbar_mobile_bar" })}
+            className="lg:hidden flex items-center gap-1.5 text-ivory/90 whitespace-nowrap font-body text-[12px] tracking-tight transition-colors duration-200 hover:text-ivory"
+            aria-label={`Call ${COMPANY.phone}`}
+          >
+            <Phone size={13} aria-hidden="true" />
+            <span>{COMPANY.phone}</span>
+          </a>
 
           {/* Mobile hamburger */}
           <button
