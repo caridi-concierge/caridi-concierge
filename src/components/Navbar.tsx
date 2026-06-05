@@ -77,7 +77,7 @@ export default function Navbar({
             href={COMPANY.phoneHref}
             id="nav-mobile-phone-bar-cta"
             onClick={() => pushEvent("phone_click", { location: "navbar_mobile_bar" })}
-            className="lg:hidden flex items-center gap-1.5 text-ivory/90 whitespace-nowrap font-body text-[12px] tracking-tight transition-colors duration-200 hover:text-ivory"
+            className="lg:hidden flex items-center gap-1.5 pr-2 text-ivory/90 whitespace-nowrap font-body text-[12px] tracking-tight transition-colors duration-200 hover:text-ivory"
             aria-label={`Call ${COMPANY.phone}`}
           >
             <Phone size={13} aria-hidden="true" />
