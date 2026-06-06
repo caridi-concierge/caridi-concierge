@@ -1,0 +1,35 @@
+name: IndexNow
+
+# Notify IndexNow-participating search engines (Bing, Yandex, Naver, Seznam —
+# not Google) of changed URLs after a merge to main. Submits only the URLs the
+# changed content maps to; pushes that touch nothing mappable submit nothing.
+on:
+  push:
+    branches: [main]
+
+# Serialize runs so two quick pushes don't submit on top of each other.
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    # Skip the first commit / force-pushes, where 'before' is the all-zero SHA
+    # and there's no previous state to diff against.
+    if: github.event.before != '0000000000000000000000000000000000000000'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history so the 'before' SHA is available to diff
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      # No install step: scripts/indexnow.mjs has no dependencies (Node global
+      # fetch + git). The IndexNow key is public, so no secret is required.
+      - name: Submit changed URLs to IndexNow
+        run: node scripts/indexnow.mjs
+        env:
+          INDEXNOW_BASE: ${{ github.event.before }}
