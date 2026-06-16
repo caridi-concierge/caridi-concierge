@@ -17,8 +17,8 @@ const baseUrl = "https://www.caridiconcierge.com";
 // from each post's `updatedDate ?? date` metadata below.
 const pages: { path: string; lastModified: string }[] = [
   // Top-level pages
-  { path: "", lastModified: "2026-05-25" },
-  { path: "about", lastModified: "2026-05-25" },
+  { path: "", lastModified: "2026-06-18" },
+  { path: "about", lastModified: "2026-06-18" },
   { path: "contact", lastModified: "2026-05-25" },
   { path: "privacy-policy", lastModified: "2026-05-25" },
   // "book" is intentionally excluded — it redirects externally.
@@ -38,8 +38,8 @@ const pages: { path: string; lastModified: string }[] = [
   { path: "treatments/consult", lastModified: "2026-05-25" },
 
   // Staff (index + profiles)
-  { path: "staff", lastModified: "2026-05-25" },
-  { path: "staff/cristina-caridi", lastModified: "2026-05-24" },
+  { path: "staff", lastModified: "2026-06-18" },
+  { path: "staff/cristina-caridi", lastModified: "2026-06-18" },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
