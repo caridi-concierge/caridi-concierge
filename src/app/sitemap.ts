@@ -17,7 +17,7 @@ const baseUrl = "https://www.caridiconcierge.com";
 // from each post's `updatedDate ?? date` metadata below.
 const pages: { path: string; lastModified: string }[] = [
   // Top-level pages
-  { path: "", lastModified: "2026-06-16" },
+  { path: "", lastModified: "2026-06-18" },
   { path: "about", lastModified: "2026-06-16" },
   { path: "contact", lastModified: "2026-05-25" },
   { path: "privacy-policy", lastModified: "2026-05-25" },

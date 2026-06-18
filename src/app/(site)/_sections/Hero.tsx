@@ -28,9 +28,10 @@ export default function HeroSection() {
           </h1>
 
           <p className="mt-8 max-w-[460px] text-base lg:text-[16px] leading-[1.7] font-light text-ivory/80">
-            Physician-led Botox and dermal filler, performed in the privacy of
-            your own setting, across Manhattan, Brooklyn, and Queens. Effortless
-            results, on your schedule.
+            <span className="text-brass-soft">Physician-led</span> Botox and
+            dermal filler, performed in the privacy of your own setting, across
+            Manhattan, Brooklyn, and Queens. Effortless results, on your
+            schedule.
           </p>
 
           <div className="mt-12 flex flex-wrap items-center gap-4">
@@ -56,7 +57,7 @@ export default function HeroSection() {
         <div className="relative px-6 sm:px-10 lg:pl-0 lg:pr-20 pb-12 lg:py-15">
           <div className="relative w-full h-full min-h-[420px] lg:min-h-0 overflow-hidden rounded-[2px]">
             <Image
-              src="/images/headshots/cc_outside_boat_1.webp"
+              src="/images/headshots/cc_outside_street_1.webp"
               alt="Dr. Cristina Caridi, founder and physician"
               fill
               priority
