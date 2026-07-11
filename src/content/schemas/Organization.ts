@@ -5,7 +5,7 @@ export const organizationSchema = {
     "@type": "Organization",
     "name": COMPANY.name,
     "url": COMPANY.url,
-    "logo": `${COMPANY.url}/${COMPANY.logoWebclip}`,
+    "logo": `${COMPANY.url}${COMPANY.logo}`,
     "description": "Caridi Concierge provides luxury, in-home aesthetic services including Botox, dermal fillers, and collagen-stimulating treatments, serving Brooklyn and greater NYC.",
     "founder": {
       "@type": "Person",
